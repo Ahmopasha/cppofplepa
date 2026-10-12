@@ -1,0 +1,31 @@
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,commandchars=\\\{\}}
+\usepackage{framed}
+\usepackage{xcolor}
+\definecolor{kutucerceve}{HTML}{BBBBBB}
+\definecolor{kutuzemin}{HTML}{F6F6F4}
+\definecolor{kodzemin}{HTML}{F7F7F5}
+% blok alinti = kural/not kutusu
+\let\eskiquote\quote
+\renewenvironment{quote}
+  {\begin{snugshade*}\small\setlength{\parskip}{4pt}}
+  {\end{snugshade*}}
+\definecolor{shadecolor}{HTML}{F2F2EF}
+% kod bloklarina hafif zemin
+\usepackage{mdframed}
+\surroundwithmdframed[linewidth=0.4pt,linecolor=kutucerceve,backgroundcolor=kodzemin,
+  innerleftmargin=6pt,innerrightmargin=6pt,innertopmargin=5pt,innerbottommargin=5pt,
+  skipabove=6pt,skipbelow=6pt]{Highlighting}
+% tablolar kucuk punto
+\let\eskilongtable\longtable
+\def\longtable{\small\eskilongtable}
+% baslik araliklari
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{16pt}{6pt}
+\titlespacing*{\subsection}{0pt}{12pt}{4pt}
+\setlength{\emergencystretch}{3em}
+\raggedbottom
+% kapak basligi
+\usepackage{titling}
+\pretitle{\vspace*{3cm}\begin{center}\fontsize{54}{60}\selectfont\bfseries}
+\posttitle{\par\end{center}\vskip 3em}

@@ -1,0 +1,18 @@
+# Her gönderimde kitabı derler ve denetler: dosya adı / başlık numarası uyumu,
+# var olmayan başlıklara giden atıflar, kutu listeleri. Sorun varsa iş başarısız olur.
+name: Denetim
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  denetim:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Derle ve denetle
+        run: python araclar/derle.py --kati
