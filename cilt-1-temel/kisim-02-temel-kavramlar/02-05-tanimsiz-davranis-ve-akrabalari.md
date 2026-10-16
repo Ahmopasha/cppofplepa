@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "2 — Temel Kavramlar"
 baslik: "2.5 Tanımsız davranış ve akrabaları"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 2.5 Tanımsız davranış ve akrabaları
@@ -20,8 +20,8 @@ optimizasyon yapma hakkı vardır.
 int a[5];
 a[10] = 1;              // tanımsız davranış
 
-char* p = "merhaba";
-p[0] = 'M';             // tanımsız davranış: yazı sabiti değiştirilemez
+int i = INT_MAX;
+++i;                    // tanımsız davranış: işaretli tamsayı taşması
 
 int x;
 std::cout << x;         // tanımsız davranış: x ilk değer almamış

@@ -53,6 +53,9 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | padding | dolgu | Cilt II 17.8 |
 | alignment | hizalama | Cilt II 17.8 |
 | strict aliasing | katı örtüşme kuralı | Cilt II 11.7 |
+| deprecated | artık önerilmiyor | Cilt I 5.2 |
+| literal type | literal tür | Cilt II 18.1 |
+| defect report | kusur raporu | Cilt II 17.6 |
 
 ### Değer kategorileri ve referanslar
 
@@ -64,6 +67,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | forwarding reference *(universal reference)* | çevrilmedi | Cilt II 1.2.1 |
 | perfect forwarding | mükemmel gönderim | Cilt II 1.2.5 |
 | life extension | ömrün uzatılması | Cilt I 8.3 |
+| dangling reference | sarkan referans | Cilt I 8.3 |
 | materialization | çevrilmedi | Cilt II 1.1.5 |
 | result object | çevrilmedi | Cilt II 1.1.5 |
 
@@ -118,6 +122,8 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | moved-from state | kaynağı devralınmış nesne durumu | Cilt II 2.5 |
 | copy elision | kopyalama eliminasyonu | Cilt II 3.1 |
 | pessimistic move | çevrilmedi | Cilt II 2.7 |
+| control block | kontrol bloğu | Cilt I 25.3 |
+| custom deleter | özel silici | Cilt II 17.9 |
 
 ### STL ve kütüphane
 

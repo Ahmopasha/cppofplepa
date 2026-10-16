@@ -15,7 +15,7 @@ kalanıyla uyumlu kalması içindir.
    derleyici değiştiğinde ilk eskiyen yerlerdir. Listenin tamamı, her derlemede
    `cikti/bakim_durumu.md` içinde yeniden üretilir.
 3. Değişiklik gerekmiyorsa yalnızca `son_kontrol` alanını güncelleyin:
-   `son_kontrol: "2027-03 (C++26)"`.
+   `son_kontrol: "2027-03 (C++23)"`.
 4. Değişiklik gerekiyorsa aşağıdaki kurallara göre yapın, `son_kontrol`'ü güncelleyin ve
    `DEGISIKLIKLER.md`'ye bir satır ekleyin.
 5. `python3 araclar/derle.py` ile derleyin ve çıkan uyarıları giderin.
@@ -102,6 +102,13 @@ gereklidir. O durumda kural Cilt I'de, gerekçesi Cilt II'de yer alır ve ikisi 
 atıf yapar. Örnek: aralık tabanlı `for` döngüsünde `auto&&` kuralı Cilt I 23.3'te,
 nedeni Cilt II 1.2.7'de.
 
+**Standart ufku.** Kitap, Necati Ergin'in kurslarında izlenen standartlara sadık kalır:
+Cilt I'in ufku C++20 (C++ kursu), Cilt II'nin ufku C++23'tür (İleri C++ kursu). Ufkun
+ötesindeki standartların değişiklikleri kitaba işlenmez. Ufuk, hocanın kurs programları
+([`necatiergin/kurs_programlari`](https://github.com/necatiergin/kurs_programlari))
+yeni bir standardı kapsadığında genişletilir. Kümülatif ilke ufukla birlikte uygulanır:
+Cilt I'deki bir cümle, Cilt II'nin ufkunda da doğru kalmalıdır.
+
 **Ders tarihleri ve künyeleri metne girmez.** Kitap bir ders kaydı değil, bir başvuru
 kaynağıdır.
 
@@ -165,10 +172,4 @@ aynı şeyi söyleyen bir geçiş, o cümleyi gereksiz kılar.
 
 ## Açık konular
 
-**Cilt I 25.5'teki atıf.** "Özel silici tanımlama, kontrol bloğunun ayrıntıları ve
-`enable_shared_from_this`" için Cilt II Kısım 14'e atıf veriliyor, ama bu konular
-Cilt II'nin hiçbir yerinde anlatılmıyor. Ya Cilt II'ye bu konuları anlatan bir alt başlık
-eklenmeli ya da cümle kaldırılmalı.
-
-**C++26 taraması yapılmadı.** Bütün dosyalar C++23'e göre işaretli. C++26'nın kitaptaki
-konulara dokunan değişiklikleri henüz işlenmedi.
+Şu anda açık konu yok.

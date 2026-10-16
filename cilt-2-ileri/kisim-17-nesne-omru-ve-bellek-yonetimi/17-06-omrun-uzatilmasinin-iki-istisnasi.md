@@ -3,7 +3,8 @@ cilt: "II — İleri"
 kisim: "17 — Nesne Ömrü ve Bellek Yönetimi"
 baslik: "17.6 Ömrün uzatılmasının iki istisnası"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+kutular: ["Derleyici Notu"]
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 17.6 Ömrün uzatılmasının iki istisnası
@@ -23,7 +24,9 @@ const std::string& bozuk()
 Uzatma, referansın **bağlandığı kapsamla** sınırlıdır. Referans işlevden döndüğünde o
 kapsam kapanır ve geçici nesne yok edilir; çağırana sarkan bir referans döner.
 
-**Sınıfın veri elemanı olan referans için geçerli değildir.**
+**Kurucu işlevle ilk değer alan referans veri elemanı için geçerli değildir.** Küme
+parantezli bileşik tür ilk değer vermesinde ise, `new` ifadesi dışında, ömür uzar (bkz.
+Kısım 16.6).
 
 ```cpp
 class Sarmal {
@@ -32,13 +35,36 @@ public:
     Sarmal(const std::string& s) : r{s} { }
 };
 
-Sarmal x{std::string{"gecici"}};      // geçici nesne kurucu işlev bitince yok olur
-x;                                    // x.r sarkıyor
+Sarmal x{std::string{"gecici"}};      // geçici nesne bu bildirimin sonunda yok olur
 ```
 
-Kurucu işlev ilk değer verme listesinde bağlanan geçici nesnenin ömrü, **kurucu işlevin
-sonuna kadar** uzar; nesnenin ömrü kadar değil. Kurucu işlev bittiğinde geçici nesne yok
-olur ve veri elemanı sarkar.
+Geçici nesne, kurucu işlevin `s` parametresine bağlanır. Bir işlev çağrısında referans
+parametreye bağlanan geçici nesne, çağrıyı içeren tam ifadenin sonuna kadar yaşar; burada
+bu, `x`'in bildiriminin sonudur. `r{s}` ile `r` de aynı geçici nesneye bağlanır, ama
+geçici nesneyi oluşturan ifadeyle değil, `s` referansı üzerinden. **Var olan bir referans
+üzerinden yapılan bağlama ömrü uzatmaz.** Bildirim bittiğinde geçici nesne yok olur ve
+`x.r` sarkar; sarkan `r`'yi (ör. bir üye işlevde) kullanmak tanımsız davranıştır.
+
+Geçici nesneyi doğrudan ilk değer verme listesinde bağlamak ise sentaks hatasıdır:
+
+```cpp
+class Bozuk {
+    const std::string& r;
+public:
+    Bozuk() : r{std::string{"gecici"}} { }    // sentaks hatası
+};
+```
+
+C++14 dahil önceki standart metinleri bu bağlamaya izin veriyor ve geçici nesneyi kurucu
+işlevin sonuna kadar yaşatıyordu. CWG 1696 sorununun C++17 metnine giren çözümüyle bağlama
+sentaks hatası oldu; çözüm bir **kusur raporu** *(defect report)* olduğundan eski dil
+kiplerine de uygulanır.
+
+> **Derleyici Notu**
+> Apple clang 21 (clang-2100.3.34.2) bu bağlamayı, C++11 dahil, denenen beş dil kipinin
+> hepsinde (C++11, C++14, C++17, C++20, C++23) sentaks hatası olarak bildirir. Bazı
+> derleyiciler ise kodu hâlâ kabul eder. Derlenmesi kodun doğru olduğunu göstermez;
+> veri elemanı yine sarkar.
 
 İkisinin ortak nedeni şudur: ömür uzatma, derleyicinin **yerel olarak** görebildiği bir
 bağlamda çalışır. İşlev sınırını veya nesne sınırını aştığında, geçici nesnenin ne kadar

@@ -2,7 +2,7 @@
 cilt: "I — Temel"
 baslik: "Ön metin"
 kaynak: "derleyen"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 # C++ — Cilt I
@@ -11,7 +11,7 @@ son_kontrol: "2026-09 (C++23)"
 
 **Necati Ergin'in ders notlarından, izniyle derlenmiştir.**
 
-Derleyen: Ahmet Kandemir Pehlivanlı · Sürüm 1.0 · Eylül 2026
+Derleyen: Ahmet Kandemir Pehlivanlı · Sürüm 1.1 · Ekim 2026
 
 ---
 

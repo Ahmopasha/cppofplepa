@@ -133,7 +133,7 @@ yerlerinde bırakılıp bölüme atıf verildi.
 
 **Çakışmaların çözülmesi.** İki not farklı şey söylediğinde kaynağı araştırıldı. Dilin
 davranışının gerçekten değiştiği yerlerde eski ve yeni anlatım birlikte korundu; kitapta
-on üç **Standart Notu** kutusu var.
+on dört **Standart Notu** kutusu var.
 
 ---
 

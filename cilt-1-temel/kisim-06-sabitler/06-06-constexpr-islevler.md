@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "6 — Sabitler"
 baslik: "6.6 `constexpr` işlevler"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 6.6 `constexpr` işlevler
@@ -24,11 +24,12 @@ Aynı işlev her iki şekilde de kullanılabilir. `constexpr`, "her zaman derlem
 
 `constexpr` işlevler örtülü olarak `inline`'dır (bkz. Kısım 11.3).
 
-**Neden her işlev `constexpr` olamaz?** Derleyici, `constexpr` olmayan bir işlevin
-gövdesine derleme zamanında bakmaz; yalnızca bildirimini görür. `constexpr` yazdığınızda
-gövdeye bakmak zorunda kalır ve gövdenin derleme zamanında yürütülebilir olması gerekir.
-Bu da neler yazabileceğinize sınır getirir: çalışma zamanına ait işler (dinamik bellek
-ayırma, giriş-çıkış, `static` yerel nesneler) gövdede yer alamaz.
+**Derleme zamanında neler yapılamaz?** Derleyici, `constexpr` olmayan bir işlevin
+gövdesini derleme zamanında çalıştırmaz. `constexpr` bir işlev derleme zamanında
+çağrıldığında ise gövdesini derleyici yürütür; bu yüzden o çağrıda yürütülen kodun
+yapabilecekleri sınırlıdır. Giriş-çıkış gibi çalışma zamanına ait işler yapılamaz.
+C++20'den itibaren dinamik bellek de ayrılabilir, ama aynı hesaplama bitmeden geri
+verilmelidir.
 
-Bu sınırların C++11'den C++20'ye kadar nasıl gevşediği ve `consteval` ile `constinit`
+Bu sınırların C++11'den C++23'e kadar nasıl gevşediği ve `consteval` ile `constinit`
 anahtar sözcükleri: **Cilt II, Kısım 18.**

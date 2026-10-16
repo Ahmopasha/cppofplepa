@@ -28,7 +28,7 @@ kutuları aynı bağları ters yönden kurar.
 | Kısım 14 — Deyimler ve Kalıplar | yok; Kısım 12 ve 18'e dayanır |
 | Kısım 15 — Eşzamanlılık | Kısım 27 |
 | Kısım 16 — Sınıfların ve Operatörlerin İleri Araçları | 3.10, Kısım 12 ve 14 |
-| Kısım 17 — Nesne Ömrü ve Bellek Yönetimi | Kısım 15 |
+| Kısım 17 — Nesne Ömrü ve Bellek Yönetimi | Kısım 15 ve 25 |
 | Kısım 18 — Derleme Zamanı Hesaplamanın Evrimi | 6.6 |
 
 Tablo yalnızca ana bağları gösterir; daha ince bağlar metin içindeki atıflarla kurulur.

@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "8 — Referanslar"
 baslik: "8.3 `const` referanslar ve geçici nesneler"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 8.3 `const` referanslar ve geçici nesneler
@@ -24,7 +24,10 @@ const std::string& r = std::string{"merhaba"};
 std::cout << r;      // geçerli — geçici nesne hâlâ hayatta
 ```
 
-Bu uzatmanın iki istisnası vardır ve ikisi de hata kaynağıdır. **İşlevden döndürülen
-referans için geçerli değildir** (bkz. 8.6). Ve **sınıfın veri elemanı olan referans
-için geçerli değildir**; kurucu işlevin ilk değer verme listesinde bağlanan geçici nesne,
-kurucu işlev biter bitmez yok olur.
+Bu uzatmanın iki önemli istisnası vardır ve ikisi de hata kaynağıdır. **İşlevden
+döndürülen referans için geçerli değildir** (bkz. Kısım 8.6). Ve **referans veri elemanı,
+kurucu işlevin referans parametresinden ilk değer alıyorsa geçerli değildir**. Kurucu
+işleve argüman olarak verilen geçici nesne, kurucu işlev çağrısını içeren ifadenin tamamı
+bitince yok olur ve veri elemanı **sarkan referans** *(dangling reference)* olarak kalır.
+
+İki istisnanın gerekçesi: **Cilt II, Kısım 17.6.**
