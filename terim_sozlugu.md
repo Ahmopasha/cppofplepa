@@ -97,6 +97,9 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | function overloading | işlev yüklemesi | Cilt I 9.1 |
 | overload resolution | yükleme çözümlemesi | Cilt I 9.3 |
 | exact match | tam uyum | Cilt I 9.6 |
+| candidate | aday | Cilt I 9.4 |
+| rewritten candidate | yeniden yazılmış aday | Cilt II 16.4 |
+| comparison category | sıralama kategorisi | Cilt II 16.4 |
 | promotion | yükseltme | Cilt I 9.6 |
 | name mangling | çevrilmedi | Cilt I 9.9 |
 | instantiation | örnekleme | Cilt II 4.2 |

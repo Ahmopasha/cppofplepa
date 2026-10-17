@@ -11,23 +11,24 @@ GitHub'dan ve Leanpub sayfasından doğrulandı.
 
 ## Aşama 0 — Hemen yapılacaklar
 
-- [ ] **Cilt I 23.7:** "`std::remove`, silinecek elemanları sona iter" yanlış. `remove`
+- [x] **Cilt I 23.7:** "`std::remove`, silinecek elemanları sona iter" yanlış. `remove`
   korunan elemanları başa taşır; yeni mantıksal son ile eski son arasının içeriği
   belirsizdir. Düzeltme panelden geçer.
-- [ ] **Cilt II 16.4:** Standart Notu, "tek bir `operator<=>` bildirimi altısını birden
+- [x] **Cilt II 16.4:** Standart Notu, "tek bir `operator<=>` bildirimi altısını birden
   üretir" diyor. Bu yalnızca `= default` için doğru; elle yazılan `<=>` `==` üretmez. Ana
   metinle uyumlu hâle getirilir. Düzeltme panelden geçer.
-- [ ] **README:** Başa Leanpub bağlantısı (<https://leanpub.com/cppofplepa>).
-- [ ] **GitHub depo açıklaması:** "226 sayfa" Leanpub'daki 235 ile tutmuyor; sayı düzeltilir
-  ya da açıklamadan çıkarılır. Depoya konu etiketleri eklenir: `cpp`, `cpp20`, `cpp23`,
-  `turkish`, `book`.
-- [ ] **Leanpub tanıtımı:** GitHub bağlantısı sondaki noktayı adrese katıyor
+- [x] **README:** Başa Leanpub bağlantısı (<https://leanpub.com/cppofplepa>).
+- [x] **GitHub depo açıklaması:** "226 sayfa" Leanpub'daki 235 ile tutmuyordu; sayfa
+  sayısı açıklamadan çıkarıldı.
+- [ ] **GitHub konu etiketleri ve Website alanı:** `cpp`, `cpp20`, `cpp23`, `turkish`,
+  `book`; Website: <https://leanpub.com/cppofplepa>.
+- [x] **Leanpub tanıtımı:** GitHub bağlantısı sondaki noktayı adrese katıyor
   (`…/cppofplepa.`); düzeltilir.
-- [ ] **BAKIM.md, standart ufku:** "Kusur raporları hariç" notu eklenir. Kusur raporları
+- [x] **BAKIM.md, standart ufku:** "Kusur raporları hariç" notu eklenir. Kusur raporları
   (DR) eski standartlara da uygulanır ve derleyiciler onları eski `-std` kiplerine işler;
   ufkun ötesinde kabul edilmiş bir DR kitabın ufkunu da ilgilendirebilir (örnek: Sürüm
   1.1'deki CWG 1696 düzeltmesi).
-- [ ] **BAKIM.md, sürüm yayımlamak:** "Tanıtım metinlerindeki sayıları (sayfa, kısım,
+- [x] **BAKIM.md, sürüm yayımlamak:** "Tanıtım metinlerindeki sayıları (sayfa, kısım,
   kutu) güncelle" adımı eklenir. `derle.py` bu sayıları `bakim_durumu.md`'ye yazdırabilir.
 
 `v1.0` etiketi verilmez: Sürüm 1.0'ın birebir karşılığı olan bir commit yok, depo kitabın

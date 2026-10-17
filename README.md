@@ -4,6 +4,10 @@ Necati Ergin'in C++ ve İleri C++ kurslarındaki ders notlarından derlenmiş, i
 Türkçe başvuru kitabının kaynak deposu. Kitap burada **her alt başlık ayrı bir Markdown
 dosyası** olacak biçimde tutulur; ciltler ve PDF bu dosyalardan derlenir.
 
+**Kitabı okumak için:** PDF, Leanpub'da ücretsizdir: <https://leanpub.com/cppofplepa>.
+Her sürümün PDF'i ayrıca bu deponun [Releases](https://github.com/Ahmopasha/cppofplepa/releases)
+sayfasında bulunur.
+
 ---
 
 ## İzin ve kullanım

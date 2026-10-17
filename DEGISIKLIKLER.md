@@ -1,5 +1,29 @@
 # Değişiklik kaydı
 
+## Yayımlanmamış
+
+### Düzeltmeler
+
+- Cilt I 23.7: `std::remove` için "silinecek elemanları sona iter" deniyordu. Doğrusu,
+  silinmeyecek elemanları başa kaydırması; kabın boyutu değişmez ve mantıksal sondan
+  itibaren elemanların değerine güvenilmez. Gerekçe için Cilt II 2.5'e atıf eklendi;
+  Cilt II 2.5'e de 23.7'ye geri atıf eklendi.
+- Cilt II 16.4: Hem ana metin hem Standart Notu, tek bir `operator<=>` bildiriminin altı
+  operatörü birden sağladığını her durum için söylüyordu; bu yalnızca `= default` için
+  geçerli. Anlatım yeniden yazma kuralına göre düzeltildi: `<=>` dört ilişkisel
+  operatörü, `==` de `!=`'yi karşılar; örtülü `==` yalnızca sınıf hiçbir `operator==`
+  bildirmemişse gelir; elle yazılan `<=>`'nin yanına `==` aynı ölçütle yazılmalıdır;
+  `==` ile `<=>`'nin tutarlılığı programcıya kalır.
+
+### Bakım
+
+- README'ye Leanpub bağlantısı ve GitHub Releases yönlendirmesi eklendi.
+- `BAKIM.md`: standart ufku kuralına kusur raporu istisnası eklendi; sürüm yayımlama
+  adımlarına GitHub Release ve tanıtım metinlerindeki sayıların güncellenmesi eklendi.
+- `YOL_HARITASI.md` eklendi.
+- Terim sözlüğü: *candidate* → aday, *rewritten candidate* → yeniden yazılmış aday,
+  *comparison category* → sıralama kategorisi.
+
 ## Sürüm 1.1 — Ekim 2026
 
 ### Yapı

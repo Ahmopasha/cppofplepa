@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "23 — STL"
 baslik: "23.7 Algoritmalar"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 23.7 Algoritmalar
@@ -33,8 +33,10 @@ dönüştürme (`transform`, `copy`, `replace`), sıralama (`sort`, `stable_sort
 `partial_sort`), sıralı aralıkta arama (`binary_search`, `lower_bound`, `upper_bound`),
 sayısal işlemler (`accumulate`, `iota` — `<numeric>` başlığında).
 
-**Algoritmalar eleman silmez.** `std::remove`, silinecek elemanları sona iter ve yeni
-mantıksal sonu döndürür; gerçek silmeyi kabın `erase` işlevi yapar:
+**Algoritmalar eleman silmez.** `std::remove`, silinmeyecek elemanları aralığın başına
+doğru kaydırır ve yeni mantıksal sonu, yani korunan son elemandan sonraki konumu gösteren
+iteratörü döndürür. Kabın boyutu değişmez; mantıksal sondan itibaren elemanların değerine
+güvenilmez (gerekçesi: Cilt II, Kısım 2.5). Gerçek silmeyi kabın `erase` işlevi yapar:
 
 ```cpp
 v.erase(std::remove(v.begin(), v.end(), 42), v.end());

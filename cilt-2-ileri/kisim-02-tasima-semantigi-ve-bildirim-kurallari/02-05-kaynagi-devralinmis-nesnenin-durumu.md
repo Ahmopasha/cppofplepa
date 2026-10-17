@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "2 — Taşıma Semantiği ve Bildirim Kuralları"
 baslik: "2.5 Kaynağı devralınmış nesnenin durumu"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 2.5 Kaynağı devralınmış nesnenin durumu
@@ -22,6 +22,9 @@ s.size();          // tanımlı ama değeri garanti edilmiyor
 s = "yeni";        // geçerli
 std::cout << s;    // artık okunabilir
 ```
+
+Aynı durum, elemanları taşıyarak kaydıran algoritmaların geride bıraktığı elemanlar için
+de geçerlidir; örneğin `std::remove` sonrasında aralığın sonundakiler (Cilt I Kısım 23.7).
 
 Kendi sınıfınızı yazarken aynı garantiyi vermeniz beklenir. "Kaynağı bırak" adımını
 atlamak yalnızca çift serbest bırakma sorunu değil, bu sözleşmenin de ihlalidir.

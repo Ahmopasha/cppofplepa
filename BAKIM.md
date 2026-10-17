@@ -104,7 +104,11 @@ nedeni Cilt II 1.2.7'de.
 
 **Standart ufku.** Kitap, Necati Ergin'in kurslarında izlenen standartlara sadık kalır:
 Cilt I'in ufku C++20 (C++ kursu), Cilt II'nin ufku C++23'tür (İleri C++ kursu). Ufkun
-ötesindeki standartların değişiklikleri kitaba işlenmez. Ufuk, hocanın kurs programları
+ötesindeki standartların değişiklikleri kitaba işlenmez. **Kusur raporları** *(defect
+report)* bunun istisnasıdır: geriye dönük uygulandıkları ve derleyiciler onları eski dil
+kiplerine de işlediği için, ufkun ötesindeki bir standart döneminde kabul edilmiş bir
+kusur raporu ufkun içindeki anlatımı da değiştirebilir (örnek: Cilt II 17.6'daki CWG
+1696). Ufuk, hocanın kurs programları
 ([`necatiergin/kurs_programlari`](https://github.com/necatiergin/kurs_programlari))
 yeni bir standardı kapsadığında genişletilir. Kümülatif ilke ufukla birlikte uygulanır:
 Cilt I'deki bir cümle, Cilt II'nin ufkunda da doğru kalmalıdır.
@@ -167,6 +171,10 @@ aynı şeyi söyleyen bir geçiş, o cümleyi gereksiz kılar.
 3. `python3 araclar/derle.py --pdf` ile derleyin; uyarı kalmadığından emin olun.
 4. Leanpub'a `cikti/CPP_Kitabi.pdf`'i yükleyin; içindekiler alanına
    `cikti/leanpub_icindekiler.html`'in içeriğini yapıştırın.
+5. GitHub'da `vX.Y` etiketiyle bir Release açıp PDF'i ekleyin.
+6. Tanıtım metinlerindeki sayıları güncelleyin: sayfa, kısım ve Standart Notu kutusu
+   sayıları GitHub depo açıklamasında, Leanpub tanıtımında ve README'de geçiyor. Kutu
+   sayıları `cikti/bakim_durumu.md`'den, sayfa sayısı PDF'ten okunur.
 
 ---
 
