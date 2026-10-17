@@ -45,6 +45,12 @@ Birinci sürüm kopyalamayı önler, ikincisi geçici nesnenin kaynağını devr
 
 Bir kullanım daha vardır: atama operatörünü R-Value nesnelerde kapatmak.
 
+<!-- kod-baglam
+class Myclass {
+public:
+@kod@
+};
+-->
 ```cpp
 Myclass& operator=(const Myclass&) & ;    // yalnızca L-Value nesnelere atama
 ```

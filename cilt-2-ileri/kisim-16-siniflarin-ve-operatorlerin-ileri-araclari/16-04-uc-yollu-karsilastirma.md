@@ -44,6 +44,12 @@ bildirir.**
 
 Elle yazmak da mümkündür:
 
+<!-- kod-baglam
+struct Kesir {
+    int pay, payda;
+@kod@
+};
+-->
 ```cpp
 std::strong_ordering operator<=>(const Kesir& d) const
 {

@@ -11,6 +11,7 @@ son_kontrol: "2026-09 (C++23)"
 C'de boş parantezli bildirim "parametreleri belirtilmemiş" demektir ve her türlü çağrıya
 izin verir. C++'ta "parametre almıyor" demektir.
 
+<!-- kod: c -->
 ```cpp
 void func();
 func(1, 2, 3);     // C'de geçerli, C++'ta sentaks hatası

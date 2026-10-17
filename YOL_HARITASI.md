@@ -20,7 +20,7 @@ GitHub'dan ve Leanpub sayfasından doğrulandı.
 - [x] **README:** Başa Leanpub bağlantısı (<https://leanpub.com/cppofplepa>).
 - [x] **GitHub depo açıklaması:** "226 sayfa" Leanpub'daki 235 ile tutmuyordu; sayfa
   sayısı açıklamadan çıkarıldı.
-- [ ] **GitHub konu etiketleri ve Website alanı:** `cpp`, `cpp20`, `cpp23`, `turkish`,
+- [x] **GitHub konu etiketleri ve Website alanı:** `cpp`, `cpp20`, `cpp23`, `turkish`,
   `book`; Website: <https://leanpub.com/cppofplepa>.
 - [x] **Leanpub tanıtımı:** GitHub bağlantısı sondaki noktayı adrese katıyor
   (`…/cppofplepa.`); düzeltilir.
@@ -41,28 +41,35 @@ alt başlıklara bölünmesinden sonra açıldı. Bu geçmişi DEGISIKLIKLER.md 
 Kitabın en çok hata barındıran ve en hızlı eskiyen kısmı kod örnekleridir. Şu anki denetim
 yapısaldır (başlık numaraları, atıflar, kutu listeleri); kodu derlemez.
 
-- [ ] **Örneklerin işaretlenmesi.** Her `cpp` bloğunun türü, okurun görmeyeceği bir HTML
-  yorumuyla belirtilir: tam program, parça, bilerek hata veren satır içeren örnek,
-  tanımsız davranış örneği. Kitaptaki örneklerin çoğu parça olduğu için ilk iş budur.
-- [ ] **`derle.py --kod`.** Her bloğu ayrı bir dosyaya çıkarır; Cilt I'i `-std=c++20`,
-  Cilt II'yi `-std=c++23` ile, `-pedantic-errors` bayrağıyla Clang ve GCC'de derler.
-  Parçalar ortak başlıkları ekleyen bir sarmalayıcıyla derlenir. `-pedantic-errors`
-  olmadan derleyiciler birçok geçersiz yapıyı yalnızca uyarıyla geçirir (Sürüm 1.1'de
-  düzeltilen `char* p = "merhaba";` bunun örneğiydi).
-- [ ] **Bilerek hata veren satırların doğrulanması.** `// sentaks hatası` ile işaretli
+- [x] **Örneklerin işaretlenmesi.** Bloğun türünü (parça, tam program, bilerek hata
+  veren satır, tanımsız davranış) araç kendisi bulur: parçaları bir işlev gövdesine
+  koyar, aynı dosyadaki önceki bloğu ve `araclar/kod_baglami.hpp`'deki yer tutucu adları
+  bağlam olarak kullanır, hata satırlarını ve "tanımsız" yorumlarını okur. Okurun
+  görmeyeceği HTML yorumu yalnızca bunun yetmediği 82 blokta var (`kod: atla`,
+  `kod-baglam`, `kod: c`; bkz. BAKIM.md, "Kod örnekleri").
+- [x] **`derle.py --kod`.** `araclar/kod_denetimi.py` her bloğu ayrı bir dosyaya çıkarır;
+  Cilt I'i `-std=c++20`, Cilt II'yi `-std=c++23` ile, `-pedantic-errors` bayrağıyla
+  derler. Yerelde Clang, GitHub Actions'ta GCC 14 ve Clang 18 kullanılır.
+  `-pedantic-errors` olmadan derleyiciler birçok geçersiz yapıyı yalnızca uyarıyla
+  geçirir (Sürüm 1.1'de düzeltilen `char* p = "merhaba";` bunun örneğiydi).
+- [x] **Bilerek hata veren satırların doğrulanması.** `// sentaks hatası` ile işaretli
   satırlar çıkarılınca kalan kodun sorunsuz derlendiği, satırlar tek tek geri konunca her
-  birinin tek başına hata verdiği denetlenir. Böylece test yanlış nedenle (ör. eksik bir
-  `#include`) geçmez.
-- [ ] **C ve C++ farkı örnekleri.** Kısım 1'deki "C'de geçerli, C++'ta değil" örnekleri
-  hem C hem C++ derleyicisinde sınanır.
-- [ ] **Sanitizer.** Çalıştırılabilir örnekler `-fsanitize=address,undefined` ile
-  çalıştırılır: "tanımsız" denen örnek gerçekten öyle mi, "doğru" denen örnek gizlice
-  tanımsız mı.
-- [ ] **Kademeli devreye alma.** Denetim önce yalnızca rapor üretir; örnekler
-  temizlendikten sonra `--kati`'ye ve GitHub Actions'a bağlanır.
-- [ ] **Derleyici Notu testleri.** Her Derleyici Notu için bugünkü davranışı doğrulayan
-  küçük bir test yazılır; ayda bir çalışan zamanlanmış bir GitHub Actions işine bağlanır.
-  Test kırıldığı gün, kutunun gözden geçirileceği gündür.
+  birinin tam o satırda hata verdiği denetlenir. Satır hem ad alanı düzeyinde hem işlev
+  gövdesinde sınanır; böylece test yanlış nedenle (ör. yanlış yerleşim ya da eksik bir
+  bildirim) geçmez. Derleyicinin mesajı raporda kitabın açıklamasının yanında durur.
+- [x] **C ve C++ farkı örnekleri.** Kısım 1'deki "C'de geçerli, C++'ta değil" örnekleri
+  hem C17 hem C++ derleyicisinde sınanır.
+- [x] **Sanitizer.** `main()` içeren örnekler `-fsanitize=address,undefined` (iş
+  parçacığı kullananlar `-fsanitize=thread`) ile çalıştırılır: "tanımsız" denen örnek
+  gerçekten öyle mi, "doğru" denen örnek gizlice tanımsız mı.
+- [ ] **Kademeli devreye alma.** Denetim şu an yalnızca rapor üretiyor (yerelde
+  `derle.py --kod`, GitHub'da `kod-denetimi.yml`). İlk raporda 504 bloğun 10'u sorunlu
+  çıktı; bunlar kitap metnindeki hatalardır ve panelden geçerek düzeltilecek. Sorunlu
+  blok kalmayınca `kod-denetimi.yml` `--kati` ile çalıştırılır.
+- [x] **Derleyici Notu testleri.** Her Derleyici Notu için bugünkü davranışı doğrulayan
+  küçük bir test yazıldı (`testler/derleyici_notlari/`); `derleyici-notlari.yml` ayda bir
+  GCC, Clang (Linux ve macOS) ve MSVC'de çalışır. Test kırıldığı gün, kutunun gözden
+  geçirileceği gündür. 17.6 testindeki GCC beklentisi ilk çalıştırmada doğrulanacak.
 
 ---
 

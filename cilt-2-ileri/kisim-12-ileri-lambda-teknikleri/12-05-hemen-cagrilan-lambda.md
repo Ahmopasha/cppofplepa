@@ -10,6 +10,10 @@ son_kontrol: "2026-09 (C++23)"
 
 Bir lambda, tanımlandığı yerde hemen çağrılabilir. İngilizcede *IIFE* denir.
 
+<!-- kod-baglam
+bool kosul_a();
+bool kosul_b();
+-->
 ```cpp
 const auto ayar = [] {
     if (kosul_a()) return 1;

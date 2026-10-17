@@ -11,6 +11,7 @@ son_kontrol: "2026-09 (C++23)"
 Çok biçimli kalıtım hiyerarşilerinde, taban sınıf göstericisinin gerçekte hangi türemiş
 sınıfı gösterdiğini **çalışma zamanında denetleyerek** dönüşüm yapar.
 
+<!-- kod: atla -->
 ```cpp
 Sekil* s = /* ... */;
 Daire* d = dynamic_cast<Daire*>(s);

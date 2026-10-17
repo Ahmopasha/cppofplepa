@@ -25,6 +25,10 @@ Myclass m = 20;     // yine örtülü dönüşüm
 
 Bu dönüşüm bazen istenir, çoğu zaman istenmez. İstenmediğinde `explicit` kullanılır:
 
+<!-- kod-baglam
+class Myclass;
+void func(Myclass);
+-->
 ```cpp
 class Myclass {
 public:

@@ -43,6 +43,9 @@ int& bar();    bar()   // L-Value  — referans döndürenler
 
 `bar()` bir L-Value olduğu için atamanın solunda durabilir:
 
+<!-- kod-baglam
+int& bar();
+-->
 ```cpp
 bar() = 42;    // geçerlidir
 ```

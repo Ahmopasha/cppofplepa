@@ -22,6 +22,10 @@ x = 20;     // atamanın solunda durabiliyor
 
 **R-Value**, geçici olan şeydir. Kullanıldığı ifadenin sonunda ortadan kalkar.
 
+<!-- kod-baglam
+int x = 10;
+int foo();
+-->
 ```cpp
 10          // R-Value
 x + 5       // R-Value

@@ -11,10 +11,19 @@ son_kontrol: "2026-09 (C++23)"
 Aynı türden nesneler birbirine atandığında çağrılır. Geri dönüş türü, zincirleme atamayı
 mümkün kılmak için sınıfın kendisine referanstır:
 
+<!-- kod-baglam
+class Myclass {
+public:
+@kod@
+};
+-->
 ```cpp
 Myclass& operator=(const Myclass& other);
 ```
 
+<!-- kod-baglam
+Myclass a, b, c;
+-->
 ```cpp
 a = b = c;      // zincirleme atama bu sayede çalışır
 ```

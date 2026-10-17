@@ -12,6 +12,7 @@ Cilt I'de ikisi tanıtılmıştı. Tamamı şöyledir:
 
 **Tür parametreleri.**
 
+<!-- kod: atla -->
 ```cpp
 template<typename T>
 ```

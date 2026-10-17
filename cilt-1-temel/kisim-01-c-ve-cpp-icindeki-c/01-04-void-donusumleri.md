@@ -11,6 +11,7 @@ son_kontrol: "2026-09 (C++23)"
 C'de `void*` türünden herhangi bir nesne göstericisine örtülü dönüşüm vardır. C++'ta
 yoktur.
 
+<!-- kod: c -->
 ```cpp
 void* vp = malloc(100);
 int* p = vp;                        // C'de geçerli, C++'ta sentaks hatası

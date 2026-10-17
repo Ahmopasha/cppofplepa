@@ -24,6 +24,7 @@ ettirilir, `done()` ile bitip bitmediği sorulur, `destroy()` ile çerçeve yok 
 **Tutamak bir akıllı gösterici değildir.** Çerçevenin yok edilmesi sizin
 sorumluluğunuzdadır; genellikle eşyordam türünün sonlandırıcı işlevine konur:
 
+<!-- kod: atla -->
 ```cpp
 ~Generator() { if (tutamac) tutamac.destroy(); }
 ```

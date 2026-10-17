@@ -10,6 +10,9 @@ son_kontrol: "2026-09 (C++23)"
 
 C dilinde tek bir dönüştürme yazımı vardır:
 
+<!-- kod-baglam
+void* q = nullptr;
+-->
 ```cpp
 int* p = (int*)q;
 ```

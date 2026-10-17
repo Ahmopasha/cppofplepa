@@ -14,6 +14,9 @@ Veri elemanlarınızın hepsi kendi kaynaklarını doğru yönetiyorsa, **sizin 
 işlev yazmanıza gerek kalmaz.** Derleyicinin yazdığı altı işlev, her veri elemanı için
 o elemanın kendi işlevini çağırır ve doğru sonuç verir.
 
+<!-- kod-baglam
+struct Ek { };
+-->
 ```cpp
 class Kayit {
     std::string ad;

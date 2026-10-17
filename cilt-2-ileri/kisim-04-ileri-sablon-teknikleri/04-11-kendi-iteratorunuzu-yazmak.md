@@ -37,6 +37,7 @@ Aradaki katmanın sebebi, **çıplak göstericilerin de iteratör sayılmasıdı
 sınıf değildir; içine `value_type` yazamazsınız. `iterator_traits`, göstericiler için
 kısmi özelleştirilmiştir ve bu bilgileri onlar adına sunar.
 
+<!-- kod: atla -->
 ```cpp
 template<typename T>
 struct iterator_traits<T*> {           // temsili

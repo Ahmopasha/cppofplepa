@@ -21,6 +21,9 @@ if (auto* d = dynamic_cast<Daire*>(s)) {
 Göstericilerde başarısızlık `nullptr` ile bildirilir. Referanslarda `nullptr` diye bir
 şey olmadığı için `std::bad_cast` gönderilir:
 
+<!-- kod-baglam
+Sekil& sekil_referansi = *listeden_al();
+-->
 ```cpp
 try {
     Daire& d = dynamic_cast<Daire&>(sekil_referansi);

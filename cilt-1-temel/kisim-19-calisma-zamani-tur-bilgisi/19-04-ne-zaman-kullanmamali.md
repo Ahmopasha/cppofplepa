@@ -11,6 +11,12 @@ son_kontrol: "2026-09 (C++23)"
 RTTI kullanma ihtiyacı, çoğu zaman tasarımın sanal işlevlerle çözülmesi gereken bir yerde
 çözülmediğinin işaretidir.
 
+<!-- kod-baglam
+struct Kare : Sekil { };
+void daire_ciz(Sekil*);
+void kare_ciz(Sekil*);
+Sekil* s = nullptr;
+-->
 ```cpp
 // Kaçınılması gereken
 if (typeid(*s) == typeid(Daire))       daire_ciz(s);

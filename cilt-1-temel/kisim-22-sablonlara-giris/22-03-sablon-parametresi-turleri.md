@@ -12,6 +12,7 @@ son_kontrol: "2026-09 (C++23)"
 
 **Tür parametreleri** — şimdiye kadarki bütün örnekler.
 
+<!-- kod: atla -->
 ```cpp
 template<typename T>
 ```

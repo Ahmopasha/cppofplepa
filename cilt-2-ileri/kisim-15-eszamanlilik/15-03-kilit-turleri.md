@@ -40,6 +40,9 @@ Kilit sarmalayıcıları da dörde ayrılır:
 parçacığı ikisini ters sırada alırsa ikisi de bekler. `std::scoped_lock` bunu, kilitleri
 belirli bir algoritmayla alarak önler.
 
+<!-- kod-baglam
+std::mutex m1, m2;
+-->
 ```cpp
 std::scoped_lock kilit{m1, m2};     // sıra fark etmez, kilitlenme olmaz
 ```

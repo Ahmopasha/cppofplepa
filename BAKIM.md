@@ -18,7 +18,8 @@ kalanıyla uyumlu kalması içindir.
    `son_kontrol: "2027-03 (C++23)"`.
 4. Değişiklik gerekiyorsa aşağıdaki kurallara göre yapın, `son_kontrol`'ü güncelleyin ve
    `DEGISIKLIKLER.md`'ye bir satır ekleyin.
-5. `python3 araclar/derle.py` ile derleyin ve çıkan uyarıları giderin.
+5. `python3 araclar/derle.py --kod` ile derleyin; çıkan uyarıları ve
+   `cikti/kod_denetimi.md`'deki sorunlu blokları giderin (bkz. "Kod örnekleri").
 
 Bir dosyayı değiştirdiğinizde, ona atıf yapan dosyalara da bakın. Atıflar "Kısım 12.13"
 biçimindedir; dosyanın numarasını depoda aratmak, onu anan yerleri bulmanın en kısa
@@ -82,6 +83,49 @@ yaygınsa açılır:
 > kalır. Buna rağmen MSVC, `std::move(foo)` gibi bir ifade için X-Value bildirmektedir.
 > Doğru sonucu görmek için GCC ile doğrulayın.
 ```
+
+Her Derleyici Notu kutusunun `testler/derleyici_notlari/` altında bir testi olur. Test,
+kutunun anlattığı davranışı her derleyici ailesi için bir beklenti olarak yazar
+(`// beklenti: clang=hata gcc=derlenir`) ve ayda bir GitHub Actions'ta çalışır. Yeni bir
+kutu eklerken testini de ekleyin; test kırıldığında kutuyu gözden geçirin.
+
+---
+
+## Kod örnekleri
+
+`python3 araclar/kod_denetimi.py` kitaptaki her `cpp` bloğunu derler: Cilt I'i
+`-std=c++20`, Cilt II'yi `-std=c++23` ile, `-pedantic-errors` bayrağıyla. Bloğun parça mı
+tam program mı olduğunu araç kendisi bulur; standart başlıkları ekler, gerekirse bloğu bir
+işlev gövdesine koyar, aynı dosyadaki önceki bloğu bağlam olarak kullanır. Ayrıca:
+
+- Yorumunda "sentaks hatası", "derlenmez", "çift anlamlılık hatası" geçen ya da
+  "hata —" ile başlayan satırların tam o satırda hata verdiğini doğrular. Bilerek hata
+  veren bir satırın yorumunu bu kalıplardan biriyle yazın.
+- `main()` içeren örnekleri sanitizer ile çalıştırır. Tanımsız davranış gösteren
+  örneğin yorumunda "tanımsız" sözcüğü geçmelidir.
+- `Myclass`, `v`, `s`, `Kesir` gibi tanıtılmadan kullanılan yer tutucu adları
+  `araclar/kod_baglami.hpp`'den alır.
+
+Araç bir bloğu kendi başına derleyemiyorsa, bloğun hemen önüne okurun görmeyeceği bir
+işaret konur. İşaretler kitabın derlenmiş metnine girmez:
+
+```
+<!-- kod: atla -->                  sözde kod ya da tek başına anlamsız bir liste
+
+<!-- kod: c -->                     C ve C++ farkı örneği: blok C17 olarak da derlenir
+
+<!-- kod-baglam
+class Yazi {
+    char* p;
+public:
+@kod@
+};
+-->                                 bloğun önüne eklenecek kod; "@kod@" satırı varsa
+                                    blok o satırın yerine konur
+```
+
+`atla` son çaredir: bağlam yazılabiliyorsa bağlam tercih edilir. Kitabın kendi metnindeki
+bir hata işaretle örtülmez; düzeltilir.
 
 ---
 
@@ -168,7 +212,8 @@ aynı şeyi söyleyen bir geçiş, o cümleyi gereksiz kılar.
    `Derleyen: ... · Sürüm ... · ...` satırını güncelleyin. PDF'in kapağı bu satırdan
    üretilir; iki dosya farklıysa betik uyarır.
 2. `DEGISIKLIKLER.md`'de "Yayımlanmamış" başlığını sürüm numarasıyla değiştirin.
-3. `python3 araclar/derle.py --pdf` ile derleyin; uyarı kalmadığından emin olun.
+3. `python3 araclar/derle.py --pdf --kod` ile derleyin; uyarı ve sorunlu kod bloğu
+   kalmadığından emin olun.
 4. Leanpub'a `cikti/CPP_Kitabi.pdf`'i yükleyin; içindekiler alanına
    `cikti/leanpub_icindekiler.html`'in içeriğini yapıştırın.
 5. GitHub'da `vX.Y` etiketiyle bir Release açıp PDF'i ekleyin.

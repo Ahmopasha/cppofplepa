@@ -23,6 +23,9 @@ Dört bağlamda görülür:
 işlevlerini kullanmak maliyeti düşürür, ama ortada zaten iki nesne olduğu için elimine
 edilecek bir şey yoktur. Bu ayrım sürekli karıştırılır.
 
+<!-- kod-baglam
+Myclass foo();
+-->
 ```cpp
 Myclass a = foo();      // eliminasyon mümkün
 Myclass b;

@@ -61,6 +61,12 @@ ihlalidir.
 İkisi bağımsızdır. Bütün erişimleri doğru kilitlediğiniz hâlde işlemlerin sırası yanlışsa
 **data race olmadan yarış koşulu** yaşarsınız:
 
+<!-- kod-baglam
+struct Hesap {
+    int bakiye() const;
+    void cek(int);
+} hesap;
+-->
 ```cpp
 if (hesap.bakiye() >= 100)        // kilitli
     hesap.cek(100);               // kilitli — ama arada başkası çekmiş olabilir

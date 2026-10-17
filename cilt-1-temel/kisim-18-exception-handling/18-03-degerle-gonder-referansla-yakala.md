@@ -21,6 +21,7 @@ throw std::runtime_error{"mesaj"};      // doğru
 
 **Yakalarken `const` referans kullanın**, sınıf türünün kendisini değil:
 
+<!-- kod: atla -->
 ```cpp
 catch (const std::exception& ex)        // doğru
 catch (std::exception ex)               // yanlış

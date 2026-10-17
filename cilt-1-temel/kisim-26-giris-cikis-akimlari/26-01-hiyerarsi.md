@@ -31,6 +31,10 @@ Dört standart akım nesnesi vardır: `std::cin` (giriş), `std::cout` (çıkı�
 Hiyerarşinin varlığı pratik bir kazanç sağlar: `std::ostream&` parametreli bir işlev,
 ekrana da dosyaya da yazı akımına da yazabilir.
 
+<!-- kod-baglam
+std::ofstream dosya_akimi;
+std::ostringstream yazi_akimi;
+-->
 ```cpp
 void rapor_yaz(std::ostream& os);
 

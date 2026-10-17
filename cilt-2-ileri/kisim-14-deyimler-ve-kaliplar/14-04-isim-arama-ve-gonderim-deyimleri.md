@@ -21,6 +21,9 @@ template<typename... Ts>
 Overloader(Ts...) -> Overloader<Ts...>;         // deduction guide
 ```
 
+<!-- kod-baglam
+std::variant<int, std::string> v;
+-->
 ```cpp
 std::visit(Overloader{
     [](int i)                { std::cout << "tamsayı: " << i; },

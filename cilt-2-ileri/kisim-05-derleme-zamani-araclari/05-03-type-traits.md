@@ -12,6 +12,7 @@ Standart kütüphanenin hazır meta işlev koleksiyonudur. Üç gruba ayrılır.
 
 **Tür sorgulayanlar** — `value` üzerinden `bool` döndürür.
 
+<!-- kod: atla -->
 ```cpp
 std::is_integral<T>::value
 std::is_pointer<T>::value
@@ -23,6 +24,7 @@ std::is_nothrow_move_constructible<T>::value
 
 **Tür dönüştürenler** — `type` üzerinden tür döndürür.
 
+<!-- kod: atla -->
 ```cpp
 std::remove_reference<T>::type
 std::remove_const<T>::type
@@ -33,6 +35,7 @@ std::conditional<kosul, A, B>::type
 **Kısaltmalar.** Her sorgunun `_v` ekli değişken şablonu, her dönüşümün `_t` ekli eş isim
 şablonu vardır (bkz. 4.10).
 
+<!-- kod: atla -->
 ```cpp
 std::is_integral_v<T>          // ::value yerine
 std::remove_reference_t<T>     // ::type yerine

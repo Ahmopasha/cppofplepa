@@ -11,6 +11,7 @@ son_kontrol: "2026-09 (C++23)"
 C++'ta bir nesneye ilk değer vermenin beş ayrı yazımı vardır. Aralarındaki farklar
 çoğu zaman önemsiz görünür ama bazı durumlarda davranış değişir.
 
+<!-- kod: atla -->
 ```cpp
 int x;              // default-initialization
 int x{};            // value-initialization

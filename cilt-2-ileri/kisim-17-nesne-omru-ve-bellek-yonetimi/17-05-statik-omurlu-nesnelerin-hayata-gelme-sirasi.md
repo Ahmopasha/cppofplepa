@@ -39,6 +39,9 @@ statik ilk değer verme aşamasına taşırsanız sorun ortadan kalkar (bkz. Kı
 **Nesneyi işlev içine taşıyın.** Yerel `static` nesneler, işlev ilk çağrıldığında hayata
 gelir; sıra, erişim sırasına bağlanmış olur.
 
+<!-- kod-baglam
+struct Ayarlar { };
+-->
 ```cpp
 Ayarlar& ayarlar()
 {

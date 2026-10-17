@@ -21,6 +21,10 @@ işlevi yerinde kalır.
 Cilt I Kısım 26.1'deki hiyerarşi hâlâ geçerli ve `std::ostream&` parametreli işlev yazma
 alışkanlığı da öyle. `std::print`'in ikinci bir biçimi, akımı doğrudan alır:
 
+<!-- kod-baglam
+std::ofstream dosya_akimi;
+int x = 0;
+-->
 ```cpp
 std::print(dosya_akimi, "{}\n", x);
 ```

@@ -19,6 +19,9 @@ ikisi tek bir kuraldır.
 
 Veri elemanlarına ilk değer, kurucu işlev ilk değer verme listesinde verilir:
 
+<!-- kod-baglam
+struct Motor { Motor(int); };
+-->
 ```cpp
 class Araba {
     Motor m;

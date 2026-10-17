@@ -24,12 +24,16 @@ baz   // L-Value
 
 **Geri dönüş türü `T&&` olan işlev çağrısı X-Value üretir:**
 
+<!-- kod-baglam
+int&& baz();
+-->
 ```cpp
 baz()   // X-Value
 ```
 
 **Lambda ifadesi PR-Value'dur:**
 
+<!-- kod: atla -->
 ```cpp
 []() { return 31; }   // PR-Value
 ```

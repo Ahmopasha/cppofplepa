@@ -29,6 +29,9 @@ Bir tuzağı daha vardır: `std::async` ile elde edilen `future` nesnesinin **so
 işlevi bloklar.** Dönüş değerini bir değişkende tutmazsanız geçici nesne hemen yok olur
 ve satır, iş bitene kadar bekler:
 
+<!-- kod-baglam
+void is();
+-->
 ```cpp
 std::async(std::launch::async, is);     // eşzamanlı DEĞİL — bu satır bekler
 auto f = std::async(std::launch::async, is);   // doğrusu

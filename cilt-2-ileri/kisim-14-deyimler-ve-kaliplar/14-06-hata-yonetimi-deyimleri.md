@@ -14,6 +14,9 @@ kendi hata türünü ortak bir taban sınıftan türetir ve tür bilgisi hatayla
 **Exception Dispatcher**, yakalama mantığını tek yerde toplar. Her `catch` zincirini
 tekrarlamak yerine, hata bir işleve devredilir:
 
+<!-- kod-baglam
+void riskli();
+-->
 ```cpp
 void isle()
 {

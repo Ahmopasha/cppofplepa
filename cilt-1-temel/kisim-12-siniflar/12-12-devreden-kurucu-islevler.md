@@ -49,6 +49,16 @@ devreder.
 **Devretme, listenin tek öğesi olmak zorundadır.** Aynı listede hem devredip hem veri
 elemanına değer veremezsiniz:
 
+<!-- kod-baglam
+class Baglanti {
+    std::string adres;
+    int port;
+    int zaman_asimi;
+public:
+    Baglanti(std::string a, int p, int z);
+@kod@
+};
+-->
 ```cpp
 Baglanti(std::string a) : Baglanti{std::move(a), 80, 30}, port{8080} { }   // hata
 ```
@@ -58,6 +68,16 @@ O noktadan sonra ilk değer verme aşaması bitmiştir; yapılabilecek şey atam
 değer verme değil. Farklı bir değer istiyorsanız devreden kurucu işlevin **gövdesinde**
 atarsınız.
 
+<!-- kod-baglam
+class Baglanti {
+    std::string adres;
+    int port;
+    int zaman_asimi;
+public:
+    Baglanti(std::string a, int p, int z);
+@kod@
+};
+-->
 ```cpp
 Baglanti(std::string a) : Baglanti{std::move(a), 80, 30} { port = 8080; }   // geçerli
 ```

@@ -8,6 +8,7 @@ son_kontrol: "2026-09 (C++23)"
 
 ## 24.2 Sözdizimi
 
+<!-- kod: atla -->
 ```cpp
 [yakalama](parametreler) -> geri_dönüş { gövde }
 ```
@@ -15,6 +16,7 @@ son_kontrol: "2026-09 (C++23)"
 Parametre listesi ve geri dönüş türü isteğe bağlıdır. Geri dönüş türü yazılmazsa
 `return` ifadesinden çıkarılır.
 
+<!-- kod: atla -->
 ```cpp
 []{ return 42; }                        // en kısa biçim
 [](int x) { return x * 2; }

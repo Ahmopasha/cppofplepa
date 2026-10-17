@@ -21,6 +21,7 @@ if (i != std::string::npos) {
 `npos`, `std::string::size_type` türünden temsil edilebilen en büyük değerdir.
 **İşaretsiz bir türdür**; `-1` ile karşılaştırmayın, `int` değişkene atamayın.
 
+<!-- kod: atla -->
 ```cpp
 int i = s.find("abc");     // yanlış — npos int'e sığmaz
 auto i = s.find("abc");    // doğru

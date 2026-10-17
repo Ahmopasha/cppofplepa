@@ -10,6 +10,9 @@ son_kontrol: "2026-09 (C++23)"
 
 Bir hatayı yakalayıp **işlemeyi başka bir yere ertelemenizi** sağlar. C++11 ile geldi.
 
+<!-- kod-baglam
+void riskli();
+-->
 ```cpp
 #include <exception>
 

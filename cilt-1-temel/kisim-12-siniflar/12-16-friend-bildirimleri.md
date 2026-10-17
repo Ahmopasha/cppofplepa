@@ -10,6 +10,13 @@ son_kontrol: "2026-09 (C++23)"
 
 Bir sınıf, `private` ve `protected` bölümüne erişim hakkını başka bir varlığa verebilir.
 
+<!-- kod-baglam
+class Myclass;
+class Baska {
+public:
+    void uye(Myclass&);
+};
+-->
 ```cpp
 class Myclass {
     int x;

@@ -11,6 +11,7 @@ son_kontrol: "2026-09 (C++23)"
 Kısım 2.4.4'te verilmişti. `++x`, `--x` ve virgül operatörü C'de R-Value üretirken C++'ta
 L-Value üretebilir. Bu, C'de geçersiz olan bazı yazımları C++'ta geçerli kılar:
 
+<!-- kod: c -->
 ```cpp
 int x = 0;
 ++x = 5;           // C'de sentaks hatası, C++'ta geçerli

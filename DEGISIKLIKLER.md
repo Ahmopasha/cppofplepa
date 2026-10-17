@@ -23,6 +23,15 @@
 - `YOL_HARITASI.md` eklendi.
 - Terim sözlüğü: *candidate* → aday, *rewritten candidate* → yeniden yazılmış aday,
   *comparison category* → sıralama kategorisi.
+- Kod denetimi eklendi (`araclar/kod_denetimi.py`, `derle.py --kod`): kitaptaki her kod
+  bloğu Cilt I için C++20, Cilt II için C++23 ile `-pedantic-errors` bayrağıyla derlenir;
+  "sentaks hatası" denen satırların tam o satırda hata verdiği doğrulanır, Kısım 1'in C ve
+  C++ farkı örnekleri iki dilde sınanır, `main()` içeren örnekler sanitizer ile
+  çalıştırılır. Tek başına derlenemeyen 82 bloğun önüne okurun görmediği işaretler kondu
+  (bkz. BAKIM.md, "Kod örnekleri"). GitHub Actions'ta GCC ve Clang ile rapor üreten bir iş
+  eklendi.
+- Derleyici Notu testleri eklendi (`araclar/derleyici_notlari.py`,
+  `testler/derleyici_notlari/`); ayda bir GCC, Clang ve MSVC'de çalışır.
 
 ## Sürüm 1.1 — Ekim 2026
 

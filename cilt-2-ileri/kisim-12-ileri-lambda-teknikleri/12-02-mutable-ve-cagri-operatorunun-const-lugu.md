@@ -21,6 +21,13 @@ public:
 
 `mutable` yazmak, o `const`luğu kaldırır:
 
+<!-- kod-baglam
+void f()
+{
+    int a = 0;
+@kod@
+}
+-->
 ```cpp
 auto f = [a]() mutable { return ++a; };
 ```

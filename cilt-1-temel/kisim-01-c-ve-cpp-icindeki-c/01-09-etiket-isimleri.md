@@ -18,6 +18,9 @@ struct Nokta n;        // C'de "struct" zorunlu
 
 C++'ta tür ismi doğrudan kullanılır:
 
+<!-- kod-baglam
+struct Nokta { int x, y; };
+-->
 ```cpp
 Nokta n;               // C++'ta yeterli
 ```

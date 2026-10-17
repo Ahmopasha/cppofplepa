@@ -12,6 +12,8 @@ Kullanım (depo kökünden):
     python3 araclar/derle.py --gecissiz    geçiş paragrafları olmadan derle
     python3 araclar/derle.py --pdf         ayrıca PDF üret
     python3 araclar/derle.py --kati        uyarı varsa da başarısız say (otomatik denetim için)
+    python3 araclar/derle.py --kod         ayrıca kod örneklerini derle (araclar/kod_denetimi.py;
+                                           şimdilik yalnızca rapor, çıkış kodunu etkilemez)
 
 Çıktılar cikti/ klasörüne yazılır.
 """
@@ -43,6 +45,8 @@ PDF_DOSYASI = "CPP_Kitabi.pdf"
 DOSYA_ADI = re.compile(r"^(\d+)-(\d+)(?:-(\d+))?-[^/\\]+\.md$")
 KISIM_KLASORU = re.compile(r"^kisim-(\d+)-")
 GECIS_DOSYASI = re.compile(r"^kisim-(\d+)-(\d+)\.md$")
+# Kod denetiminin işaretleri (araclar/kod_denetimi.py); kitabın metnine girmez.
+KOD_ISARETI = re.compile(r"^<!--\s*kod(?:-baglam)?\b.*?-->[ \t]*\n", re.S | re.M)
 
 uyarilar = []
 hatalar = []
@@ -84,6 +88,7 @@ def oku(yol):
             except ValueError:
                 meta[anahtar.strip()] = deger.strip('"')
         metin = metin[son + 5:]
+    metin = KOD_ISARETI.sub("", metin)
     return meta, metin.strip("\n").rstrip()
 
 
@@ -536,6 +541,8 @@ def main():
     ap.add_argument("--pdf", action="store_true", help="ayrıca PDF üret")
     ap.add_argument("--kati", action="store_true",
                     help="uyarı varsa da hata koduyla çık (otomatik denetim için)")
+    ap.add_argument("--kod", action="store_true",
+                    help="ayrıca kod örneklerini derle (yalnızca rapor; bkz. araclar/kod_denetimi.py)")
     ap.add_argument("--cikti", default=os.path.join(KOK, "cikti"),
                     help="çıktı klasörü (varsayılan: cikti/)")
     arg = ap.parse_args()
@@ -595,6 +602,10 @@ def main():
         print("UYARI:", u)
     for h in hatalar:
         print("HATA:", h)
+    if arg.kod:
+        sys.stdout.flush()
+        subprocess.run([sys.executable, os.path.join(KOK, "araclar", "kod_denetimi.py"),
+                        "--cikti", arg.cikti])
     sys.exit(1 if hatalar or (arg.kati and uyarilar) else 0)
 
 

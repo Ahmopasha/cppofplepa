@@ -15,6 +15,9 @@ kadar geri gelmez.
 
 **Sarkan gösterici.** `delete` edilmiş bir adresin üzerinden erişim yapılır.
 
+<!-- kod-baglam
+Myclass* p = new Myclass;
+-->
 ```cpp
 delete p;
 p->func();      // tanımsız davranış

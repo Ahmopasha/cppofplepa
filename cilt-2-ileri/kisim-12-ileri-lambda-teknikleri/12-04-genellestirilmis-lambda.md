@@ -23,6 +23,9 @@ operatörü şablondur.
 
 En sık kullanıldığı yer `std::visit` ziyaretçileridir (bkz. Kısım 11.5):
 
+<!-- kod-baglam
+std::variant<int, double> v;
+-->
 ```cpp
 std::visit([](const auto& d) { std::cout << d; }, v);
 ```

@@ -11,6 +11,7 @@ son_kontrol: "2026-09 (C++23)"
 Köşeli parantez, lambdanın gövdesinde kullanacağı dış değişkenleri belirler. Buna
 **yakalama** *(capture)* denir.
 
+<!-- kod: atla -->
 ```cpp
 int a = 10, b = 20;
 

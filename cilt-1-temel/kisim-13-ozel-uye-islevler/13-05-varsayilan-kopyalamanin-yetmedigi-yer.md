@@ -27,6 +27,13 @@ kez serbest bırakılır ve program tanımsız davranışa girer.
 Buna **sığ kopyalama** *(shallow copy)* denir. İstenen ise **derin kopyalamadır**
 *(deep copy)*: kaynağın kendisinin de kopyalanması.
 
+<!-- kod-baglam
+class Yazi {
+    char* p;
+public:
+@kod@
+};
+-->
 ```cpp
 Yazi(const Yazi& other) : p{ new char[std::strlen(other.p) + 1] }
 {

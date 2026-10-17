@@ -40,6 +40,9 @@ nesne.erisim_sayisi();                         // mixin'den geldi
 Asıl kazanç, birden fazla mixin'in üst üste bindirilebilmesidir. Her biri bir öncekinin
 üzerine bir katman ekler.
 
+<!-- kod-baglam
+class Cekirdek { };
+-->
 ```cpp
 template<typename Taban> class Gunlukleyen  : public Taban { /* ... */ };
 template<typename Taban> class Kilitleyen   : public Taban { /* ... */ };

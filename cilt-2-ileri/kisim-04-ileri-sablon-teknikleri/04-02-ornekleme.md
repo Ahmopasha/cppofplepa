@@ -17,6 +17,12 @@ Terim karışıklığına dikkat: "specialization" hem örnekleme ürününü he
 Örnekleme iki şekilde tetiklenir. **Örtülü örnekleme**, şablonun kullanıldığı yerde
 kendiliğinden olur. **Açık örnekleme** ise elle istenir:
 
+<!-- kod-baglam
+template<typename T>
+class Kutu {
+    T icerik;
+};
+-->
 ```cpp
 template class Kutu<int>;      // açık örnekleme tanımı
 ```

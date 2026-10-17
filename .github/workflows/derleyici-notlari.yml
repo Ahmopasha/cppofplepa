@@ -1,0 +1,41 @@
+name: Derleyici Notu testleri
+
+# Her Derleyici Notu kutusunun anlattığı davranışı sınar (araclar/derleyici_notlari.py).
+# Bir test kırıldığı gün, ilgili kutunun gözden geçirileceği gündür.
+
+on:
+  schedule:
+    - cron: "0 6 1 * *"     # her ayın 1'i, 06:00 UTC
+  push:
+    branches: [main]
+    paths: ["testler/derleyici_notlari/**", "araclar/derleyici_notlari.py",
+            ".github/workflows/derleyici-notlari.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        derleyici: [g++-14, clang++-18]
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y g++-14 clang-18
+      - run: python3 araclar/derleyici_notlari.py --derleyici ${{ matrix.derleyici }}
+
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 araclar/derleyici_notlari.py --derleyici clang++
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ilammy/msvc-dev-cmd@v1
+      - run: python araclar/derleyici_notlari.py --derleyici cl

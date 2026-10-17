@@ -11,6 +11,10 @@ son_kontrol: "2026-09 (C++23)"
 
 Zincirin sonunda gerçek bir kap istiyorsanız C++20'de elle kopyalamanız gerekir:
 
+<!-- kod-baglam
+std::vector<int> v{1, 2, 3};
+auto g = v | std::views::take(2);
+-->
 ```cpp
 std::vector<int> sonuc;
 std::ranges::copy(g, std::back_inserter(sonuc));
@@ -18,6 +22,10 @@ std::ranges::copy(g, std::back_inserter(sonuc));
 
 C++23 bunu tek çağrıya indirdi:
 
+<!-- kod-baglam
+std::vector<int> v{1, 2, 3};
+auto g = v | std::views::take(2);
+-->
 ```cpp
 auto sonuc = g | std::ranges::to<std::vector>();
 ```

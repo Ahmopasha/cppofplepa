@@ -70,6 +70,20 @@ error: no matching function for call to 'Device::Device()'
 
 Çözüm, paylaşılan taban sınıfı en alttaki sınıfın listesinde açıkça çağırmaktır:
 
+<!-- kod-baglam
+class Device {
+public:
+    Device(int);
+};
+class Fax : virtual public Device {
+public:
+    Fax() : Device(1) { }
+};
+class Modem : virtual public Device {
+public:
+    Modem() : Device(2) { }
+};
+-->
 ```cpp
 class FaxModem : public Fax, public Modem {
 public:

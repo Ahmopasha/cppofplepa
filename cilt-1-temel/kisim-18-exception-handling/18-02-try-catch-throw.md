@@ -8,6 +8,9 @@ son_kontrol: "2026-09 (C++23)"
 
 ## 18.2 `try`, `catch`, `throw`
 
+<!-- kod-baglam
+void islem();
+-->
 ```cpp
 try {
     // hata gönderebilecek kod
@@ -23,6 +26,9 @@ catch (const std::exception& ex) {
 
 `throw` ile bir nesne gönderilir:
 
+<!-- kod-baglam
+int bolen = 0;
+-->
 ```cpp
 if (bolen == 0)
     throw std::runtime_error{"sıfıra bölme"};

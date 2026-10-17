@@ -15,6 +15,14 @@ Yakaladıktan sonra seçenekleriniz şunlardır: sorunu çözüp devam etmek, ku
 bildirmek, günlüğe yazıp aynı hatayı yeniden göndermek, veya farklı bir hata nesnesine
 çevirip göndermek.
 
+<!-- kod-baglam
+void gunluge_yaz(const char*);
+void f()
+{
+    try { }
+@kod@
+}
+-->
 ```cpp
 catch (const std::exception& ex) {
     gunluge_yaz(ex.what());

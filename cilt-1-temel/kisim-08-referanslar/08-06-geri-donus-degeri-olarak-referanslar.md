@@ -11,6 +11,9 @@ son_kontrol: "2026-09 (C++23)"
 Bir işlev referans döndürebilir. Döndürdüğünde, çağrı ifadesi L-Value olur ve atamanın
 solunda durabilir.
 
+<!-- kod-baglam
+std::vector<int> vec(10);
+-->
 ```cpp
 int& eleman(std::vector<int>& v, int i)
 {

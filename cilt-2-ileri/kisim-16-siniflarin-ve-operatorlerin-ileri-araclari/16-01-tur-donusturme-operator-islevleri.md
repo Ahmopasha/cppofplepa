@@ -36,6 +36,7 @@ k + 1;                 // double aritmetiği
 > **Tür dönüştürme operatör işlevlerini `explicit` yapın.** Dönüştüren kurucu işlevler
 > için verilen tavsiyenin (Cilt I 12.13) aynısı; sebep de aynı.
 
+<!-- kod: atla -->
 ```cpp
 explicit operator double() const;
 

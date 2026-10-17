@@ -11,6 +11,9 @@ son_kontrol: "2026-10 (C++23)"
 Bir işlev `constexpr` olarak nitelenirse, **argümanları derleme zamanında biliniyorsa
 sonucu da derleme zamanında hesaplanabilir** demektir.
 
+<!-- kod-baglam
+int oku();
+-->
 ```cpp
 constexpr int kare(int x) { return x * x; }
 

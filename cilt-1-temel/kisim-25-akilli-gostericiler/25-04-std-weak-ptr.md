@@ -13,6 +13,9 @@ son_kontrol: "2026-09 (C++23)"
 
 `weak_ptr`, bir nesneyi sahiplenmeden gözlemler; sayacı artırmaz.
 
+<!-- kod-baglam
+auto p = std::make_shared<Myclass>();
+-->
 ```cpp
 std::weak_ptr<Myclass> w = p;
 

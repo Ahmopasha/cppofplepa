@@ -38,6 +38,12 @@ yüklemezseniz, kurucu işlev hata gönderdiğinde ayrılan bellek serbest bıra
 
 C++14, boyut bilgisini alan sonlandırma biçimini ekledi:
 
+<!-- kod-baglam
+class Myclass {
+public:
+@kod@
+};
+-->
 ```cpp
 static void operator delete(void* p, std::size_t n) noexcept;
 ```

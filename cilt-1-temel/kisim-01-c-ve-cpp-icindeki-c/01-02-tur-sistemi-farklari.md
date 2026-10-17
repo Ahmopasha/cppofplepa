@@ -13,12 +13,14 @@ son_kontrol: "2026-09 (C++23)"
 
 **Karşılaştırma ve mantık operatörleri `bool` döndürür.** C'de `int` döndürürler.
 
+<!-- kod: c -->
 ```cpp
 sizeof(1 == 1);     // C'de 4, C++'ta 1
 ```
 
 **Karakter sabitlerinin türü `char`'dır.** C'de `int`'tir.
 
+<!-- kod: c -->
 ```cpp
 sizeof('A');        // C'de 4, C++'ta 1
 ```

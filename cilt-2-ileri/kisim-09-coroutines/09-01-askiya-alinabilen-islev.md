@@ -15,6 +15,7 @@ oluşur, işlev bitince çerçeve yok olur; işlevin durumu geriye kalmaz.
 kaldığı yerden devam edebilen bir işlevdir. Askıya alındığında yerel değişkenleri ve
 çalışma noktası korunur.
 
+<!-- kod: atla -->
 ```cpp
 Generator sayilar()
 {

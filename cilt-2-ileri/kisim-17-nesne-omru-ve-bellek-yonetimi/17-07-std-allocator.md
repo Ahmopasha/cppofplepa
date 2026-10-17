@@ -12,6 +12,14 @@ Kapların bellek ayırma biçimini değiştirmeye yarayan ilke sınıfıdır. 17
 `operator new` yüklemesinden farkı, **kap düzeyinde** çalışmasıdır; sınıfı değil, kabı
 özelleştirir.
 
+<!-- kod-baglam
+template<typename T>
+struct KendiAyiricim {
+    using value_type = T;
+    T* allocate(std::size_t);
+    void deallocate(T*, std::size_t) noexcept;
+};
+-->
 ```cpp
 std::vector<int, KendiAyiricim<int>> v;
 ```

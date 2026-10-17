@@ -24,6 +24,12 @@ ortadan kaldırır: **Cilt II, Kısım 16.**
 **İndisleme operatörü.** Üye işlev olmak zorundadır. `const` ve `const` olmayan iki sürüm
 yazılır:
 
+<!-- kod-baglam
+class Dizi {
+public:
+@kod@
+};
+-->
 ```cpp
 int&       operator[](std::size_t i);
 const int& operator[](std::size_t i) const;

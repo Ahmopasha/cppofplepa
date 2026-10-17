@@ -11,6 +11,7 @@ son_kontrol: "2026-09 (C++23)"
 **İsimlendirilmiş bir nesne asla geçici nesne değildir.** Geçici nesneler iki şekilde
 oluşur: derleyicinin kendiliğinden oluşturması, veya programcının açıkça istemesi.
 
+<!-- kod: atla -->
 ```cpp
 Myclass{12}      // programcının oluşturduğu geçici nesne
 ```

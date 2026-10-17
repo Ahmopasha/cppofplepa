@@ -26,12 +26,22 @@ Dört tür gereklilik yazılabilir.
 
 **Basit gereklilik.** İfade geçerli olmalıdır.
 
+<!-- kod-baglam
+template<typename T>
+concept Ornek =
+@kod@
+-->
 ```cpp
 requires(T a) { a.func(); };
 ```
 
 **Tür gerekliliği.** Belirtilen tür var olmalıdır.
 
+<!-- kod-baglam
+template<typename T>
+concept Ornek =
+@kod@
+-->
 ```cpp
 requires { typename T::value_type; };
 ```
@@ -39,6 +49,11 @@ requires { typename T::value_type; };
 **Bileşik gereklilik.** İfade geçerli olmalı, ayrıca sonucunun türü bir kısıtı
 sağlamalıdır.
 
+<!-- kod-baglam
+template<typename T>
+concept Ornek =
+@kod@
+-->
 ```cpp
 requires(T a) {
     { a.size() } -> std::convertible_to<std::size_t>;
@@ -50,6 +65,11 @@ Süslü parantez zorunludur ve `->` sağındaki, bir türü değil bir **kavram�
 
 **İç içe gereklilik.** Başka bir kısıtın sağlanmasını ister.
 
+<!-- kod-baglam
+template<typename T>
+concept Ornek =
+@kod@
+-->
 ```cpp
 requires(T a) {
     requires std::integral<T>;

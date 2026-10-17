@@ -14,6 +14,7 @@ mümkündür; buna *name mangling* denir. C dilinde yükleme olmadığı için b
 C ile yazılmış bir kütüphanenin işlevlerini kullanırken bağlayıcının ismi C biçiminde
 aramasını sağlamak gerekir:
 
+<!-- kod: atla -->
 ```cpp
 extern "C" void c_islevi(int);
 

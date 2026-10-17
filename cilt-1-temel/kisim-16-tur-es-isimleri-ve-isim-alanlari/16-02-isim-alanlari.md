@@ -32,6 +32,9 @@ de bu şekilde, `std` isim alanını onlarca başlık dosyasına dağıtarak ça
 
 İsim alanına eş isim verilebilir:
 
+<!-- kod-baglam
+namespace grafik::ileri_seviye { }
+-->
 ```cpp
 namespace gfx = grafik::ileri_seviye;
 ```

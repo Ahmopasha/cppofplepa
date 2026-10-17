@@ -57,6 +57,8 @@ cilt-1-temel/                        Cilt I
 cilt-2-ileri/                        Cilt II, aynı düzen
 gecisler/                            kısımlar ve ciltler arasındaki geçiş paragrafları
 araclar/derle.py                     derleme betiği
+araclar/kod_denetimi.py              kod örneklerinin denetimi
+araclar/derleyici_notlari.py         Derleyici Notu kutularının testleri (testler/)
 araclar/pdf/baslik.tex               PDF biçimlendirmesi
 terim_sozlugu.md                     Türkçe karşılıkların dizini
 BAKIM.md                             güncellik kontrolü ve yazım kuralları
@@ -89,6 +91,7 @@ Depo kökünden:
 python3 araclar/derle.py            iki cilt, birleşik kitap, Leanpub içindekiler listesi
 python3 araclar/derle.py --pdf      yukarıdakiler ve PDF
 python3 araclar/derle.py --gecissiz geçiş paragrafları olmadan
+python3 araclar/derle.py --kod      ayrıca kod örneklerini derle (Clang; rapor cikti/kod_denetimi.md)
 ```
 
 Çıktılar `cikti/` klasörüne yazılır:
@@ -106,7 +109,9 @@ içindeki **"Kısım N.M" atıflarının var olan bir başlığa gitmesini** ve 
 listesinin metinle tutarlılığını. Sorunları `UYARI` / `HATA` satırlarıyla bildirir.
 GitHub aynı denetimi her gönderimde kendiliğinden çalıştırır
 (`.github/workflows/denetim.yml`); bir sorun varsa gönderimin yanında kırmızı işaret
-görünür.
+görünür. İki iş daha vardır: `kod-denetimi.yml` kod örneklerini GCC ve Clang ile derleyip
+raporunu işin özetine koyar (şimdilik yalnızca rapor); `derleyici-notlari.yml` her
+Derleyici Notu kutusunun anlattığı davranışı ayda bir GCC, Clang ve MSVC'de sınar.
 
 Gerekenler: Python 3.8 veya üstü (Windows'ta `python3` yerine `py` yazın). PDF için
 ayrıca [pandoc](https://pandoc.org), bir TeX dağıtımı (TeX Live ya da MiKTeX; `xelatex`

@@ -34,6 +34,12 @@ taban sınıfa hiç bakılmaz. **Taban sınıf ile türemiş sınıfın işlevle
 
 Bunu istemiyorsanız taban sınıftaki ismi türemiş sınıf kapsamına taşıyın:
 
+<!-- kod-baglam
+class Base {
+public:
+    void func(int);
+};
+-->
 ```cpp
 class Der : public Base {
 public:

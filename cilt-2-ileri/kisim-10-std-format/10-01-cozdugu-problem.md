@@ -30,6 +30,9 @@ std::cout << std::setw(10) << std::fixed << std::setprecision(2) << x << '\n';
 C++20'nin `std::format` kütüphanesi ikisinin üstünlüklerini birleştirir: `printf`
 kadar kısa, akımlar kadar tür güvenli ve genişletilebilir.
 
+<!-- kod-baglam
+double x = 3.14159;
+-->
 ```cpp
 #include <format>
 
