@@ -14,6 +14,22 @@
   operatörü, `==` de `!=`'yi karşılar; örtülü `==` yalnızca sınıf hiçbir `operator==`
   bildirmemişse gelir; elle yazılan `<=>`'nin yanına `==` aynı ölçütle yazılmalıdır;
   `==` ile `<=>`'nin tutarlılığı programcıya kalır.
+- Kod denetiminin bulduğu, örneğin kendisinin derlenmediği ya da "sentaks hatası" denen
+  satırın geçerli olduğu yerler düzeltildi:
+  - Cilt I 9.2: `void func(int); void func(const int);` için "sentaks hatası" deniyordu;
+    ikisi aynı işlevin geçerli bildirimleridir. Örnek, hatanın ancak ikinci tanımda
+    çıktığını gösterecek biçimde yeniden yazıldı. "Göstericilerde `const` imzanın
+    parçasıdır" cümlesi gösterilen nesneyle sınırlandı; göstericinin kendi `const`u üst
+    düzeydir ve yok sayılır.
+  - Cilt I 12.7: `const Myclass cm;` derlenmiyordu (sınıfın kullanıcı tanımlı varsayılan
+    kurucu işlevi yok); `const Myclass cm{};` yapıldı.
+  - Cilt I 14.4 ve Cilt II 16.1: veri elemanları `private` olan `Kesir`'in kurucu işlevi
+    yoktu, `Kesir{...}` derlenmiyordu; kurucu işlev eklendi.
+  - Cilt II 13.3: `Der` ve `Der2` taban sınıftan türetilmemişti, `override` geçersizdi;
+    kalıtım eklendi.
+  - Cilt II 1.2.6: `Myclass` şablon olduğu için `void f4(Myclass&&)` derlenmiyordu;
+    parametre `std::string&&` yapıldı. `f2` satırının yorumu da düzeltildi: `T`
+    çıkarılır, ama parametre `T&&` biçiminde değildir.
 
 ### Bakım
 
@@ -30,6 +46,8 @@
   çalıştırılır. Tek başına derlenemeyen 82 bloğun önüne okurun görmediği işaretler kondu
   (bkz. BAKIM.md, "Kod örnekleri"). GitHub Actions'ta GCC ve Clang ile rapor üreten bir iş
   eklendi.
+- Kod denetimi, kodun hemen üstündeki çok satırlı `/* ... */` yorum bloğunu tanır; bloğun
+  içindeki "sentaks hatası" gibi işaretler altındaki satıra ait sayılır.
 - Derleyici Notu testleri eklendi (`araclar/derleyici_notlari.py`,
   `testler/derleyici_notlari/`); ayda bir GCC, Clang ve MSVC'de çalışır.
 

@@ -4,7 +4,7 @@ kisim: "13 — İleri Hata Yönetimi"
 baslik: "13.3 `noexcept` ve geçersiz kılma"
 kaynak: "ders notları"
 kutular: ["Standart Notu — C++17"]
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 13.3 `noexcept` ve geçersiz kılma
@@ -12,11 +12,11 @@ son_kontrol: "2026-09 (C++23)"
 Sanal bir işlevi geçersiz kılarken `noexcept` **eklenebilir, kaldırılamaz.**
 
 ```cpp
-class Base { public: virtual void f(int);          };
-class Der  { public: void f(int) noexcept override; };   // geçerli
+class Base                { public: virtual void f(int);          };
+class Der  : public Base  { public: void f(int) noexcept override; };   // geçerli
 
-class Base2 { public: virtual void f(int) noexcept; };
-class Der2  { public: void f(int) override;         };   // sentaks hatası
+class Base2               { public: virtual void f(int) noexcept; };
+class Der2 : public Base2 { public: void f(int) override;         };   // sentaks hatası
 ```
 
 Sebep, Cilt II Kısım 6.3'teki ilkeyle aynıdır: çağıran kod taban sınıfın sözleşmesine

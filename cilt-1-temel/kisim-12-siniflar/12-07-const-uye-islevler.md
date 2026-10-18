@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "12 — Sınıflar"
 baslik: "12.7 `const` üye işlevler"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 12.7 `const` üye işlevler
@@ -24,7 +24,11 @@ public:
 üzerinden yalnızca `const` üye işlevler çağrılabilir.**
 
 ```cpp
-const Myclass cm;
+/*
+* const nesne ilk değer almalı (bkz. 6.1);
+* {} değerle ilk değer verir, x sıfırlanır (bkz. 3.3)
+*/
+const Myclass cm{};
 cm.get();      // geçerli
 cm.set(10);    // sentaks hatası
 ```

@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "16 — Sınıfların ve Operatörlerin İleri Araçları"
 baslik: "16.1 Tür dönüştürme operatör işlevleri"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 16.1 Tür dönüştürme operatör işlevleri
@@ -16,6 +16,7 @@ dönüştürme operatör işleviyle sağlanır.
 class Kesir {
     int pay, payda;
 public:
+    Kesir(int p, int q) : pay{p}, payda{q} { }
     operator double() const { return static_cast<double>(pay) / payda; }
 };
 

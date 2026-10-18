@@ -20,8 +20,9 @@ Blok tek başına derlenmezse sırayla şunlar eklenerek yeniden denenir:
     +genel    araclar/kod_baglami.hpp'deki yer tutucu adlar (Myclass, v, s ...);
               yalnızca derleyicinin bulamadığı adlar eklenir
 
-HATA SATIRLARI. Yorumunda "sentaks hatası", "çift anlamlılık hatası", "derlenmez" geçen
-ya da "hata —", "hata →" ile başlayan satırlar (yorum C++'ın satırı geçerli saydığını
+HATA SATIRLARI. Yorumunda (satır sonundaki // yorumu ya da hemen üstündeki /* ... */
+bloğu) "sentaks hatası", "çift anlamlılık hatası", "derlenmez" geçen ya da "hata —",
+"hata →" ile başlayan satırlar (yorum C++'ın satırı geçerli saydığını
 söylemiyorsa) bilerek hata verir sayılır. Bu satırlar çıkarılınca kalan blok
 derlenmeli, her biri tek başına geri konunca derleyici tam o satırda hata vermelidir.
 Satır, derlenen yerleşimlerin en dıştakinde ve en içtekinde ayrı ayrı sınanır.
@@ -153,9 +154,41 @@ def kod_kismi(satir):
     return re.sub(r"/\*.*?\*/", " ", satir)
 
 
-def hata_satiri_mi(satir):
+def satirlari_cozumle(satirlar):
+    """Her satır için (kod kısmı, yorum metni) listelerini döndürür.
+
+    Kendi satırlarında açılıp kapanan /* ... */ bloklarını izler (kitabın biçimi: uzun
+    açıklama kodun hemen üstünde bir blok yorumdur). Blok yorumun metni, hemen altındaki
+    kod satırının yorumuna eklenir; böylece "sentaks hatası" gibi işaretler o satıra ait
+    sayılır.
+    """
+    kodlar, yorumlar = [], []
+    blokta, bekleyen = False, []
+    for s in satirlar:
+        duz = s.strip()
+        if blokta or (duz.startswith("/*") and "*/" not in duz):
+            if "*/" in duz:
+                blokta = False
+            else:
+                blokta = True
+            bekleyen.append(duz.lstrip("/*").rstrip("*/").strip())
+            kodlar.append("")
+            yorumlar.append("")
+            continue
+        kod = kod_kismi(s)
+        yor = yorum(s) if yorum_baslangici(s) < len(s) else ""
+        if kod.strip() and bekleyen:
+            yor = " ".join(bekleyen + [yor]).strip()
+        if kod.strip() or not duz:
+            bekleyen = []
+        kodlar.append(kod)
+        yorumlar.append(yor)
+    return kodlar, yorumlar
+
+
+def hata_satiri_mi(yorum_metni):
     """Satırın yorumu, satırın C++'ta bilerek derleme hatası verdiğini söylüyor mu?"""
-    kucuk = yorum(satir).lower()
+    kucuk = yorum_metni.lower()
     if not kucuk or re.search(r"c\+\+'ta (geçerli|derlenir)", kucuk):
         return False
     if re.search(r"sentaks hatası|çift anlamlılık hatası|böyle bir yazım yok", kucuk):
@@ -165,18 +198,18 @@ def hata_satiri_mi(satir):
     return re.match(r"hata\s*(—|→|$)", kucuk) is not None or re.search(r":\s*hata$", kucuk) is not None
 
 
-def yalniz_cpp_mi(satir):
+def yalniz_cpp_mi(yorum_metni):
     """Yorumu yalnızca C++'tan söz eden satır (C sınamasına alınmaz)."""
-    kucuk = yorum(satir).lower()
+    kucuk = yorum_metni.lower()
     return "c++'ta" in kucuk and "c'de" not in kucuk
 
 
-def c_hata_satiri_mi(satir):
-    return re.search(r"c'de (sentaks hatası|geçersiz|derlenmez)", yorum(satir).lower()) is not None
+def c_hata_satiri_mi(yorum_metni):
+    return re.search(r"c'de (sentaks hatası|geçersiz|derlenmez)", yorum_metni.lower()) is not None
 
 
 def tanimsiz_mi(blok):
-    return any("tanımsız" in yorum(s).lower() for s in blok["satirlar"])
+    return any("tanımsız" in y.lower() for y in satirlari_cozumle(blok["satirlar"])[1])
 
 
 def onsoz():
@@ -247,9 +280,10 @@ def blok_isaretleri(onceki):
 
 def parcalara_ayir(satirlar):
     """Satır numaralarını en dıştaki bildirim/deyimlere göre gruplar: [[i, i+1, ...], ...]."""
+    kodlar = satirlari_cozumle(satirlar)[0]
     parcalar, simdiki, derinlik = [], [], 0
-    for i, s in enumerate(satirlar):
-        k = kod_kismi(s).strip()
+    for i, k in enumerate(kodlar):
+        k = k.strip()
         simdiki.append(i)
         if derinlik == 0 and k.startswith("#"):
             parcalar.append(simdiki)
@@ -265,7 +299,7 @@ def parcalara_ayir(satirlar):
     # "else" ve "catch" ile başlayan parça, öncekinin devamıdır.
     birlesik = []
     for p in parcalar:
-        ilk = next((kod_kismi(satirlar[i]).strip() for i in p if kod_kismi(satirlar[i]).strip()), "")
+        ilk = next((kodlar[i].strip() for i in p if kodlar[i].strip()), "")
         if birlesik and re.match(r"(else|catch)\b", ilk):
             birlesik[-1] = birlesik[-1] + p
         else:
@@ -307,8 +341,8 @@ def kaynak(blok, disari, iceri, haric=(), isaretli=None, genel=("", "")):
 def ifade_satirlari(satirlar):
     """Noktalı virgülsüz ifade listelerini ("x  // L-Value") deyime çevirir; değişmezse None."""
     yeni, degisti, derinlik = [], False, 0
-    for s in satirlar:
-        k = kod_kismi(s).rstrip()
+    for s, k in zip(satirlar, satirlari_cozumle(satirlar)[0]):
+        k = k.rstrip()
         devam = k[-1:] in tuple(";{}(,:>=|&+-") and not k.endswith(("++", "--"))
         if derinlik == 0 and k.strip() and not k.strip().startswith("#") and not devam:
             y = yorum_baslangici(s)
@@ -524,9 +558,10 @@ def hata_satirlarini_sina(der, blok, hata_satirlari, gecenler, ad, kayit):
 def c_denetle(der, blok, kayit=None):
     """Bloğu C olarak denetler. 'gecti' ya da sorunun açıklamasını döndürür."""
     ad = blok_adi(blok) + "_c"
-    alinan = [s for s in blok["satirlar"] if not yalniz_cpp_mi(s)]
+    yorumlar = satirlari_cozumle(blok["satirlar"])[1]
+    alinan = [s for s, y in zip(blok["satirlar"], yorumlar) if not yalniz_cpp_mi(y)]
     sanal = dict(blok, satirlar=alinan, baglam="", std=C_STANDARDI)
-    hata_satirlari = [i for i, s in enumerate(alinan) if c_hata_satiri_mi(s)]
+    hata_satirlari = [i for i, y in enumerate(satirlari_cozumle(alinan)[1]) if c_hata_satiri_mi(y)]
     haric = set(hata_satirlari)
     gecenler, ilk_hata = [], None
     for yer, dis, ic in yerlesimler(sanal):
@@ -558,7 +593,7 @@ def blogu_denetle(der, blok, oncekiler, kayit=None):
         return {"durum": "gecti" if c == "gecti" else "derlenmedi", "kip": "C", "c": c,
                 "hatalar": [(0, c)], "dogrulanan": [(x, "C: " + m) for x, m in dogrulanan]}
     ad = blok_adi(blok)
-    yerel_hatalar = [i for i, s in enumerate(blok["satirlar"]) if hata_satiri_mi(s)]
+    yerel_hatalar = [i for i, y in enumerate(satirlari_cozumle(blok["satirlar"])[1]) if hata_satiri_mi(y)]
     temiz = [s for i, s in enumerate(blok["satirlar"]) if i not in yerel_hatalar]
 
     adaylar = [("", [])]
