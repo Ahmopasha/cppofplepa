@@ -58,7 +58,6 @@ cilt-2-ileri/                        Cilt II, aynı düzen
 gecisler/                            kısımlar ve ciltler arasındaki geçiş paragrafları
 araclar/derle.py                     derleme betiği
 araclar/kod_denetimi.py              kod örneklerinin denetimi
-araclar/derleyici_notlari.py         Derleyici Notu kutularının testleri (testler/)
 araclar/pdf/baslik.tex               PDF biçimlendirmesi
 terim_sozlugu.md                     Türkçe karşılıkların dizini
 BAKIM.md                             güncellik kontrolü ve yazım kuralları
@@ -77,7 +76,7 @@ yöneliktir. `00` bir birimin başını, `99` sonunu gösterir:
 | `NN-MM-99-...md`, `NN-99-...md` | Alt başlığın ya da kısmın kapanış kutusu |
 
 Her dosyanın başında, GitHub'ın tablo olarak gösterdiği kısa bir üst bilgi bulunur:
-hangi cilde ve kısma ait olduğu, kaynağı, içerdiği Standart Notu / Derleyici Notu
+hangi cilde ve kısma ait olduğu, kaynağı, içerdiği Standart Notu
 kutuları ve **en son ne zaman, hangi standarda göre kontrol edildiği.** Bakımın nasıl
 yapılacağı `BAKIM.md`'de.
 
@@ -109,9 +108,8 @@ içindeki **"Kısım N.M" atıflarının var olan bir başlığa gitmesini** ve 
 listesinin metinle tutarlılığını. Sorunları `UYARI` / `HATA` satırlarıyla bildirir.
 GitHub aynı denetimi her gönderimde kendiliğinden çalıştırır
 (`.github/workflows/denetim.yml`); bir sorun varsa gönderimin yanında kırmızı işaret
-görünür. İki iş daha vardır: `kod-denetimi.yml` kod örneklerini GCC ve Clang ile derleyip
-raporunu işin özetine koyar (şimdilik yalnızca rapor); `derleyici-notlari.yml` her
-Derleyici Notu kutusunun anlattığı davranışı ayda bir GCC, Clang ve MSVC'de sınar.
+görünür. Bir iş daha vardır: `kod-denetimi.yml` kod örneklerini GCC ve Clang ile derleyip
+raporunu işin özetine koyar (şimdilik yalnızca rapor).
 
 Gerekenler: Python 3.8 veya üstü (Windows'ta `python3` yerine `py` yazın). PDF için
 ayrıca [pandoc](https://pandoc.org), bir TeX dağıtımı (TeX Live ya da MiKTeX; `xelatex`

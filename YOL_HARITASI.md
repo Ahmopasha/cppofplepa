@@ -66,10 +66,9 @@ yapısaldır (başlık numaraları, atıflar, kutu listeleri); kodu derlemez.
   `derle.py --kod`, GitHub'da `kod-denetimi.yml`). İlk raporda 504 bloğun 10'u sorunlu
   çıktı; bunlar kitap metnindeki hatalardır ve panelden geçerek düzeltilecek. Sorunlu
   blok kalmayınca `kod-denetimi.yml` `--kati` ile çalıştırılır.
-- [x] **Derleyici Notu testleri.** Her Derleyici Notu için bugünkü davranışı doğrulayan
-  küçük bir test yazıldı (`testler/derleyici_notlari/`); `derleyici-notlari.yml` ayda bir
-  GCC, Clang (Linux ve macOS) ve MSVC'de çalışır. Test kırıldığı gün, kutunun gözden
-  geçirileceği gündür. 17.6 testindeki GCC beklentisi ilk çalıştırmada doğrulanacak.
+- [x] ~~**Derleyici Notu testleri.**~~ Kaldırıldı (2026-10-21). Kitap artık derleyici
+  davranışını değil yalnızca standardı anlatıyor; iki Derleyici Notu kutusu kaldırıldı,
+  testleri ve aylık iş akışı da onlarla birlikte gitti (bkz. BAKIM.md, "Derleyici farkı").
 
 ---
 
@@ -149,7 +148,7 @@ kimlikler vermek, araya başlık eklenince bir atfın var olan ama yanlış bir 
 | Ne zaman | Ne |
 |---|---|
 | Her değişiklikte | `python3 araclar/derle.py --kati`; ilgili kod örneklerinin derlenmesi; değişen dosyaya atıf yapan yerlerin okunması; esaslı metinler için panel |
-| Ayda bir | 8 kısımlık doğruluk taraması; okur bildirimleri; Derleyici Notu testleri; hocanın `KURS_PROGRAMLARI` deposundaki iki programın takibi (değiştiğinde issue açan zamanlanmış bir iş) |
+| Ayda bir | 8 kısımlık doğruluk taraması; okur bildirimleri; hocanın `KURS_PROGRAMLARI` deposundaki iki programın takibi (değiştiğinde issue açan zamanlanmış bir iş) |
 | Her sürümde | Sürüm satırı, DEGISIKLIKLER.md, `vX.Y` etiketi, PDF'li GitHub Release, Leanpub yüklemesi, tanıtım metinlerindeki sayıların eşleşmesi, PDF'in gözle kontrolü |
 | Üç ayda bir | Kapsam tablosu, kaynak bağlantıları, panelin modelleri (`./panel.sh preflight`) |
 

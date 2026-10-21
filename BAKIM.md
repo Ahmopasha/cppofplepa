@@ -10,9 +10,8 @@ kalanıyla uyumlu kalması içindir.
 
 1. Dosyanın üst bilgisindeki `son_kontrol` alanına bakın. `2026-09 (C++23)`, dosyanın
    Eylül 2026'da, C++23'e kadarki standartlar gözetilerek gözden geçirildiğini söyler.
-2. Metni dilin ve derleyicilerin güncel durumuyla karşılaştırın. Önce `kutular` alanında
-   **Standart Notu** ya da **Derleyici Notu** geçen dosyalara bakın; bunlar standart veya
-   derleyici değiştiğinde ilk eskiyen yerlerdir. Listenin tamamı, her derlemede
+2. Metni dilin güncel durumuyla karşılaştırın. Önce `kutular` alanında **Standart Notu**
+   geçen dosyalara bakın; bunlar standart değiştiğinde ilk eskiyen yerlerdir. Listenin tamamı, her derlemede
    `cikti/bakim_durumu.md` içinde yeniden üretilir.
 3. Değişiklik gerekmiyorsa yalnızca `son_kontrol` alanını güncelleyin:
    `son_kontrol: "2027-03 (C++23)"`.
@@ -35,7 +34,7 @@ yoludur.
 | `kisim` | Dosyanın ait olduğu kısım |
 | `baslik` | Dosyadaki başlık |
 | `kaynak` | `ders notları`, `derleyen (ders notlarında yok)` ya da `derleyen` (ön metin, geçiş, kapanış kutusu) |
-| `kutular` | Dosyadaki Standart Notu ve Derleyici Notu kutuları; yoksa alan yazılmaz |
+| `kutular` | Dosyadaki Standart Notu kutuları; yoksa alan yazılmaz |
 | `son_kontrol` | En son kontrolün ayı ve gözetilen en yeni standart |
 
 Üst bilgi derlenen kitaba girmez; yalnızca depoda görünür. `kutular` alanını kutu
@@ -53,7 +52,7 @@ bakımda karşılaşılan değişiklikler için de geçerlidir:
 | Standart değişikliği | C++26 bir kuralı değiştirdi | Eski ve yeni davranış birlikte korunur; **Standart Notu** kutusu açılır |
 | Derinlik farkı | Bir konu başka bir kaynakta daha ayrıntılı | Kutu açılmaz; eksik ayrıntı ilgili cilde eklenir |
 | Hata | Metinde yanlış bir bilgi ya da atıf | Düzeltilir, `DEGISIKLIKLER.md`'ye yazılır |
-| Derleyici farkı | Bir derleyici standarttan farklı davranıyor | **Derleyici Notu** kutusu açılır; derleyici düzeldiğinde kutu güncellenir ya da kaldırılır |
+| Derleyici farkı | Derleyiciler aynı kodda farklı davranıyor | Kitap derleyiciyi değil standardı anlatır: yalnızca standardın hükmü yazılır. Standart davranışı gerçeklemeye bağlı bırakıyorsa "gerçeklemeye bağlı" denir; derleyici adı ve sürümü metne girmez |
 | Terim farkı | Aynı kavram için iki terim | Standart terim birincildir; diğeri ilk geçtiği yerde parantez içinde verilir; `terim_sozlugu.md` güncellenir |
 | Bağlam farkı | Aynı konu iki yerde anlatılıyor | Tek yerde anlatılır, diğer yer oraya atıf yapar |
 
@@ -75,19 +74,18 @@ yaygınsa açılır:
 > mevcut çözümlerin hiçbiri okunabilir değildi.
 ```
 
-### Derleyici Notu kutusu
+### Kod yorumları
+
+Kod örneğindeki yorum satıra sığıyorsa satır sonunda `//` ile yazılır. İkinci satıra
+taşacaksa açıklama kodun hemen üstüne blok yorum olarak yazılır:
 
 ```
-> **Derleyici Notu**
-> Fonksiyonlar hangi referans türüne dönüştürülürse dönüştürülsün her zaman L-Value
-> kalır. Buna rağmen MSVC, `std::move(foo)` gibi bir ifade için X-Value bildirmektedir.
-> Doğru sonucu görmek için GCC ile doğrulayın.
+/*
+* const nesne ilk değer almalı (bkz. 6.1);
+* {} değerle ilk değer verir, x sıfırlanır (bkz. 3.3)
+*/
+const Myclass cm{};
 ```
-
-Her Derleyici Notu kutusunun `testler/derleyici_notlari/` altında bir testi olur. Test,
-kutunun anlattığı davranışı her derleyici ailesi için bir beklenti olarak yazar
-(`// beklenti: clang=hata gcc=derlenir`) ve ayda bir GitHub Actions'ta çalışır. Yeni bir
-kutu eklerken testini de ekleyin; test kırıldığında kutuyu gözden geçirin.
 
 ---
 

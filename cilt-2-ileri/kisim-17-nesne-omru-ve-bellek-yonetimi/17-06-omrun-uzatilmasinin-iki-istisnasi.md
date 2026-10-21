@@ -3,7 +3,6 @@ cilt: "II — İleri"
 kisim: "17 — Nesne Ömrü ve Bellek Yönetimi"
 baslik: "17.6 Ömrün uzatılmasının iki istisnası"
 kaynak: "ders notları"
-kutular: ["Derleyici Notu"]
 son_kontrol: "2026-10 (C++23)"
 ---
 
@@ -59,12 +58,6 @@ C++14 dahil önceki standart metinleri bu bağlamaya izin veriyor ve geçici nes
 işlevin sonuna kadar yaşatıyordu. CWG 1696 sorununun C++17 metnine giren çözümüyle bağlama
 sentaks hatası oldu; çözüm bir **kusur raporu** *(defect report)* olduğundan eski dil
 kiplerine de uygulanır.
-
-> **Derleyici Notu**
-> Apple clang 21 (clang-2100.3.34.2) bu bağlamayı, C++11 dahil, denenen beş dil kipinin
-> hepsinde (C++11, C++14, C++17, C++20, C++23) sentaks hatası olarak bildirir. Bazı
-> derleyiciler ise kodu hâlâ kabul eder. Derlenmesi kodun doğru olduğunu göstermez;
-> veri elemanı yine sarkar.
 
 İkisinin ortak nedeni şudur: ömür uzatma, derleyicinin **yerel olarak** görebildiği bir
 bağlamda çalışır. İşlev sınırını veya nesne sınırını aştığında, geçici nesnenin ne kadar

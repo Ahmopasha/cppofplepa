@@ -30,6 +30,14 @@
   - Cilt II 1.2.6: `Myclass` şablon olduğu için `void f4(Myclass&&)` derlenmiyordu;
     parametre `std::string&&` yapıldı. `f2` satırının yorumu da düzeltildi: `T`
     çıkarılır, ama parametre `T&&` biçiminde değildir.
+- Kitap artık derleyici davranışını değil yalnızca C++ standardını anlatıyor. İki Derleyici
+  Notu kutusu kaldırıldı:
+  - Cilt II 1.1.7: MSVC'nin `std::move(foo)` için X-Value bildirdiği söyleniyordu; güncel
+    MSVC doğru sonucu veriyor. Kutunun taşıdığı dil kuralı Cilt II 1.1.3'e istisna olarak
+    taşındı: `T` bir işlev türüyse `T&&` döndüren çağrı L-Value üretir. 1.1.7'nin son
+    örneğine eksik `<iostream>` eklendi; standart `exp` adını gölgeleyen makro `EXP` oldu.
+  - Cilt II 17.6: Clang'ın davranışını anlatan kutu kaldırıldı; standardın hükmü (CWG
+    1696) ana metinde duruyor.
 
 ### Bakım
 
@@ -48,8 +56,6 @@
   eklendi.
 - Kod denetimi, kodun hemen üstündeki çok satırlı `/* ... */` yorum bloğunu tanır; bloğun
   içindeki "sentaks hatası" gibi işaretler altındaki satıra ait sayılır.
-- Derleyici Notu testleri eklendi (`araclar/derleyici_notlari.py`,
-  `testler/derleyici_notlari/`); ayda bir GCC, Clang ve MSVC'de çalışır.
 
 ## Sürüm 1.1 — Ekim 2026
 

@@ -3,8 +3,7 @@ cilt: "II — İleri"
 kisim: "1 — Değer Kategorileri ve Referans Semantiği"
 baslik: "1.1.7 Kategoriyi derleme zamanında tespit etmek"
 kaynak: "ders notları"
-kutular: ["Derleyici Notu"]
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ### 1.1.7 Kategoriyi derleme zamanında tespit etmek
@@ -36,6 +35,7 @@ Aynı işi `if constexpr` ile de yapabiliriz:
 
 ```cpp
 #include <type_traits>
+#include <iostream>
 
 template<typename T>
 void func()
@@ -45,17 +45,12 @@ void func()
     else if constexpr (!std::is_reference_v<T>)       std::cout << "PR-Value\n";
 }
 
-#define exp(e) decltype((e))
+#define EXP(e) decltype((e))
 
 int main()
 {
-    func<exp(12)>();   // PR-Value
+    func<EXP(12)>();   // PR-Value
     int x = 43;
-    func<exp(x)>();    // L-Value
+    func<EXP(x)>();    // L-Value
 }
 ```
-
-> **Derleyici Notu**
-> Fonksiyonlar hangi referans türüne dönüştürülürse dönüştürülsün her zaman L-Value
-> kalır. Buna rağmen MSVC, `std::move(foo)` gibi bir ifade için X-Value bildirmektedir.
-> Doğru sonucu görmek için GCC ile doğrulayın.

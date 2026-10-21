@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "1 — Değer Kategorileri ve Referans Semantiği"
 baslik: "1.1.3 Köşe durumlar"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ### 1.1.3 Köşe durumlar
@@ -11,7 +11,7 @@ son_kontrol: "2026-09 (C++23)"
 Cilt I'deki liste sık karşılaşılanlarla sınırlıydı. Aşağıdakiler kütüphane yazarken
 karşınıza çıkar.
 
-**Fonksiyon isimleri her zaman L-Value'dur**, geri dönüş türlerinden bağımsız olarak:
+**İşlev isimleri her zaman L-Value'dur**, geri dönüş türlerinden bağımsız olarak:
 
 ```cpp
 void moo();  int foo();  int& bar();  int&& baz();
@@ -22,13 +22,26 @@ bar   // L-Value
 baz   // L-Value
 ```
 
-**Geri dönüş türü `T&&` olan işlev çağrısı X-Value üretir:**
+**Geri dönüş türü `T&&` olan (`T` referans olmayan bir tür) işlev çağrısı X-Value
+üretir:**
 
 <!-- kod-baglam
 int&& baz();
 -->
 ```cpp
 baz()   // X-Value
+```
+
+Bunun istisnası: **`T` bir işlev türüyse, işleve R-Value referans döndüren çağrı L-Value
+üretir.** **İşleve L-Value ya da R-Value referans türüne dönüştürülen bir işlev de L-Value
+kalır:**
+
+<!-- kod-baglam
+void moo();
+-->
+```cpp
+std::move(moo)                   // L-Value — X-Value değil
+static_cast<void(&&)()>(moo)     // L-Value
 ```
 
 **Lambda ifadesi PR-Value'dur:**
