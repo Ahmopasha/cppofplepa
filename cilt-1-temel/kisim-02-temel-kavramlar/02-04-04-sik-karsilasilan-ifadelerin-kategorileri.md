@@ -34,7 +34,7 @@ x--
 std::move(x)
 ```
 
-Fonksiyonlarda kategori, geri dönüş türüne bakılarak belirlenir:
+İşlevlerde kategori, geri dönüş türüne bakılarak belirlenir:
 
 ```cpp
 int  foo();    foo()   // R-Value  — değer döndürenler

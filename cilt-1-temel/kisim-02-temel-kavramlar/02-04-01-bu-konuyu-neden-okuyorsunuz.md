@@ -20,5 +20,5 @@ int&& d = x;          // DERLENMEZ
 ```
 
 Aradaki farkı açıklayan şeye ifadenin **değer kategorisi** denir. Bu konuyu bilmeden
-yazılan kodda, derleyicinin neden şikâyet ettiği anlaşılmaz. Fonksiyon parametrelerini
+yazılan kodda, derleyicinin neden şikâyet ettiği anlaşılmaz. İşlev parametrelerini
 doğru seçmek de buna bağlıdır.

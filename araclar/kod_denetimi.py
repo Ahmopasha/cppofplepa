@@ -230,6 +230,14 @@ def bloklari_topla():
             for ad in sorted(dosyalar):
                 if ad.endswith(".md"):
                     bloklar += dosyadaki_bloklar(os.path.join(kok, ad), std)
+    # Aşama 2 taramalarının test kodları (tarama/<tarih>/cilt-N-...md): dosya adının
+    # başındaki cilt, standardı belirler.
+    for kok, _, dosyalar in sorted(os.walk(os.path.join(KOK, "tarama"))):
+        for ad in sorted(dosyalar):
+            m = re.match(r"cilt-([12])-", ad)
+            if m and ad.endswith(".md"):
+                std = CILT_STANDARDI["cilt-1-temel" if m.group(1) == "1" else "cilt-2-ileri"]
+                bloklar += dosyadaki_bloklar(os.path.join(kok, ad), std)
     return bloklar
 
 

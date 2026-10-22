@@ -457,6 +457,28 @@ def atiflari_denetle(birimler_ve_cilt, numaralar):
 KUTU = re.compile(r"^> \*\*(Standart Notu — [^*]+|Derleyici Notu[^*]*)\*\*", re.M)
 
 
+def terimleri_denetle(birimler):
+    """terim_sozlugu.md'nin "Kullanılmayan karşılıklar" tablosundaki sözcükleri arar."""
+    yol = os.path.join(KOK, "terim_sozlugu.md")
+    if not os.path.exists(yol):
+        return
+    with open(yol, encoding="utf-8") as f:
+        metin = f.read()
+    bolum = metin.split("## 6. Kullanılmayan karşılıklar", 1)
+    if len(bolum) < 2:
+        return
+    yasaklar = []
+    for satir in bolum[1].split("\n"):
+        m = re.match(r"^\|\s*([^|*-][^|]*?)\s*\|\s*([^|]+?)\s*\|$", satir)
+        if m and m.group(1) != "Kullanılmaz":
+            yasaklar.append((m.group(1), m.group(2)))
+    for u in birimler:
+        for no, satir in kod_disi_satirlar(u["govde"]):
+            for kotu, iyi in yasaklar:
+                if re.search(rf"(?<!\w){re.escape(kotu)}", satir, re.I):
+                    uyar(f"{goreli(u['yol'])}: '{kotu}' yerine '{iyi}' kullanın (terim_sozlugu.md, 6)")
+
+
 def kutulari_denetle(birimler):
     """Üst bilgideki 'kutular' alanını metindeki kutularla karşılaştırır.
 
@@ -588,6 +610,7 @@ def main():
         denetlenecek += [(u, "II" if a == "acilis" else "I") for a, u in cilt_gecisleri.items()]
     atif_sayisi = atiflari_denetle(denetlenecek, numaralar)
     kutulari_denetle([u for u, _ in denetlenecek])
+    terimleri_denetle([u for u, _ in denetlenecek])
     with open(os.path.join(arg.cikti, "bakim_durumu.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(bakim_durumu([u for u, _ in denetlenecek]))
 

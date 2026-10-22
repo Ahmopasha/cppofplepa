@@ -81,19 +81,22 @@ yapısaldır (başlık numaraları, atıflar, kutu listeleri); kodu derlemez.
   iddia ("tanımsız davranıştır", "geçersizdir", "C++17'den beri") bir tabloya dökülür,
   her birine standarttaki bölüm adı ve iddiayı sınayan kısa bir kod eklenir. Kodlar
   Aşama 1'deki denetimden geçer. Kanıtı olmayan ya da derleyiciyle çelişen iddialar
-  incelenir.
+  incelenir. Tablolar `tarama/<yıl-ay>/cilt-N-kisim-NN.md` dosyalarındadır; içlerindeki
+  test kodlarını kod denetimi de derler. İlk tablo: Cilt II Kısım 17 (2026-10).
 - [ ] **Kümülatif ilke sorusu.** Cilt I dosyalarında: "Bu dosyadaki hangi cümle C++23'te ya
   da Cilt II'deki anlatım karşısında yanlış kalır?"
 - [ ] **Bulguların işlenmesi.** Esaslı her düzeltme AI hakem panelinden (`cpp-kitap`
   ölçütü) geçer. Hakemlerin internet erişimi olmadığı için standart iddiaları birincil
   kaynaktan (önerge, cppreference) ve kod derlenerek panelin dışında doğrulanır. Gözden
   geçirme, metni yazan oturumdan bağımsız bir oturumda yapılır.
-- [ ] **Depo köküne `CLAUDE.md`.** BAKIM.md'yi gösterir; üstüne yalnızca yapay zekâya özgü
+- [x] **Depo köküne `CLAUDE.md`.** BAKIM.md'yi gösterir; üstüne yalnızca yapay zekâya özgü
   kuralları ekler: kanıtsız iddia yok, her normatif iddiaya bir test kodu, derlenmeyen
   kod "derlendi" diye yazılmaz.
-- [ ] **Terim uyarısı.** `derle.py`, terim sözlüğünde tercih edilmeyen karşılıkları uyarı
+- [x] **Terim uyarısı.** `derle.py`, terim sözlüğünde tercih edilmeyen karşılıkları uyarı
   olarak bildirir. İlk adım: kitapta 8 dosyada geçen 11 "fonksiyon" (616 "işlev"in
   yanında; biri `02-04-06-fonksiyon-parametresini-nasil-secersiniz.md` dosya adında).
+  Yapıldı (2026-10-22): `terim_sozlugu.md`'nin 6. bölümü kullanılmayan karşılıkları
+  listeler, `derle.py` bunları uyarır; 11 geçiş "işlev" oldu, iki dosya yeniden adlandırıldı.
 
 ---
 

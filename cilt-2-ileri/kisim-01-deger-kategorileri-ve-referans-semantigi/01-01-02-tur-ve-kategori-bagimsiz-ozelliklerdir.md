@@ -49,5 +49,5 @@ p;              // "p" burada ifade: L-Value, tür "int*".
 
 `int&& rr` bildirimindeki `rr`'nin bir ifade olarak L-Value olması, ilk bakışta
 çelişkili görünür. Çelişki değildir: `rr` bir isimdir, isimlerin bellekte yeri vardır,
-dolayısıyla kimliği vardır. Bu, `T&&` parametreli fonksiyonların gövdesinde
+dolayısıyla kimliği vardır. Bu, `T&&` parametreli işlevlerin gövdesinde
 `std::move` çağırmak zorunda kalmanızın sebebidir.

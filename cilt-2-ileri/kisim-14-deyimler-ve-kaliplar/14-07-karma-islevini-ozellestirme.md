@@ -1,12 +1,12 @@
 ---
 cilt: "II — İleri"
 kisim: "14 — Deyimler ve Kalıplar"
-baslik: "14.7 Karma fonksiyonu özelleştirme"
+baslik: "14.7 Karma işlevini özelleştirme"
 kaynak: "ders notları"
 son_kontrol: "2026-09 (C++23)"
 ---
 
-## 14.7 Karma fonksiyonu özelleştirme
+## 14.7 Karma işlevini özelleştirme
 
 Kendi türünüzü `std::unordered_map` anahtarı yapmak için `std::hash` şablonunun o tür
 için özelleştirilmesi gerekir (bkz. Cilt I Kısım 23.4).

@@ -1,12 +1,12 @@
 ---
 cilt: "I — Temel"
 kisim: "2 — Temel Kavramlar"
-baslik: "2.4.6 Fonksiyon parametresini nasıl seçersiniz"
+baslik: "2.4.6 İşlev parametresini nasıl seçersiniz"
 kaynak: "ders notları"
 son_kontrol: "2026-09 (C++23)"
 ---
 
-### 2.4.6 Fonksiyon parametresini nasıl seçersiniz
+### 2.4.6 İşlev parametresini nasıl seçersiniz
 
 Yukarıdaki tablonun doğrudan sonucu, günlük olarak vereceğiniz bir karardır.
 

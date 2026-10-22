@@ -96,6 +96,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | İngilizce | Türkçe | İlk geçtiği yer |
 |---|---|---|
 | function overloading | işlev yüklemesi | Cilt I 9.1 |
+| hash function | karma işlevi | Cilt I 23.4 |
 | overload resolution | yükleme çözümlemesi | Cilt I 9.3 |
 | exact match | tam uyum | Cilt I 9.6 |
 | candidate | aday | Cilt I 9.4 |
@@ -227,3 +228,14 @@ Yeni bir terim eklenirken üç soru sorulur:
 
 Üçüncü soru için son geçişte otomatik denetim yapıldı: 61 terimin hiçbirinde çakışan
 karşılık bulunmadı.
+
+---
+
+## 6. Kullanılmayan karşılıklar
+
+Aşağıdaki sözcükler kitapta yerine sağdaki karşılık kullanılmak üzere bırakıldı.
+`araclar/derle.py`, kod blokları dışında bunlardan birini görürse uyarır.
+
+| Kullanılmaz | Yerine |
+|---|---|
+| fonksiyon | işlev |

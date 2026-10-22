@@ -52,6 +52,12 @@
 
 ### Bakım
 
+- Depo köküne yapay zekâ oturumları için `CLAUDE.md` eklendi.
+- Terim sözlüğüne "Kullanılmayan karşılıklar" bölümü eklendi; `derle.py` bu sözcükleri
+  uyarır. Kitaptaki 11 "fonksiyon" "işlev" oldu (Cilt I 2.4.1, 2.4.4, 2.4.6 başlığı,
+  23.4; Cilt II 1.1.2, 1.1.5, 14.7 başlığı). *hash function* → karma işlevi sözlüğe eklendi.
+- Aşama 2 taraması başladı: normatif iddia tabloları `tarama/` altında; kod denetimi
+  tablolardaki test kodlarını da derler. İlk tablo Cilt II Kısım 17.
 - README'ye Leanpub bağlantısı ve GitHub Releases yönlendirmesi eklendi.
 - `BAKIM.md`: standart ufku kuralına kusur raporu istisnası eklendi; sürüm yayımlama
   adımlarına GitHub Release ve tanıtım metinlerindeki sayıların güncellenmesi eklendi.

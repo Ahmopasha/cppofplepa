@@ -18,7 +18,7 @@ PR-Value → X-Value dönüşümü olur ve ortaya bir *result object* çıkar. M
 olmazsa ortada bir nesneden söz edilemez.
 
 Materialization şu durumlarda olur: ifade bir nesneye ilk değer verirken, bir
-fonksiyonun parametre değişkeni olurken, geri dönüş değerini tutarken, ifade *discard*
+işlevin parametre değişkeni olurken, geri dönüş değerini tutarken, ifade *discard*
 edilirken, ya da ifade bir `const T&` veya `T&&` referansa bağlanırken.
 
 ```cpp

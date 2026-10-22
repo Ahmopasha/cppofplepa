@@ -53,7 +53,7 @@ Aynı dört kabın karma tablosuna dayanan sürümleridir: `unordered_set`, `uno
 `unordered_multiset`, `unordered_multimap`.
 
 Arama ortalama sabit zamandadır ama elemanlar sıralı değildir. Sıraya ihtiyacınız yoksa
-ve anahtarlarınız karma fonksiyonu olan türlerdense bunları tercih edin.
+ve anahtarlarınız karma işlevi olan türlerdense bunları tercih edin.
 
 ### Kap uyumlandırıcıları
 
