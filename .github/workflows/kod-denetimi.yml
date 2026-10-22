@@ -1,7 +1,7 @@
 name: Kod denetimi
 
 # Kitaptaki kod örneklerini GCC ve Clang ile derler (araclar/kod_denetimi.py).
-# Şimdilik yalnızca rapor üretir; rapor işin özetine ve "kod-denetimi" yapıtına konur.
+# Sorunlu blok varsa iş başarısız olur (--kati); rapor işin özetine ve "kod-denetimi" yapıtına konur.
 
 on:
   push:
@@ -29,8 +29,8 @@ jobs:
           g++-14 --version | head -1
           clang++-18 --version | head -1
 
-      - name: Kod denetimi (yalnızca rapor)
-        run: python3 araclar/kod_denetimi.py --derleyici g++-14 --derleyici clang++-18
+      - name: Kod denetimi
+        run: python3 araclar/kod_denetimi.py --kati --derleyici g++-14 --derleyici clang++-18
 
       - name: Raporu özete ekle
         if: always()

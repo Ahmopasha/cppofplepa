@@ -81,6 +81,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | constructor | kurucu işlev | Cilt I 12.8 |
 | destructor | sonlandırıcı işlev | Cilt I 12.9 |
 | target constructor | hedef kurucu işlev | Cilt I 12.12 |
+| ill-formed, no diagnostic required | derleyicinin bildirmek zorunda olmadığı hata | Cilt I 12.12 |
 | special member functions | özel üye işlevler | Cilt I 13.1 |
 | shallow / deep copy | sığ / derin kopyalama | Cilt I 13.5 |
 | object slicing | nesne dilimlenmesi | Cilt I 17.9 |

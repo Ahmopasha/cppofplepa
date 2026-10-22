@@ -109,7 +109,7 @@ listesinin metinle tutarlılığını. Sorunları `UYARI` / `HATA` satırlarıyl
 GitHub aynı denetimi her gönderimde kendiliğinden çalıştırır
 (`.github/workflows/denetim.yml`); bir sorun varsa gönderimin yanında kırmızı işaret
 görünür. Bir iş daha vardır: `kod-denetimi.yml` kod örneklerini GCC ve Clang ile derleyip
-raporunu işin özetine koyar (şimdilik yalnızca rapor).
+raporunu işin özetine koyar; sorunlu blok varsa iş başarısız olur.
 
 Gerekenler: Python 3.8 veya üstü (Windows'ta `python3` yerine `py` yazın). PDF için
 ayrıca [pandoc](https://pandoc.org), bir TeX dağıtımı (TeX Live ya da MiKTeX; `xelatex`

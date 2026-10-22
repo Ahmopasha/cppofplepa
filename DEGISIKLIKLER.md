@@ -30,6 +30,17 @@
   - Cilt II 1.2.6: `Myclass` şablon olduğu için `void f4(Myclass&&)` derlenmiyordu;
     parametre `std::string&&` yapıldı. `f2` satırının yorumu da düzeltildi: `T`
     çıkarılır, ama parametre `T&&` biçiminde değildir.
+- Kod denetiminin bulduğu son üç sorun düzeltildi:
+  - Cilt I 12.12: Kurucu işlevin doğrudan ya da dolaylı olarak kendine devretmesi
+    "tanımsız davranış" diye anlatılıyordu; standarda göre derleyicinin bildirmek zorunda
+    olmadığı bir hatadır *(ill-formed, no diagnostic required)*. Terim sözlüğe eklendi.
+  - Cilt II 1.1.4: İkinci örnekteki ilk değersiz referans bildirimleri `using` eş
+    adlarına çevrildi. `decltype`'ın bildirilen türü verdiği durum parantezsiz sınıf
+    üyesi erişimini de kapsayacak biçimde yazıldı; "(x) artık bir ifadedir" yorumu
+    düzeltildi.
+  - Cilt II 16.5: Literal operatör bildirimlerine geri dönüş türü eklendi; izin verilen
+    parametre listeleri standarttaki tam listeye göre yazıldı (şablon olmayan biçimler,
+    `wchar_t`/`char8_t`/`char16_t`/`char32_t`, varsayılan argüman yasağı).
 - Kitap artık derleyici davranışını değil yalnızca C++ standardını anlatıyor. İki Derleyici
   Notu kutusu kaldırıldı:
   - Cilt II 1.1.7: MSVC'nin `std::move(foo)` için X-Value bildirdiği söyleniyordu; güncel
@@ -53,7 +64,7 @@
   C++ farkı örnekleri iki dilde sınanır, `main()` içeren örnekler sanitizer ile
   çalıştırılır. Tek başına derlenemeyen 82 bloğun önüne okurun görmediği işaretler kondu
   (bkz. BAKIM.md, "Kod örnekleri"). GitHub Actions'ta GCC ve Clang ile rapor üreten bir iş
-  eklendi.
+  eklendi. Sorunlu blok kalmadığı için iş artık `--kati` ile çalışır.
 - Kod denetimi, kodun hemen üstündeki çok satırlı `/* ... */` yorum bloğunu tanır; bloğun
   içindeki "sentaks hatası" gibi işaretler altındaki satıra ait sayılır.
 

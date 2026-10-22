@@ -62,10 +62,10 @@ yapısaldır (başlık numaraları, atıflar, kutu listeleri); kodu derlemez.
 - [x] **Sanitizer.** `main()` içeren örnekler `-fsanitize=address,undefined` (iş
   parçacığı kullananlar `-fsanitize=thread`) ile çalıştırılır: "tanımsız" denen örnek
   gerçekten öyle mi, "doğru" denen örnek gizlice tanımsız mı.
-- [ ] **Kademeli devreye alma.** Denetim şu an yalnızca rapor üretiyor (yerelde
-  `derle.py --kod`, GitHub'da `kod-denetimi.yml`). İlk raporda 504 bloğun 10'u sorunlu
-  çıktı; bunlar kitap metnindeki hatalardır ve panelden geçerek düzeltilecek. Sorunlu
-  blok kalmayınca `kod-denetimi.yml` `--kati` ile çalıştırılır.
+- [x] **Kademeli devreye alma.** İlk raporda 504 bloğun 10'u sorunluydu; hepsi kitap
+  metnindeki hatalardı ve panelden geçerek düzeltildi (Cilt I 9.2, 12.7, 12.12, 14.4;
+  Cilt II 1.1.4, 1.2.6, 13.3, 16.1, 16.5). Sorunlu blok kalmayınca `kod-denetimi.yml`
+  `--kati` ile çalışmaya başladı (2026-10-22).
 - [x] ~~**Derleyici Notu testleri.**~~ Kaldırıldı (2026-10-21). Kitap artık derleyici
   davranışını değil yalnızca standardı anlatıyor; iki Derleyici Notu kutusu kaldırıldı,
   testleri ve aylık iş akışı da onlarla birlikte gitti (bkz. BAKIM.md, "Derleyici farkı").

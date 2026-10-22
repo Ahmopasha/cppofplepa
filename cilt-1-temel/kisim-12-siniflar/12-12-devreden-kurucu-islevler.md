@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "12 — Sınıflar"
 baslik: "12.12 Devreden kurucu işlevler"
 kaynak: "derleyen (ders notlarında yok)"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 12.12 Devreden kurucu işlevler
@@ -87,14 +87,17 @@ devreden kurucu işlevin gövdesinde hata oluşursa, **sonlandırıcı işlev ç
 Sıradan bir kurucu işlevde durum böyle değildir (bkz. Kısım 18.9); orada gövdede oluşan
 hata nesnenin hiç hayata gelmediği anlamına gelir.
 
-**Devretme döngüsü kurmayın.** İki kurucu işlev birbirine devrederse program sonsuz
-özyinelemeye girer. Derleyici bunu yakalamak zorunda değildir.
+**Devretme döngüsü kurmayın.** Bir kurucu işlev doğrudan ya da dolaylı olarak kendine
+devrederse (örneğin iki kurucu işlevin birbirine devretmesi), bu durum
+**derleyicinin bildirmek zorunda olmadığı hata** *(ill-formed, no diagnostic required)*
+sayılır.
 
+<!-- kod: atla -->
 ```cpp
 class Bozuk {
 public:
     Bozuk(int)    : Bozuk{1.0} { }
-    Bozuk(double) : Bozuk{1}   { }      // tanımsız davranış
+    Bozuk(double) : Bozuk{1}   { }  // döngü — derleyicinin bildirmek zorunda olmadığı hata
 };
 ```
 
