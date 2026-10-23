@@ -87,8 +87,10 @@ C_BASLIKLARI = ["stdio.h", "stdlib.h", "string.h", "stdbool.h"]
 # Standart kütüphanenin derleyiciye göre eksik kalan parçaları. Bu mesajlarla derlenmeyen
 # blok kitabın değil derleyicinin sorunudur; ayrı listelenir ve sorun sayılmaz.
 BILINEN_EKSIKLER = [
-    (r"'generator' file not found|generator: No such file",
+    (r"'generator' file not found|generator: No such file|no template named 'generator' in namespace 'std'",
      "std::generator (C++23) bu standart kütüphanede yok"),
+    (r"no member named 'hardware_(destructive|constructive)_interference_size' in namespace 'std'",
+     "std::hardware_destructive_interference_size (C++17) bu standart kütüphanede yok"),
     (r"no member named '(par|par_unseq|seq|unseq)' in namespace 'std::execution'",
      "paralel algoritmalar (C++17) bu standart kütüphanede varsayılan olarak kapalı"),
 ]
@@ -697,6 +699,33 @@ def dosyayi_denetle(der, bloklar, calistir=True):
     return sonuclar
 
 
+def derleyici_farklarini_isle(sonuclar):
+    """Bir blok bir derleyicide sorunlu, başka birinde sorunsuzsa sorunlu sayılmaz.
+
+    Kitap standardı anlatır; derleyicilerden biri standarttan sapıyorsa (ör. bir sentaks
+    hatasını bildirmiyorsa ya da kütüphanesi bir parçayı sunmuyorsa) bu, kitabın hatası
+    değildir. Bu bloklar "derleyici-farki" olarak ayrı listelenir ve standarda bakılarak
+    elle gözden geçirilir.
+    """
+    if len(sonuclar) < 2:
+        return
+    bloklara = {}
+    for ad, ss in sonuclar.items():
+        for b, s in ss:
+            bloklara.setdefault((b["yol"], b["satir"]), []).append((ad, s))
+    for kayitlar in bloklara.values():
+        sorunsuz = [ad for ad, s in kayitlar if not sorunlu_mu(s) and s["durum"] != "atlandi"]
+        if not sorunsuz:
+            continue
+        for ad, s in kayitlar:
+            if sorunlu_mu(s):
+                s["fark"] = sorun_ozeti(s)
+                s["fark_sorunsuz"] = sorunsuz
+                s["durum"] = "derleyici-farki"
+                s.pop("c", None)
+                s.pop("calisma", None)
+
+
 def sorunlu_mu(s):
     if s["durum"] in ("derlenmedi", "hata-satiri-sorunu"):
         return True
@@ -747,6 +776,16 @@ def rapor(derleyici_sonuclari, toplam):
                     ayr = {"uyari": c.get("uyari", ""), "zaman-asimi": f"{CALISMA_SURESI} sn'de bitmedi",
                            "derlenemedi": "sanitizer ile derlenemedi: " + " ".join(c.get("ayrinti", []))}[c["durum"]]
                 satirlar.append(f"| `{b['yol']}` | {b['satir']} | {durum} | {hucre(ayr)} |")
+            satirlar.append("")
+        farkli = [(b, s) for b, s in sonuclar if s["durum"] == "derleyici-farki"]
+        if farkli:
+            satirlar += ["### Derleyiciler arasında fark", "",
+                         "Bu bloklar bu derleyicide sorunlu, başka bir derleyicide sorunsuz. Kitap "
+                         "standardı anlatır; hangi derleyicinin standarttan saptığı standarda bakılarak "
+                         "gözden geçirilmelidir.", "",
+                         "| Dosya | Satır | Bu derleyicide | Sorunsuz olduğu derleyici |", "|---|---|---|---|"]
+            satirlar += [f"| `{b['yol']}` | {b['satir']} | {hucre(s['fark'])} | {', '.join(s['fark_sorunsuz'])} |"
+                         for b, s in farkli]
             satirlar.append("")
         eksik = [(b, s) for b, s in sonuclar if s["durum"] == "derleyici-eksigi"]
         if eksik:
@@ -843,6 +882,7 @@ def main():
                          for bl in dosyalara.values()]
                 sonuclar[k] = [x for i in isler for x in i.result()]
 
+    derleyici_farklarini_isle(sonuclar)
     os.makedirs(arg.cikti, exist_ok=True)
     with open(os.path.join(arg.cikti, "kod_denetimi.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(rapor(sonuclar, len(bloklar)))
@@ -860,6 +900,9 @@ def main():
         # İş günlükleri ve özet yalnızca oturum açınca görünür; annotation'lar herkese açıktır.
         for ad, ss in sonuclar.items():
             for b, s in ss:
+                if s["durum"] == "derleyici-farki":
+                    ileti = f"{os.path.basename(ad)} (başka derleyicide sorunsuz): {s['fark']}"
+                    print(f"::warning file={b['yol']},line={b['satir']}::{ileti[:900]}")
                 if sorunlu_mu(s):
                     ileti = f"{os.path.basename(ad)}: {sorun_ozeti(s)}".replace("%", "%25").replace("\n", " ")
                     print(f"::error file={b['yol']},line={b['satir']}::{ileti[:900]}")
