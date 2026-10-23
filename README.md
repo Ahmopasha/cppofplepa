@@ -7,6 +7,8 @@ dosyası** olacak biçimde tutulur; ciltler ve PDF bu dosyalardan derlenir.
 **Kitabı okumak için:** PDF, Leanpub'da ücretsizdir: <https://leanpub.com/cppofplepa>.
 Her sürümün PDF'i ayrıca bu deponun [Releases](https://github.com/Ahmopasha/cppofplepa/releases)
 sayfasında bulunur.
+Kitap, [free-programming-books](https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-tr.md#cpp)
+listesinin Türkçe C++ bölümünde de yer alır.
 
 ---
 

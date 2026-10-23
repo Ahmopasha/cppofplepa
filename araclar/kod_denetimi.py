@@ -856,7 +856,26 @@ def main():
         print(f"{ad}: {len(ss)} blok — " + ", ".join(f"{k} {v}" for k, v in sorted(say.items()))
               + f"; sorunlu {n}")
     print("Rapor: " + os.path.relpath(os.path.join(arg.cikti, "kod_denetimi.md"), KOK))
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        # İş günlükleri ve özet yalnızca oturum açınca görünür; annotation'lar herkese açıktır.
+        for ad, ss in sonuclar.items():
+            for b, s in ss:
+                if sorunlu_mu(s):
+                    ileti = f"{os.path.basename(ad)}: {sorun_ozeti(s)}".replace("%", "%25").replace("\n", " ")
+                    print(f"::error file={b['yol']},line={b['satir']}::{ileti[:900]}")
     sys.exit(1 if arg.kati and sorun else 0)
+
+
+def sorun_ozeti(s):
+    """Sorunlu bir bloğun tek satırlık açıklaması."""
+    if s["durum"] == "derlenmedi":
+        return f"derlenmedi ({s['kip']}): {s['hatalar'][0][1]}"
+    if s["durum"] == "hata-satiri-sorunu":
+        return "hata satırı derlendi: " + "; ".join(f"{x} → {m}" for x, m in s["bozmayanlar"])
+    if s.get("c", "gecti") != "gecti":
+        return s["c"]
+    c = s.get("calisma") or {}
+    return f"çalıştırma: {c.get('uyari') or c.get('durum')} {' '.join(c.get('ayrinti', []))}".strip()
 
 
 if __name__ == "__main__":
