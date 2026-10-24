@@ -4,6 +4,25 @@
 
 ### Düzeltmeler
 
+- Cilt II Kısım 17 (Aşama 2 taramasının ilk kısmı; iddia tablosu
+  `tarama/2026-10/cilt-2-kisim-17.md`):
+  - 17.1: `operator new`'ün `malloc`'tan "farkı yoktur" deniyordu; new handler döngüsü,
+    `bad_alloc` ve değiştirilebilirlik farkları yazıldı. `delete`'in bırakma işlevi seçimi
+    standarda göre anlatıldı.
+  - 17.2: Yalnızca `operator new` yüklendiğinde global `operator delete` çağrılır
+    ("serbest bırakılamaz" deniyordu); sınıf düzeyindeki boyutlu `operator delete`
+    C++14'ten önce de vardı; iki biçim birlikteyse boyutsuz olan seçilir. Örnekteki
+    `operator new` artık `bad_alloc` gönderiyor; gerçekleme anlatan "sistem çağrısı"
+    cümlesi silindi.
+  - 17.5: Dinamik ilk değer vermenin `main`'den önce yapılması gerçeklemeye bağlı
+    (ertelenebilir) olarak yazıldı; aynı çeviri birimindeki sıra "tanım sırası" oldu ve
+    sırasız/kısmen sıralı istisnaları eklendi; "derleme zamanında dosyaya yazılır" ve
+    "derleyici kilit ekler" gibi gerçekleme anlatımları standardın ifadeleriyle değişti.
+  - 17.7: Ayırıcının asgari arayüzü tamamlandı (`==`, dönüştüren kurucu, kopyalama/taşıma,
+    hata göndermeme); `rebind` varsayılanının koşulu yazıldı.
+  - 17.8: `alignof` değerleri, sınıf hizalaması, `max_align_t` ve genişletilmiş hizalama
+    standarda göre düzeltildi.
+  - Terim sözlüğüne altı terim eklendi.
 - Cilt I 23.7: `std::remove` için "silinecek elemanları sona iter" deniyordu. Doğrusu,
   silinmeyecek elemanları başa kaydırması; kabın boyutu değişmez ve mantıksal sondan
   itibaren elemanların değerine güvenilmez. Gerekçe için Cilt II 2.5'e atıf eklendi;

@@ -170,6 +170,12 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | spurious wakeup | yalancı uyanma | Cilt II 15.4 |
 | sequential consistency | sıralı tutarlılık | Cilt II 15.1 |
 | false sharing | yanlış paylaşım | Cilt II 17.8 |
+| constant initialization | sabit ilk değer verme | Cilt II 17.5 |
+| zero-initialization | sıfırla ilk değer verme | Cilt II 17.5 |
+| odr-use | ODR kullanımı | Cilt II 17.5 |
+| ordered / partially-ordered / unordered initialization | sıralı / kısmen sıralı / sırasız | Cilt II 17.5 |
+| interface dependency | arayüz bağımlılığı | Cilt II 17.5 |
+| extended alignment | genişletilmiş hizalama | Cilt II 17.8 |
 | coroutine | eşyordam | Cilt II 9.1 |
 | awaitable | beklenebilir | Cilt II 9.5 |
 | immediate function | ivedi işlev | Cilt II 18.3 |

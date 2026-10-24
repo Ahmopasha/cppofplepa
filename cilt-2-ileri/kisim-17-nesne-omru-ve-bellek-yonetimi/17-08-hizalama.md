@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "17 — Nesne Ömrü ve Bellek Yönetimi"
 baslik: "17.8 Hizalama"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 17.8 Hizalama
@@ -15,20 +15,25 @@ Her türün, nesnelerinin bellekte hangi adreslerde durabileceğini belirleyen b
 
 ```cpp
 alignof(char);        // 1
-alignof(int);         // genellikle 4
-alignof(double);      // genellikle 8
+alignof(int);         // gerçeklemeye bağlı
+alignof(double);      // gerçeklemeye bağlı
 ```
 
-Bir sınıfın hizalaması, en büyük hizalamalı veri elemanının hizalamasıdır. Derleyici,
-elemanlar arasına gerektiğinde **dolgu** *(padding)* ekler; bu yüzden `sizeof`, elemanların
-boyutları toplamından büyük olabilir.
+Bir sınıfın hizalaması, en az, en katı hizalamalı statik olmayan veri elemanınınki
+kadardır. Bit alanları ve referans türündeki elemanlar bu alt sınırın dışındadır: bit
+alanlarının hizalaması gerçeklemeye bağlıdır, bir referansın yer kaplayıp kaplamadığı ise
+belirtilmemiştir. Derleyici, elemanlar arasına gerektiğinde **dolgu** *(padding)* ekler;
+bu yüzden `sizeof`, elemanların boyutları toplamından büyük olabilir.
 
 `alignas` niteleyicisi, hizalamayı artırmak için kullanılır:
 
 ```cpp
 alignas(16) int dizi[4];              // 16 baytlık sınıra hizalı
-alignas(std::max_align_t) char t[64]; // her tür için uygun hizalama
+alignas(std::max_align_t) char t[64]; // her skaler tür için uygun hizalama
 ```
+
+16, `alignof(std::max_align_t)`'den büyükse bir **genişletilmiş hizalama**
+*(extended alignment)* olur; desteklenip desteklenmediği gerçeklemeye bağlıdır.
 
 Yalnızca **artırabilirsiniz**; türün doğal hizalamasından küçük bir değer vermek sentaks
 hatasıdır.

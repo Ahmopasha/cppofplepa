@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "17 — Nesne Ömrü ve Bellek Yönetimi"
 baslik: "17.2 Sınıf düzeyinde yükleme"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 17.2 Sınıf düzeyinde yükleme
@@ -16,7 +16,9 @@ public:
     static void* operator new(std::size_t n)
     {
         std::cout << n << " bayt isteniyor\n";
-        return std::malloc(n);
+        if (void* p = std::malloc(n))
+            return p;
+        throw std::bad_alloc{};
     }
 
     static void operator delete(void* p) noexcept
@@ -28,15 +30,18 @@ public:
 
 Üç nokta önemlidir.
 
-**Bu işlevler örtülü olarak `static`'tir.** `static` yazmasanız da öyledirler; nesne
-henüz yokken çağrıldıkları için `this` göstericileri olamaz.
+**Bu işlevler örtülü olarak `static`'tir.** `static` yazmasanız da öyledirler;
+`operator new` nesne henüz yokken, `operator delete` ise nesne yok edildikten sonra
+çağrıldığı için `this` göstericileri olamaz.
 
 **İkisi eşleştirilmelidir.** Yalnızca `operator new` yükleyip `operator delete`
-yüklemezseniz, kurucu işlev hata gönderdiğinde ayrılan bellek serbest bırakılamaz.
+yüklemezseniz, hem `delete` ifadesi hem de kurucu işlev hata gönderdiğinde yapılan
+temizlik global `operator delete`'i çağırır. Örnekteki gibi bellek `malloc` ile ayrılmışsa
+bu, eşleşmeyen ayırma ve bırakmadır; tanımsız davranıştır.
 
 **Dizi biçimleri ayrıdır.** `operator new[]` ve `operator delete[]` ayrıca yüklenmelidir.
 
-C++14, boyut bilgisini alan sonlandırma biçimini ekledi:
+Sınıf düzeyindeki `operator delete`, boyut bilgisini ikinci parametre olarak da alabilir:
 
 <!-- kod-baglam
 class Myclass {
@@ -48,8 +53,9 @@ public:
 static void operator delete(void* p, std::size_t n) noexcept;
 ```
 
-Bu biçim varsa tercih edilir; ayırıcının boyutu ayrıca saklamasına gerek kalmaz.
+Sınıfta yalnızca bu biçim varsa `delete` ifadesi nesnenin boyutunu ona geçirir;
+ayırıcının boyutu ayrıca saklamasına gerek kalmaz. İki biçim birlikte bildirilirse
+boyutsuz olan seçilir.
 
-Kullanım alanı, çok sayıda küçük nesne üreten sınıflarda havuz ayırıcı kurmaktır. Genel
-amaçlı ayırıcı her çağrıda sistem çağrısına yaklaşır; havuz ayırıcı bir kez büyük blok
-alıp parçalar.
+Kullanım alanı, çok sayıda küçük nesne üreten sınıflarda havuz ayırıcı kurmaktır. Havuz
+ayırıcı bir kez büyük bir blok alıp onu aynı boyutlu parçalara böler.

@@ -6,10 +6,18 @@ aykırı), **eksik** (doğru ama standardın söylediğinden dar ya da geniş), 
 çalışma taslağının (eel.is/c++draft) bölüm adlarıyla verilir; C++23 metninde aynı
 bölümlerdir. 17.6 ve 17.9 Ekim 2026'da panelden geçtiği için bu turda taranmadı.
 
+**İşlem (2026-10):** "düzeltilmeli", "eksik" ve "gerçekleme" sonuçlu bütün iddialar
+düzeltildi; metinler AI hakem panelinden geçti (`~/ai-panel/calismalar/2026-10-22_c2-17-tarama`,
+beş tur). Panel ayrıca şunları ekletti: 17.2 örneğindeki `operator new` artık başarısızlıkta
+`bad_alloc` gönderiyor; 17.2'deki "sistem çağrısı" gerçekleme cümlesi silindi; ayırıcının
+asgari arayüzüne kopyalama/taşıma ve hata göndermeme şartı eklendi; sabit ilk değer verme,
+sıfırla ilk değer verme, ODR kullanımı, sıralı/kısmen sıralı/sırasız ilk değer verme ve
+genişletilmiş hizalama terimleri tanıtıldı.
+
 | # | Yer | İddia | Kaynak | Sonuç |
 |---|---|---|---|---|
 | 1 | 17.1 | `operator new`'ün `malloc`'tan farkı yoktur, değiştirilebilir olması dışında | [new.delete.single]: başarısızlıkta `bad_alloc` gönderir ve önce new handler'ı çağırır; [c.malloc]: `malloc` başarısızlıkta boş gösterici döndürür | düzeltilmeli |
-| 2 | 17.1 | `delete` ifadesi sonlandırıcıdan sonra `operator delete(void*)` çağırır | [expr.delete]/9.6: global işlevlerde boyutlu biçimin seçilip seçilmeyeceği belirtilmemiştir | eksik |
+| 2 | 17.1 | `delete` ifadesi sonlandırıcıdan sonra `operator delete(void*)` çağırır | [expr.delete]/9.5–9.6: global işlevlerde tür tamsa boyutlu biçim seçilir (dizi silmede trivial olmayan sonlandırıcılı sınıf türü şartıyla); kalan durumlarda seçim belirtilmemiştir | eksik |
 | 3 | 17.2 | Sınıf düzeyindeki işlevler örtülü olarak `static`'tir | [class.free]/1 | doğru |
 | 4 | 17.2 | Yalnızca `operator new` yüklenirse, kurucu işlev hata gönderdiğinde bellek serbest bırakılamaz | [expr.new]/27–28: ad önce sınıf kapsamında, bulunamazsa global kapsamda aranır ve bulunan işlev çağrılır; yani global `operator delete` çağrılır. Örnekteki `malloc` belleği için bu, eşleşmeyen ayırma/bırakma demektir | düzeltilmeli (test 1) |
 | 5 | 17.2 | Dizi biçimleri ayrı yüklenmelidir | [class.free] | doğru |
