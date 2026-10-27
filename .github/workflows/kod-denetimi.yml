@@ -6,9 +6,9 @@ name: Kod denetimi
 on:
   push:
     branches: [main]
-    paths: ["cilt-*/**", "araclar/**", ".github/workflows/kod-denetimi.yml"]
+    paths: ["cilt-*/**", "tarama/**", "araclar/**", ".github/workflows/kod-denetimi.yml"]
   pull_request:
-    paths: ["cilt-*/**", "araclar/**"]
+    paths: ["cilt-*/**", "tarama/**", "araclar/**", ".github/workflows/kod-denetimi.yml"]
   workflow_dispatch:
 
 permissions:
@@ -28,6 +28,9 @@ jobs:
           sudo sysctl vm.mmap_rnd_bits=28
           g++-14 --version | head -1
           clang++-18 --version | head -1
+
+      - name: Araç testleri
+        run: python3 -m unittest discover -s araclar/testler
 
       - name: Kod denetimi
         run: python3 araclar/kod_denetimi.py --kati --derleyici g++-14 --derleyici clang++-18

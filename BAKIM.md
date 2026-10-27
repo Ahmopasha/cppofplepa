@@ -100,7 +100,18 @@ işlev gövdesine koyar, aynı dosyadaki önceki bloğu bağlam olarak kullanır
   "hata —" ile başlayan satırların tam o satırda hata verdiğini doğrular. Bilerek hata
   veren bir satırın yorumunu bu kalıplardan biriyle yazın.
 - `main()` içeren örnekleri sanitizer ile çalıştırır. Tanımsız davranış gösteren
-  örneğin yorumunda "tanımsız" sözcüğü geçmelidir.
+  örneğin yorumunda "tanımsız" sözcüğü geçmelidir. Tanımlı davranışlı örneğin 0 ile bitmesi
+  beklenir; başka bir kodla ya da bir sinyalle (ör. `std::terminate`, başarısız `assert`)
+  bitmesi gereken örnek bunu `cikis-N` ya da `cikis-sinyal` işaretiyle belirtir.
+- Birden çok derleyiciyle çalışırken (CI: GCC ve Clang) bir blok birinde derlenirken
+  sorunlu, öbüründe sorunsuzsa bu bir **derleyici farkıdır**. Fark, standarda bakılarak
+  `araclar/kod_denetimi.py` → `DERLEYICI_FARKI_ISTISNALARI`'na gerekçesiyle kaydedilmedikçe
+  sorun sayılır. Kayıt bloğun içerik özetine ve derleyicinin ana sürümüne bağlıdır (rapor
+  ikisini de yazar); kod ya da derleyici sürümü değişince kayıt geçersiz olur. Çalışma
+  zamanı bulguları (sanitizer, çıkış kodu, zaman aşımı) derleyici farkı sayılmaz.
+- `derle.py --kod` kod denetimi çalışamazsa (ör. derleyici yok) başarısız döner; `--kati`
+  ile sorunlu blok varsa da. Araçların kendi testleri: `python3 -m unittest discover -s
+  araclar/testler`.
 - `Myclass`, `v`, `s`, `Kesir` gibi tanıtılmadan kullanılan yer tutucu adları
   `araclar/kod_baglami.hpp`'den alır.
 
@@ -111,6 +122,8 @@ işaret konur. İşaretler kitabın derlenmiş metnine girmez:
 <!-- kod: atla -->                  sözde kod ya da tek başına anlamsız bir liste
 
 <!-- kod: c -->                     C ve C++ farkı örneği: blok C17 olarak da derlenir
+
+<!-- kod: cikis-sinyal -->           program bilerek bir sinyalle biter (cikis-3: 3 koduyla)
 
 <!-- kod-baglam
 class Yazi {

@@ -12,8 +12,9 @@ Kullanım (depo kökünden):
     python3 araclar/derle.py --gecissiz    geçiş paragrafları olmadan derle
     python3 araclar/derle.py --pdf         ayrıca PDF üret
     python3 araclar/derle.py --kati        uyarı varsa da başarısız say (otomatik denetim için)
-    python3 araclar/derle.py --kod         ayrıca kod örneklerini derle (araclar/kod_denetimi.py;
-                                           şimdilik yalnızca rapor, çıkış kodunu etkilemez)
+    python3 araclar/derle.py --kod         ayrıca kod örneklerini derle (araclar/kod_denetimi.py);
+                                           kod denetimi çalışamazsa (ör. derleyici yok) başarısız,
+                                           --kati ile sorunlu blok varsa da başarısız
 
 Çıktılar cikti/ klasörüne yazılır.
 """
@@ -564,7 +565,8 @@ def main():
     ap.add_argument("--kati", action="store_true",
                     help="uyarı varsa da hata koduyla çık (otomatik denetim için)")
     ap.add_argument("--kod", action="store_true",
-                    help="ayrıca kod örneklerini derle (yalnızca rapor; bkz. araclar/kod_denetimi.py)")
+                    help="ayrıca kod örneklerini derle (bkz. araclar/kod_denetimi.py); denetim çalışamazsa "
+                         "ya da --kati ile sorunlu blok varsa hata koduyla çık")
     ap.add_argument("--cikti", default=os.path.join(KOK, "cikti"),
                     help="çıktı klasörü (varsayılan: cikti/)")
     arg = ap.parse_args()
@@ -625,11 +627,16 @@ def main():
         print("UYARI:", u)
     for h in hatalar:
         print("HATA:", h)
+    kod_basarisiz = False
     if arg.kod:
         sys.stdout.flush()
-        subprocess.run([sys.executable, os.path.join(KOK, "araclar", "kod_denetimi.py"),
-                        "--cikti", arg.cikti])
-    sys.exit(1 if hatalar or (arg.kati and uyarilar) else 0)
+        r = subprocess.run([sys.executable, os.path.join(KOK, "araclar", "kod_denetimi.py"),
+                            "--cikti", arg.cikti, *(["--kati"] if arg.kati else [])])
+        # Katı değilken kod denetimi yalnızca çalışamadığında sıfırdan farklı döner.
+        if r.returncode != 0:
+            kod_basarisiz = True
+            print(f"HATA: kod denetimi basarisiz (cikis kodu {r.returncode})")
+    sys.exit(1 if hatalar or (arg.kati and uyarilar) or kod_basarisiz else 0)
 
 
 if __name__ == "__main__":

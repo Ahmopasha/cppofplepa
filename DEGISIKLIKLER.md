@@ -88,6 +88,17 @@
 
 ### Bakım
 
+- Kod denetiminin başarı sinyali sıkılaştırıldı (Kimi ve ChatGPT incelemeleri):
+  - `derle.py --kod`, kod denetimi çalışamazsa (ör. derleyici yok) başarısız döner ve
+    `--kati`'yi kod denetimine de aktarır; önceden sonuç ne olursa olsun 0 dönüyordu.
+  - Çalıştırılan örneğin çıkış kodu denetlenir: tanımlı davranışlı örnek 0 ile bitmelidir;
+    başka bir kod ya da sinyal bekleyen örnek `cikis-N`/`cikis-sinyal` işaretiyle belirtilir.
+  - Derleyici farkı artık kendiliğinden muaf değil: çalışma zamanı bulguları hiç muaf
+    tutulmaz; derleme farkı yalnızca bloğun özetine ve derleyici sürümüne bağlı gerekçeli
+    bir kayıtla geçer (`DERLEYICI_FARKI_ISTISNALARI`; Cilt II 17.6 ve Cilt II Kısım 18
+    taramasının iki farkı kaydedildi).
+  - Kod denetimi iş akışı `tarama/**` değişikliklerinde de çalışır; araç testleri
+    (`araclar/testler/`) iş akışında koşar.
 - Depo köküne yapay zekâ oturumları için `CLAUDE.md` eklendi.
 - Terim sözlüğüne "Kullanılmayan karşılıklar" bölümü eklendi; `derle.py` bu sözcükleri
   uyarır. Kitaptaki 11 "fonksiyon" "işlev" oldu (Cilt I 2.4.1, 2.4.4, 2.4.6 başlığı,

@@ -57,6 +57,7 @@ Yalnızca Python 3.8+ standart kütüphanesi kullanılır.
 """
 import argparse
 import concurrent.futures
+import hashlib
 import os
 import re
 import shutil
@@ -93,6 +94,22 @@ BILINEN_EKSIKLER = [
      "std::hardware_destructive_interference_size (C++17) bu standart kütüphanede yok"),
     (r"no member named '(par|par_unseq|seq|unseq)' in namespace 'std::execution'",
      "paralel algoritmalar (C++17) bu standart kütüphanede varsayılan olarak kapalı"),
+]
+
+# Bir derleyicide sorunlu, başka bir derleyicide sorunsuz derleme sonuçları. Fark ancak burada
+# kaydı varsa katı kapıdan geçer: kayıt bloğun içerik özetine (blok_ozeti) ve sorunlu çıkan
+# derleyicinin ana sürümüne (Derleyici.anahtar) bağlıdır. Kod ya da derleyici sürümü değişince
+# kayıt geçersiz olur ve fark yeniden incelenir. Çalışma zamanı bulguları burada muaf tutulamaz.
+DERLEYICI_FARKI_ISTISNALARI = [
+    {"yol": "cilt-2-ileri/kisim-17-nesne-omru-ve-bellek-yonetimi/17-06-omrun-uzatilmasinin-iki-istisnasi.md",
+     "ozet": "7b8da391b71c", "derleyici": "g++ 14",
+     "gerekce": "GCC, CWG 1696'yı ([class.base.init]/8: ilk değer verme listesinde referans elemana "
+                "geçici nesne bağlamak sentaks hatasıdır) teşhis etmiyor; Clang hata veriyor."},
+    {"yol": "tarama/2026-10/cilt-2-kisim-18.md",
+     "ozet": "f86c38f6de9b", "derleyici": "clang++ 18",
+     "gerekce": "Clang 18, C++23'te kaldırılan \"hiçbir zaman sabit ifade üretmeyen constexpr işlev\" "
+                "kuralını (P2448R2) hâlâ hata olarak uyguluyor; aynı blok static_assert ile sınanıyor "
+                "ve GCC 14'te geçiyor."},
 ]
 
 # Derleyicinin bir adı bulamadığını söyleyen mesajlar (Clang ve GCC).
@@ -431,6 +448,12 @@ class Derleyici:
     def ad(self):
         return os.path.basename(self.komut)
 
+    def anahtar(self):
+        """İstisna kayıtları için derleyici ailesi ve ana sürümü (ör. "g++ 14", "clang++ 18")."""
+        r = subprocess.run([self.komut, "-dumpversion"], capture_output=True, text=True, env=ORTAM)
+        aile = "clang++" if "clang" in self.ad() else "g++"
+        return f"{aile} {r.stdout.strip().split('.')[0]}"
+
     def onsoz_hazirla(self, std):
         """Önsözü bir kez ön derlenmiş başlığa çevirir; olmazsa düz dahil eder."""
         yol = os.path.join(self.gecici, f"onsoz-{std}.hpp")
@@ -684,6 +707,28 @@ def blogu_denetle(der, blok, oncekiler, kayit=None):
     return sonuc
 
 
+def blok_ozeti(blok):
+    """Bloğun bağlamı, işaretleri ve satırlarından türetilen kısa özet (istisna kayıtları için)."""
+    metin = "\n".join([blok["baglam"], " ".join(sorted(blok["isaretler"]))] + blok["satirlar"])
+    return hashlib.sha256(metin.encode("utf-8")).hexdigest()[:12]
+
+
+def beklenen_cikis(isaretler):
+    """Programın beklenen çıkışı: 0 (varsayılan), `cikis-N` işaretiyle N, `cikis-sinyal` ile
+    bir sinyalle sonlanma (ör. std::terminate ya da assert)."""
+    for i in isaretler:
+        if i == "cikis-sinyal":
+            return "sinyal"
+        m = re.fullmatch(r"cikis-(\d+)", i)
+        if m:
+            return int(m.group(1))
+    return 0
+
+
+def cikis_uygun(kod, beklenen):
+    return kod < 0 if beklenen == "sinyal" else kod == beklenen
+
+
 def dosyayi_denetle(der, bloklar, calistir=True):
     """Bir dosyanın blokları sırayla denetlenir; geçenler sonrakilere bağlam olabilir."""
     oncekiler, sonuclar = [], []
@@ -692,47 +737,69 @@ def dosyayi_denetle(der, bloklar, calistir=True):
         if calistir and s.get("program"):
             is_parcacigi = re.search(r"std::(j?thread|async)\b", s["program"]) is not None
             s["calisma"] = der.calistir(s["program"], b["std"], blok_adi(b), is_parcacigi)
-            s["calisma"]["beklenti"] = "tanımsız" if tanimsiz_mi(b) else "tanımlı"
+            c = s["calisma"]
+            c["beklenti"] = "tanımsız" if tanimsiz_mi(b) else "tanımlı"
+            c["beklenen_kod"] = beklenen_cikis(b["isaretler"])
+            if c["durum"] == "temiz" and not cikis_uygun(c["kod"], c["beklenen_kod"]):
+                # Sanitizer temiz ama program beklenen biçimde bitmedi: davranış doğrulanmadı.
+                c["durum"] = "beklenmeyen-cikis"
+                c["ayrinti"] = [f"çıkış kodu {c['kod']}, beklenen {c['beklenen_kod']}"]
         sonuclar.append((b, s))
         if s.get("temiz"):
             oncekiler.append(s["temiz"])
     return sonuclar
 
 
-def derleyici_farklarini_isle(sonuclar):
-    """Bir blok bir derleyicide sorunlu, başka birinde sorunsuzsa sorunlu sayılmaz.
+def derleme_sorunu_mu(s):
+    """Sorun derleme zamanında mı (derlenmedi, hata satırı, C)? Çalışma zamanı bulguları değil."""
+    return s["durum"] in ("derlenmedi", "hata-satiri-sorunu") or s.get("c", "gecti") != "gecti"
+
+
+def derleyici_farklarini_isle(sonuclar, anahtarlar=None, istisnalar=None):
+    """Bir blok bir derleyicide derleme sorunu verip başka birinde sorunsuzsa "derleyici-farki" olur.
 
     Kitap standardı anlatır; derleyicilerden biri standarttan sapıyorsa (ör. bir sentaks
     hatasını bildirmiyorsa ya da kütüphanesi bir parçayı sunmuyorsa) bu, kitabın hatası
-    değildir. Bu bloklar "derleyici-farki" olarak ayrı listelenir ve standarda bakılarak
-    elle gözden geçirilir.
+    olmayabilir. Ama bunu standarda bakan biri karar verir: fark, DERLEYICI_FARKI_ISTISNALARI'nda
+    bu bloğun özetine ve bu derleyicinin sürümüne bağlı gerekçeli bir kayıt yoksa sorunlu
+    kalır. Çalışma zamanı bulguları (sanitizer, çıkış kodu, zaman aşımı) hiçbir zaman fark
+    sayılmaz: başka bir derleyicinin temiz çalışması onları kapatmaz.
     """
     if len(sonuclar) < 2:
         return
+    anahtarlar = anahtarlar or {}
+    istisnalar = DERLEYICI_FARKI_ISTISNALARI if istisnalar is None else istisnalar
     bloklara = {}
     for ad, ss in sonuclar.items():
         for b, s in ss:
-            bloklara.setdefault((b["yol"], b["satir"]), []).append((ad, s))
+            bloklara.setdefault((b["yol"], b["satir"]), []).append((ad, b, s))
     for kayitlar in bloklara.values():
-        sorunsuz = [ad for ad, s in kayitlar if not sorunlu_mu(s) and s["durum"] != "atlandi"]
+        sorunsuz = [ad for ad, _, s in kayitlar if not sorunlu_mu(s) and s["durum"] != "atlandi"]
         if not sorunsuz:
             continue
-        for ad, s in kayitlar:
-            if sorunlu_mu(s):
+        for ad, b, s in kayitlar:
+            if sorunlu_mu(s) and derleme_sorunu_mu(s):
+                ozet, anahtar = blok_ozeti(b), anahtarlar.get(ad, os.path.basename(ad))
+                kayit = next((i for i in istisnalar if i["yol"] == b["yol"] and i["ozet"] == ozet
+                              and i["derleyici"] == anahtar), None)
                 s["fark"] = sorun_ozeti(s)
                 s["fark_sorunsuz"] = sorunsuz
+                s["fark_anahtar"] = {"ozet": ozet, "derleyici": anahtar}
+                s["istisna"] = kayit["gerekce"] if kayit else None
                 s["durum"] = "derleyici-farki"
                 s.pop("c", None)
-                s.pop("calisma", None)
 
 
 def sorunlu_mu(s):
+    if s["durum"] == "derleyici-farki":
+        return not s.get("istisna")       # gerekçeli kaydı olmayan fark incelenmeden geçmez
     if s["durum"] in ("derlenmedi", "hata-satiri-sorunu"):
         return True
     if s.get("c", "gecti") != "gecti":
         return True
     c = s.get("calisma")
-    return bool(c) and c["beklenti"] == "tanımlı" and c["durum"] in ("uyari", "zaman-asimi", "derlenemedi")
+    return bool(c) and c["beklenti"] == "tanımlı" and c["durum"] in ("uyari", "zaman-asimi", "derlenemedi",
+                                                                      "beklenmeyen-cikis")
 
 
 # ---------------------------------------------------------------------------
@@ -768,24 +835,30 @@ def rapor(derleyici_sonuclari, toplam):
                 elif s["durum"] == "hata-satiri-sorunu":
                     durum = "hata satırı derlendi"
                     ayr = "; ".join(f"`{x}` → {m}" for x, m in s["bozmayanlar"])
+                elif s["durum"] == "derleyici-farki":
+                    durum = "derleyici farkı (kayıtsız)"
+                    ayr = (f"{s['fark']} — sorunsuz: {', '.join(s['fark_sorunsuz'])}; istisna için "
+                           f"ozet {s['fark_anahtar']['ozet']}, derleyici {s['fark_anahtar']['derleyici']}")
                 elif s.get("c", "gecti") != "gecti":
                     durum, ayr = "C", s["c"]
                 else:
                     c = s["calisma"]
                     durum = "çalıştırma"
                     ayr = {"uyari": c.get("uyari", ""), "zaman-asimi": f"{CALISMA_SURESI} sn'de bitmedi",
-                           "derlenemedi": "sanitizer ile derlenemedi: " + " ".join(c.get("ayrinti", []))}[c["durum"]]
+                           "derlenemedi": "sanitizer ile derlenemedi: " + " ".join(c.get("ayrinti", [])),
+                           "beklenmeyen-cikis": " ".join(c.get("ayrinti", []))}[c["durum"]]
                 satirlar.append(f"| `{b['yol']}` | {b['satir']} | {durum} | {hucre(ayr)} |")
             satirlar.append("")
-        farkli = [(b, s) for b, s in sonuclar if s["durum"] == "derleyici-farki"]
+        farkli = [(b, s) for b, s in sonuclar if s["durum"] == "derleyici-farki" and s.get("istisna")]
         if farkli:
-            satirlar += ["### Derleyiciler arasında fark", "",
-                         "Bu bloklar bu derleyicide sorunlu, başka bir derleyicide sorunsuz. Kitap "
-                         "standardı anlatır; hangi derleyicinin standarttan saptığı standarda bakılarak "
-                         "gözden geçirilmelidir.", "",
-                         "| Dosya | Satır | Bu derleyicide | Sorunsuz olduğu derleyici |", "|---|---|---|---|"]
-            satirlar += [f"| `{b['yol']}` | {b['satir']} | {hucre(s['fark'])} | {', '.join(s['fark_sorunsuz'])} |"
-                         for b, s in farkli]
+            satirlar += ["### Derleyiciler arasında fark (kayıtlı istisna)", "",
+                         "Bu bloklar bu derleyicide derlenirken sorunlu, başka bir derleyicide sorunsuz. "
+                         "Standarda bakılarak verilen gerekçe `DERLEYICI_FARKI_ISTISNALARI`'nda kayıtlı; "
+                         "kod ya da derleyici sürümü değişirse kayıt geçersiz olur.", "",
+                         "| Dosya | Satır | Bu derleyicide | Sorunsuz olduğu derleyici | Gerekçe |",
+                         "|---|---|---|---|---|"]
+            satirlar += [f"| `{b['yol']}` | {b['satir']} | {hucre(s['fark'])} | {', '.join(s['fark_sorunsuz'])} "
+                         f"| {hucre(s['istisna'])} |" for b, s in farkli]
             satirlar.append("")
         eksik = [(b, s) for b, s in sonuclar if s["durum"] == "derleyici-eksigi"]
         if eksik:
@@ -798,6 +871,8 @@ def rapor(derleyici_sonuclari, toplam):
         if calisan:
             satirlar += ["### Çalıştırılan örnekler", "",
                          "Beklenti, örneğin yorumlarında \"tanımsız\" geçip geçmediğine göre belirlenir. "
+                         "Tanımlı davranışlı örneğin 0 ile (ya da `cikis-N`/`cikis-sinyal` işaretindeki "
+                         "biçimde) bitmesi beklenir. "
                          "Tanımsız davranışın her türünü sanitizer yakalamaz (ör. ilk değer verilmemiş "
                          "değişkeni okumak); \"temiz\" sonucu tanımlı davranışın kanıtı değildir.", "",
                          "| Dosya | Satır | Beklenti | Sanitizer | Sonuç | Çıktı |", "|---|---|---|---|---|---|"]
@@ -867,11 +942,12 @@ def main():
     for b in bloklar:
         dosyalara.setdefault(b["yol"], []).append(b)
 
-    sonuclar = {}
+    sonuclar, anahtarlar = {}, {}
     with tempfile.TemporaryDirectory(prefix="kod-denetimi-") as gecici:
         for k in komutlar:
             der = Derleyici(shutil.which(k), os.path.join(gecici, os.path.basename(k)))
             os.makedirs(der.gecici)
+            anahtarlar[k] = der.anahtar()
             for std in sorted(set(CILT_STANDARDI.values())):
                 der.onsoz_hazirla(std)
             if arg.goster:
@@ -882,7 +958,7 @@ def main():
                          for bl in dosyalara.values()]
                 sonuclar[k] = [x for i in isler for x in i.result()]
 
-    derleyici_farklarini_isle(sonuclar)
+    derleyici_farklarini_isle(sonuclar, anahtarlar)
     os.makedirs(arg.cikti, exist_ok=True)
     with open(os.path.join(arg.cikti, "kod_denetimi.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(rapor(sonuclar, len(bloklar)))
@@ -900,8 +976,8 @@ def main():
         # İş günlükleri ve özet yalnızca oturum açınca görünür; annotation'lar herkese açıktır.
         for ad, ss in sonuclar.items():
             for b, s in ss:
-                if s["durum"] == "derleyici-farki":
-                    ileti = f"{os.path.basename(ad)} (başka derleyicide sorunsuz): {s['fark']}"
+                if s["durum"] == "derleyici-farki" and s.get("istisna"):
+                    ileti = f"{os.path.basename(ad)} (kayıtlı derleyici farkı): {s['fark']}"
                     print(f"::warning file={b['yol']},line={b['satir']}::{ileti[:900]}")
                 if sorunlu_mu(s):
                     ileti = f"{os.path.basename(ad)}: {sorun_ozeti(s)}".replace("%", "%25").replace("\n", " ")
@@ -911,6 +987,9 @@ def main():
 
 def sorun_ozeti(s):
     """Sorunlu bir bloğun tek satırlık açıklaması."""
+    if s["durum"] == "derleyici-farki":
+        return (f"derleyici farkı, istisna kaydı yok (ozet {s['fark_anahtar']['ozet']}, "
+                f"{s['fark_anahtar']['derleyici']}): {s['fark']}")
     if s["durum"] == "derlenmedi":
         return f"derlenmedi ({s['kip']}): {s['hatalar'][0][1]}"
     if s["durum"] == "hata-satiri-sorunu":
