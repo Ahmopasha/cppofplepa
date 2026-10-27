@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "1 — Değer Kategorileri ve Referans Semantiği"
 baslik: "1.1.1 Modeli üreten iki eksen"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ### 1.1.1 Modeli üreten iki eksen
@@ -11,8 +11,9 @@ son_kontrol: "2026-09 (C++23)"
 Cilt I'de üç kategori operasyonel olarak sıralanmıştı. Bu üçlü keyfi değildir; iki
 ikili sorunun kesişiminden doğar:
 
-- İfadenin bir **kimliği** var mı? Bellekte bir yere karşılık geliyor mu, yani `&`
-  operatörünün operandı olabiliyor mu? Bir isimle temsil edilmesi şart değildir.
+- İfadenin bir **kimliği** var mı? Yani belirli bir nesneye ya da işleve karşılık geliyor
+  mu? Bir isimle temsil edilmesi şart değildir. L-Value'ların adresi yerleşik `&`
+  işleciyle alınabilir; X-Value'ların kimliği olduğu hâlde adresi alınamaz.
 - İfadenin **kaynakları devralınabilir** mi?
 
 |  | Kimliği var | Kimliği yok |

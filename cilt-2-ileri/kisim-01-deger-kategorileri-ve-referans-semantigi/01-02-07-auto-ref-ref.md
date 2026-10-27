@@ -3,13 +3,15 @@ cilt: "II — İleri"
 kisim: "1 — Değer Kategorileri ve Referans Semantiği"
 baslik: "1.2.7 `auto&&`"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ### 1.2.7 `auto&&`
 
-`auto&&` de forwarding reference'tır ve aynı çıkarım kurallarına uyar. Pratik sonucu,
-**her şeye bağlanabilen** bir referans elde etmenizdir.
+`auto&&` de forwarding reference'tır ve küme parantezli ilk değer listeleri (bkz. Cilt I,
+Kısım 4.5) dışında aynı çıkarım kurallarına uyar. Pratik sonucu,
+L-Value ya da R-Value, `const` olsun olmasın, hemen her ifadeye bağlanabilen bir referans
+elde etmenizdir.
 
 ```cpp
 auto&& r1 = 31;          // int&&

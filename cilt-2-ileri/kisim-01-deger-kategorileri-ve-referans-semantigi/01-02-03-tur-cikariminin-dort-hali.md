@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "1 — Değer Kategorileri ve Referans Semantiği"
 baslik: "1.2.3 Tür çıkarımının dört hâli"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ### 1.2.3 Tür çıkarımının dört hâli
@@ -26,5 +26,6 @@ void foo(T&& arg);
 Tablodan okunacak kural: **argüman L-Value ise `T` referans türüne çıkarılır, R-Value
 ise referanssız çıkarılır.** Çökme kuralı gerisini halleder.
 
-Sonuç olarak `T`'nin kendisi iki bilgiyi birden taşır: argümanın **değer kategorisini**
-ve **`const`luğunu**. Bölümün tamamı bu tek gözlemin üzerine kuruludur.
+Sonuç olarak `T`'nin kendisi iki bilgiyi birden taşır: argümanın **L-Value mı R-Value mi**
+olduğunu ve **cv nitelemesini** (`const`/`volatile`). PR-Value ile X-Value ayrımı
+korunmaz; ikisi de aynı `T`'yi verir. Bölümün tamamı bu tek gözlemin üzerine kuruludur.

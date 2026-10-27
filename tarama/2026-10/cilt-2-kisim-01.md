@@ -9,6 +9,15 @@ kullanıldı. Tasarım tavsiyeleri (1.1.6'daki "güvenli varsayılan" gibi) norm
 için tabloya alınmadı. Testler `araclar/kod_denetimi.py` ile `-std=c++23` altında derlendi
 ve çalıştırıldı.
 
+**İşlem (2026-10):** "düzeltilmeli" ve "eksik" sonuçlu iddialar düzeltildi; iddia 15
+(yapılandırılmış bağlamaların `decltype` sonucu) ve iddia 26'nın bit alanı kısmı, dayandıkları
+kavramlar kitapta anlatılmadığı için yazar kararıyla dışarıda kaldı. Metinler AI hakem
+panelinden geçti (`~/ai-panel/calismalar/2026-10-25_c2-01-tarama`, beş tur). Panel ayrıca
+şunları ekletti: statik olmayan üye işlev istisnası (1.1.3), üçlü operatörde dönüşüm
+yolları (1.1.3), `void` türünden PR-Value'lar (1.1.5), C++20'de parametrelerin `throw`'da
+kapsama girmesi ve `co_return` için Kısım 9.2 atfı (1.1.2), ilk forwarding reference
+örneğine `baz` ve `Kap` karşı örnekleri (1.2.1).
+
 | # | Yer | İddia | Kaynak | Sonuç |
 |---|---|---|---|---|
 | 1 | 1.1.1 | "Kimlik" = bellekte bir yere karşılık gelmek, "yani `&` operatörünün operandı olabilmek" | [basic.lval]/1.1: glvalue, değerlendirilmesi bir nesnenin ya da işlevin kimliğini belirleyen ifadedir; [expr.unary.op]/3: `&`'nin operandı **L-Value** olmalıdır. X-Value'nun kimliği vardır (kitabın kendi tablosu) ama adresi alınamaz | düzeltilmeli (test 1) |

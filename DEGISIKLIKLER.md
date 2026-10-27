@@ -4,6 +4,23 @@
 
 ### Düzeltmeler
 
+- Cilt II Kısım 1 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-2-kisim-01.md`):
+  - 1.1.1: "Kimlik" `&`'nin operandı olabilmekle tanımlanıyordu; X-Value'nun kimliği olduğu
+    hâlde adresinin alınamadığı yazıldı.
+  - 1.1.2, 1.2.5: "İsimler L-Value'dur" değişken adlarıyla sınırlandı; `return`, `co_return`
+    ve `throw` istisnası (taşınmaya uygun adlar, C++23'te X-Value) ve Standart Notu — C++23
+    kutusu eklendi.
+  - 1.1.3: İşlev isimleri için "her zaman" çıktı, statik olmayan üye işlev istisnası
+    eklendi; üçlü operatörün kategori kuralı [expr.cond]'a göre yeniden yazıldı.
+  - 1.1.5: PR-Value'nun sonuç nesnesi ve materialization durumları standarda göre
+    anlatıldı ("materialization olmazsa nesne yoktur" yanlıştı); Standart Notu uyduruldu.
+  - 1.1.7: `decltype((e))` iç parantezinin gerekçesi düzeltildi.
+  - 1.2.1: Başlık "Üçüncü referans türü" iken "`T&&`'nin şablondaki anlamı" oldu;
+    forwarding reference ayrı bir referans türü değil, çıkarım kuralıdır.
+  - 1.2.3, 1.2.4, 1.2.7: `T`'nin taşıdığı bilgi, `volatile` R-Value istisnası ve küme
+    parantezli liste istisnası düzeltildi.
+  - 1.2.5: Mükemmel gönderimin "hiçbir fark bırakmadığı" iddiası kaldırıldı; kalan farklar
+    (PR-Value'nun X-Value olarak iletilmesi, `0`, küme listeleri) yazıldı.
 - Cilt II Kısım 17 (Aşama 2 taramasının ilk kısmı; iddia tablosu
   `tarama/2026-10/cilt-2-kisim-17.md`):
   - 17.1: `operator new`'ün `malloc`'tan "farkı yoktur" deniyordu; new handler döngüsü,

@@ -28,8 +28,9 @@ constexpr const char* p<T&&> = "X-Value";
 ```
 
 `#e` önişlemcinin *stringizing* operatörüdür, argümanı olduğu gibi yazıya çevirir.
-`decltype((e))` içindeki iç parantez zorunludur: onsuz operand isim sayılır ve
-kategori değil bildirilen tür elde edilir.
+`decltype((e))` içindeki iç parantez zorunludur: `e` parantezsiz bir isim ya da üye
+erişimiyse `decltype` kategoriye göre değil, bildirilen türe göre sonuç verir. Makroya
+hangi ifadenin geleceği bilinmediği için parantez her durumda konur.
 
 Aynı işi `if constexpr` ile de yapabiliriz:
 
