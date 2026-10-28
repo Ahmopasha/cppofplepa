@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "15 — Eşzamanlılık"
 baslik: "15.4 `std::condition_variable`"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 15.4 `std::condition_variable`
@@ -37,9 +37,11 @@ void bildiren()
 **`std::unique_lock` gerekir**, `lock_guard` yetmez; `wait` çağrısı kilidi geçici olarak
 bırakır ve uyandığında yeniden alır.
 
-**Koşul yüklemi yazılmalıdır.** İkinci parametresiz `wait` biçimi, *yalancı uyanma*
-*(spurious wakeup)* durumunda hatalı devam eder. Yüklemli biçim, uyandığında koşulu
-yeniden denetler.
+**Koşul yüklemi yazılmalıdır.** Yüklemsiz `wait`, bir bildirim gelmeden de uyanıp
+dönebilir: buna **yalancı uyanma** *(spurious wakeup)* denir. Ayrıca bildirim, bekleme
+başlamadan önce gelmiş olabilir. Yüklemli biçim `while (!pred()) wait(lock);` ile
+eşdeğerdir: koşulu beklemeden önce ve her uyanışta yeniden denetler. Yüklemsiz biçim ancak
+böyle bir döngünün içinde doğru kullanılır.
 
 **Koşulu değiştiren kod kilit altında olmalıdır**, aksi hâlde bildirim kaçırılabilir.
 

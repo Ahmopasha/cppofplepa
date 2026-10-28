@@ -3,19 +3,21 @@ cilt: "II — İleri"
 kisim: "15 — Eşzamanlılık"
 baslik: "15.3 Kilit türleri"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 15.3 Kilit türleri
 
-Standart kütüphane dört `mutex` türü sunar:
+Standart kütüphane altı `mutex` türü sunar:
 
 | Tür | Ne zaman |
 |---|---|
 | `std::mutex` | Varsayılan |
 | `std::recursive_mutex` | Aynı iş parçacığı aynı kilidi birden fazla alabilmeli |
 | `std::timed_mutex` | Kilit için zaman aşımı gerekiyor |
+| `std::recursive_timed_mutex` | İkisi birden |
 | `std::shared_mutex` | Çok okuyan, az yazan (C++17) |
+| `std::shared_timed_mutex` | Çok okuyan, az yazan; zaman aşımıyla (C++14) |
 
 `std::shared_mutex`, okuyucuların **aynı anda** girmesine izin verir; yazıcı geldiğinde
 tek başına kilitlenir.

@@ -3,14 +3,15 @@ cilt: "II — İleri"
 kisim: "15 — Eşzamanlılık"
 baslik: "15.2 İş parçacığı yönetimi"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 15.2 İş parçacığı yönetimi
 
-Cilt I Kısım 27.1'de `std::thread` tanıtılmıştı. Orada verilen kural — `join` veya
-`detach` çağrılmadan nesnenin hayatı biterse program sonlanır — pratikte sık ihlal
-edilir; araya bir hata girdiğinde `join` çağrısına hiç gelinmez.
+Cilt I, Kısım 27.1'de `std::thread` tanıtılmıştı. Bir iş parçacığını temsil eden
+(`joinable()`) bir `std::thread` nesnesinin hayatı `join` veya `detach` çağrılmadan
+biterse `std::terminate` çağrılır. Bu kural pratikte sık ihlal edilir; araya bir hata
+girdiğinde `join` çağrısına hiç gelinmez.
 
 C++20 bunu çözen bir tür ekledi:
 

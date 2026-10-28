@@ -169,6 +169,15 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | busy wait | meşgul bekleme | Cilt II 15.4 |
 | spurious wakeup | yalancı uyanma | Cilt II 15.4 |
 | sequential consistency | sıralı tutarlılık | Cilt II 15.1 |
+| abstract machine | soyut makine | Cilt II 15.1 |
+| observable behavior | gözlemlenebilir davranış | Cilt II 15.1 |
+| memory model | bellek modeli | Cilt II 15.1 |
+| launch policy | başlatma ilkesi | Cilt II 15.6 |
+| lock-free | kilitsiz | Cilt II 15.8 |
+| hosted implementation | barındırılan gerçekleme | Cilt II 15.8 |
+| execution policy | çalıştırma ilkesi | Cilt II 15.9 |
+| vectorization-unsafe | vektörleşmeye uygun olmayan | Cilt II 15.9 |
+| element access function | öğe erişim işlevi | Cilt II 15.9 |
 | false sharing | yanlış paylaşım | Cilt II 17.8 |
 | constant initialization | sabit ilk değer verme | Cilt II 17.5 |
 | zero-initialization | sıfırla ilk değer verme | Cilt II 17.5 |

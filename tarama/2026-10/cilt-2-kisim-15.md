@@ -8,6 +8,17 @@ metnindendir (N4950). Sürüm iddiaları ilgili standart metninde (N4140 = C++14
 C++17, N4861 = C++20) türün varlığına bakılarak denetlendi. 15.0 normatif iddia
 içermiyor.
 
+**İşlem (2026-10):** "düzeltilmeli", "eksik" ve "gerçekleme" sonuçlu bütün iddialar
+düzeltildi; metinler AI hakem panelinden geçti (`~/ai-panel/calismalar/2026-10-28_c2-15-tarama`,
+dört tur). İki ayrılık: iddia 30'daki `[[nodiscard]]` bilgisi metne alınmadı (güncel taslakta
+`std::async` bildiriminde yok); "Ek gözlemler"deki "`seq`'ten farklı olarak" yanlıştır,
+[execpol.seq]/2'ye göre `seq`'te de `std::terminate` çağrılır. `std::pmr` atfı kitapta
+anlatılmadığı için eklenmedi. Panel ayrıca şunları ekletti: tanımsız davranış sınırı ve soyut
+makine tanımı (15.1), yalancı uyanmanın yüklemsiz `wait` ile sınırlanması (15.4),
+`set_exception`'ın hatayı sakladığı (15.5), ilkesiz ya da çok ilkeli çağrıda da sonlandırıcının
+beklemesi (15.6), öğe erişim işlevi kapsamı ve "algoritmaların çoğu" (15.9), data race
+kuralının global ayırma işlevleriyle sınırlanması (15.10).
+
 | # | Yer | İddia | Kaynak | Sonuç |
 |---|---|---|---|---|
 | 1 | 15.1 | Tek iş parçacıklı programlarda derleyicinin tek yükümlülüğü gözlemlenebilir davranışın kaynak koddaki gibi olmasıdır | [intro.abstract]/1: gerçekleme soyut makinenin yalnızca gözlemlenebilir davranışını taklit etmek zorundadır; bu kural iş parçacığı sayısından bağımsızdır. [intro.abstract]/5–6: gözlemlenebilir davranış `volatile` erişimler, dosyaya yazılan veri ve etkileşimli giriş-çıkışla sınırlıdır ve soyut makinenin **olası yürütmelerinden biriyle** aynı olmalıdır | eksik |

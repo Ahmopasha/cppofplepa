@@ -4,6 +4,26 @@
 
 ### Düzeltmeler
 
+- Cilt II Kısım 15 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-2-kisim-15.md`):
+  - 15.1: "Derleyicinin tek yükümlülüğü" yerine soyut makinenin gözlemlenebilir davranışı
+    ve tanımsız davranış sınırı; sıralı tutarlılık, koşulunu sağlayan programlarla
+    sınırlandı; "en pahalı" gerçekleme gözlemi oldu.
+  - 15.2: `std::thread` kuralı bir iş parçacığını temsil eden nesneyle sınırlandı;
+    sonuç "`std::terminate` çağrılır" diye verildi.
+  - 15.3: `mutex` türleri dört değil altı.
+  - 15.4: Yüklemli `wait`'in `while (!pred()) wait(lock);` eşdeğeri ve yalancı uyanma.
+  - 15.5: Hata taşımanın "tek yolu" `future` değil; örneğe `<thread>` ve `<utility>`.
+  - 15.6: Başlatma ilkesinin değerleri, `deferred`'ın `get`/`wait` ile çalışması,
+    ilkesiz çağrıda seçimin gerçeklemede olması, sonlandırıcının yalnızca `async`
+    seçildiğinde beklemesi.
+  - 15.8: `is_lock_free`/`is_always_lock_free` ayrımı; `atomic_flag`'in "tek kilitsiz
+    tür" olması C++20 öncesiyle sınırlandı, C++20 üyeleri eklendi; işleç biçimleri
+    `memory_order` almaz; tabloya `acq_rel`, `relaxed`'in değişiklik sırası ve `consume`.
+  - 15.9: `par` izindir; vektörleşme kuralı `unseq` için de geçerli; öğe erişim
+    işlevinden kaçan hatada `std::terminate`.
+  - 15.10: Ayırıcının iç yapısı gerçekleme gözlemi oldu; data race kuralının kapsamı
+    global ayırma işlevleriyle sınırlandı; atıf ayırıcı gereksinimlerine (Kısım 17.7).
+  - Terim sözlüğüne dokuz terim eklendi.
 - Cilt II Kısım 1 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-2-kisim-01.md`):
   - 1.1.1: "Kimlik" `&`'nin operandı olabilmekle tanımlanıyordu; X-Value'nun kimliği olduğu
     hâlde adresinin alınamadığı yazıldı.
