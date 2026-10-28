@@ -95,7 +95,8 @@
     başka bir kod ya da sinyal bekleyen örnek `cikis-N`/`cikis-sinyal` işaretiyle belirtilir.
   - Derleyici farkı artık kendiliğinden muaf değil: çalışma zamanı bulguları hiç muaf
     tutulmaz; derleme farkı yalnızca bloğun özetine ve derleyici sürümüne bağlı gerekçeli
-    bir kayıtla geçer (`DERLEYICI_FARKI_ISTISNALARI`; Cilt II 17.6 ve Cilt II Kısım 18
+    bir kayıtla geçer ve kayıt aynı bloğun çalışma zamanı bulgusunu kapatmaz
+    (`DERLEYICI_FARKI_ISTISNALARI`; Cilt II 17.6 ve Cilt II Kısım 18
     taramasının iki farkı kaydedildi).
   - Kod denetimi iş akışı `tarama/**` değişikliklerinde de çalışır; araç testleri
     (`araclar/testler/`) iş akışında koşar.

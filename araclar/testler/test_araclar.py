@@ -5,7 +5,8 @@
 1. derle.py --kod, kod denetimi çalışamazsa (derleyici yok) başarısız döner; --kati'yi aktarır.
 2. Çalıştırılan örneğin çıkış kodu beklentiyle karşılaştırılır (varsayılan 0; cikis-N, cikis-sinyal).
 3. Derleyici farkı: çalışma zamanı bulgusu muaf tutulmaz; derleme farkı yalnızca bloğun özetine
-   ve derleyici sürümüne bağlı gerekçeli kayıtla geçer.
+   ve derleyici sürümüne bağlı gerekçeli kayıtla geçer. Kayıt, aynı sonuçtaki çalışma zamanı
+   bulgusunu kapatmaz.
 """
 import os
 import shutil
@@ -109,6 +110,24 @@ class TestDerleyiciFarki(unittest.TestCase):
             _, ss = self.sonuclar(s, b)
             kd.derleyici_farklarini_isle(ss, self.ANAHTAR, istisnalar=[degisen])
             self.assertTrue(kd.sorunlu_mu(s), f"kod ya da surum degisince kayit gecersiz: {degisen}")
+
+
+    def test_exception_does_not_cover_runtime_finding_in_same_result(self):
+        b = blok(["int x;"])
+        kayit = {"yol": b["yol"], "ozet": kd.blok_ozeti(b), "derleyici": "g++ 14", "gerekce": "GCC sapiyor."}
+        for calisma in ({"durum": "uyari", "uyari": "runtime error: load of null pointer"},
+                        {"durum": "zaman-asimi"},
+                        {"durum": "beklenmeyen-cikis", "ayrinti": ["çıkış kodu 1, beklenen 0"]}):
+            s = {"durum": "hata-satiri-sorunu", "bozmayanlar": [("x", "derlendi")],
+                 "calisma": dict(calisma, beklenti="tanımlı")}
+            _, ss = self.sonuclar(s, b)
+            kd.derleyici_farklarini_isle(ss, self.ANAHTAR, istisnalar=[kayit])
+            self.assertEqual(s["durum"], "derleyici-farki")
+            self.assertEqual(s["istisna"], "GCC sapiyor.")
+            self.assertTrue(kd.sorunlu_mu(s), f"istisna calisma zamani bulgusunu kapatmamali: {calisma}")
+            self.assertTrue(kd.sorun_ozeti(s).startswith("çalıştırma:"), kd.sorun_ozeti(s))
+            rapor = kd.rapor({"g++-14": [(b, s)], "clang++-18": [(b, {"durum": "gecti"})]}, 1)
+            self.assertIn("### Sorunlu bloklar", rapor)
 
 
 class TestCIKapsami(unittest.TestCase):

@@ -108,7 +108,8 @@ işlev gövdesine koyar, aynı dosyadaki önceki bloğu bağlam olarak kullanır
   `araclar/kod_denetimi.py` → `DERLEYICI_FARKI_ISTISNALARI`'na gerekçesiyle kaydedilmedikçe
   sorun sayılır. Kayıt bloğun içerik özetine ve derleyicinin ana sürümüne bağlıdır (rapor
   ikisini de yazar); kod ya da derleyici sürümü değişince kayıt geçersiz olur. Çalışma
-  zamanı bulguları (sanitizer, çıkış kodu, zaman aşımı) derleyici farkı sayılmaz.
+  zamanı bulguları (sanitizer, çıkış kodu, zaman aşımı) derleyici farkı sayılmaz; kayıt,
+  aynı bloğun çalışma zamanı bulgusunu da kapatmaz.
 - `derle.py --kod` kod denetimi çalışamazsa (ör. derleyici yok) başarısız döner; `--kati`
   ile sorunlu blok varsa da. Araçların kendi testleri: `python3 -m unittest discover -s
   araclar/testler`.

@@ -790,16 +790,24 @@ def derleyici_farklarini_isle(sonuclar, anahtarlar=None, istisnalar=None):
                 s.pop("c", None)
 
 
+def calisma_sorunu_mu(s):
+    """Çalışma zamanı bulgusu: tanımlı davranışlı örnekte sanitizer uyarısı, zaman aşımı,
+    sanitizer'la derlenememe ya da beklenmeyen çıkış kodu."""
+    c = s.get("calisma")
+    return bool(c) and c["beklenti"] == "tanımlı" and c["durum"] in ("uyari", "zaman-asimi", "derlenemedi",
+                                                                      "beklenmeyen-cikis")
+
+
 def sorunlu_mu(s):
     if s["durum"] == "derleyici-farki":
-        return not s.get("istisna")       # gerekçeli kaydı olmayan fark incelenmeden geçmez
+        # Gerekçeli kayıt yalnızca derleme farkını kapatır; aynı sonuçtaki çalışma zamanı
+        # bulgusu açık kalır. Kaydı olmayan fark incelenmeden geçmez.
+        return not s.get("istisna") or calisma_sorunu_mu(s)
     if s["durum"] in ("derlenmedi", "hata-satiri-sorunu"):
         return True
     if s.get("c", "gecti") != "gecti":
         return True
-    c = s.get("calisma")
-    return bool(c) and c["beklenti"] == "tanımlı" and c["durum"] in ("uyari", "zaman-asimi", "derlenemedi",
-                                                                      "beklenmeyen-cikis")
+    return calisma_sorunu_mu(s)
 
 
 # ---------------------------------------------------------------------------
@@ -835,7 +843,7 @@ def rapor(derleyici_sonuclari, toplam):
                 elif s["durum"] == "hata-satiri-sorunu":
                     durum = "hata satırı derlendi"
                     ayr = "; ".join(f"`{x}` → {m}" for x, m in s["bozmayanlar"])
-                elif s["durum"] == "derleyici-farki":
+                elif s["durum"] == "derleyici-farki" and not s.get("istisna"):
                     durum = "derleyici farkı (kayıtsız)"
                     ayr = (f"{s['fark']} — sorunsuz: {', '.join(s['fark_sorunsuz'])}; istisna için "
                            f"ozet {s['fark_anahtar']['ozet']}, derleyici {s['fark_anahtar']['derleyici']}")
@@ -987,7 +995,7 @@ def main():
 
 def sorun_ozeti(s):
     """Sorunlu bir bloğun tek satırlık açıklaması."""
-    if s["durum"] == "derleyici-farki":
+    if s["durum"] == "derleyici-farki" and not s.get("istisna"):
         return (f"derleyici farkı, istisna kaydı yok (ozet {s['fark_anahtar']['ozet']}, "
                 f"{s['fark_anahtar']['derleyici']}): {s['fark']}")
     if s["durum"] == "derlenmedi":
