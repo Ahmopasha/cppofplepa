@@ -4,6 +4,19 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 8 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-1-kisim-08.md`):
+  - 8.1: Referans "bir isim" değil; bağlandığı nesneyi belirtir. Geçici bir değere bağlanan
+    referans yeni bir geçici nesneye bağlanır.
+  - 8.2: İlk değer zorunluluğunun istisnaları (`extern`, veri elemanı, parametre, dönüş
+    türü) eklendi. "Geçersiz referans yoktur" yerine boş referans yoktur; referans sarkabilir.
+  - 8.3: "İfadenin sonunda" yerine tam ifadenin sonunda; ömrün uzatılması `T&&` için de
+    geçerli.
+  - 8.4: Türler aynı değil uyumlu olmalı (`const` ekleme, taban sınıf); `const` düşürmek
+    sentaks hatası.
+  - 8.6: L-Value referans döndüren çağrı L-Value, `T&&` döndüren X-Value; derleyici uyarısı
+    anlatımı çıktı; geçici argümana dönen referansın sarkması eklendi.
+  - 8.9: "Üçüncü referans türü" yanlıştı; başlık "Şablonlarda `T&&`" oldu.
+  - Terim sözlüğüne tam ifade ve boş referans eklendi.
 - Cilt II Kısım 15 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-2-kisim-15.md`):
   - 15.1: "Derleyicinin tek yükümlülüğü" yerine soyut makinenin gözlemlenebilir davranışı
     ve tanımsız davranış sınırı; sıralı tutarlılık, koşulunu sağlayan programlarla

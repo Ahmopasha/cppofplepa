@@ -64,10 +64,12 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | value category | değer kategorisi | Cilt I 2.4.1 |
 | L-Value / R-Value / PR-Value / X-Value / GL-Value | çevrilmedi, olduğu gibi kullanılır | Cilt I 2.4.2 |
 | reference collapsing | referans çökmesi | Cilt II 1.2.2 |
-| forwarding reference *(universal reference)* | çevrilmedi | Cilt II 1.2.1 |
+| forwarding reference *(universal reference)* | çevrilmedi | Cilt I 8.9 (ayrıntısı Cilt II 1.2.1) |
 | perfect forwarding | mükemmel gönderim | Cilt II 1.2.5 |
 | life extension | ömrün uzatılması | Cilt I 8.3 |
 | dangling reference | sarkan referans | Cilt I 8.3 |
+| full-expression | tam ifade | Cilt I 8.3 |
+| null reference | boş referans | Cilt I 8.2 |
 | materialization | çevrilmedi | Cilt II 1.1.5 |
 | result object | çevrilmedi | Cilt II 1.1.5 |
 

@@ -9,6 +9,15 @@ ayrıca belirtilir. Tasarım tavsiyeleri (8.5'teki `const T&`/`T&` seçimi, 8.7'
 kuralı) normatif olmadığı için tabloya alınmadı. Testler `araclar/kod_denetimi.py` ile
 `-std=c++20` altında derlendi ve çalıştırıldı.
 
+**İşlem (2026-10):** "düzeltilmeli", "eksik" ve "gerçekleme" sonuçlu bütün iddialar
+düzeltildi; metinler AI hakem panelinden geçti (`~/ai-panel/calismalar/2026-10-28_c1-08-tarama`,
+üç tur). 8.9'un başlığı "Şablonlarda `T&&`" oldu. Panel ayrıca şunları ekletti: ilk değer
+istisnalarına `catch` parametresi ve dönüş türü (8.2, test 1'e `catch` eklendi), boş referans
+ve tam ifade terimleri (8.2, 8.3), `const` niteliğinin bağlanan ifadeye göre belirlendiği (8.4),
+`const` referans döndüren çağrının atanamadığı ve tür dönüşümüyle oluşan geçici argüman (8.6),
+şablonlar için Kısım 22 atfı (8.9). PR-Value terimi Cilt I'de Kısım 8'den önce tanıtılmadığı
+için 8.1'de kullanılmadı (terim 12.17'de tanıtılmadan geçiyor).
+
 | # | Yer | İddia | Kaynak | Sonuç |
 |---|---|---|---|---|
 | 1 | 8.1 | Referans yeni bir nesne oluşturmaz, mevcut nesneye bir ad daha verir | [dcl.init.ref]/5.3 ve 5.4.2: referans bir PR-Value'ya ya da türü uymayan bir ifadeye bağlanırken geçici nesne oluşturulur (kitabın kendi 8.3 ve 8.4 örnekleri) | eksik |
@@ -60,6 +69,12 @@ struct Tutucu {
 };
 
 void degistir(int& p);          // parametre: ilk değerini çağrı verir
+
+void dene()
+{
+    try { throw 1; }
+    catch (const int& hata) { }   // catch parametresi: ilk değerini yakalanan hata nesnesi verir
+}
 
 int deger = 1;
 int& dis_ref = deger;           // tanım ayrı yerde
