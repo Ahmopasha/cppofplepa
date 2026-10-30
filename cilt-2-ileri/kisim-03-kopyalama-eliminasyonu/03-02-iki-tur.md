@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "3 — Kopyalama Eliminasyonu"
 baslik: "3.2 İki tür"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 3.2 İki tür
@@ -13,9 +13,9 @@ davranış değişikliğidir.
 
 | | Zorunlu | Zorunlu olmayan |
 |---|---|---|
-| Derleyici yapmak zorunda mı | **Evet** | Hayır |
-| Kopyalayan/taşıyan işlev çağrılabilir olmalı mı | **Hayır** | **Evet** |
-| Statüsü | Dilin kuralı | Derleyici optimizasyonu |
+| Gerçekleme yapmak zorunda mı | **Evet** (istisna: Kısım 3.3) | Hayır |
+| Kopyalayan/taşıyan işlev çağrılabilir olmalı mı | **Hayır** (`throw` hariç) | **Evet** |
+| Statüsü | Dilin kuralı | Standardın izin verdiği optimizasyon |
 | Geldiği standart | C++17 | Öncesinden beri |
 
 İkinci satır pratikte en çok fark yaratan yerdir. Zorunlu eliminasyonda ilgili işlevin

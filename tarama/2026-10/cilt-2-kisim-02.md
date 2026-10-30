@@ -17,7 +17,7 @@ kuralının `reserve` ve tek öğeyi sona eklemeyle sınırlanması ([vector.mod
 `std::deque` taşıyan kurucusunun `noexcept` olmasının garanti edilmediği (2.6); 2.8
 örneğine sonlandırıcı. Açık kalan: 2.7'nin giriş cümlesi ikinci senaryoyu (`return
 std::move(x)`) da "kopyalayan işleve düşer" diye anlatıyor; o senaryoda taşıyan kurucu
-seçilir, kaybedilen eliminasyondur. Kısım 3 panelinde düzeltilecek.
+seçilir, kaybedilen eliminasyondur. Kısım 3 panelinde düzeltildi.
 
 | # | Yer | İddia | Kaynak | Sonuç |
 |---|---|---|---|---|

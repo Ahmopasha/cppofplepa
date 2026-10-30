@@ -7,14 +7,23 @@ C++23 metninin (N4950, timsong-cpp.github.io/cppwp/n4950) bölüm adlarıyla ver
 çalışma taslağında da aynı bölümlerdir. Testler `araclar/kod_denetimi.py` ile derlendi ve
 çalıştırıldı.
 
+**İşlem (2026-10):** "düzeltilmeli", "eksik" ve "gerçekleme" sonuçlu bütün iddialar
+düzeltildi; metinler AI hakem panelinden geçti (`~/ai-panel/calismalar/2026-10-30_c2-03-tarama`,
+dört tur). Panel ayrıca şunları düzeltti: 3.3'ün ilk paragrafı 1.1.5'e uyduruldu (iddia 5);
+`throw` için kopyalayan kurucu şartı ([except.throw]/5; test 3 değişti); 3.4'te kurucu
+seçimi (`const` yerel nesne, Kısım 2.1'deki yok sayılan taşıyan kurucu) ve C++23 / C++20 /
+C++11–17 örtülü taşıma kuralı (C++17'de ek koşul: N4659 [class.copy.elision]/3); C++17
+öncesi yıkım sırası; "uygun" *(eligible)* tanımı; 3.6'daki öğüdün kopyalayan/taşıyan kurucu
+çağrılarıyla sınırlanması. Kısım 2.7'nin giriş cümlesi de bu panelde düzeltildi.
+
 | # | Yer | İddia | Kaynak | Sonuç |
 |---|---|---|---|---|
 | 1 | 3.1 | Eliminasyon dört bağlamda görülür: nesne hayata getirilirken, `return`, `throw`, `catch` | [class.copy.elision]/1: izinli eliminasyon `return` (1.1), `throw` (1.2), **eşyordam parametresinin kopyası** (1.3) ve yakalayıcının *exception-declaration*'ı (1.4) için tanımlanır; ayrıca sabit ifade gerektiren bağlamda ve sabit ilk değer vermede eliminasyon yapılamaz. "Nesne hayata getirilirken" maddesi C++17'den beri eliminasyon değil, PR-Value'nun doğrudan hedefi oluşturmasıdır ([dcl.init.general]/16.6.1) | eksik |
 | 2 | 3.1 | Hayata gelmiş iki nesne arasındaki atamada eliminasyon yoktur | [class.copy.elision]/1 yalnızca kopyalayan/taşıyan **kurma** işlemini eler; `b = foo()`'da PR-Value atama işlevinin referans parametresine bağlanmak için somutlaşır ([class.temporary]/2) | doğru |
 | 3 | 3.2 | Zorunlu olmayan eliminasyonda kopyalayan/taşıyan kurucu çağrılabilir olmalıdır; zorunluda gerekmez | [stmt.return]/2: dönüş nesnesi işlenenden *copy-initialization* ile kurulur, kurucu seçimi eliminasyondan bağımsız yapılır; [dcl.init.general]/16.6.1: aynı sınıftan PR-Value hedefi doğrudan kurar | doğru |
 | 4 | 3.2 | Zorunlu olmayan eliminasyon "derleyici optimizasyonu"dur, "öncesinden beri" vardır | [class.copy.elision]/1: "an implementation is allowed to omit"; zorunlu biçim C++17'de P0135R1 ile geldi | doğru |
-| 5 | 3.3 | C++17 ile PR-Value nesne değil, nesneyi ilk değerle donatma reçetesidir; somutlaşma olmazsa nesne yoktur | [basic.lval]/1.2, [class.temporary]/2 | doğru |
-| 6 | 3.3 | Zorunlu eliminasyon "iki yerde görülür" (`return Myclass{...}` ve değer parametresine geçici nesne) | [dcl.init.general]/16.6.1 genel kuraldır: aynı sınıftan her PR-Value hedefini doğrudan kurar. `Myclass m = foo();` (3.7 tablosunda da var), `Myclass m = Myclass{};`, `throw Myclass{};` ([except.throw]/3), `new Myclass(Myclass{})` aynı kuraldandır | eksik (test 3) |
+| 5 | 3.3 | C++17 ile PR-Value nesne değil, nesneyi ilk değerle donatma reçetesidir; somutlaşma olmazsa nesne yoktur | [basic.lval]/1.2, [class.temporary]/2. **Sonradan düzeltildi:** "somutlaşma olmazsa nesne yoktur" kısmı yanlış; PR-Value aynı türden hedefi doğrudan kurar ve o nesne vardır (Cilt II 1.1.5 paneli, Ekim 2026) | eksik |
+| 6 | 3.3 | Zorunlu eliminasyon "iki yerde görülür" (`return Myclass{...}` ve değer parametresine geçici nesne) | [dcl.init.general]/16.6.1 genel kuraldır: aynı sınıftan her PR-Value hedefini doğrudan kurar. `Myclass m = foo();` (3.7 tablosunda da var), `Myclass m = Myclass{};`, `throw Myclass{};` ([except.throw]/3), `new Myclass(Myclass{})` aynı kuraldandır. `throw`'da kopyalayan kurucu yine silinmemiş ve erişilebilir olmalıdır ([except.throw]/5) | eksik (test 3) |
 | 7 | 3.3 | `return Myclass{31};` için kopyalayan/taşıyan kurucu silinmiş olsa da kod derlenir | [stmt.return]/2 (not 2), [dcl.init.general]/16.6.1 | doğru |
 | 8 | 3.3 | Geri dönüşte ve değer parametresine geçişte "yalnızca bir nesne oluşur" | [class.temporary]/3: türün bütün uygun kopyalayan/taşıyan kurucuları trivial, sonlandırıcısı trivial ya da silinmişse gerçekleme parametre ya da dönüş nesnesi için ek bir geçici nesne oluşturabilir (yazmaçla aktarım için). Kural yalnızca bu türlerde gevşer | eksik |
 | 9 | 3.4 | NRVO zorunlu değildir | [class.copy.elision]/1.1 ("is allowed to omit") | doğru |
@@ -78,21 +87,26 @@ int main()
 }
 ```
 
-## Test 3 — iddia 6: `throw` işleneni PR-Value ise kopyalayan/taşıyan kurucu gerekmez
+## Test 3 — iddia 6: `throw` işleneni PR-Value ise hata nesnesi doğrudan kurulur
+
+İlk sürümdeki test, kopyalayan ve taşıyan kurucusu silinmiş bir sınıfla `throw Myclass{};`
+yazıp derlendiğini gösteriyordu. [except.throw]/5'e göre kopyalayan kurucu eleme yapılsa
+bile silinmemiş ve erişilebilir olmalıdır; o program geçersizdir ve derleyicinin onu kabul
+etmesi standart hükmü değildir. Test buna göre değiştirildi.
 
 ```cpp
 #include <cstdio>
 
 struct Myclass {
     Myclass() = default;
-    Myclass(const Myclass&) = delete;
-    Myclass(Myclass&&) = delete;
+    Myclass(const Myclass&) { std::puts("kopya"); }    // silinmemiş ve erişilebilir olmalı
+    Myclass(Myclass&&) = delete;                        // PR-Value'da seçilmez
 };
 
 int main()
 {
     try {
-        throw Myclass{};    // hata nesnesi PR-Value'dan doğrudan kurulur
+        throw Myclass{};    // hata nesnesi doğrudan kurulur: "kopya" yazılmaz
     }
     catch (const Myclass&) {
         std::puts("yakalandi");

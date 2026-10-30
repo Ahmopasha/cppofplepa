@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "3 — Kopyalama Eliminasyonu"
 baslik: "3.6 Yan etkili kopyalama işlevleri"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 3.6 Yan etkili kopyalama işlevleri
@@ -20,13 +20,13 @@ public:
 };
 ```
 
-Bu sınıfta kopya sayısı, derleyiciye ve optimizasyon seviyesine göre değişir. Zorunlu
-eliminasyon bağlamlarında sayaç hiç artmaz; NRVO bağlamlarında artıp artmayacağı
-belirsizdir.
+Bu sınıfta zorunlu eliminasyon bağlamlarında sayaç hiç artmaz. NRVO bağlamlarında artıp
+artmayacağını standart belirtmez: eliminasyona izin verir, ama zorunlu kılmaz.
 
-Kural: **özel üye işlevlerin gövdesine, nesnenin kendi durumu dışında hiçbir şeyi
-değiştiren kod yazmayın.** Günlükleme, sayaç, global durum güncellemesi — hepsi
-programın davranışını derleyiciye bağımlı hâle getirir.
+Kural: **kopyalayan ve taşıyan kurucuların ve onlarla eşleşen sonlandırıcı çağrılarının
+sayısına programın doğruluğunu bağlamayın.** Bu işlevlerde günlükleme, sayaç ya da global
+durum güncellemesi, programın davranışını gerçeklemenin eliminasyon tercihine bağımlı hâle
+getirebilir.
 
 Öğretim amaçlı kodda bu işlevlere yazdırma koymak yaygındır ve yararlıdır; üretim
 kodunda değildir.

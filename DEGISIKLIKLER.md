@@ -4,6 +4,18 @@
 
 ### Düzeltmeler
 
+- Cilt II Kısım 3 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-2-kisim-03.md`):
+  - 3.1: Eliminasyon bağlamları standarda göre (eşyordam parametresi, sabit ifade ve sabit
+    ilk değer verme istisnası); aynı türden PR-Value ile ilk değer verme ayrıca anlatıldı.
+  - 3.2, 3.4, 3.6: "Derleyiciye ve optimizasyon seviyesine bağlıdır" anlatımları çıktı.
+  - 3.3: İlk paragraf 1.1.5'e uyduruldu; kural genelleştirildi; `throw`'da kopyalayan
+    kurucu şartı; trivial türlerde ek geçici nesne istisnası; C++17 öncesi yıkım sırası.
+  - 3.4: Kurucu seçimi X-Value için yükleme çözümlemesiyle; örtülü taşımanın C++23, C++20 ve
+    C++11–17 kuralı (Kısım 1.1.2'nin Standart Notu artık buraya gerçek bir atıf veriyor).
+  - 3.5, 3.7: `const T` dönüş türü eliminasyonu değil taşımayı engeller; koşullu dönüş
+    kopyalanır; `if`/`return` yazımında NRVO izinli; parametre istisnası.
+  - 2.7: Giriş cümlesi iki senaryoyu doğru ayırıyor (ikincisinde taşıyan kurucu çağrılır).
+  - Terim sözlüğüne "uygun" *(eligible)* eklendi.
 - Cilt II Kısım 2 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-2-kisim-02.md`):
   - 2.1: Bildirilmemiş işlev çağrısının sonucunu kalan yüklemeler belirler; silinmiş olarak
     tanımlanan örtülü ya da ilk bildiriminde `= default` taşıyan işlevlerin yok sayılması.

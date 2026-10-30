@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "3 — Kopyalama Eliminasyonu"
 baslik: "3.4 NRVO — hâlâ bir optimizasyon"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 3.4 NRVO — hâlâ bir optimizasyon
@@ -20,14 +20,20 @@ Myclass bar()
 
 Buna *Named Return Value Optimization* denir ve **zorunlu değildir.** Sonuçları:
 
-- Derleyici bu eliminasyonu yapmak zorunda değildir.
-- Yapabilmek zorunda bile değildir; davranış derleyiciye ve optimizasyon seviyesine
-  bağlıdır.
-- Kopyalayan veya taşıyan kurucu işlev **çağrılabilir olmak zorundadır.** İkisi de
-  `delete` edilmişse kod derlenmez, eliminasyon yapılacak olsa bile.
+- Gerçekleme bu eliminasyonu yapmak zorunda değildir; standart yapılıp yapılmayacağını
+  belirtmez.
+- Dönüş nesnesini kuracak kurucu **çağrılabilir olmak zorundadır**, eliminasyon yapılacak
+  olsa bile. Kurucu, X-Value olan `mx` için yükleme çözümlemesiyle seçilir: X-Value'yu
+  kabul eden bir taşıyan kurucu çözümlemeye katılıyorsa o, katılmıyorsa (bildirilmemişse
+  ya da Kısım 2.1'deki gibi yok sayılıyorsa) ya da nesne `const` olduğu için `T&&`'ye
+  bağlanamıyorsa X-Value'yu kabul eden kopyalayan kurucu seçilir. X-Value'yu kabul eden
+  taşıyan kurucu açıkça silinmişse seçilen odur ve kopyalayan kurucu olsa bile sentaks
+  hatasıdır.
 
-NRVO uygulanmadığında kopyalama yapılmaz; önce **örtülü taşıma** denenir. Dönüş
-ifadesindeki yerel nesne, yükleme çözümlemesinde R-Value muamelesi görür. Bu yüzden
-`return mx;` yazmak, `return std::move(mx);` yazmakla aynı taşımayı zaten yapar.
-
-Sıralama şudur: NRVO varsa hiçbir şey yapılmaz, yoksa taşınır, taşıma yoksa kopyalanır.
+NRVO yapılmadığında bu kurucu çağrılır. Adın `std::move` yazılmadan R-Value olarak ele
+alınmasına **örtülü taşıma** denir; seçilen kurucu taşıyan kurucu olmayabilir. Örtülü
+taşıma sayesinde `return mx;`, `return std::move(mx);` ile aynı kurucuyu seçer; üstelik
+NRVO'yu engellemez (Kısım 3.5). C++23'ten itibaren `return` deyimindeki taşınmaya uygun ad
+(Kısım 1.1.2) bir X-Value'dur. C++20'de bu ad bir L-Value'dur; kurucu önce ad R-Value
+sayılarak seçilir, bu çözümleme başarısız olursa ad L-Value sayılarak yeniden seçilir.
+C++11–17'de bu kurala ek bir koşul vardı.

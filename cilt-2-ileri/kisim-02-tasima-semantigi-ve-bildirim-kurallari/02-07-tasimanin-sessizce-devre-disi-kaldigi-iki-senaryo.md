@@ -8,11 +8,12 @@ son_kontrol: "2026-10 (C++23)"
 
 ## 2.7 Taşımanın sessizce devre dışı kaldığı iki senaryo
 
-Cilt I, Kısım 13.12'deki iki kuralın sebebi burada. İkisinde de ortak örüntü şudur:
-yükleme çözümlemesi taşıyan işlevi **seçemez** ve kopyalayan işleve düşer. Bu durumlarda
-argümanı kabul eden, silinmemiş ve erişilebilir bir kopyalayan işlev varsa kod geçerlidir;
-standart, gerçeklemenin bunu bildirmesini istemez. Aksi hâlde sentaks hatasıdır (Kısım
-2.1).
+Cilt I, Kısım 13.12'deki iki kuralın sebebi burada. İkisinde de daha ucuz bir yol kapanır:
+ilkinde yükleme çözümlemesi taşıyan işlevi **seçemez** ve kopyalayan işleve düşer;
+ikincisinde taşıyan kurucu çağrılır, ama eliminasyon yapılamaz. İlk durumda, argümanı
+kabul eden, silinmemiş ve erişilebilir bir kopyalayan işlev varsa kod geçerlidir; aksi
+hâlde sentaks hatasıdır (Kısım 2.1). Kod geçerliyse, iki durumda da standart,
+gerçeklemenin daha ucuz yolun kapandığını bildirmesini istemez.
 
 **Geri dönüş türünün `const T` olması.**
 

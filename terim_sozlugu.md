@@ -181,7 +181,8 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | vectorization-unsafe | vektörleşmeye uygun olmayan | Cilt II 15.9 |
 | element access function | öğe erişim işlevi | Cilt II 15.9 |
 | false sharing | yanlış paylaşım | Cilt II 17.8 |
-| constant initialization | sabit ilk değer verme | Cilt II 17.5 |
+| constant initialization | sabit ilk değer verme | Cilt II 3.1 (ayrıntısı Cilt II 17.5) |
+| eligible (special member function) | uygun | Cilt II 3.3 |
 | zero-initialization | sıfırla ilk değer verme | Cilt II 17.5 |
 | odr-use | ODR kullanımı | Cilt II 17.5 |
 | ordered / partially-ordered / unordered initialization | sıralı / kısmen sıralı / sırasız | Cilt II 17.5 |
