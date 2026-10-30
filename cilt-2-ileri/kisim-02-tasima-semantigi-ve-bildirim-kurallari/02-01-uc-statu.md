@@ -3,15 +3,18 @@ cilt: "II — İleri"
 kisim: "2 — Taşıma Semantiği ve Bildirim Kuralları"
 baslik: "2.1 Üç statü"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 2.1 Üç statü
 
 Altı özel üye işlevin her biri, her sınıf için üç statüden **tam olarak birindedir.**
 
-**Not Declared.** İşlev yoktur. Çağırmak sentaks hatası verir, ama hata "silinmiş işlev"
-değil "böyle bir işlev yok" biçimindedir. Yükleme çözümlemesine hiç katılmaz.
+**Not Declared.** İşlev yoktur ve yükleme çözümlemesine hiç katılmaz. Çağrının sonucunu
+kalan yüklemeler belirler: uygun yükleme yoksa, belirsizlik varsa ya da seçilen yükleme
+silinmiş veya erişilemezse çağrı sentaks hatasıdır. Örneğin taşıyan kurucu bildirilmemişse
+X-Value (ör. `std::move(x)`) bir argüman, daha iyi eşleşen başka bir yükleme yoksa, onu
+kabul eden, silinmemiş ve erişilebilir bir kopyalayan kurucuya gider.
 
 **Implicitly Declared.** Kullanıcı bildirmemiştir, derleyici durumdan vazife çıkarıp
 bildirmiştir. İki alt hâli vardır: *implicitly defaulted* (derleyici gövdesini de yazar)
@@ -22,5 +25,8 @@ kopyalanamıyorsa).
 (gövdeyi de kullanıcı yazmıştır), *defaulted* (`= default`), *deleted* (`= delete`).
 
 Bu ayrım önemlidir çünkü **Not Declared ile Deleted aynı şey değildir.** Silinmiş işlev
-yükleme çözümlemesine katılır ve seçilirse hata verir; bildirilmemiş işlev çözümlemeye
-hiç girmez, başka bir yükleme seçilebilir.
+yükleme çözümlemesine katılır ve seçilirse hata verir; bildirilmemiş işlev çözümlemeye hiç
+girmez, başka bir yükleme seçilebilir. Bir istisna vardır: örtülü bildirilen ya da ilk
+bildiriminde `= default` yapılan bir taşıyan kurucu ya da taşıyan atama silinmiş olarak
+tanımlanırsa yükleme çözümlemesinde yok sayılır. Böylece X-Value (ör. `std::move(x)`)
+argüman, bildirilmemiş durumdaki gibi, aynı koşulla kopyalayan işleve gider.

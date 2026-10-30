@@ -4,6 +4,17 @@
 
 ### Düzeltmeler
 
+- Cilt II Kısım 2 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-2-kisim-02.md`):
+  - 2.1: Bildirilmemiş işlev çağrısının sonucunu kalan yüklemeler belirler; silinmiş olarak
+    tanımlanan örtülü ya da ilk bildiriminde `= default` taşıyan işlevlerin yok sayılması.
+  - 2.2, 2.6, 2.7: "Derleyici uyarı vermez" cümleleri standarda göre yazıldı.
+  - 2.4: Örnekteki fark `is_trivially_copyable`'a değil `is_trivially_default_constructible`'a
+    yansır.
+  - 2.5: "Aksi belirtilmedikçe" kaydı; ön koşulu olan ve olmayan işlemler ayrımı.
+  - 2.6: `vector` kuralı `reserve` ve tek öğeyi sona eklemeyle, kopyalanabilen türlerle
+    sınırlandı; örnekteki `Yazi`'ye kopyalayan kurucu eklendi; örtülü `noexcept`.
+  - 2.8: `operator=(Yazi)` kopyalayan atama işlevidir ve taşıyan kurucuyu baskılar; örneğe
+    taşıyan ve kopyalayan kurucu ile sonlandırıcı eklendi.
 - Cilt I Kısım 8 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-1-kisim-08.md`):
   - 8.1: Referans "bir isim" değil; bağlandığı nesneyi belirtir. Geçici bir değere bağlanan
     referans yeni bir geçici nesneye bağlanır.

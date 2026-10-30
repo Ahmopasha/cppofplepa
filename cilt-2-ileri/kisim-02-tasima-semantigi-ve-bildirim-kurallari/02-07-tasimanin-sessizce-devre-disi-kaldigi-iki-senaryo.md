@@ -3,14 +3,16 @@ cilt: "II — İleri"
 kisim: "2 — Taşıma Semantiği ve Bildirim Kuralları"
 baslik: "2.7 Taşımanın sessizce devre dışı kaldığı iki senaryo"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 2.7 Taşımanın sessizce devre dışı kaldığı iki senaryo
 
 Cilt I, Kısım 13.12'deki iki kuralın sebebi burada. İkisinde de ortak örüntü şudur:
-yükleme çözümlemesi taşıyan işlevi **seçemez** ve sessizce kopyalayan işleve düşer.
-Derleyici uyarı vermez.
+yükleme çözümlemesi taşıyan işlevi **seçemez** ve kopyalayan işleve düşer. Bu durumlarda
+argümanı kabul eden, silinmemiş ve erişilebilir bir kopyalayan işlev varsa kod geçerlidir;
+standart, gerçeklemenin bunu bildirmesini istemez. Aksi hâlde sentaks hatasıdır (Kısım
+2.1).
 
 **Geri dönüş türünün `const T` olması.**
 

@@ -8,11 +8,15 @@ son_kontrol: "2026-10 (C++23)"
 
 ## 2.5 Kaynağı devralınmış nesnenin durumu
 
-Standart kütüphane türleri için verilen garanti: **geçerli ama değeri belirsiz.**
+Standart kütüphane türleri için verilen garanti, aksi belirtilmedikçe, **geçerli ama
+belirtilmemiş bir durumdur.** Bazı türlerde durum belirtilmiştir; örneğin başka bir
+nesneye taşınmış `std::unique_ptr` boştur.
 
-Bunun pratik karşılığı üç maddedir. Nesnenin sonlandırıcı işlevi güvenle çalışır.
-Nesneye yeni bir değer atayabilirsiniz. Mevcut değerine dayanan hiçbir işlem
-yapamazsınız.
+Geçerli ama belirtilmemiş durumun pratik karşılığı üç maddedir. Nesnenin sonlandırıcı
+işlevi güvenle çalışır. Tür atamayı destekliyorsa nesneye yeni bir değer atayabilirsiniz.
+Ön koşulu olmayan işlemler (bir `vector` için `size()`, `empty()`, `clear()`) çağrılabilir
+ve türü için belirtildiği gibi davranır; ön koşulu nesnenin değerine bağlı işlemlerden
+(`front()`, `pop_back()`) önce ise bu koşul denetlenmelidir.
 
 ```cpp
 std::string s(10000, 'A');

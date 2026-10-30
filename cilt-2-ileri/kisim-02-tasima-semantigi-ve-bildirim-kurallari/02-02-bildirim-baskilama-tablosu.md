@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "2 — Taşıma Semantiği ve Bildirim Kuralları"
 baslik: "2.2 Bildirim baskılama tablosu"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 2.2 Bildirim baskılama tablosu
@@ -26,9 +26,12 @@ Bir özel üye işlevi bildirmek, diğerlerinin statüsünü değiştirir. Kural
 Tablodan çıkan üç sonuç:
 
 **Sonlandırıcı işlev yazmak taşımayı öldürür.** Sırf günlükleme eklemek için boş bir
-sonlandırıcı işlev yazdığınızda, sınıfınız sessizce taşınamaz hâle gelir ve her yerde
-kopyalanmaya başlar. Performans kaybı derleyici uyarısı vermez. Bu, Big-Five kuralının
-asıl teknik gerekçesidir.
+sonlandırıcı işlev yazdığınızda, taşıyan işlevler örtülü bildirilmez: sınıfınız
+kopyalanabiliyorsa taşınması beklenen yerlerde kopyalanmaya başlar, kopyalanamıyorsa
+(ör. `std::unique_ptr` üyesi varsa) `std::move` ile kurulması sentaks hatası olur
+(Kısım 2.1). Kopyalamaya düşen kod geçerlidir; standart, gerçeklemenin bunu bildirmesini
+istemez; performans kaybı sessizce oluşabilir. Bu, Big-Five kuralının asıl teknik
+gerekçesidir.
 
 **Taşıma işlevi yazmak kopyalamayı siler.** Yalnızca taşıyan kurucu yazarsanız sınıf
 kopyalanamaz hâle gelir. Bunu isteyerek yapıyorsanız sorun yok; istemeden yaptıysanız

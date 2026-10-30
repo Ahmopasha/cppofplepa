@@ -7,6 +7,18 @@ C++23 metninin (N4950, timsong-cpp.github.io/cppwp/n4950) bölüm adlarıyla ver
 çalışma taslağında da aynı bölümlerdir. Testler `araclar/kod_denetimi.py` ile derlendi ve
 çalıştırıldı.
 
+**İşlem (2026-10):** "düzeltilmeli", "eksik" ve "gerçekleme" sonuçlu bütün iddialar
+düzeltildi; metinler AI hakem panelinden geçti (`~/ai-panel/calismalar/2026-10-30_c2-02-tarama`,
+beş tur). "Derleyici uyarı vermez" cümleleri "kod geçerlidir; standart, gerçeklemenin bunu
+bildirmesini istemez" kalıbıyla yazıldı. Panel ayrıca şunları ekletti: bildirilmemiş işlev
+çağrısının sonucunu kalan yüklemelerin belirlediği ve X-Value/PR-Value ayrımı (2.1, 2.8);
+kopyalanamayan üyeli sınıfta sonlandırıcının sentaks hatasına yol açması (2.2); `vector`
+kuralının `reserve` ve tek öğeyi sona eklemeyle sınırlanması ([vector.modifiers]; 2.6);
+`std::deque` taşıyan kurucusunun `noexcept` olmasının garanti edilmediği (2.6); 2.8
+örneğine sonlandırıcı. Açık kalan: 2.7'nin giriş cümlesi ikinci senaryoyu (`return
+std::move(x)`) da "kopyalayan işleve düşer" diye anlatıyor; o senaryoda taşıyan kurucu
+seçilir, kaybedilen eliminasyondur. Kısım 3 panelinde düzeltilecek.
+
 | # | Yer | İddia | Kaynak | Sonuç |
 |---|---|---|---|---|
 | 1 | 2.1 | Altı özel üye işlev vardır; her biri bildirilmemiş, örtülü bildirilmiş (defaulted/deleted) ya da kullanıcı bildirmiş (provided/defaulted/deleted) olabilir | [special]/1; [class.copy.ctor]/6, /8, /10; [dcl.fct.def.default]/5 | doğru |
@@ -29,7 +41,7 @@ C++23 metninin (N4950, timsong-cpp.github.io/cppwp/n4950) bölüm adlarıyla ver
 | 18 | 2.7 | İki senaryoda da "derleyici uyarı vermez" | Standart tanı istemez; uyarı gerçeklemeye bağlıdır (`return std::move(x)` için varsayılan olarak uyarı veren gerçeklemeler vardır) | gerçekleme |
 | 19 | 2.7 | `return std::move(mx)` eliminasyonu engeller, taşıyan kurucu çağrılır | [class.copy.elision]/1.1: eliminasyon için `return` işleneni otomatik ömürlü, `volatile` olmayan bir nesnenin **adı** olmalıdır | doğru |
 | 20 | 2.8 | Copy-and-swap güçlü garanti sağlar; kendine atama denetimi gerekmez | `swap` `noexcept` olduğunda kopya çağrı noktasında yapılır; `*this`'e dokunulmadan önce biter ([expr.call]: parametrelerin ilk değer verilmesi işlev gövdesinden önce yapılır) | doğru |
-| 21 | 2.8 | Tek işlev hem kopyalayan hem taşıyan atama görevi görür; "R-Value ise taşınarak gelir" | [class.copy.assign]/1: `operator=(Yazi)` bir **kopyalayan atama işlevidir**; kullanıcı bildirdiği için taşıyan kurucu örtülü bildirilmez ([class.copy.ctor]/8). Örnekteki `Yazi`'ye R-Value verildiğinde parametre kopyalanarak oluşur; taşınması için taşıyan kurucu ayrıca yazılmalıdır | eksik (test 5) |
+| 21 | 2.8 | Tek işlev hem kopyalayan hem taşıyan atama görevi görür; "R-Value ise taşınarak gelir" | [class.copy.assign]/1: `operator=(Yazi)` bir **kopyalayan atama işlevidir**; kullanıcı bildirdiği için taşıyan kurucu örtülü bildirilmez ([class.copy.ctor]/8). Örnekteki `Yazi`'ye X-Value (`std::move(b)`) verildiğinde parametre kopyalanarak oluşur; taşınması için taşıyan kurucu ayrıca yazılmalıdır | eksik (test 5) |
 
 **Normatif olmayan not.** 2.7'deki *pessimistic move* adı yaygın kullanımda *pessimizing
 move*'dur; terim sözlüğüyle karşılaştırılmalı.
