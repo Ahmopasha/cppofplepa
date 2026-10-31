@@ -4,6 +4,16 @@
 
 ### Düzeltmeler
 
+- Cilt II Kısım 18 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-2-kisim-18.md`):
+  - 18.1: C++11 gövde listesi N3337'ye göre; `&&` ve `||`; lambda çağrı işleci şartı;
+    "gelinmemelidir" kuralı `static`/`thread_local` ve `goto` ile sınırlandı, literal tür
+    olmayan yerel değişken ayrıldı.
+  - 18.2: Kurucu şartı nesneyi oluşturan, gövdesi yazılmış kurucuya sınırlandı; literal tür
+    kavramı ve şartları; C++20 öncesi trivial sonlandırıcı; `mutable` istisnası.
+  - 18.3: İvedi çağrı kuralı ivedi işlev bağlamıyla ve değerlendirilmeyen işlenenlerle
+    sınırlandı; ivediliğin yayılması anıldı. Sözlüğe "ivedi işlev bağlamı" eklendi.
+  - 18.4: "Derleme zamanında olur" ve "`main`'den önce" anlatımları kalktı, Kısım 17.5'e atıf
+    verildi; yanlış olan Cilt I 12.14 atfı düzeltildi; tablo "`const` yapar mı" oldu.
 - PR-Value Cilt I 2.4.3'te tanıtıldı (GL-Value da anıldı); 12.17 buraya atıf veriyor.
 - İki cildin ön metnine standart ufku yazıldı. Cilt II'de C++23'e ilk girilen yerlere, mevcut
   metne dokunulmadan **Standart Notu — C++23** kutuları eklendi: 8.6, 8.11, 9.7, 10.6, 12.6,

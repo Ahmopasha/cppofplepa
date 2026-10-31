@@ -9,12 +9,14 @@ son_kontrol: "2026-10 (C++23)"
 
 ## 18.1 `constexpr` işlevlerin gevşeyen kısıtları
 
-Cilt I Kısım 6.6'da `constexpr` işlevlerin derleme zamanında yürütülen koduna sınır
-konduğu söylenmiş, bu sınırların standarttan standarda gevşediği buraya bırakılmıştı.
+Cilt I, Kısım 6.6'da `constexpr` işlevlerin sabit ifadede yürütülen koduna sınır konduğu
+söylenmiş, bu sınırların standarttan standarda gevşediği buraya bırakılmıştı.
 
-**C++11.** Gövde tek bir `return` deyiminden ibaret olmak zorundaydı. Döngü, yerel
-değişken, `if` deyimi yazılamazdı. Koşullu hesaplama yalnızca üçlü operatörle,
-tekrarlama yalnızca özyinelemeyle yapılabiliyordu.
+**C++11.** Gövdede `return` dışında yalnızca boş deyimler, `static_assert` bildirimleri,
+sınıf ya da numaralandırma tanımlamayan `typedef` ve takma ad bildirimleri, `using`
+bildirimleri ve yönergeleri bulunabilirdi; çalışan tek deyim bir `return`'dü. Döngü, yerel
+değişken, `if` deyimi yazılamazdı. Koşullu hesaplama `?:`, `&&` ve `||` ile
+yapılabiliyordu; tekrarlama için genellikle özyineleme kullanılıyordu.
 
 ```cpp
 constexpr int faktoriyel(int n)          // C++11'de tek yol
@@ -36,8 +38,9 @@ constexpr int faktoriyel(int n)          // C++14
 }
 ```
 
-**C++17.** `if constexpr` gövdede kullanılabilir hâle geldi (bkz. Kısım 5.4) ve lambda
-ifadeleri örtülü olarak `constexpr` oldu.
+**C++17.** `if constexpr` gövdede kullanılabilir hâle geldi (Kısım 5.4). Lambda
+ifadelerinin çağrı işleci de `constexpr` işlev şartlarını sağladığında örtülü olarak
+`constexpr` oldu.
 
 **C++20.** En büyük adım burada atıldı. `try`/`catch` blokları, sanal işlev çağrıları,
 `union` üyesi değiştirme, `constexpr` sonlandırıcı işlevler ve — en önemlisi —
@@ -57,10 +60,13 @@ kullanılabilir hâle geldi.
 
 **C++23.** Gövdeye yazılabilecekler yeniden genişledi. `static` ve `thread_local`
 değişkenler, türü **literal tür** *(literal type)* olmayan yerel değişkenler ve `goto`
-artık gövdede yer alabilir; **derleme zamanında yürütülen yolda bu satırlara
-gelinmemelidir**; gelinirse o çağrı sabit ifade olmaz. Sabit ifadelerde kullanılabilen
-`static` ve `thread_local` değişkenler (ör. `static constexpr`) ise bu kuralın dışındadır;
-derleme zamanında da kullanılabilir:
+artık gövdede yer alabilir (literal tür şartları için Kısım 18.2). `static` ya da
+`thread_local` değişkenin bildirimine ve `goto`'ya **derleme zamanında yürütülen yolda
+gelinmemelidir**; gelinirse o çağrı sabit ifade olmaz. Türü literal tür olmayan yerel
+değişkende ise şart farklıdır: değişkeni oluşturan kurucu işlev ya da sonlandırıcı işlev
+`constexpr` değilse bildirimine gelindiğinde çağrı sabit ifade olmaz. Sabit ifadelerde
+kullanılabilen `static` ve `thread_local` değişkenler (ör. `static constexpr`) ise
+gelinmeme kuralının dışındadır; derleme zamanında da kullanılabilir:
 
 ```cpp
 constexpr char onaltilik(int n)          // C++23

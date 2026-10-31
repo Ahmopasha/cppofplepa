@@ -9,6 +9,13 @@ geçmişti; bu turda yeniden tarandı ve kronolojisi önergelerle karşılaştı
 P2448R2 ve P2647R1 C++23'e kusur raporu olmadan girdi; P2564R3 ise C++20'ye kusur raporudur
 (cppreference, C++23 derleyici desteği tablosu).
 
+**İşlem (2026-10):** "düzeltilmeli", "eksik" ve "gerçekleme" sonuçlu bütün iddialar
+düzeltildi; metinler AI hakem panelinden geçti (`~/ai-panel/calismalar/2026-10-31_c2-18-tarama`,
+dört tur). Panel ayrıca şunları düzeltti: C++11'de `&&`, `||` ve tekrarlamanın "genellikle"
+özyineleme olması; literal tür şartının statik veri elemanlarını kapsamaması ve C++20 öncesi
+trivial sonlandırıcı; ivedi çağrı kuralının sınırı (ivedi işlev bağlamı); 18.4'teki sıra
+iddiasının blok dışı nesnelerle sınırlanması, `constinit const` ve yanlış Cilt I 12.14 atfı.
+
 | # | Yer | İddia | Kaynak | Sonuç |
 |---|---|---|---|---|
 | 1 | 18.1 | C++11'de gövde tek bir `return` deyiminden ibaret olmak zorundaydı | N3337 [dcl.constexpr]/3: gövde boş deyimler, `static_assert` bildirimleri, sınıf ya da numaralandırma tanımlamayan `typedef`/takma ad bildirimleri, `using` bildirimleri ve yönergeleri ile **tam bir** `return` deyimi içerebilirdi | eksik |

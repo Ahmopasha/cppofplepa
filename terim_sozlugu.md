@@ -192,6 +192,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | coroutine | eşyordam | Cilt II 9.1 |
 | awaitable | beklenebilir | Cilt II 9.5 |
 | immediate function | ivedi işlev | Cilt II 18.3 |
+| immediate function context | ivedi işlev bağlamı | Cilt II 18.3 |
 
 ### Deyimler
 

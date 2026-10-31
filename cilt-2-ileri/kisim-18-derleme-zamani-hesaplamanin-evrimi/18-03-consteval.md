@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "18 — Derleme Zamanı Hesaplamanın Evrimi"
 baslik: "18.3 `consteval`"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 18.3 `consteval`
@@ -20,8 +20,15 @@ int oku();
 int b = kare(oku());           // sentaks hatası — argüman sabit ifade değil
 ```
 
-Bu tür işlevlere **ivedi işlev** *(immediate function)* denir. Her çağrısı, derleme
-zamanında bir sabite dönüşmek zorundadır; aksi hâlde kod derlenmez.
+Bu tür işlevlere **ivedi işlev** *(immediate function)* denir. Değerlendirilmeyen
+işlenenler (ör. `sizeof` ve `decltype` işlenenleri) dışında, böyle bir işlevin **ivedi
+işlev bağlamı** *(immediate function context)* dışındaki çağrısı derleme zamanında bir
+sabite dönüşmek zorundadır; aksi hâlde sentaks hatası olur. Örneğin bir ivedi işlevin
+gövdesi bu bağlamdadır; oradaki çağrı sabit ifade olmak zorunda değildir: parametresi `x`
+olan `consteval` bir işlevin gövdesinde `kare(x)` geçerlidir. Ayrıca örneğin `constexpr`
+bir şablondan örneklenen işlevde ya da bir lambdanın çağrı işlecinde, sabit ifade olmayan
+böyle bir çağrı sentaks hatası değildir; çağrıyı içeren işlev ivedi işleve dönüşür
+(C++20'ye de uygulanan bir kusur raporu).
 
 Kullanım alanı, çalışma zamanında çalışmasını **istemediğiniz** hesaplamalardır.
 Örneğin bir yapılandırma değerinin derleme zamanında doğrulanması: `constexpr`
