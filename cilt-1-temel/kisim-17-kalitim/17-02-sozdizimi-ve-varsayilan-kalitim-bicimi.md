@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "17 — Kalıtım"
 baslik: "17.2 Sözdizimi ve varsayılan kalıtım biçimi"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 17.2 Sözdizimi ve varsayılan kalıtım biçimi

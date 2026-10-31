@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "15 — Dinamik Ömürlü Nesneler"
 baslik: "15.3 Üç klasik hata"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 15.3 Üç klasik hata

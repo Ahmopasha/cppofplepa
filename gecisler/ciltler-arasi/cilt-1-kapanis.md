@@ -3,7 +3,7 @@ tur: "cilt geçişi"
 cilt: "I — Temel"
 yer: "Cilt I'in sonu, son kısımdan sonra ayrı bir bölüm olarak"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 # Cilt I'den Cilt II'ye

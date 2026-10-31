@@ -4,7 +4,7 @@ kisim: "5 — `enum` ve `enum class`"
 baslik: "5.4 `using enum`"
 kaynak: "ders notları"
 kutular: ["Standart Notu — C++20"]
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 5.4 `using enum`

@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "25 — Akıllı Göstericiler"
 baslik: "25.1 Çözdükleri problem"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 25.1 Çözdükleri problem

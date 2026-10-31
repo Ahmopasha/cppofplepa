@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "4 — Tür Çıkarımı"
 baslik: "4.6 Sondan yazılan geri dönüş türü"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 4.6 Sondan yazılan geri dönüş türü

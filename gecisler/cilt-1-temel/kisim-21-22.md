@@ -5,7 +5,7 @@ onceki: "Kısım 21 — Bileşik Nesneler"
 sonraki: "Kısım 22 — Şablonlara Giriş"
 yer: "Kısım 22 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 Kısım 21'deki bağlı liste yalnızca `int` tutuyordu. Aynı listeyi `double` ya da

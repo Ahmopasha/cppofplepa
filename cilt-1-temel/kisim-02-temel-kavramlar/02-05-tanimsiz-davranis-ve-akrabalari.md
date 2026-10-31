@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "2 — Temel Kavramlar"
 baslik: "2.5 Tanımsız davranış ve akrabaları"
 kaynak: "ders notları"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 ## 2.5 Tanımsız davranış ve akrabaları

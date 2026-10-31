@@ -5,7 +5,7 @@ onceki: "Kısım 26 — Giriş–Çıkış Akımları"
 sonraki: "Kısım 27 — Eşzamanlılığa Giriş"
 yer: "Kısım 27 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 Buraya kadarki bütün programlar tek bir yürütme akışıyla çalıştı: bir işlem bitmeden

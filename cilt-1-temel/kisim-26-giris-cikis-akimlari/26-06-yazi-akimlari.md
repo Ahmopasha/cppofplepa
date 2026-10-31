@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "26 — Giriş–Çıkış Akımları"
 baslik: "26.6 Yazı akımları"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 26.6 Yazı akımları

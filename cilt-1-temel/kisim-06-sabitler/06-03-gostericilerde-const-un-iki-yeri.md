@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "6 — Sabitler"
 baslik: "6.3 Göstericilerde `const`un iki yeri"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 6.3 Göstericilerde `const`un iki yeri

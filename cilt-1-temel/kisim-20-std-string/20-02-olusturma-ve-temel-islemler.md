@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "20 — `std::string`"
 baslik: "20.2 Oluşturma ve temel işlemler"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 20.2 Oluşturma ve temel işlemler

@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "5 — `enum` ve `enum class`"
 baslik: "5.2 Kapsamlandırılmamış `enum`'un üç sorunu"
 kaynak: "ders notları"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 ## 5.2 Kapsamlandırılmamış `enum`'un üç sorunu

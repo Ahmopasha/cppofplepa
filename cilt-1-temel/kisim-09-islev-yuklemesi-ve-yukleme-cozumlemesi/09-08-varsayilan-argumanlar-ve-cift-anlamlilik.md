@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "9 — İşlev Yüklemesi ve Yükleme Çözümlemesi"
 baslik: "9.8 Varsayılan argümanlar ve çift anlamlılık"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 9.8 Varsayılan argümanlar ve çift anlamlılık

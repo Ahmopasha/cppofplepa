@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "27 — Eşzamanlılığa Giriş"
 baslik: "27.3 `mutex` ve `lock_guard`"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 27.3 `mutex` ve `lock_guard`

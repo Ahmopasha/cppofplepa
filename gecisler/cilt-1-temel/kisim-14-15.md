@@ -5,7 +5,7 @@ onceki: "Kısım 14 — Operatör Yüklemesi"
 sonraki: "Kısım 15 — Dinamik Ömürlü Nesneler"
 yer: "Kısım 15 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 Buraya kadarki örneklerde nesnelerin ömrü, tanımlandıkları yere bağlıydı: kapsam bitince

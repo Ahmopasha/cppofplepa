@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "2 — Temel Kavramlar"
 baslik: "2.4 sonu — Cilt II'ye geçiş"
 kaynak: "derleyen"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 > **Cilt II'ye geçiş**

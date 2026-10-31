@@ -5,7 +5,7 @@ onceki: "Kısım 13 — Özel Üye İşlevler"
 sonraki: "Kısım 14 — Operatör Yüklemesi"
 yer: "Kısım 14 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 Atama işlevi, Kısım 13'te derleyicinin sizin yerinize yazabildiği işlevlerden biri olarak

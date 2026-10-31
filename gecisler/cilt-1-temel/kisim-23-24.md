@@ -5,7 +5,7 @@ onceki: "Kısım 23 — STL"
 sonraki: "Kısım 24 — Lambda İfadeleri"
 yer: "Kısım 24 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 Algoritmaların önemli bir kısmı, ne yapacağını bir koşul ya da karşılaştırma olarak

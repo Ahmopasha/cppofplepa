@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "9 — İşlev Yüklemesi ve Yükleme Çözümlemesi"
 baslik: "Kısım 9 sonu — Cilt II'ye geçiş"
 kaynak: "derleyen"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 > **Cilt II'ye geçiş**

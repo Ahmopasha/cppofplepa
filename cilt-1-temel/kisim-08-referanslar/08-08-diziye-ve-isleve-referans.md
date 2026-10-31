@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "8 — Referanslar"
 baslik: "8.8 Diziye ve işleve referans"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 8.8 Diziye ve işleve referans

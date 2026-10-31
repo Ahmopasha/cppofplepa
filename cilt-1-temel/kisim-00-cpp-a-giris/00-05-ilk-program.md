@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "0 — C++'a Giriş"
 baslik: "0.5 İlk program"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 0.5 İlk program

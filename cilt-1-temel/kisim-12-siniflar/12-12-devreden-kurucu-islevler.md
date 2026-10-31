@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "12 — Sınıflar"
 baslik: "12.12 Devreden kurucu işlevler"
 kaynak: "derleyen (ders notlarında yok)"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 ## 12.12 Devreden kurucu işlevler

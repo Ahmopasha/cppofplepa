@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "10 — Tür Dönüştürme Operatörleri"
 baslik: "10.5 `dynamic_cast`"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 10.5 `dynamic_cast`

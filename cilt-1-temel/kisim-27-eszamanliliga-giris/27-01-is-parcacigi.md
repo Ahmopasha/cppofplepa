@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "27 — Eşzamanlılığa Giriş"
 baslik: "27.1 İş parçacığı"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 27.1 İş parçacığı

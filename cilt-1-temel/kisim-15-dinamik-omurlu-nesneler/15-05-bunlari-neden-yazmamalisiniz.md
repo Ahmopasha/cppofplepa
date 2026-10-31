@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "15 — Dinamik Ömürlü Nesneler"
 baslik: "15.5 Bunları neden yazmamalısınız"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 15.5 Bunları neden yazmamalısınız

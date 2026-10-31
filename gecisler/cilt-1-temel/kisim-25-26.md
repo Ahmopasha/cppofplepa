@@ -5,7 +5,7 @@ onceki: "Kısım 25 — Akıllı Göstericiler"
 sonraki: "Kısım 26 — Giriş–Çıkış Akımları"
 yer: "Kısım 26 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 Kitabın ilk programından beri kullanılan `std::cout`, bu bölümde ilk kez kendi başına ele

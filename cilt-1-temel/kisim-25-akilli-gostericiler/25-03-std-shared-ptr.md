@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "25 — Akıllı Göstericiler"
 baslik: "25.3 `std::shared_ptr`"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 25.3 `std::shared_ptr`

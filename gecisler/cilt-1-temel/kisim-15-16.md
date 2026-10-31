@@ -5,7 +5,7 @@ onceki: "Kısım 15 — Dinamik Ömürlü Nesneler"
 sonraki: "Kısım 16 — Tür Eş İsimleri ve İsim Alanları"
 yer: "Kısım 16 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 Program büyüdükçe isimlerin yönetimi ayrı bir sorun hâline gelir: uzun tür isimleri

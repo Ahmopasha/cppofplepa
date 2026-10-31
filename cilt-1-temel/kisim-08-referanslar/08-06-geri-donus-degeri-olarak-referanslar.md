@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "8 — Referanslar"
 baslik: "8.6 Geri dönüş değeri olarak referanslar"
 kaynak: "ders notları"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 ## 8.6 Geri dönüş değeri olarak referanslar

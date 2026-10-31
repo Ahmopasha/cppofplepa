@@ -5,7 +5,7 @@ onceki: "Kısım 1 — C ve C++ İçindeki C"
 sonraki: "Kısım 2 — Temel Kavramlar"
 yer: "Kısım 2 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 Kısım 1, C++'ı C ile karşılaştırarak anlattı. Buradan sonra karşılaştırma bırakılıyor ve

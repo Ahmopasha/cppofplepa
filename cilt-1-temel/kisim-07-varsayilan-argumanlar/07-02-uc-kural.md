@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "7 — Varsayılan Argümanlar"
 baslik: "7.2 Üç kural"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 7.2 Üç kural

@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "19 — Çalışma Zamanı Tür Bilgisi"
 baslik: "19.3 `typeid` ve `std::type_info`"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 19.3 `typeid` ve `std::type_info`

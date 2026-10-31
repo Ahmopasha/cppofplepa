@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "6 — Sabitler"
 baslik: "6.1 `const` değişkenler"
 kaynak: "ders notları"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 ## 6.1 `const` değişkenler

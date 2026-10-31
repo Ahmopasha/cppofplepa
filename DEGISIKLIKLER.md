@@ -4,6 +4,8 @@
 
 ### Düzeltmeler
 
+- Cilt I ve geçişlerinin `son_kontrol` etiketi cildin ufkuna uyduruldu: `(C++23)` yerine
+  `(C++20)`; tarihler değişmedi. `BAKIM.md`'ye etiketin anlamı eklendi.
 - Cilt I Kısım 6 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-1-kisim-06.md`):
   - 6.1: `extern const` bildirimi ve varsayılan kurucusuyla ilk değer alan sınıf türleri
     ayrıldı; C'de `const` değişkenin ilk değersiz tanımlanabildiği yazıldı.

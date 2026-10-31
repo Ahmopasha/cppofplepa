@@ -5,7 +5,7 @@ onceki: "Kısım 4 — Tür Çıkarımı"
 sonraki: "Kısım 5 — `enum` ve `enum class`"
 yer: "Kısım 5 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 Bu bölüm, programcının tanımlayabileceği türlerin en basitini ele alıyor. C'den miras

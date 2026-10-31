@@ -4,7 +4,7 @@ kisim: "4 — Tür Çıkarımı"
 baslik: "4.5 `auto x{...}` tuzağı"
 kaynak: "ders notları"
 kutular: ["Standart Notu — C++17"]
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 4.5 `auto x{...}` tuzağı

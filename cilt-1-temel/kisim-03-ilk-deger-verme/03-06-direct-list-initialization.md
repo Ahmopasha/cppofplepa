@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "3 — İlk Değer Verme"
 baslik: "3.6 Direct-list-initialization"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 3.6 Direct-list-initialization

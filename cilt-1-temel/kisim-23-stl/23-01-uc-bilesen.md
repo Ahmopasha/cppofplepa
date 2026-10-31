@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "23 — STL"
 baslik: "23.1 Üç bileşen"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 23.1 Üç bileşen

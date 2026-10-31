@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "8 — Referanslar"
 baslik: "8.3 `const` referanslar ve geçici nesneler"
 kaynak: "ders notları"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 ## 8.3 `const` referanslar ve geçici nesneler

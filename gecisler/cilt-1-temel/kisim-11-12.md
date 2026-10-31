@@ -5,7 +5,7 @@ onceki: "Kısım 11 — `inline`"
 sonraki: "Kısım 12 — Sınıflar"
 yer: "Kısım 12 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 Buraya kadarki bölümler dilin temel kavramlarını ve C üzerine eklediği araçları tek tek

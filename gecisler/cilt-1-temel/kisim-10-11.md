@@ -5,7 +5,7 @@ onceki: "Kısım 10 — Tür Dönüştürme Operatörleri"
 sonraki: "Kısım 11 — `inline`"
 yer: "Kısım 11 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 Sınıflara geçmeden önce bir bağlayıcı meselesinin çözülmesi gerekiyor. Sınıf tanımları

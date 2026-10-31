@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "13 — Özel Üye İşlevler"
 baslik: "13.6 Big-Three"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 13.6 Big-Three

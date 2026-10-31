@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "16 — Tür Eş İsimleri ve İsim Alanları"
 baslik: "16.1 Tür eş isimleri"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 16.1 Tür eş isimleri

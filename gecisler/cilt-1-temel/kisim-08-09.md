@@ -5,7 +5,7 @@ onceki: "Kısım 8 — Referanslar"
 sonraki: "Kısım 9 — İşlev Yüklemesi ve Yükleme Çözümlemesi"
 yer: "Kısım 9 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 Referans parametreler, bir işlevin argümanını nasıl kullanacağını imzasında ifade etmesini

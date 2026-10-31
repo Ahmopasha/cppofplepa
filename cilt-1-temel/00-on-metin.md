@@ -2,7 +2,7 @@
 cilt: "I — Temel"
 baslik: "Ön metin"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 # C++ — Cilt I

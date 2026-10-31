@@ -5,7 +5,7 @@ onceki: "Kısım 12 — Sınıflar"
 sonraki: "Kısım 13 — Özel Üye İşlevler"
 yer: "Kısım 13 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 Kısım 12'de kurucu ve sonlandırıcı işlevler tanıtıldı. Nesnelerin kopyalanması ve

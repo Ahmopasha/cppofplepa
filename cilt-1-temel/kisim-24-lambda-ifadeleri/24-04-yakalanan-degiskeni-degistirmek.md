@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "24 — Lambda İfadeleri"
 baslik: "24.4 Yakalanan değişkeni değiştirmek"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 24.4 Yakalanan değişkeni değiştirmek

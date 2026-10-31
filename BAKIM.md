@@ -10,6 +10,8 @@ kalanıyla uyumlu kalması içindir.
 
 1. Dosyanın üst bilgisindeki `son_kontrol` alanına bakın. `2026-09 (C++23)`, dosyanın
    Eylül 2026'da, C++23'e kadarki standartlar gözetilerek gözden geçirildiğini söyler.
+   Parantez içi cildin ufkudur: Cilt I'de `C++20`, Cilt II'de `C++23` yazılır (bkz. "Standart
+   ufku"). Kümülatif ilke gereği Cilt I'deki cümleler C++23'te de doğru kalmalıdır.
 2. Metni dilin güncel durumuyla karşılaştırın. Önce `kutular` alanında **Standart Notu**
    geçen dosyalara bakın; bunlar standart değiştiğinde ilk eskiyen yerlerdir. Listenin tamamı, her derlemede
    `cikti/bakim_durumu.md` içinde yeniden üretilir.

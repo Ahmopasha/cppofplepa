@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "21 — Bileşik Nesneler"
 baslik: "21.2 Hayata gelme sırası"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 21.2 Hayata gelme sırası

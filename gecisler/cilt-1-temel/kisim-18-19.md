@@ -5,7 +5,7 @@ onceki: "Kısım 18 — Exception Handling"
 sonraki: "Kısım 19 — Çalışma Zamanı Tür Bilgisi"
 yer: "Kısım 19 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-10 (C++20)"
 ---
 
 Hata yönetiminin ardından kalıtıma geri dönülüyor. Kısım 17'deki çok biçimlilik, nesnenin

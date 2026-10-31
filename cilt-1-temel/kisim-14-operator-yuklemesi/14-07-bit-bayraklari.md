@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "14 — Operatör Yüklemesi"
 baslik: "14.7 Bit bayrakları"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 14.7 Bit bayrakları

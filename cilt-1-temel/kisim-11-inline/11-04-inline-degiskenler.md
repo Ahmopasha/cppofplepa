@@ -4,7 +4,7 @@ kisim: "11 — `inline`"
 baslik: "11.4 `inline` değişkenler"
 kaynak: "ders notları"
 kutular: ["Standart Notu — C++17"]
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 11.4 `inline` değişkenler

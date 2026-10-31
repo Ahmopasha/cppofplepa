@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "11 — `inline`"
 baslik: "11.2 Ne demek değil"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-09 (C++20)"
 ---
 
 ## 11.2 Ne demek değil
