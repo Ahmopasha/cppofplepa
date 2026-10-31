@@ -65,7 +65,9 @@ geldiğini doğrulayın.
 ### Standart Notu kutusu
 
 Davranış bir standartla değiştiyse ya da eski yöntem mevcut kod tabanlarında hâlâ
-yaygınsa açılır:
+yaygınsa açılır. Bir istisna vardır: Cilt I'in ufku C++20 olduğu için, C++23 ile gelen bir
+özelliğin kitapta ilk geçtiği yere ve asıl anlatıldığı yere, salt ekleme olsa da
+**Standart Notu — C++23** kutusu konur:
 
 ```
 > **Standart Notu — C++17**

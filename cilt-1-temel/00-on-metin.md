@@ -20,6 +20,7 @@ kullanabilmeniz için yeterli olanı anlatır; araçların iç yapısı, tasarı
 kütüphane yazarken gereken teknikler **Cilt II**'nin konusudur.
 
 İki cilt kümülatif okunmak üzere yazıldı: Cilt I'in söylediği hiçbir şey Cilt II'de geri
-alınmaz. Basitleştirme vardır, yanıltma yoktur.
+alınmaz. Basitleştirme vardır, yanıltma yoktur. Bu cilt C++20 ve önceki standartlara göre
+yazıldı; C++23 ile gelenlerden kitapta yer alanlar Cilt II'dedir.
 
 Bölüm sonlarındaki geçiş kutuları, o konunun Cilt II'de nereden devam ettiğini gösterir.

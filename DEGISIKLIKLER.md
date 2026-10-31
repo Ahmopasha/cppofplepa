@@ -4,6 +4,11 @@
 
 ### Düzeltmeler
 
+- PR-Value Cilt I 2.4.3'te tanıtıldı (GL-Value da anıldı); 12.17 buraya atıf veriyor.
+- İki cildin ön metnine standart ufku yazıldı. Cilt II'de C++23'e ilk girilen yerlere, mevcut
+  metne dokunulmadan **Standart Notu — C++23** kutuları eklendi: 8.6, 8.11, 9.7, 10.6, 12.6,
+  16.3, 18.1. `BAKIM.md`'ye bu kutuların kuralı yazıldı; sözlüğe "açık nesne parametresi"
+  eklendi.
 - Cilt I ve geçişlerinin `son_kontrol` etiketi cildin ufkuna uyduruldu: `(C++23)` yerine
   `(C++20)`; tarihler değişmedi. `BAKIM.md`'ye etiketin anlamı eklendi.
 - Cilt I Kısım 6 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-1-kisim-06.md`):

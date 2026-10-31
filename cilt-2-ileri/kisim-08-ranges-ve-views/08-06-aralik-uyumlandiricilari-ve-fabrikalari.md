@@ -3,7 +3,8 @@ cilt: "II — İleri"
 kisim: "8 — Ranges ve Views"
 baslik: "8.6 Aralık uyumlandırıcıları ve fabrikaları"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+kutular: ["Standart Notu — C++23"]
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 8.6 Aralık uyumlandırıcıları ve fabrikaları
@@ -38,3 +39,8 @@ Fabrikalar:
 C++23 birkaçını daha ekledi: `views::stride` (belirli aralıklarla atlar), `views::chunk`
 (parçalara böler), `views::zip` (birden fazla aralığı eşler), `views::enumerate`
 (sıra numarasıyla eşler).
+
+> **Standart Notu — C++23**
+> **C++23 öncesi:** `views::stride`, `views::chunk`, `views::zip` ve `views::enumerate`
+> yoktur.
+> **C++23 ile:** Bunlar standart kütüphaneye eklendi.

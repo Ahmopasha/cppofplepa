@@ -3,6 +3,7 @@ cilt: "II — İleri"
 kisim: "18 — Derleme Zamanı Hesaplamanın Evrimi"
 baslik: "18.1 `constexpr` işlevlerin gevşeyen kısıtları"
 kaynak: "ders notları"
+kutular: ["Standart Notu — C++23"]
 son_kontrol: "2026-10 (C++23)"
 ---
 
@@ -45,6 +46,14 @@ ifadeleri örtülü olarak `constexpr` oldu.
 Geçici olması şu demektir: derleme zamanında ayrılan bellek, yine derleme zamanında
 serbest bırakılmak zorundadır. Bu sayede `std::vector` ve `std::string` derleme zamanında
 kullanılabilir hâle geldi.
+
+> **Standart Notu — C++23**
+> **C++23 öncesi:** `constexpr` işlev gövdesinde `static` ya da `thread_local` değişken ile
+> türü literal tür olmayan yerel değişken tanımlanamaz; `case` ile `default` dışındaki
+> etiketler ve `goto` da yer alamaz. Cilt I, Kısım 6.6 `constexpr` işlevin sabit ifadedeki
+> sınırlarını anlatır.
+> **C++23 ile:** Aşağıdaki gevşemeler geçerlidir; `goto` ile birlikte bu etiketlerin yasağı
+> da kalkar.
 
 **C++23.** Gövdeye yazılabilecekler yeniden genişledi. `static` ve `thread_local`
 değişkenler, türü **literal tür** *(literal type)* olmayan yerel değişkenler ve `goto`

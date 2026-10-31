@@ -3,7 +3,8 @@ cilt: "II — İleri"
 kisim: "12 — İleri Lambda Teknikleri"
 baslik: "12.6 Özyinelemeli lambda"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+kutular: ["Standart Notu — C++23"]
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 12.6 Özyinelemeli lambda
@@ -29,3 +30,9 @@ auto fak = [](this auto&& self, int n) {
 ```
 
 `self`, kapanış nesnesinin kendisidir.
+
+> **Standart Notu — C++23**
+> **C++23 öncesi:** **Açık nesne parametresi** *(explicit object parameter)* yoktur; lambda
+> kendisini doğrudan çağıramaz, yukarıdaki gibi dolaylı bir çözüm gerekir.
+> **C++23 ile:** Lambda, `this` ile bildirilen açık nesne parametresi üzerinden kendisine
+> erişebilir (Kısım 16.3).

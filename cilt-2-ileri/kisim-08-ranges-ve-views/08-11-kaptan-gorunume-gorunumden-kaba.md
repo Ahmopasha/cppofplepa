@@ -3,8 +3,8 @@ cilt: "II — İleri"
 kisim: "8 — Ranges ve Views"
 baslik: "8.11 Kaptan görünüme, görünümden kaba"
 kaynak: "ders notları"
-kutular: ["Standart Notu — C++20"]
-son_kontrol: "2026-09 (C++23)"
+kutular: ["Standart Notu — C++20", "Standart Notu — C++23"]
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 8.11 Kaptan görünüme, görünümden kaba
@@ -29,6 +29,11 @@ auto g = v | std::views::take(2);
 ```cpp
 auto sonuc = g | std::ranges::to<std::vector>();
 ```
+
+> **Standart Notu — C++23**
+> **C++23 öncesi:** `std::ranges::to` yoktur; C++20'de kap, yukarıdaki `std::ranges::copy`
+> çözümündeki gibi elle doldurulabilir.
+> **C++23 ile:** Zincirin sonuç kabı tek çağrıyla oluşturulur.
 
 > **Standart Notu — C++20**
 > **C++20 öncesi:** Algoritmalar iteratör çiftiyle çağrılırdı; kabın tamamı üzerinde

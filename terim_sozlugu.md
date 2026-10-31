@@ -55,6 +55,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | strict aliasing | katı örtüşme kuralı | Cilt II 11.7 |
 | deprecated | artık önerilmiyor | Cilt I 5.2 |
 | literal type | literal tür | Cilt II 18.1 |
+| explicit object parameter | açık nesne parametresi | Cilt II 12.6 |
 | defect report | kusur raporu | Cilt II 17.6 |
 
 ### Değer kategorileri ve referanslar
@@ -62,7 +63,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | İngilizce | Türkçe | İlk geçtiği yer |
 |---|---|---|
 | value category | değer kategorisi | Cilt I 2.4.1 |
-| L-Value / R-Value / PR-Value / X-Value / GL-Value | çevrilmedi, olduğu gibi kullanılır | Cilt I 2.4.2 |
+| L-Value / R-Value / PR-Value / X-Value / GL-Value | çevrilmedi, olduğu gibi kullanılır | Cilt I 2.4.2 (PR-Value, GL-Value: 2.4.3) |
 | reference collapsing | referans çökmesi | Cilt II 1.2.2 |
 | forwarding reference *(universal reference)* | çevrilmedi | Cilt I 8.9 (ayrıntısı Cilt II 1.2.1) |
 | perfect forwarding | mükemmel gönderim | Cilt II 1.2.5 |

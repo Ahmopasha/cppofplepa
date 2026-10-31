@@ -3,8 +3,8 @@ cilt: "II — İleri"
 kisim: "9 — Coroutines"
 baslik: "9.7 C++20'de eksik olan"
 kaynak: "ders notları"
-kutular: ["Standart Notu — C++20"]
-son_kontrol: "2026-09 (C++23)"
+kutular: ["Standart Notu — C++20", "Standart Notu — C++23"]
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 9.7 C++20'de eksik olan
@@ -33,6 +33,11 @@ for (int x : sayilar())
 `std::generator` bir aralıktır; Kısım 8'deki görünümlerle zincirlenebilir. Eşzamansız
 işler için gereken `task` benzeri türler ise hâlâ standart dışıdır; üçüncü parti
 kütüphanelerden alınır.
+
+> **Standart Notu — C++23**
+> **C++23 öncesi:** Standart kütüphanede hazır bir üreteç türü yoktur; C++20'de
+> `promise_type` sözleşmesini sağlayan tür elle yazılır (Kısım 9.3).
+> **C++23 ile:** `<generator>` başlık dosyası ve `std::generator` eklendi.
 
 > **Standart Notu — C++20**
 > **C++20 öncesi:** Askıya alınabilen işlev yoktu. Üreteç yazmak için ya bütün değerleri
