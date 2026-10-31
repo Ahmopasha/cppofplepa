@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "6 — Sabitler"
 baslik: "6.5 `constexpr` değişkenler"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-10 (C++23)"
 ---
 
 ## 6.5 `constexpr` değişkenler
@@ -29,4 +29,7 @@ C++'ta, sabit ifadeyle ilk değer verilmişse kullanılabilir. `constexpr` bu im
 niyetinizi açıkça yazarak sağlar.
 
 Namespace kapsamındaki `const` değişkenler C++'ta örtülü olarak iç bağlantılıdır; bu
-sayede başlık dosyasında tanımlanabilirler.
+sayede başlık dosyasında tanımlanabilirler. `volatile` ya da `inline` (bkz. Kısım 11.4)
+olanlar, açıkça `extern` bildirilenler, daha önce iç bağlantılı olmayan bir bildirimi
+bulunanlar, değişken şablonları (bkz. Cilt II, Kısım 4.10) ve modüllerde bildirilen bazı
+değişkenler örtülü iç bağlantı kuralının dışındadır.

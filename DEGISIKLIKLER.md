@@ -4,6 +4,14 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 6 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-1-kisim-06.md`):
+  - 6.1: `extern const` bildirimi ve varsayılan kurucusuyla ilk değer alan sınıf türleri
+    ayrıldı; C'de `const` değişkenin ilk değersiz tanımlanabildiği yazıldı.
+  - 6.2: "C'de bu dönüşüm serbesttir" ve "C'de derlenir" yanlıştı; C'de de kısıt ihlalidir.
+    Başlık "`const`luğu koruyan iki kural" oldu. Yazı sabitini doğrudan değiştirme sentaks
+    hatasıyla sınırlandı; `const_cast` ve C'deki tanımsız davranış eklendi.
+  - 6.5: Örtülü iç bağlantı kuralının istisnaları eklendi.
+  - 6.6: "Derleyici ... çalıştırmaz" anlatımı standardın diliyle yazıldı; `consteval` eklendi.
 - Cilt II Kısım 3 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-2-kisim-03.md`):
   - 3.1: Eliminasyon bağlamları standarda göre (eşyordam parametresi, sabit ifade ve sabit
     ilk değer verme istisnası); aynı türden PR-Value ile ilk değer verme ayrıca anlatıldı.

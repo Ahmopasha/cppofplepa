@@ -10,6 +10,15 @@ her cümle C++23'te de doğru kalmalıdır (kümülatif ilke); bu açıdan ayrı
 cümle bulunmadı: 18. satırdaki eksiklik C++20'de de C++23'te de geçerlidir (P2788R0, C++20'ye
 kusur raporu olarak uygulandı).
 
+**İşlem (2026-10):** "düzeltilmeli", "eksik" ve "gerçekleme" sonuçlu bütün iddialar
+düzeltildi; metinler AI hakem panelinden geçti (`~/ai-panel/calismalar/2026-10-31_c1-06-tarama`,
+iki tur). Panel ayrıca şunları düzeltti: 6.1'de zorunluluk yeniden "`const` bir değişken
+tanımlarken" biçimine döndü, sınıf türü istisnası "bazı sınıf türleri" oldu (test 1'in
+karşıtı: `struct Nokta { int x; }; const Nokta n;` sentaks hatasıdır); C'de "bildirilebilir"
+yerine "tanımlanabilir" yazıldı; 6.2'ye doğrudan değiştirme örneği ve C'deki tanımsız davranış
+eklendi; 6.5'teki istisnalara daha önceki bildirim eklendi, modül istisnası "bazı
+değişkenler" oldu; 6.6'da `consteval` eklendi ve başlık "Sabit ifadede neler yapılamaz?" oldu.
+
 | # | Yer | İddia | Kaynak | Sonuç |
 |---|---|---|---|---|
 | 1 | 6.1 | `const` değişkenlere ilk değer vermek zorunludur; `const int y;` sentaks hatasıdır | [dcl.init.general]/8: `const` nitelikli bir nesnenin varsayılan ilk değer almasını gerektiren program, tür *const-default-constructible* bir sınıf türü (ya da dizisi) değilse geçersizdir. Kullanıcı tanımlı varsayılan kurucusu olan bir sınıf türünden `const` nesne ilk değersiz tanımlanabilir; `extern const int y;` ise tanım değil bildirimdir. `int` için iddia doğrudur | eksik (test 1) |
