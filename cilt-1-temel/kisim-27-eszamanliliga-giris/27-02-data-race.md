@@ -3,16 +3,18 @@ cilt: "I — Temel"
 kisim: "27 — Eşzamanlılığa Giriş"
 baslik: "27.2 Data race"
 kaynak: "derleyen (ders notlarında yok)"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 27.2 Data race
 
 Eşzamanlı programlamanın temel tehlikesi budur. Tanımı üç koşulun aynı anda sağlanmasıdır:
 
-1. İki veya daha fazla iş parçacığı **aynı bellek konumuna** erişiyor,
-2. Erişimlerden **en az biri yazma**,
-3. Erişimler arasında **senkronizasyon yok.**
+1. Farklı iş parçacıklarından iki erişim **aynı bellek konumuna** yapılıyor,
+2. Bu iki erişimden **en az biri yazma**,
+3. Bu iki erişimden **en az biri atomik değil** (sıradan okuma ve yazmalar atomik
+   değildir; atomik işlemler için bkz. Cilt II, Kısım 15.8) ve aralarında
+   **senkronizasyonla kurulan bir sıra yok** (bkz. Kısım 27.3).
 
 Üçü birden sağlanıyorsa ortada bir **data race** vardır ve bu, **tanımsız davranıştır**
 (bkz. Kısım 2.5).
@@ -27,7 +29,7 @@ int main()
     std::thread t1{artir};
     std::thread t2{artir};
     t1.join(); t2.join();
-    std::cout << sayac;               // 200000 değil, tanımsız
+    std::cout << sayac;               // 200000 olacağı garanti değil: tanımsız davranış
 }
 ```
 
@@ -82,15 +84,15 @@ yine de data race vardır ve program tanımsız davranıştadır.
 
 ### Neden test ederek bulunamaz
 
-Data race'in ortaya çıkması, iş parçacıklarının **belirli bir anda** araya girmesine
-bağlıdır. Bu, işletim sisteminin o anki yüküne, çekirdek sayısına ve derleyicinin ürettiği
-koda göre değişir.
+Data race'in belirtisi, başka etkenlerin yanında iş parçacıklarının hangi sırayla
+ilerlediğine göre de değişebilir. Standart bu sırayı belirlemez; aynı program her
+çalıştırmada farklı davranabilir.
 
 Bir program yıllarca sorunsuz çalışıp, farklı bir makinede veya farklı bir derleyici
 sürümüyle bozulabilir. Hatanın yeniden üretilmesi çoğu zaman mümkün olmaz.
 
-Bu yüzden data race, **test edilerek değil, tasarımla** önlenir. Derleyicilerin sunduğu
-`ThreadSanitizer` gibi araçlar yardımcı olur ama garanti vermez; yalnızca o çalıştırmada
+Bu yüzden data race, **test edilerek değil, tasarımla** önlenir. Çalışma anında erişimleri
+izleyen denetim araçları yardımcı olur ama garanti vermez; yalnızca o çalıştırmada
 gerçekleşen erişimleri görürler.
 
 ### Üç kaçınma stratejisi
@@ -100,11 +102,14 @@ Tanımdaki üç koşuldan **herhangi birini** kırmak yeterlidir.
 **Paylaşmayın.** Her iş parçacığı kendi verisiyle çalışsın; sonuçlar sonda birleştirilsin.
 Bu, üç stratejinin en hızlısı ve en güvenlisidir.
 
-**Değiştirmeyin.** Paylaşılan veri `const` ise, bütün erişimler okuma olur ve ikinci koşul
-sağlanmaz. Sabit veriyi kaç iş parçacığının okuduğunun önemi yoktur.
+**Değiştirmeyin.** Paylaşılan veri `const` ise ve `mutable` eleman (bkz. Kısım 12.15) gibi
+yollarla gizlice yazılmıyorsa, bütün erişimler okuma olur ve ikinci koşul sağlanmaz. Sabit
+veriyi kaç iş parçacığının okuduğunun önemi yoktur. Aksi belirtilmedikçe standart
+kütüphane işlevleri, başka iş parçacıklarının erişebildiği nesnelerden yalnızca `const`
+olmayan argümanları (üye işlevlerde `this` dahil) üzerinden eriştiklerini değiştirebilir.
 
-**Senkronize edin.** Paylaşım da değişiklik de kaçınılmazsa, erişimleri 27.3'teki
-`mutex` ile veya atomik işlemlerle sıralayın.
+**Senkronize edin.** Paylaşım da değişiklik de kaçınılmazsa, erişimleri `mutex` (bkz.
+Kısım 27.3) ile sıralayın ya da atomik işlemler kullanın.
 
 Sıralama bilinçli olarak bu şekildedir: kilit, ilk iki strateji uygulanamadığında
 başvurulan son çözümdür. Kilit eklemek hem maliyet getirir hem yeni hata sınıfları açar

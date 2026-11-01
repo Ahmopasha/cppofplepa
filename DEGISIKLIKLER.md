@@ -4,6 +4,13 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 27 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-1-kisim-27.md`):
+  - 27.1: `std::terminate` kuralı `joinable()` nesnelerle sınırlandı; taşıyarak atama ve taşınmış
+    nesne eklendi.
+  - 27.2: Data race koşulları aynı iki erişime bağlandı, "en az biri atomik değil" eklendi;
+    "200000 değil" ve gerçekleme anlatımları çıktı (`ThreadSanitizer` adı dahil); `const`
+    stratejisine `mutable` istisnası ve standart kütüphane güvencesi eklendi.
+  - 27.3: "Program kilitlenir" sonuçlarına ayrıldı; `scoped_lock` (C++17) eklendi.
 - Cilt II Kısım 8 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-2-kisim-08.md`):
   - 8.1: "Çöker" yerine tanımsız davranış; sayısal algoritmaların ranges sürümü yok; güvenlik
     kazancı aralığın kendisi geçirildiğinde.

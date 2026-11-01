@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "27 — Eşzamanlılığa Giriş"
 baslik: "27.1 İş parçacığı"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 27.1 İş parçacığı
@@ -27,8 +27,10 @@ int main()
 `join()`, iş parçacığının bitmesini bekler. `detach()` ise bağı koparır; iş parçacığı
 arka planda devam eder.
 
-**`join` veya `detach` çağırmadan `std::thread` nesnesinin hayatının bitmesi, programı
-sonlandırır.** Sonlandırıcı işlev `std::terminate` çağırır.
+**Bir iş parçacığını temsil eden (`joinable()`) bir `std::thread` nesnesinin hayatı `join`
+veya `detach` çağrılmadan biterse program sonlanır:** nesnenin sonlandırıcı işlevi
+`std::terminate` işlevini çağırır. Böyle bir nesneye taşıyarak atama yapmak da aynı sonucu
+doğurur. Taşınmış ya da varsayılan kurulmuş nesne bir iş parçacığını temsil etmez.
 
 `std::thread` kopyalamaya kapalı, taşımaya açıktır; bir iş parçacığının iki sahibi
 olamaz.

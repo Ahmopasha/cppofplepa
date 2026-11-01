@@ -8,6 +8,13 @@ metnindendir (N4950). Cilt I'in ufku C++20 olduğu için her iddia N4861'de de d
 iki metin arasında bu kısmı etkileyen fark bulunmadı. 27.0 ve 27.4 normatif iddia
 içermiyor.
 
+**İşlem (2026-11):** "düzeltilmeli", "eksik" ve "gerçekleme" sonuçlu bütün iddialar düzeltildi;
+metinler AI hakem panelinden geçti (`~/ai-panel/calismalar/2026-11-01_c1-27-tarama`, üç tur).
+Panel ayrıca şunları düzeltti: data race koşullarının aynı iki erişime bağlanması; "sıradan okuma
+ve yazmalar atomik değildir" (`atomic_ref` nedeniyle); [res.on.data.races] cümlesi ("aksi
+belirtilmedikçe", `this`); `mutable` koşulunun doğrudan yazmayı da kapsaması; belirtinin sıraya
+kesin bağlanmaması; yeniden kilitlemenin bırakmadan almaya sınırlanması.
+
 | # | Yer | İddia | Kaynak | Sonuç |
 |---|---|---|---|---|
 | 1 | 27.1 | İş parçacığı, süreç içinde bağımsız çalışan yürütme akışıdır; aynı süreçtekiler aynı belleği paylaşır | [intro.multithread]/1: iş parçacığı "program içinde tek bir denetim akışı"dır; her iş parçacığı programdaki her nesneye ve işleve erişebilir. Standart "süreç" kavramını kullanmaz ama cümle onunla çelişmez | doğru |
