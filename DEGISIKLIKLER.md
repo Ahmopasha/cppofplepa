@@ -4,6 +4,15 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 0 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-00.md`):
+  - 0.1: İlkeler tasarım hedefi olarak yazıldı; `vptr` gerçekleme olarak anıldı; `std::vector`
+    için hız değil bitişik depolama ve sabit zamanlı erişim.
+  - 0.2: Standart Notu tanımı `BAKIM.md`'ye uyduruldu.
+  - 0.3: Dokuz çeviri aşaması; çeviri birimi tanımı; ODR ve hata mesajı anlatımı yumuşatıldı;
+    araç terimleri tanıtıldı.
+  - 0.4, 0.5: `inline` `static` veri elemanı; `#pragma once`; `main`'in sonuna ulaşma kuralı.
+  - `BAKIM.md`'ye kütüphane adı kuralı, `YOL_HARITASI.md`'ye tarama yöntemi ve akıcılık aşaması
+    eklendi.
 - Cilt I Kısım 27 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-1-kisim-27.md`):
   - 27.1: `std::terminate` kuralı `joinable()` nesnelerle sınırlandı; taşıyarak atama ve taşınmış
     nesne eklendi.

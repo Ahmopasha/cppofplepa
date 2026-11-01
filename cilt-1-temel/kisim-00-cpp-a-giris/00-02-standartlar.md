@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "0 — C++'a Giriş"
 baslik: "0.2 Standartlar"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 0.2 Standartlar
@@ -23,5 +23,6 @@ C++ bir şirketin ürünü değil, ISO tarafından standartlaştırılan bir dil
 C++11 ve C++17 kalın yazıldı, çünkü dilin yazılma biçimini en çok değiştiren ikisi
 onlardır. "Modern C++" ifadesi genellikle C++11 ve sonrasını kasteder.
 
-Bu kitapta bir özelliğin hangi standartla geldiği, davranış değişikliği olan yerlerde
-**Standart Notu** kutusuyla belirtilir.
+Bu kitapta, davranışın bir standartla değiştiği ya da eski yöntemin hâlâ yaygın olduğu
+yerler ile C++23 ile gelen özelliklerin ilk geçtiği yerler **Standart Notu** kutusuyla
+belirtilir.

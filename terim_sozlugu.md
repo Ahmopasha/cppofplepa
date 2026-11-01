@@ -48,6 +48,12 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | undefined behaviour | tanımsız davranış | Cilt I 2.5 |
 | unspecified behaviour | belirtilmemiş davranış | Cilt I 2.5 |
 | implementation-defined | gerçeklemeye bağlı davranış | Cilt I 2.5 |
+| implementation | gerçekleme | Cilt I 0.1 |
+| phases of translation | çeviri aşamaları | Cilt I 0.3 |
+| preprocessor | önişlemci | Cilt I 0.3 |
+| compiler | derleyici | Cilt I 0.3 |
+| linker | bağlayıcı | Cilt I 0.3 |
+| object file | nesne dosyası | Cilt I 0.3 |
 | translation unit | çeviri birimi | Cilt I 0.3 |
 | complete / incomplete type | tamamlanmış / tamamlanmamış tür | Cilt I 2.6 |
 | padding | dolgu | Cilt II 17.8 |

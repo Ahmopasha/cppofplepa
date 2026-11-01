@@ -77,6 +77,12 @@ yapısaldır (başlık numaraları, atıflar, kutu listeleri); kodu derlemez.
 - [ ] **Ritim.** Her ay, `son_kontrol` tarihi en eski olan yaklaşık 8 kısım taranır; 46
   kısım altı ayda bir dolaşılır. İlk turda riskli konulardan başlanır: nesne ömrü,
   referanslar, taşıma, `constexpr`, ranges, eşzamanlılık.
+- [ ] **Klasör klasör tarama (kullanıcı kararı, 2026-11).** İlk turun on kısmından sonra Cilt I
+  Kısım 0'dan başlanır, Cilt II'ye geçilir, işlenmiş kısımlar atlanır. Tek geçiştir: açık nokta
+  bırakılmaz, tarama için geri dönülmez. Her klasörde normatif iddialar, atıflar, terimler ve
+  biçim taranır. Anlatım yalnızca üç durumda düzeltilir: okurun bilmediği kavrama açıklamasız
+  dayanma, tanıtılmamış terim, anlatılanı göstermeyen örnek. Taranan dosyaların `son_kontrol`'ü
+  değişmeseler de güncellenir.
 - [ ] **Yöntem.** Yapay zekâya "bu bölüm doğru mu?" diye sorulmaz; dosyadaki her normatif
   iddia ("tanımsız davranıştır", "geçersizdir", "C++17'den beri") bir tabloya dökülür,
   her birine standarttaki bölüm adı ve iddiayı sınayan kısa bir kod eklenir. Kodlar
@@ -116,6 +122,8 @@ yapısaldır (başlık numaraları, atıflar, kutu listeleri); kodu derlemez.
   | `decltype(auto)` | — | 41 | yalnızca 0.2 tablosunda |
   | Semaforlar, `std::call_once` | — | 21 / 14 | yok |
 
+  Bu tablo terim aramasıyla çıkarıldı; `kapsam.md` notlar → kitap yönünde, yazım varyantlarıyla
+  yeniden doğrulanır. Taramada görülen ek konular: koşullu derleme (Cilt I'de anlatılmıyor).
   Bilerek dışarıda bırakılan konu varsa tabloda öyle işaretlenir.
 - [ ] **Sonra yalnızca hocanın güncel programında olanlar.** `std::expected`,
   `std::mdspan`, `std::flat_map`/`flat_set`, `std::stacktrace`, `if consteval`, çok
@@ -166,3 +174,10 @@ kimlikler vermek, araya başlık eklenince bir atfın var olan ama yanlış bir 
 - Panel brief'lerindeki alıntılar güncel tutulur; eski bir alıntı hakemleri yanlış bulguya
   götürür.
 - Uzunluk sınırları cömert konur; onaylanan eklemeler metni uzatır.
+
+---
+
+## Akıcılık gözlemi
+
+Tarama, doğru ama akıcı olmayan anlatıma dokunmaz. Kitabın akıcılığı Aşama 4'ten sonra ayrı bir
+aşama olarak yeniden gözlenir; adı ve kapsamı başlarken kararlaştırılır.

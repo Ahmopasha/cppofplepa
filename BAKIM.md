@@ -176,6 +176,9 @@ Cilt I'deki bir cümle, Cilt II'nin ufkunda da doğru kalmalıdır.
 **Ders tarihleri ve künyeleri metne girmez.** Kitap bir ders kaydı değil, bir başvuru
 kaynağıdır.
 
+**Kütüphane adları.** Metinde standart kütüphane adı her zaman `std::` önekiyle yazılır;
+başlıklar ve tablo sütun başlıkları bunun dışındadır.
+
 **Terimler.** Yeni bir terim ilk geçtiği yerde `**Türkçe karşılık** *(İngilizce terim)*`
 biçiminde tanıtılır ve `terim_sozlugu.md`'ye eklenir. Sözlüğün sonundaki üç soru,
 karşılık seçerken sorulacak sorulardır.
