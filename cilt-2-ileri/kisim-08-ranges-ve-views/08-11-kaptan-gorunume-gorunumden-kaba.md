@@ -4,7 +4,7 @@ kisim: "8 — Ranges ve Views"
 baslik: "8.11 Kaptan görünüme, görünümden kaba"
 kaynak: "ders notları"
 kutular: ["Standart Notu — C++20", "Standart Notu — C++23"]
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-11 (C++23)"
 ---
 
 ## 8.11 Kaptan görünüme, görünümden kaba
@@ -37,11 +37,11 @@ auto sonuc = g | std::ranges::to<std::vector>();
 
 > **Standart Notu — C++20**
 > **C++20 öncesi:** Algoritmalar iteratör çiftiyle çağrılırdı; kabın tamamı üzerinde
-> çalışmak için her seferinde `begin()` ve `end()` yazılırdı. Birbirine bağlı işlemler
-> ara kap gerektirir, her adımda bellek ayrılırdı. Farklı kaplardan iteratör geçirmek
-> derleme zamanında yakalanamazdı.
-> **C++20 ile:** Algoritmalar aralığın kendisini alır. Görünümler tembel çalışır ve
-> zincirlenebilir; ara kap oluşmaz. Uyumsuz iteratör geçirmek kavram ihlali olarak
-> derleme zamanında yakalanır.
-> **Neden değişti:** İteratör çifti soyutlaması, iki iteratörün aynı kaba ait olduğunu
-> tür sisteminde ifade edemiyordu. Aralık, o bilgiyi tek nesnede taşır.
+> çalışmak için her seferinde `begin()` ve `end()` yazılırdı. Birbirine bağlı işlemler ara
+> kap gerektirir, her adımda bellek ayrılırdı. Farklı kaplardan iteratör geçirmek derleme
+> zamanında yakalanamazdı.
+> **C++20 ile:** `std::ranges` altındaki algoritmaların çoğu aralığın kendisini de alır.
+> Görünümler tembel çalışır ve zincirlenebilir; ara kap oluşmaz. Aralığın kendisi
+> geçirildiğinde farklı kaplardan iteratör geçirme hatası yapılamaz.
+> **Neden değişti:** İteratör çifti soyutlaması, iki iteratörün aynı kaba ait olduğunu tür
+> sisteminde ifade edemiyordu. Aralık, o bilgiyi tek nesnede taşır.

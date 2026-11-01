@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "8 — Ranges ve Views"
 baslik: "8.1 STL'in ikinci sürümü"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-11 (C++23)"
 ---
 
 ## 8.1 STL'in ikinci sürümü
@@ -23,15 +23,15 @@ Bu yazımın üç sorunu vardır.
 davranıştır.
 
 ```cpp
-std::sort(v1.begin(), v2.end());     // derlenir, çöker
+std::sort(v1.begin(), v2.end());     // derlenir; tanımsız davranış
 ```
 
 **Birleştirilememe.** İki algoritmayı ardışık uygulamak için ara kap gerekir; her adımda
 kopyalama ve bellek ayırma olur.
 
-C++20'nin **ranges** kütüphanesi üçünü birden çözer. Standart kütüphanenin eski
-algoritmaları yerinde durur; ranges sürümleri `std::ranges` isim alanında paralel olarak
-bulunur.
+C++20'nin **ranges** kütüphanesi üçünü de ele alır. Standart kütüphanenin eski
+algoritmaları yerinde durur; çoğunun ranges sürümü `std::ranges` isim alanında bulunur.
+`accumulate` ve `reduce` gibi sayısal algoritmaların ise ranges sürümü yoktur.
 
 ```cpp
 #include <ranges>
@@ -39,3 +39,6 @@ bulunur.
 
 std::ranges::sort(v);        // kabın kendisi yeterli
 ```
+
+Güvenlik kazancı, aralığın kendisi geçirildiğinde vardır:
+`std::ranges::sort(v1.begin(), v2.end())` yine derlenir ve tanımsız davranıştır.

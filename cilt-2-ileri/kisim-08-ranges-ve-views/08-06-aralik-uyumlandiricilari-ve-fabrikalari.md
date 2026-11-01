@@ -4,13 +4,14 @@ kisim: "8 — Ranges ve Views"
 baslik: "8.6 Aralık uyumlandırıcıları ve fabrikaları"
 kaynak: "ders notları"
 kutular: ["Standart Notu — C++23"]
-son_kontrol: "2026-10 (C++23)"
+son_kontrol: "2026-11 (C++23)"
 ---
 
 ## 8.6 Aralık uyumlandırıcıları ve fabrikaları
 
-**Uyumlandırıcı** *(range adaptor)*, bir aralık alıp yeni bir görünüm üreten işlev
-nesnesidir. **Fabrika** *(range factory)* ise girdisiz olarak aralık üretir.
+**Aralık uyumlandırıcısı** *(range adaptor)*, bir aralık alıp yeni bir görünüm üreten
+işlev nesnesidir. **Aralık fabrikası** *(range factory)* ise girdi olarak aralık almadan
+görünüm üretir.
 
 Sık kullanılan uyumlandırıcılar:
 

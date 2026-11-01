@@ -12,6 +12,14 @@ olarak uygulanan ranges değişiklikleri ayrıca belirtilmiştir: P2325R3 (`view
 tablolarından alındı (`ranges/view`, `ranges/basic_istream_view`); P2415R2'nin kendi
 metni DR ifadesi içermez, yalnızca LWG3452'yi çözdüğünü söyler.
 
+**İşlem (2026-11):** "düzeltilmeli", "eksik", "gerçekleme" ve "doğrulanamadı" sonuçlu bütün
+iddialar düzeltildi; metinler AI hakem panelinden geçti
+(`~/ai-panel/calismalar/2026-11-01_c2-08-tarama`, beş tur). Panel ayrıca şunları düzeltti:
+`flat_*` uyumlandırıcıları nedeniyle kap uyumlandırıcısı cümlesi; "amortize" sabit zaman;
+görünüm tanımında `enable_view` ve `movable`, sabit zamanın kurmayla sınırlı olması;
+`filter_view` önbelleğinde `forward_range` koşulu ve geçersizleşme; ödünç aralıkta iteratörlerin
+başka nesnelere bağlılığı; "algoritmaların çoğu" (`copy_n`).
+
 | # | Yer | İddia | Kaynak | Sonuç |
 |---|---|---|---|---|
 | 1 | 8.1 | İki ayrı kaptan iteratör geçirmek tanımsız davranıştır; örnek yorumu: "derlenir, çöker" | [iterator.requirements.general]/12: geçersiz aralığa kütüphane işlevi uygulamanın sonucu tanımsızdır. Tanımsız davranış çökmeyi garanti etmez | gerçekleme |

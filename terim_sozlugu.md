@@ -146,6 +146,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | range adaptor / factory | aralık uyumlandırıcısı / fabrikası | Cilt II 8.6 |
 | projection | izdüşüm | Cilt II 8.9 |
 | borrowed range | ödünç aralık | Cilt II 8.10 |
+| amortized constant time | amortize sabit zaman | Cilt II 8.2 |
 | lazy evaluation | tembel değerlendirme | Cilt II 8.5 |
 | proxy | vekil nesne | Cilt I 23.3 |
 | vocabulary types | çevrilmedi | Cilt II 11.1 |

@@ -4,6 +4,18 @@
 
 ### Düzeltmeler
 
+- Cilt II Kısım 8 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-2-kisim-08.md`):
+  - 8.1: "Çöker" yerine tanımsız davranış; sayısal algoritmaların ranges sürümü yok; güvenlik
+    kazancı aralığın kendisi geçirildiğinde.
+  - 8.2, 8.3, 8.4: Kap uyumlandırıcıları ayrıldı; `sized_range` zincirin dışında; verim
+    iddiası varlığı bilinen elemanın aranmasına bağlandı; görünüm tanımı standarda çekildi.
+  - 8.5, 8.7: `filter_view` önbelleği ve geçersizleşme; R-Value kap ve `owning_view`; `take`
+    altındaki fazladan ilerleme. "İşlevsel programlamadan ödünç" cümlesi doğrulanamadığı için
+    çıktı.
+  - 8.6, 8.8, 8.10, 8.11: Sözlükteki terimler; `subrange` iteratör ve sentinel paketler;
+    `views::common` örneği sorunu gösterecek biçimde değişti; ödünç aralık ölçütü; Standart
+    Notu'ndaki "derleme zamanında yakalanır" yanlışı düzeltildi. Sözlüğe "amortize sabit zaman"
+    eklendi.
 - Cilt II Kısım 18 (Aşama 2 taraması; iddia tablosu `tarama/2026-10/cilt-2-kisim-18.md`):
   - 18.1: C++11 gövde listesi N3337'ye göre; `&&` ve `||`; lambda çağrı işleci şartı;
     "gelinmemelidir" kuralı `static`/`thread_local` ve `goto` ile sınırlandı, literal tür

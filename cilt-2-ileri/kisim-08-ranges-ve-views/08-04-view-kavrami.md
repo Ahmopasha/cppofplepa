@@ -3,13 +3,16 @@ cilt: "II — İleri"
 kisim: "8 — Ranges ve Views"
 baslik: "8.4 `view` kavramı"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-11 (C++23)"
 ---
 
 ## 8.4 `view` kavramı
 
-**Görünüm**, kopyalanması ve taşınması ucuz olan bir aralıktır. Veriyi sahiplenmez;
-üzerinde durduğu aralığa bakar.
+**Görünüm** *(view)*, `enable_view` ile görünüm olarak işaretlenmiş, `movable` kavramını
+sağlayan, taşıyarak kurulması (kopyalanabiliyorsa kopyalayarak kurulması da) sabit zamanlı
+olan bir aralıktır. Görünümlerin çoğu veriyi sahiplenmez, üzerinde durduğu aralığa bakar.
+`single_view` (Kısım 8.6) ve `owning_view` (Kısım 8.5) gibi veriyi sahiplenen görünümler
+de vardır.
 
 Kısım 11.2 ve 11.3'teki `string_view` ve `span` ile aynı fikirdir; buradaki fark,
 görünümün bir **dönüşüm** de uygulayabilmesidir.

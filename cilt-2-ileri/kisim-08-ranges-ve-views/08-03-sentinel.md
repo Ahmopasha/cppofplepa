@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "8 — Ranges ve Views"
 baslik: "8.3 Sentinel"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-11 (C++23)"
 ---
 
 ## 8.3 Sentinel
@@ -22,6 +22,7 @@ bilinmez; eski STL ile çalışmak için önce uzunluğu hesaplamak gerekirdi. S
 bitiş koşulu bir **karşılaştırma** hâline gelir: "iteratörün gösterdiği karakter boş
 karakter mi?"
 
-`std::unreachable_sentinel`, hiçbir zaman eşit olmayan özel bir sentineldir. Sonsuz
-aralıklar bununla kurulur; bitiş denetimi tamamen elenir ve derleyici döngüyü daha iyi
-optimize eder.
+`std::unreachable_sentinel`, hiçbir iteratöre eşit olmayan özel bir sentineldir. Sonsuz
+aralıklar bununla kurulabilir. Varlığı bilinen bir eleman aranırken bu sentineli bitiş
+olarak vermek, bitiş sınamasını gereksiz kıldığı için aramayı daha verimli kılabilir;
+eleman yoksa sonlu bir kaynakta arama sınırı aşar ve davranış tanımsızdır.
