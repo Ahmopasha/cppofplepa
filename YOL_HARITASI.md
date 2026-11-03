@@ -165,6 +165,13 @@ kimlikler vermek, araya başlık eklenince bir atfın var olan ama yanlış bir 
 
 ---
 
+## Akıcılık gözlemi
+
+Tarama, doğru ama akıcı olmayan anlatıma dokunmaz. Kitabın akıcılığı Aşama 4'ten sonra ayrı bir
+aşama olarak yeniden gözlenir; adı ve kapsamı başlarken kararlaştırılır.
+
+---
+
 ## Çalışma ilkeleri
 
 - Kitabın kuralları BAKIM.md'dedir; bu dosya yalnızca sırayı ve kapsamı tutar.
@@ -174,10 +181,3 @@ kimlikler vermek, araya başlık eklenince bir atfın var olan ama yanlış bir 
 - Panel brief'lerindeki alıntılar güncel tutulur; eski bir alıntı hakemleri yanlış bulguya
   götürür.
 - Uzunluk sınırları cömert konur; onaylanan eklemeler metni uzatır.
-
----
-
-## Akıcılık gözlemi
-
-Tarama, doğru ama akıcı olmayan anlatıma dokunmaz. Kitabın akıcılığı Aşama 4'ten sonra ayrı bir
-aşama olarak yeniden gözlenir; adı ve kapsamı başlarken kararlaştırılır.

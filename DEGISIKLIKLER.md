@@ -4,6 +4,18 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 1 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-01.md`):
+  - 1.1: C sürümü (C17) belirtildi; atlama izni Kısım 1.4, 1.5 ve 1.10 ile sınırlandı.
+  - 1.2: C'de `bool` `_Bool`'a genişler; `sizeof` sonuçları sayıyla yazılmaz; `<=>` ve çok
+    karakterli ya da Türkçe harfli sabitler kuralın dışında; temel karakter kümesi tanıtıldı.
+  - 1.3: `const T*` dönüşümü C–C++ farkı değildir (Kısım 6.2).
+  - 1.5: `NULL` tanımı gerçeklemeye bağlıdır; örnek `func(0)`/`func(0L)` ile; `nullptr` örtülü
+    dönüşümü; boş gösterici sabiti tanıtıldı.
+  - 1.6: Tanımsız davranış; örtülü işlev bildirimi C99 ile kalktı.
+  - 1.7: Atama ve koşul operatörü eklendi.
+  - 1.8: C'de temel tür `int` olmak zorunda değildir; numaralandırıcı ve temel tür tanıtıldı.
+  - 1.10: C dil bağlantısı; makrolar `std`'de değildir; küresel kapsam belirtilmemiştir.
+  - Sonraki kısımlara verilen atıflar geçmiş zamandan geniş zamana çevrildi.
 - Cilt I Kısım 0 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-00.md`):
   - 0.1: İlkeler tasarım hedefi olarak yazıldı; `vptr` gerçekleme olarak anıldı; `std::vector`
     için hız değil bitişik depolama ve sabit zamanlı erişim.

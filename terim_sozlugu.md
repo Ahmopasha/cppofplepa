@@ -55,6 +55,12 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | linker | bağlayıcı | Cilt I 0.3 |
 | object file | nesne dosyası | Cilt I 0.3 |
 | translation unit | çeviri birimi | Cilt I 0.3 |
+| null pointer constant | boş gösterici sabiti | Cilt I 1.5 |
+| basic character set | temel karakter kümesi | Cilt I 1.2 |
+| implicit function declaration | örtülü işlev bildirimi | Cilt I 1.6 |
+| enumerator | numaralandırıcı | Cilt I 1.8 |
+| underlying type | temel tür | Cilt I 1.8 |
+| language linkage | dil bağlantısı | Cilt I 1.10 |
 | complete / incomplete type | tamamlanmış / tamamlanmamış tür | Cilt I 2.6 |
 | padding | dolgu | Cilt II 17.8 |
 | alignment | hizalama | Cilt II 17.8 |

@@ -3,11 +3,11 @@ cilt: "I — Temel"
 kisim: "1 — C ve C++ İçindeki C"
 baslik: "1.3 `const` farkları"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 1.3 `const` farkları
 
-Kısım 6'da ayrıntılandırıldı. Özetle üç fark vardır: C++'ta `const` değişkenlere ilk
-değer vermek zorunludur, `const T*` türünden `T*` türüne örtülü dönüşüm yoktur, ve
-`const` bir tamsayı sabit ifadesi gerektiren yerlerde kullanılabilir.
+Kısım 6'da ayrıntılandırılır. Başlıca iki fark şunlardır: C++'ta `const` bir değişken
+tanımlarken ilk değer vermek zorunludur (Kısım 6.1) ve sabit ifadeyle ilk değer almış
+`const` bir tamsayı C++'ta sabit ifade gerektiren yerlerde kullanılabilir (Kısım 6.5).
