@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "2 — Temel Kavramlar"
 baslik: "2.4.6 İşlev parametresini nasıl seçersiniz"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ### 2.4.6 İşlev parametresini nasıl seçersiniz
@@ -27,6 +27,7 @@ void buyut(std::string& s);
 **Kaynağını devralacaksanız `T&&` kullanın.** Bu, "bu nesneyi bana bırak, artık senin
 değil" demenin dildeki karşılığıdır.
 
-Bir sınıf türünü değerle geçmek, kopyalama maliyeti getirir. Yerleşik türlerde
-(`int`, `double`, gösterici) değerle geçmek doğru tercihtir; referans kullanmanın
+Kopyalanması pahalı bir sınıf türünü değerle geçmek, argüman bir L-Value ise kopyalama
+maliyeti getirir. Yerleşik türlerde (`int`, `double`, gösterici) salt okunacak bir
+parametreyi değerle geçmek doğru tercihtir; `const` referans kullanmanın genellikle bir
 kazancı yoktur.

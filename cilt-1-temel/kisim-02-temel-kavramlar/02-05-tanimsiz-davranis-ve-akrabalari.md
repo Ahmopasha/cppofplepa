@@ -3,18 +3,18 @@ cilt: "I — Temel"
 kisim: "2 — Temel Kavramlar"
 baslik: "2.5 Tanımsız davranış ve akrabaları"
 kaynak: "ders notları"
-son_kontrol: "2026-10 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 2.5 Tanımsız davranış ve akrabaları
 
-Standart, bazı durumlarda derleyiciye ne yapması gerektiğini söylemez. Bunun üç ayrı
+Standart, bazı durumlarda gerçeklemeye ne yapması gerektiğini söylemez. Bunun üç ayrı
 derecesi vardır ve karıştırılmamaları gerekir.
 
-**Tanımsız davranış** *(undefined behaviour)*. Standart hiçbir şey garanti etmez. Program
-çökebilir, yanlış sonuç verebilir, doğru çalışıyormuş gibi görünebilir. Derleyicinin sizi
-uyarma zorunluluğu yoktur; dahası, tanımsız davranışın gerçekleşmeyeceğini varsayarak
-optimizasyon yapma hakkı vardır.
+**Tanımsız davranış** *(undefined behavior)*. Standart hiçbir şey garanti etmez. Program
+çökebilir, yanlış sonuç verebilir, doğru çalışıyormuş gibi görünebilir. Standart,
+gerçeklemenin sizi uyarmasını istemez; dahası gerçekleme, tanımsız davranışın
+gerçekleşmeyeceğini varsayarak optimizasyon yapabilir.
 
 ```cpp
 int a[5];
@@ -27,9 +27,9 @@ int x;
 std::cout << x;         // tanımsız davranış: x ilk değer almamış
 ```
 
-**Belirtilmemiş davranış** *(unspecified behaviour)*. Derleyici birkaç geçerli seçenek
+**Belirtilmemiş davranış** *(unspecified behavior)*. Gerçekleme birkaç geçerli seçenek
 arasından birini seçer. Hangisini seçtiğini **belgelemek zorunda değildir** ve aynı
-derleyici farklı yerlerde farklı seçim yapabilir.
+programın farklı yerlerinde farklı seçim yapabilir.
 
 ```cpp
 int f1();
@@ -38,19 +38,21 @@ int f2();
 int x = f1() + 5 * f2();
 ```
 
-`f1` mi önce çağrılır `f2` mi, garanti edilmez. İşlevlerin yan etkisi varsa sonuç
-derleyiciye göre değişir. (Çarpmanın önceliği ayrı bir konudur; o garantilidir.)
+`f1` mi önce çağrılır `f2` mi, garanti edilmez. İşlevlerin yan etkisi varsa sonuç, aynı
+gerçeklemede bile, değişebilir. (Çarpmanın önceliği ayrı bir konudur; o garantilidir.)
 
-**Gerçeklemeye bağlı davranış** *(implementation-defined)*. Derleyici yine seçim yapar,
-ama seçimini **belgelemek zorundadır.**
+**Gerçeklemeye bağlı davranış** *(implementation-defined behavior)*. Gerçekleme yine seçim
+yapar, ama seçimini **belgelemek zorundadır.**
 
+```cpp
+sizeof(int)     // kaç bayt olduğu gerçeklemeye bağlı, ama belgelenmiş
 ```cpp
 sizeof(int)     // 4 mü 8 mi: gerçeklemeye bağlı, ama belgelenmiş
 ```
 
 Farkı tek tabloda:
 
-| | Standart garanti veriyor mu | Derleyici belgelemek zorunda mı |
+| | Standart garanti veriyor mu | Gerçekleme belgelemek zorunda mı |
 |---|---|---|
 | Tanımsız | hayır, hiçbir şey | — |
 | Belirtilmemiş | geçerli seçenekler kümesi var | hayır |

@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "2 — Temel Kavramlar"
 baslik: "2.1 Bildirim ve tanım"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 2.1 Bildirim ve tanım
@@ -28,6 +28,8 @@ class Myclass;            // bildirim
 class Myclass { int a; }; // tanım
 ```
 
-Ayrımın pratik karşılığı şudur: bir ismi **kullanabilmek** için bildirimini görmek
-yeterlidir, tanımını görmeniz gerekmez. Bu yüzden başlık dosyalarında bildirimler,
-kaynak dosyalarda tanımlar bulunur.
+Ayrımın pratik karşılığı şudur: bir ismi **kullanabilmek** için çoğu zaman bildirimini
+görmek yeterlidir, tanımını görmeniz gerekmez. Bir sınıf türünden nesne oluşturmak ya da
+`sizeof` uygulamak ise sınıfın tanımını gerektirir (Kısım 2.6). Bu yüzden bildirimler ve
+sınıf tanımları başlık dosyalarına, `inline` olmayan işlevlerin tanımları kaynak dosyalara
+konur (Kısım 0.4).

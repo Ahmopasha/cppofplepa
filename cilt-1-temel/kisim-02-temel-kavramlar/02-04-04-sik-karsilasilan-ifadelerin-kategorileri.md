@@ -3,8 +3,7 @@ cilt: "I — Temel"
 kisim: "2 — Temel Kavramlar"
 baslik: "2.4.4 Sık karşılaşılan ifadelerin kategorileri"
 kaynak: "ders notları"
-kutular: ["Standart Notu — C ve C++ farkı"]
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ### 2.4.4 Sık karşılaşılan ifadelerin kategorileri
@@ -34,11 +33,14 @@ x--
 std::move(x)
 ```
 
-İşlevlerde kategori, geri dönüş türüne bakılarak belirlenir:
+İşlev çağrısı ifadesinin kategorisi, geri dönüş türüne bakılarak belirlenir. Referans
+döndürmeyen çağrı PR-Value, L-Value referans döndüren çağrı L-Value, bir nesneye R-Value
+referans (`T&&`) döndüren çağrı X-Value'dur (Kısım 8.6):
 
 ```cpp
-int  foo();    foo()   // R-Value  — değer döndürenler
-int& bar();    bar()   // L-Value  — referans döndürenler
+int  foo();    foo()   // PR-Value — referans döndürmeyenler
+int& bar();    bar()   // L-Value  — L-Value referans döndürenler
+int&& baz();   baz()   // X-Value  — nesneye R-Value referans döndürenler
 ```
 
 `bar()` bir L-Value olduğu için atamanın solunda durabilir:
@@ -50,8 +52,11 @@ int& bar();
 bar() = 42;    // geçerlidir
 ```
 
-> **Standart Notu — C ve C++ farkı**
-> `++x` ve `--x` önek biçimleri C dilinde R-Value üretir, C++'ta L-Value üretir.
-> Virgül operatörü de C'de R-Value üretirken C++'ta sağ operandın kategorisini üretir.
-> `x + 5` gibi aritmetik ifadeler her iki dilde de R-Value'dur. C'den gelen kodu
-> okurken bu farkları gözden kaçırmayın.
+Aşağıdaki farklar `int` gibi yerleşik türler içindir. `++x` ve `--x` önek biçimleri C
+dilinde R-Value üretir, C++'ta L-Value üretir. Atama ifadesi de C'de R-Value, C++'ta
+L-Value üretir. Koşul operatörü (`?:`) C'de R-Value üretir; C++'ta ise, örneğin iki
+seçeneği de aynı türden L-Value ise, L-Value üretir. Virgül operatörü de C'de R-Value
+üretirken C++'ta sağ operandın kategorisini üretir. `x + 5` gibi aritmetik ifadeler her
+iki dilde de R-Value'dur.
+
+> C ile ortak kullanılacak kodda (ör. başlık dosyalarında) bu ifadelerin L-Value olmasına dayanmayın.

@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "2 — Temel Kavramlar"
 baslik: "2.3 İsim arama"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 2.3 İsim arama
@@ -12,7 +12,8 @@ Derleyici bir isim gördüğünde onu bir varlıkla eşleştirmek zorundadır. B
 arama** *(name lookup)* denir.
 
 Kuralın tek cümlelik hâli şudur: **arama, ismin bulunduğu ilk kapsamda durur.** Bulunan
-ismin işe yarayıp yaramadığına bakılmaz; arama orada biter.
+ismin işe yarayıp yaramadığına bakılmaz; arama orada biter. İşlev çağrılarında, argümanın
+türüne bağlı ek bir arama da yapılabilir (Kısım 16.5).
 
 ```cpp
 void func(int);

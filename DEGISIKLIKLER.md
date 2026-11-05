@@ -4,6 +4,16 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 2 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-02.md`):
+  - 2.1–2.3: Bildirimin yetmediği durumlar; kapsam tablosu (numaralandırma, şablon parametresi,
+    işlev parametresi, etiketler); gölgelenmenin istisnaları; argümana bağlı aramaya atıf.
+  - 2.4: L-Value/R-Value tarifleri istisnalarıyla; işlev çağrısının üç kategorisi; C/C++ farkı
+    kutudan düz metne alındı, atama ve koşul operatörü eklendi; referans bağlamada "tür aynı
+    olmak zorundadır" yanlışı düzeltildi; `str.size()` "0 döner" yanlışı düzeltildi; "geçerli ama
+    belirtilmemiş".
+  - 2.5: Öznesi "gerçekleme"; 2.6: gösterici ve referans gerekçeleri; 2.7: ODR'de tanı istenmez,
+    `inline` değişkenler, modüller; 2.8: C++14, basamak ayırıcının yeri, `long long`.
+  - Kod yorumları "sentaks hatası"/"geçerli" oldu; sözlük güncellendi; Standart Notu sayısı 21.
 - Cilt I Kısım 1 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-01.md`):
   - 1.1: C sürümü (C17) belirtildi; atlama izni Kısım 1.4, 1.5 ve 1.10 ile sınırlandı.
   - 1.2: C'de `bool` `_Bool`'a genişler; `sizeof` sonuçları sayıyla yazılmaz; `<=>` ve çok

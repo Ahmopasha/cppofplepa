@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "2 — Temel Kavramlar"
 baslik: "2.4.3 Üçüncü kategori: X-Value"
 kaynak: "ders notları"
-son_kontrol: "2026-10 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ### 2.4.3 Üçüncü kategori: X-Value
@@ -20,8 +20,8 @@ std::string s2 = std::move(s1);   // s1'in kaynağı kopyalanmaz, devralınır
 `std::move(s1)` ifadesinin kategorisi **X-Value**'dur. Hem bellekte bir yeri vardır
 (`s1` orada duruyor), hem de kaynağı devralınabilir.
 
-Üç kategori arasındaki ilişki şudur: X-Value, R-Value'ların bir alt türüdür. Bir
-R-Value ya geçici bir şeydir ya da `std::move` ile işaretlenmiş bir nesnedir.
+Üç kategori arasındaki ilişki şudur: X-Value, R-Value'ların bir alt kategorisidir. Bir
+R-Value ya geçici bir şeydir ya da `std::move` gibi bir araçla işaretlenmiş bir nesnedir.
 
 X-Value olmayan R-Value'lara **PR-Value** *(pure R-Value)* denir. Kısım 2.4.2'deki `10`,
 `x + 5` ve değer döndüren `foo()` birer PR-Value'dur. Böylece her ifade L-Value, X-Value

@@ -44,9 +44,9 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | definition | tanım | Cilt I 2.1 |
 | scope | kapsam | Cilt I 2.2 |
 | name lookup | isim arama | Cilt I 2.3 |
-| shadowing | gölgelenme | Cilt I 2.2 |
-| undefined behaviour | tanımsız davranış | Cilt I 2.5 |
-| unspecified behaviour | belirtilmemiş davranış | Cilt I 2.5 |
+| name hiding (shadowing) | gölgelenme | Cilt I 2.2 |
+| undefined behavior | tanımsız davranış | Cilt I 2.5 |
+| unspecified behavior | belirtilmemiş davranış | Cilt I 2.5 |
 | implementation-defined | gerçeklemeye bağlı davranış | Cilt I 2.5 |
 | implementation | gerçekleme | Cilt I 0.1 |
 | phases of translation | çeviri aşamaları | Cilt I 0.3 |
@@ -55,6 +55,11 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | linker | bağlayıcı | Cilt I 0.3 |
 | object file | nesne dosyası | Cilt I 0.3 |
 | translation unit | çeviri birimi | Cilt I 0.3 |
+| move constructor | taşıyan kurucu işlev | Cilt I 2.4.7 |
+| move assignment operator | taşıyan atama işlevi | Cilt I 2.4.7 |
+| binary literal | ikilik sabit | Cilt I 2.8 |
+| digit separator | basamak ayırıcı | Cilt I 2.8 |
+| raw string literal | ham yazı sabiti | Cilt I 2.8 |
 | null pointer constant | boş gösterici sabiti | Cilt I 1.5 |
 | basic character set | temel karakter kümesi | Cilt I 1.2 |
 | implicit function declaration | örtülü işlev bildirimi | Cilt I 1.6 |
@@ -139,7 +144,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 |---|---|---|
 | stack unwinding | yığının geri sarılması | Cilt I 18.5 |
 | basic / strong guarantee | temel / güçlü garanti | Cilt II 13.1 |
-| moved-from state | kaynağı devralınmış nesne durumu | Cilt II 2.5 |
+| moved-from state | kaynağı devralınmış nesne durumu | Cilt I 2.4.7 |
 | copy elision | kopyalama eliminasyonu | Cilt II 3.1 |
 | pessimistic move | çevrilmedi | Cilt II 2.7 |
 | control block | kontrol bloğu | Cilt I 25.3 |
