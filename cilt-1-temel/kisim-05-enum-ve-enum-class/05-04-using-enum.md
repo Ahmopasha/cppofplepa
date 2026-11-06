@@ -26,8 +26,8 @@ void yazdir(Renk r)
 }
 ```
 
-Sabitler yalnızca o kapsama taşınır; `enum class`'ın sağladığı diğer güvenceler
-korunur.
+Sabitler yalnızca o kapsamda nitelenmeden kullanılabilir; `enum class`'ın sağladığı
+diğer güvenceler korunur.
 
 Kapsamlandırılmış bir `enum`'un numaralandırıcıları kendi kapsamı (Kısım 2.2) dışında
 nitelenerek kullanılır. C++20'den itibaren `using enum` bildirimiyle bir kapsamda toplu
