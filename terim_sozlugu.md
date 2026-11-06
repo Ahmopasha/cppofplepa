@@ -115,6 +115,8 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | default member initializer | sınıf içi ilk değer | Cilt I 3.10 (ayrıntısı Cilt I 12.11) |
 | top-level const | üst düzey `const` | Cilt I 4.2 |
 | decay | çürüme | Cilt I 4.3 |
+| forward declaration | ileri bildirim | Cilt I 2.6 |
+| floating-point type | gerçek sayı türü | Cilt I 3.7 |
 
 ### İşlevler ve şablonlar
 

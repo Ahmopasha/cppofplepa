@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "5 — `enum` ve `enum class`"
 baslik: "5.3 `enum class`"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 5.3 `enum class`
@@ -24,18 +24,21 @@ isim seçimi yanıltıcıdır. `enum struct` yazımı da aynı anlama gelir.
 **Sabitler kendi kapsamlarındadır.** `Renk::Kirmizi` ile `Meyve::Kirmizi` bir arada
 bulunabilir.
 
-**Tamsayı türlerine örtülü dönüşüm yoktur.** Gerçekten istiyorsanız açıkça
-dönüştürürsünüz:
+**Tamsayı türlerine örtülü dönüşüm yoktur.** Gerçekten istiyorsanız `static_cast` (Kısım
+10.2) ile açıkça dönüştürürsünüz:
 
 ```cpp
 int x = static_cast<int>(Renk::Yesil);
 ```
 
-**Temel tür belirtilebilir** ve belirtilmezse `int`'tir:
+Temel tür belirtilebilir ve **belirtilmezse `int`'tir**.
 
 ```cpp
 enum class Durum : unsigned char { Bekliyor, Calisiyor };
 ```
+
+Temel türü her zaman bilindiği için `enum class` türleri ileri bildirilebilir:
+`enum class Renk;`.
 
 Temel tür belirtme imkânı kapsamlandırılmamış `enum` türlerine de C++11 ile geldi:
 

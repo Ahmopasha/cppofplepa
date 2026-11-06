@@ -38,8 +38,8 @@ class Der : public Myclass {}; // kalıtımda taban sınıf yapma
 
 Tamamlanmamış tür, başlık dosyaları arasındaki bağımlılığı azaltmak için kullanılır.
 Yalnızca göstericisine ya da referansına ihtiyacınız varsa, o sınıfın başlık dosyasını
-dahil etmek yerine ileri bildirim yapmanız yeterlidir; derleme süreniz kısalabilir ve
-bağımlılık zinciri kırılır.
+dahil etmek yerine **ileri bildirim** *(forward declaration)* yapmanız yeterlidir; derleme
+süreniz kısalabilir ve bağımlılık zinciri kırılır.
 
 > Gereksiz başlık dosyası eklemekten kaçının. İleri bildirimle çözülebilecek bir
 > bağımlılığı `#include` ile çözmek, projenin derleme süresini gereksiz yere büyütür.

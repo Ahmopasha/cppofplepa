@@ -3,8 +3,7 @@ cilt: "I — Temel"
 kisim: "5 — `enum` ve `enum class`"
 baslik: "5.4 `using enum`"
 kaynak: "ders notları"
-kutular: ["Standart Notu — C++20"]
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 5.4 `using enum`
@@ -30,9 +29,6 @@ void yazdir(Renk r)
 Sabitler yalnızca o kapsama taşınır; `enum class`'ın sağladığı diğer güvenceler
 korunur.
 
-> **Standart Notu — C++20**
-> **C++20 öncesi:** Kapsamlandırılmış `enum` sabitleri her kullanımda nitelenmek
-> zorundaydı. Tek çözüm, her sabit için ayrı bir `constexpr` eş isim tanımlamaktı.
-> **C++20 ile:** `using enum` bildirimiyle sabitler bir kapsama toplu olarak taşınabilir.
-> **Neden değişti:** Niteleme zorunluluğu, `enum class`'a geçişin önündeki başlıca
-> pratik engeldi.
+Kapsamlandırılmış bir `enum`'un numaralandırıcıları kendi kapsamı (Kısım 2.2) dışında
+nitelenerek kullanılır. C++20'den itibaren `using enum` bildirimiyle bir kapsamda toplu
+olarak nitelenmeden de kullanılabilir.

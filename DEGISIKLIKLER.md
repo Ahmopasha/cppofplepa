@@ -4,6 +4,15 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 5 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-05.md`):
+  - 5.1: `enum` tamsayı türü değildir (C'den farklı olarak); türün değerleri
+    numaralandırıcılarla sınırlı olmayabilir.
+  - 5.2: "derlenir" → "geçerli"; derleyici uyarısı yerine "artık önerilmiyor"un anlamı (gerçek
+    sayıyla işlemler de); üçüncü sorun yalnızca temel tür belirtilmediğinde; ileri bildirim
+    örneği; "C dilinde temel tür `int` olmak zorundadır" yanlışı düzeltildi.
+  - 5.3: `static_cast` atfı; `enum class`'ın ileri bildirilebildiği.
+  - 5.4: Standart Notu kutusu düz metne alındı (Standart Notu sayısı 20).
+  - 2.6: "ileri bildirim" terimi tanıtıldı. Sözlüğe iki terim eklendi.
 - Cilt I Kısım 4 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-04.md`):
   - 4.2: üst düzey `const` tanıtıldı, gösterilen nesnenin `const`luğu örneklendi; `auto&` her
     zaman L-Value referanstır, `int&` R-Value'ya bağlanmaz; `auto&&` ve aralık tabanlı `for`
