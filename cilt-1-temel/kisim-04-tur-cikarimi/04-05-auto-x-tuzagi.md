@@ -4,7 +4,7 @@ kisim: "4 — Tür Çıkarımı"
 baslik: "4.5 `auto x{...}` tuzağı"
 kaynak: "ders notları"
 kutular: ["Standart Notu — C++17"]
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 4.5 `auto x{...}` tuzağı
@@ -18,11 +18,14 @@ auto a3 = {10};    // std::initializer_list<int>
 auto a4{10, 20};   // sentaks hatası (C++17'den itibaren)
 ```
 
-Kural: `auto` ile eşittir yazımını kullanın.
+Kural: `auto` ile küme parantezi yerine eşittir ve tek değer yazın: `auto a1 = 10;`.
 
 > **Standart Notu — C++17**
-> **C++17 öncesi:** `auto a2{10};` yazımı da `std::initializer_list<int>` üretiyordu.
-> **C++17 ile:** Tek elemanlı küme parantezi elemanın türünü üretir; çok elemanlı olan
-> `auto` ile sentaks hatasıdır.
-> **Neden değişti:** Önceki davranış sezgiye aykırıydı ve `auto` ile küme parantezini bir
-> arada kullanan kodda sık hataya yol açıyordu.
+> **C++17 öncesi:** `auto a2{10};` ve `auto a4{10, 20};` yazımları da
+> `std::initializer_list<int>` üretiyordu.
+> **C++17 ile:** Eşittirsiz yazılan tek elemanlı küme parantezi türü tek elemandan,
+> `auto x = eleman;` yazımındaki gibi çıkarır (`auto a2{10};` → `int`); çok elemanlı
+> olan sentaks hatasıdır. `auto a3 = {10};` ise hâlâ `std::initializer_list<int>`
+> üretir.
+> **Neden değişti:** Önceki davranış sezgiye aykırıydı ve `auto` ile küme parantezini
+> bir arada kullanan kodda sık hataya yol açıyordu.

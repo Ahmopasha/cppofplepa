@@ -3,13 +3,14 @@ cilt: "I — Temel"
 kisim: "4 — Tür Çıkarımı"
 baslik: "4.3 Dizi ve işlev isimlerinin çürümesi"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 4.3 Dizi ve işlev isimlerinin çürümesi
 
-`auto x = expr;` kalıbında dizi ismi göstericiye, işlev ismi işlev göstericisine dönüşür.
-`auto&` kalıbında dönüşmez.
+`auto x = expr;` kalıbında dizi göstericiye, işlev de işlev göstericisine dönüşür. Bu
+dönüşüme **çürüme** *(decay)* denir. Referans kalıplarında (`auto&`, `const auto&`,
+`auto&&`) çürüme olmaz.
 
 ```cpp
 int a[5]{};

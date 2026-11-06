@@ -4,6 +4,17 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 4 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-04.md`):
+  - 4.2: üst düzey `const` tanıtıldı, gösterilen nesnenin `const`luğu örneklendi; `auto&` her
+    zaman L-Value referanstır, `int&` R-Value'ya bağlanmaz; `auto&&` ve aralık tabanlı `for`
+    atıfları; "her zaman bağımsız kopya" genellemesi düzeltildi.
+  - 4.3: "çürüme" terimi; referans kalıplarında çürüme olmaz.
+  - 4.4: `size_type` gerçeklemeye bağlıdır; derleyici uyarısı yerine dönüşümün sonucu; lambda,
+    şablon ve iteratör atıfları.
+  - 4.5: kural cümlesi kendi örneğiyle tutarlı; Standart Notu'nda eşittirsiz yazım ve türün
+    tek elemandan çıkarılması.
+  - 4.6: sondan yazımın `decltype` ile kullanımına atıf; geri dönüş türü çıkarımının koşulları
+    (`return`'süz işlev, özyineleme), başlık dosyasında `inline`. Sözlüğe iki terim eklendi.
 - Cilt I Kısım 3 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-03.md`):
   - 3.1: copy-list-initialization tanıtıldı; 3.3: `int()` ifadesi; 3.5: argüman geçirme ve
     değer döndürme de copy-initialization'dır, "tek farkı" yerine "en önemli farkı".
