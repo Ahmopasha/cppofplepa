@@ -4,6 +4,16 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 3 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-03.md`):
+  - 3.1: copy-list-initialization tanıtıldı; 3.3: `int()` ifadesi; 3.5: argüman geçirme ve
+    değer döndürme de copy-initialization'dır, "tek farkı" yerine "en önemli farkı".
+  - 3.7: daraltıcı dönüşümün standarttaki listesi ve sabit ifade istisnası; `char`'ın değer
+    aralığı gerçeklemeye bağlıdır; "taşma" yanlışı düzeltildi; "derlenir" → "geçerli".
+  - 3.8: kural standardın kuralı olarak; asıl most vexing parse örneği eklendi (örnek, `Diger`
+    alan kendi `Kutu` sınıfıyla).
+  - 3.9: `std::initializer_list` önceliğinin koşulları, boş küme parantezi, `std::` öneki.
+  - 3.10: C++20'de kullanıcının *bildirdiği* kurucu işlev; sınıf içi ilk değer ve referans
+    elemanlar; atıf Cilt II 16.6. Sözlüğe üç terim eklendi.
 - Cilt I Kısım 2 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-02.md`):
   - 2.1–2.3: Bildirimin yetmediği durumlar; kapsam tablosu (numaralandırma, şablon parametresi,
     işlev parametresi, etiketler); gölgelenmenin istisnaları; argümana bağlı aramaya atıf.

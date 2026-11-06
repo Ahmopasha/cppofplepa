@@ -110,6 +110,9 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | virtual inheritance | sanal kalıtım | Cilt II 6.11 |
 | covariant return type | çevrilmedi | Cilt II 6.4 |
 | aggregate | bileşik tür | Cilt I 3.10 |
+| narrowing conversion | daraltıcı dönüşüm | Cilt I 3.7 |
+| most vexing parse | en can sıkıcı ayrıştırma | Cilt I 3.8 |
+| default member initializer | sınıf içi ilk değer | Cilt I 3.10 (ayrıntısı Cilt I 12.11) |
 
 ### İşlevler ve şablonlar
 

@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "3 — İlk Değer Verme"
 baslik: "3.2 Default-initialization"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 3.2 Default-initialization
@@ -24,5 +24,5 @@ int main()
 }
 ```
 
-Sınıf türlerinde varsayılan kurucu işlev çağrılır. Sınıfın varsayılan kurucu işlevi yoksa
-sentaks hatası alırsınız.
+Sınıf türlerinde varsayılan kurucu işlev (Kısım 12.8) çağrılır. Sınıfın varsayılan kurucu
+işlevi yoksa sentaks hatası alırsınız.
