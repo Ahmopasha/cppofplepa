@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "7 — Varsayılan Argümanlar"
 baslik: "7.1 Ne işe yarar"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 7.1 Ne işe yarar
@@ -17,5 +17,5 @@ yazdir("merhaba");          // ayirici '\n'
 yazdir("merhaba", ' ');     // ayirici ' '
 ```
 
-Aynı işi iki yükleme yazarak da yapabilirdiniz. Varsayılan argüman, tek bir tanımla
-aynı sonucu verir.
+Aynı işi, işlevi iki kez yükleyerek (Kısım 9.1) de yapabilirdiniz. Varsayılan argüman, tek
+bir tanımla aynı sonucu verir.

@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "7 — Varsayılan Argümanlar"
 baslik: "7.2 Üç kural"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 7.2 Üç kural
@@ -21,12 +21,14 @@ Sebep basittir: argümanlar soldan sağa eşleştirilir, aradaki bir argüman at
 **Aradaki argümanı atlayamazsınız.**
 
 ```cpp
-f1(1, , 30);      // böyle bir yazım yok
+f1(1, , 30);      // sentaks hatası: böyle bir yazım yok
 f1(1, 10, 30);    // ortadakini yazmak zorundasınız
 ```
 
-**Varsayılan argüman bir kez yazılır.** Hem bildirimde hem tanımda yazmak sentaks
-hatasıdır. Yeri bildirimdir; yani başlık dosyası.
+**Varsayılan argüman bir kez yazılır.** Aynı kapsamda hem bildirimde hem bu bildirimi
+gören tanımda (ör. başlık dosyasını dahil eden kaynak dosyada) yazmak, değer aynı olsa
+bile sentaks hatasıdır. Varsayılan argüman, çağrı yerinde görülen bildirimden alınır
+(Kısım 7.4); bu yüzden yeri, çağıranların dahil ettiği bildirimdir, yani başlık dosyası.
 
 ```cpp
 // baslik.h

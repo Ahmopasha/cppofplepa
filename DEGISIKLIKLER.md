@@ -4,6 +4,15 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 7 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-07.md`):
+  - 7.1, 7.3: işlev yüklemesi, imza ve yükleme çözümlemesi atıfları; "yüklemeyi tetikler"
+    yanlışı ve ters kurulmuş neden-sonuç düzeltildi; "sentaks hatası: çift anlamlılık".
+  - 7.2: "sentaks hatası"; varsayılan argümanın "bu bildirimi gören tanımda" yeniden
+    yazılamayacağı; başlık dosyası öğüdünün gerekçesi.
+  - 7.4: seçim derlemede, değer her çağrıda; "farklı dosyalarda farklı davranır" yanlışı
+    düzeltildi: varsayılan argüman ODR'ye tabidir, farklı çeviri birimlerinde farklı vermek
+    programı hatalı yapar; `inline` işlevler için ek koşul. Yeni Standart Notu — C++20
+    (gerekçe satırı yok; sayı 21).
 - Cilt I Kısım 5 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-05.md`):
   - 5.1: `enum` tamsayı türü değildir (C'den farklı olarak); türün değerleri
     numaralandırıcılarla sınırlı olmayabilir.
