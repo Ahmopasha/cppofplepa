@@ -125,6 +125,8 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | function overloading | işlev yüklemesi | Cilt I 9.1 |
 | hash function | karma işlevi | Cilt I 23.4 |
 | overload resolution | yükleme çözümlemesi | Cilt I 9.3 |
+| viable function | uygun aday | Cilt I 9.4 |
+| ambiguity | çift anlamlılık | Cilt I 9.4 |
 | exact match | tam uyum | Cilt I 9.6 |
 | candidate | aday | Cilt I 9.4 |
 | rewritten candidate | yeniden yazılmış aday | Cilt II 16.4 |

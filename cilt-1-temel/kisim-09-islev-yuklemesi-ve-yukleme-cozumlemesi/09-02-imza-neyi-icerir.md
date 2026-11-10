@@ -3,17 +3,17 @@ cilt: "I — Temel"
 kisim: "9 — İşlev Yüklemesi ve Yükleme Çözümlemesi"
 baslik: "9.2 İmza neyi içerir"
 kaynak: "ders notları"
-son_kontrol: "2026-10 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 9.2 İmza neyi içerir
 
 | İmzanın parçası | İmzanın parçası değil |
 |---|---|
-| İşlev ismi | Geri dönüş türü |
+| İşlev ismi ve bulunduğu isim alanı (Kısım 16.2); üye işlevlerde üyesi olduğu sınıf (Kısım 12) | Geri dönüş türü (şablon olmayan işlevlerde; şablonlar: Kısım 22.2) |
 | Parametre türleri ve sırası | Parametre isimleri |
-| Üye işlevlerde `const`luk | Değer parametrelerdeki üst düzey `const` |
-| Üye işlevlerde referans niteleyicisi | Varsayılan argümanlar |
+| Üye işlevlerde `const`luk (Kısım 12.7) | Değer parametrelerdeki üst düzey `const` |
+| Üye işlevlerde referans niteleyicisi (Cilt II, Kısım 16.2) | Varsayılan argümanlar |
 
 Geri dönüş türünün imzaya dahil olmaması önemlidir:
 

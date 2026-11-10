@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "9 — İşlev Yüklemesi ve Yükleme Çözümlemesi"
 baslik: "9.5 Dönüşüm hiyerarşisi"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 9.5 Dönüşüm hiyerarşisi
@@ -18,10 +18,14 @@ standart dönüşüm  >  kullanıcı tanımlı dönüşüm  >  variadic dönüş
 
 **Standart dönüşüm** — dilin kendi kurallarıyla yapılan dönüşümler.
 
-**Kullanıcı tanımlı dönüşüm** — normalde geçersiz olan bir dönüşümün, sizin yazdığınız
-bir dönüştüren kurucu işlev veya tür dönüştürme operatör işlevi sayesinde geçerli hâle
-gelmesi (bkz. Kısım 12.13).
+**Kullanıcı tanımlı dönüşüm** — normalde geçersiz olan bir dönüşümün, bir sınıfın
+(`std::string` gibi kütüphane sınıfları dahil) dönüştüren kurucu işlevi (Kısım 12.13) veya
+tür dönüştürme operatör işlevi (Cilt II, Kısım 16.1) sayesinde geçerli hâle gelmesi.
 
 **Variadic dönüşüm** — işlev imzasındaki `...` parametresine yapılan geçiş.
 
-Aynı kategoriden birden fazla aday varsa çift anlamlılık hatası oluşur.
+Bir argüman için aynı kategoride dönüşüm gerektiren birden fazla uygun aday varsa,
+kategorinin kendi içindeki sıraya bakılır (standart dönüşümler için Kısım 9.6; aynı
+sıradaki dönüşümleri ayıran ek kurallar da vardır, ör. referans bağlamada değer
+kategorisi: Cilt II, Kısım 1.1.6); bunlarla da ayrılamazlarsa o argüman bakımından
+eşittirler ve çağrının sonucunu Kısım 9.7'deki kural belirler.

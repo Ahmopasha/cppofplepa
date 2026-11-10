@@ -4,6 +4,17 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 9 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-09.md`):
+  - 9.1–9.3: terim tanıtımı; imzada isim alanı ve sınıf, şablonlarda geri dönüş türü; çağrının
+    çözülme sırası standardın kuralı olarak, argümana bağlı arama, erişilemeyen yükleme.
+  - 9.4: uygunluğun tanımı; "uygun aday" ve "çift anlamlılık" tanıtıldı; derleyici mesajı
+    kaldırıldı.
+  - 9.5–9.6: "aynı kategoride çift anlamlılık" yanlışı düzeltildi; ek sıralama kuralları
+    (Cilt II 1.1.6); yükseltme genel kural olarak (numaralandırma, geniş karakter türleri);
+    tam uyum listesi açık uçlu; `0`/`nullptr` örneği.
+  - 9.7: koşulların mantığı ve nicelemesi düzeltildi. 9.8: Kısım 7.3 ile tutarlı.
+  - 9.9: isim kodlaması gerçeklemenin yöntemi; `extern "C"` yükleme kuralı;
+    `extern "C" { #include }` kalıbı yerine bildirimler. Sözlüğe iki terim eklendi.
 - Cilt I Kısım 7 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-07.md`):
   - 7.1, 7.3: işlev yüklemesi, imza ve yükleme çözümlemesi atıfları; "yüklemeyi tetikler"
     yanlışı ve ters kurulmuş neden-sonuç düzeltildi; "sentaks hatası: çift anlamlılık".

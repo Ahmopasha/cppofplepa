@@ -3,13 +3,13 @@ cilt: "I — Temel"
 kisim: "9 — İşlev Yüklemesi ve Yükleme Çözümlemesi"
 baslik: "9.1 Ne zaman yükleme vardır"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 9.1 Ne zaman yükleme vardır
 
-**Aynı kapsamda**, aynı isimli, farklı imzalara sahip birden fazla işlev bildirilmesine
-işlev yüklemesi *(function overloading)* denir.
+**Aynı kapsamda**, aynı isimli, farklı imzalara (Kısım 9.2) sahip birden fazla işlev
+bildirilmesine **işlev yüklemesi** *(function overloading)* denir.
 
 ```cpp
 void func(int);
