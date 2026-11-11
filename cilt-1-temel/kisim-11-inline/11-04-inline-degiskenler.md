@@ -4,13 +4,15 @@ kisim: "11 — `inline`"
 baslik: "11.4 `inline` değişkenler"
 kaynak: "ders notları"
 kutular: ["Standart Notu — C++17"]
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 11.4 `inline` değişkenler
 
-C++17'ye kadar `inline` yalnızca işlevler içindi. Değişkenler için aynı problem
-çözümsüzdü: başlık dosyasında bir değişken tanımlayamazdınız.
+C++17'ye kadar `inline` belirteci yalnızca işlevler içindi. Değişkenler için doğrudan bir
+çözüm yoktu: başlık dosyasında, işlev dışında tanımlanan sıradan bir değişkeni bütün
+çeviri birimlerinin paylaştığı tek değişken olarak tanımlayamazdınız. Bildirim başlığa
+`extern` ile, tanım ise bir kaynak dosyaya konurdu.
 
 C++17 bunu değiştirdi:
 
@@ -19,9 +21,12 @@ C++17 bunu değiştirdi:
 inline int genel_sayac = 0;
 ```
 
-En çok işe yaradığı yer sınıfların `static` veri elemanlarıdır. Kısım 12.14'te,
-`static` veri elemanının sınıf içinde bildirilip kaynak dosyada tanımlandığını görmüştük.
-`inline` ile bu ikinci adım ortadan kalkar:
+`inline` değişken de birden çok çeviri biriminde tanımlanabilir ve bütün çeviri birimleri
+aynı değişkeni kullanır; Kısım 11.1'deki iki koşul burada da geçerlidir.
+
+En çok işe yaradığı yer sınıfların `static` veri elemanlarıdır. Kısım 12.14'te göreceğiniz
+gibi, `static` veri elemanı sınıf içinde bildirilir ve bir kaynak dosyada ayrıca
+tanımlanır. `inline` ile bu ikinci adım ortadan kalkar:
 
 ```cpp
 class Myclass {
@@ -31,10 +36,8 @@ public:
 ```
 
 > **Standart Notu — C++17**
-> **C++17 öncesi:** `inline` yalnızca işlevlere uygulanabilir. `static` veri elemanları
-> sınıf içinde bildirilir, bir kaynak dosyada ayrıca tanımlanır. Bu ayrım, yalnızca
-> başlık dosyasından oluşan kütüphaneler yazmayı zorlaştırır.
-> **C++17 ile:** `inline` değişkenlere de uygulanabilir. `static` veri elemanı sınıf
-> içinde tanımlanabilir; ayrı tanım gerekmez.
-> **Neden değişti:** Yalnızca başlık dosyasından oluşan kütüphaneler yaygınlaştı ve
-> değişkenler için ODR istisnası olmaması bu tarzın önündeki son engeldi.
+> **C++17 öncesi:** `inline` belirteci yalnızca işlevlere uygulanabilir. `static` veri
+> elemanları sınıf içinde bildirilir, bir kaynak dosyada ayrıca tanımlanır.
+> **C++17 ile:** `inline` belirteci değişkenlere de uygulanabilir. `inline` ile
+> bildirilen `static` veri elemanı sınıf içinde tanımlanabilir; ayrı tanım gerekmez.
+> `constexpr` `static` veri elemanları da örtülü olarak `inline`'dır.

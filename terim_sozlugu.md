@@ -70,6 +70,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | padding | dolgu | Cilt II 17.8 |
 | alignment | hizalama | Cilt II 17.8 |
 | strict aliasing | katı örtüşme kuralı | Cilt II 11.7 |
+| inline substitution | satır içi yerleştirme | Cilt I 11.2 |
 | deprecated | artık önerilmiyor | Cilt I 5.2 |
 | literal type | literal tür | Cilt II 18.1 |
 | explicit object parameter | açık nesne parametresi | Cilt II 12.6 |

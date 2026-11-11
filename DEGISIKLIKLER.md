@@ -4,6 +4,14 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 11 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-11.md`):
+  - 11.1: "bağlayıcı hata verir" yerine standardın sonucu (program hatalı, tanı istenmez);
+    `inline` işlevin iki koşulu; ortak başlığın koşulları "çoğunlukla" sağladığı.
+  - 11.2: standart satır içi yerleştirmeyi tercih olarak söyler, zorlamaz; terim tanıtıldı.
+  - 11.3: liste kapalı değil; adlandırılmış modül istisnası; `consteval`; atıflar.
+  - 11.4: "Kısım 12.14'te görmüştük" yanlışı düzeltildi; yapılamayan şey paylaşılan tek
+    değişkendi; `inline` değişken kuralı; Standart Notu'na `constexpr` `static` veri
+    elemanları eklendi, doğrulanamayan gerekçe satırı kaldırıldı. Sözlüğe bir terim eklendi.
 - Cilt I Kısım 10 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-10.md`):
   - 10.2: `std::malloc`; "aşağı dönüşüm" tanıtıldı; yanlış aşağı dönüşüm tanımsız davranış;
     `dynamic_cast` öğüdü taban sınıfın çok biçimliliğine bağlandı.

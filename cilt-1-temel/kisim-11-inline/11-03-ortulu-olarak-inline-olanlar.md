@@ -3,15 +3,17 @@ cilt: "I — Temel"
 kisim: "11 — `inline`"
 baslik: "11.3 Örtülü olarak `inline` olanlar"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 11.3 Örtülü olarak `inline` olanlar
 
-Üç durumda anahtar sözcüğü yazmanıza gerek kalmaz.
+Bazı durumlarda anahtar sözcüğü yazmanıza gerek kalmaz; başlıcaları şunlardır.
 
-**Sınıf bloğu içinde tanımlanan üye işlevler.** Sınıf tanımı zaten başlık dosyasındadır
-ve her yere dahil edilir; bu işlevler örtülü olarak `inline`'dır.
+**Sınıf bloğu içinde tanımlanan üye işlevler.** Sınıflar Kısım 12'de anlatılır. Sınıf
+tanımı genellikle başlık dosyasında durur ve her yere dahil edilir; sınıf bloğu içinde
+tanımlanan üye işlevler örtülü olarak `inline`'dır (adlandırılmış bir modüle bağlı
+sınıflar dışında).
 
 ```cpp
 class Myclass {
@@ -22,8 +24,8 @@ private:
 };
 ```
 
-**Derleyicinin yazdığı özel üye işlevler.** Kısım 13'teki altı işlevin derleyici
-tarafından üretilen hâlleri `inline`'dır.
+**Derleyicinin yazdığı özel üye işlevler.** Kısım 13'teki altı işlevin örtülü olarak
+bildirilen hâlleri `inline`'dır.
 
-**`constexpr` işlevler.** Kısım 6'daki `constexpr` anahtar sözcüğü `inline`'lığı da
-kapsar.
+**`constexpr` ve `consteval` işlevler.** Kısım 6.6'daki bu belirteçlerle bildirilen
+işlevler örtülü olarak `inline`'dır.
