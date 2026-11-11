@@ -106,6 +106,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | shallow / deep copy | sığ / derin kopyalama | Cilt I 13.5 |
 | object slicing | nesne dilimlenmesi | Cilt I 17.9 |
 | upcasting | çevrilmedi | Cilt I 17.4 |
+| downcasting | aşağı dönüşüm | Cilt I 10.2 |
 | diamond formation | elmas formasyonu | Cilt II 6.11 |
 | virtual inheritance | sanal kalıtım | Cilt II 6.11 |
 | covariant return type | çevrilmedi | Cilt II 6.4 |

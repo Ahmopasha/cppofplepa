@@ -4,6 +4,15 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 10 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-10.md`):
+  - 10.2: `std::malloc`; "aşağı dönüşüm" tanıtıldı; yanlış aşağı dönüşüm tanımsız davranış;
+    `dynamic_cast` öğüdü taban sınıfın çok biçimliliğine bağlandı.
+  - 10.3: "`const` bir bağlantı" yerine "`const T*` ya da `const T&`" ("bağlantı" kitapta dil
+    bağlantısı anlamında); meşru kullanım kurala hizalandı.
+  - 10.4: "bit örüntüsüne dokunmaz" ve "tanımsız davranışa yakın" kaldırıldı; gösterici ile
+    tamsayı eşlemesi gerçeklemeye bağlı, gidiş-dönüş güvencesi; katı örtüşme kuralı.
+  - 10.5: sanal işlev koşulu yalnızca aşağı dönüşümde; referanslar; atıflar.
+  - 10.6: C tarzı dönüşümün yorumlanma sırası standarttaki gibi. Sözlüğe bir terim eklendi.
 - Cilt I Kısım 9 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-09.md`):
   - 9.1–9.3: terim tanıtımı; imzada isim alanı ve sınıf, şablonlarda geri dönüş türü; çağrının
     çözülme sırası standardın kuralı olarak, argümana bağlı arama, erişilemeyen yükleme.
