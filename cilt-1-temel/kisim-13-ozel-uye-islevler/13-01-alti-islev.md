@@ -3,12 +3,13 @@ cilt: "I — Temel"
 kisim: "13 — Özel Üye İşlevler"
 baslik: "13.1 Altı işlev"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 13.1 Altı işlev
 
-Her sınıf için derleyicinin sizin adınıza yazabileceği altı üye işlev vardır:
+Her sınıf için siz bildirmediğinizde derleyicinin örtülü olarak bildirebileceği altı üye
+işlev vardır; bunlara **özel üye işlevler** *(special member functions)* denir:
 
 | İşlev | Ne zaman devreye girer |
 |---|---|

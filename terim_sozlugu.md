@@ -108,6 +108,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | ill-formed, no diagnostic required | derleyicinin bildirmek zorunda olmadığı hata | Cilt I 12.12 |
 | special member functions | özel üye işlevler | Cilt I 13.1 |
 | shallow / deep copy | sığ / derin kopyalama | Cilt I 13.5 |
+| memberwise copy | üye üye kopyalama | Cilt I 13.2 |
 | object slicing | nesne dilimlenmesi | Cilt I 17.9 |
 | upcasting | çevrilmedi | Cilt I 17.4 |
 | downcasting | aşağı dönüşüm | Cilt I 10.2 |

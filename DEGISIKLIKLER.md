@@ -4,6 +4,19 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 13 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-13.md`):
+  - 13.1–13.2: "özel üye işlevler" ve "üye üye kopyalama" tanıtıldı; örtülü bildirim,
+    varsayılan kurucunun bastırılması, silinmiş sayılma, taban sınıfların önce kopyalanması.
+  - 13.3: kopyalayan kurucunun kuralı aynı türden L-Value; "değer döndüren işlevin dönüşü"
+    yanlışı düzeltildi (C++17'de PR-Value'dan ilk değer verilirken kurucu çağrılmaz; yerel
+    nesnede eleme ya da taşıma, parametrede taşıma).
+  - 13.7: taşımanın ölçütü; `noexcept` atfı; kaynağı devralınmış nesnenin geçerli durumu;
+    taşıyan atamanın eski kaynağı; seçim kuralı; silinmiş taşıyan işlev.
+  - 13.9: Rule of Zero kutusu daraltıldı, `std::` öneki, sanal sonlandırıcı atfı.
+  - 13.11: atlanan elemanın ilk değeri; derleyici uyarısı yerine standardın sonucu.
+  - 13.12: C++17 zorunlu eleme ve yerel nesnede izinli eleme; "`const` dönüş değeri
+    kopyalanmak zorunda" yanlışı düzeltildi (sorun atamada); referansı kullanmak tanımsız
+    davranış; Cilt II 3.5 atfı. Sözlüğe bir terim eklendi.
 - Cilt I Kısım 12 (klasör klasör tarama, iki panel; iddia tablosu `tarama/2026-11/cilt-1-kisim-12.md`):
   - 12.1–12.5: "başlıca" öğeler; "erişim belirleyicisi" tanıtıldı, `protected` farkı ve `friend`
     istisnası; 12.4'te Kısım 2.3 ile çelişen "bağlam denetimi" yerine yükleme çözümlemesi,
