@@ -101,6 +101,9 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | type member / nested type | tür üyesi / içsel tür | Cilt I 12.2, 12.18 |
 | constructor | kurucu işlev | Cilt I 12.8 |
 | destructor | sonlandırıcı işlev | Cilt I 12.9 |
+| access specifier | erişim belirleyicisi | Cilt I 12.3 |
+| delegation / delegating constructor | devretme / devreden kurucu işlev | Cilt I 12.12 |
+| converting constructor | dönüştüren kurucu işlev | Cilt I 12.13 |
 | target constructor | hedef kurucu işlev | Cilt I 12.12 |
 | ill-formed, no diagnostic required | derleyicinin bildirmek zorunda olmadığı hata | Cilt I 12.12 |
 | special member functions | özel üye işlevler | Cilt I 13.1 |

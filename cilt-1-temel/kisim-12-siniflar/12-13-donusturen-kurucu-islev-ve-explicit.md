@@ -3,13 +3,14 @@ cilt: "I — Temel"
 kisim: "12 — Sınıflar"
 baslik: "12.13 Dönüştüren kurucu işlev ve `explicit`"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 12.13 Dönüştüren kurucu işlev ve `explicit`
 
-Tek parametreli kurucu işlevler, sınıf türünden olmayan bir değerin sınıf türüne
-**örtülü olarak dönüşmesini** sağlar. Buna dönüştüren kurucu işlev denir.
+Tek argümanla çağrılabilen ve `explicit` olmayan kurucu işlevler, başka türden bir değerin
+bu sınıfın türüne **örtülü olarak dönüşmesini** sağlar. `explicit` olmayan kurucu
+işlevlere **dönüştüren kurucu işlev** *(converting constructor)* denir.
 
 ```cpp
 class Myclass {
@@ -40,9 +41,10 @@ Myclass m = 20;        // sentaks hatası
 Myclass m2{20};        // geçerli — açık çağrı
 ```
 
-> **Tek parametreli kurucu işlevlerinizi `explicit` yapın.** Örtülü dönüşümü bilinçli
-> olarak isteyene kadar varsayılan bu olmalıdır. `explicit` olmayan bir kurucu işlev,
-> yanlışlıkla yazılmış bir çağrının sessizce derlenmesine yol açar.
+> **Tek parametreli kurucu işlevlerinizi `explicit` yapın** (kopyalayan ve taşıyan
+> kurucu işlevler bunun dışındadır, Kısım 13). Örtülü dönüşümü bilinçli olarak isteyene
+> kadar varsayılan bu olmalıdır. `explicit` olmayan bir kurucu işlev, yanlışlıkla
+> yazılmış bir çağrının sessizce geçerli olmasına yol açar.
 
 Parametre türünün `int` olması şart değildir; `double`, `const char*` ve diğer türler de
 aynı sonucu doğurur.

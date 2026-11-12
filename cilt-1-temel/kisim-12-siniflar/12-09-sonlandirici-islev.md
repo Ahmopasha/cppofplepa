@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "12 — Sınıflar"
 baslik: "12.9 Sonlandırıcı işlev"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 12.9 Sonlandırıcı işlev
@@ -18,8 +18,13 @@ public:
 };
 ```
 
-Kurucu işlevden farklı olarak `.` operatörüyle **çağrılabilir**, ama bu kötü bir
-alışkanlıktır; nesnenin hayatı bittiğinde ikinci kez çağrılır ve tanımsız davranış oluşur.
+Kurucu işlevden farklı olarak `.` ya da `->` operatörüyle **çağrılabilir**, ama bu kötü
+bir alışkanlıktır: açık çağrı nesnenin ömrünü bitirir; nesne kapsamdan çıkarken
+sonlandırıcı işlev yeniden çağrılır ve ömrü bitmiş nesne için yapılan bu çağrı tanımsız
+davranıştır. Açık çağrının başlıca meşru kullanımı, `placement new` ile yerinde
+oluşturulan nesnelerdir (Cilt II, Kısım 17.3).
 
-Sonlandırıcı işlev yazmanız gereken durum, sınıfın bir kaynak yönetmesidir. O durumda
-Kısım 13'teki Big-Five kuralı devreye girer.
+Sonlandırıcı işlev yazmanız gereken başlıca durum, sınıfın bir kaynak yönetmesidir; o
+durumda Big-Five kuralı (Kısım 13.8) devreye girer. Türemiş sınıf nesneleri taban sınıf
+göstericisiyle siliniyorsa taban sınıfın sonlandırıcı işlevi `virtual` olmalıdır (Kısım
+17.7).

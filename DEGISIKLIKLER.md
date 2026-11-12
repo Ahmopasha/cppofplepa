@@ -4,6 +4,21 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 12 (klasör klasör tarama, iki panel; iddia tablosu `tarama/2026-11/cilt-1-kisim-12.md`):
+  - 12.1–12.5: "başlıca" öğeler; "erişim belirleyicisi" tanıtıldı, `protected` farkı ve `friend`
+    istisnası; 12.4'te Kısım 2.3 ile çelişen "bağlam denetimi" yerine yükleme çözümlemesi,
+    isim aramanın sırası (önce yerel kapsam), erişilemeyen `private` öğenin koşulu; modül
+    istisnası.
+  - 12.6–12.9: `this` standardın tanımıyla, gizli parametre gerçeklemenin yöntemi; `const` üye
+    işlev kuralı (`mutable`, `const` referans/gösterici, sonlandırıcı); `= default` atfı; açık
+    sonlandırıcı çağrısında ömrün bittiği an, `placement new`, sanal sonlandırıcı.
+  - 12.10–12.12: listede olmayan elemanın ilk değeri; referans ve `const` elemanlar;
+    "devretme" ve "devreden kurucu işlev" tanıtıldı; tanı istenmeyen hata kalıbı; "sınıf içi
+    ilk değer kod çalıştırmaz" yanlışı düzeltildi.
+  - 12.13–12.18: dönüştüren kurucu işlevin tanımı; `static` veri elemanı istisnaları;
+    `static` üye işlevde "nesne belirtmeden"; yalnızca sınıf içinde bildirilen `friend`
+    işlevin ADL ile bulunması; geçici nesne ve C++17 PR-Value modeli; içsel tür terimi.
+    Sözlüğe dört terim eklendi.
 - Cilt I Kısım 11 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-11.md`):
   - 11.1: "bağlayıcı hata verir" yerine standardın sonucu (program hatalı, tanı istenmez);
     `inline` işlevin iki koşulu; ortak başlığın koşulları "çoğunlukla" sağladığı.

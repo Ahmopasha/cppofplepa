@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "12 — Sınıflar"
 baslik: "12.16 `friend` bildirimleri"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 12.16 `friend` bildirimleri
@@ -29,8 +29,10 @@ class Myclass {
 `friend` bildirimi sınıfın neresinde yapıldığının önemi yoktur; erişim belirleyicileri
 onu etkilemez.
 
-Sınıf içinde `friend` olarak bildirilen bir işlevin ismi, argümana bağlı isim arama
-yoluyla bulunabilir hâle gelir (bkz. Kısım 16).
+Yalnızca sınıf içinde `friend` olarak bildirilen bir işlevin ismi sıradan isim aramayla
+bulunmaz; yalnızca argümana bağlı isim arama (Kısım 16.5) ile, örneğin argümanlardan biri
+bu sınıf türündeyse, bulunabilir. İşlev, sınıfın bulunduğu isim alanında (Kısım 16.2)
+ayrıca bildirilirse sıradan aramayla da bulunur.
 
 `friend`, kapsüllemeyi delen bir araçtır; ihtiyaç duyulan en dar biçimi tercih edin.
 Bütün bir sınıfa `friend` vermek yerine, yalnızca erişmesi gereken üye işleve verin.

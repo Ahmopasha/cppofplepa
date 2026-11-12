@@ -3,13 +3,14 @@ cilt: "I — Temel"
 kisim: "12 — Sınıflar"
 baslik: "12.6 `this` göstericisi"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 12.6 `this` göstericisi
 
-Her `static` olmayan üye işlev, çağrıldığı nesnenin adresini gizli bir parametre olarak
-alır. Bu adrese `this` anahtar sözcüğüyle erişilir.
+Her `static` (Kısım 12.14) olmayan üye işlevin gövdesinde `this` anahtar sözcüğü, işlevin
+çağrıldığı nesnenin adresini verir. Gerçeklemeler bunu çoğunlukla nesnenin adresini işleve
+gizli bir argüman olarak geçirerek sağlar.
 
 ```cpp
 class Myclass {

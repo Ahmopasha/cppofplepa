@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "12 — Sınıflar"
 baslik: "12.12 Devreden kurucu işlevler"
 kaynak: "derleyen (ders notlarında yok)"
-son_kontrol: "2026-10 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 12.12 Devreden kurucu işlevler
@@ -22,9 +22,10 @@ public:
 };
 ```
 
-C++11'den itibaren bir kurucu işlev, ilk değer verme listesinde **aynı sınıfın başka bir
-kurucu işlevini** çağırabilir. Buna *devretme* denir; çağrılan işleve **hedef kurucu
-işlev** *(target constructor)* denir.
+C++11'den itibaren bir kurucu işlev, ilk değer verme listesinde
+**aynı sınıfın başka bir kurucu işlevini** çağırabilir. Buna **devretme** *(delegation)*,
+böyle bir kurucu işleve **devreden kurucu işlev** *(delegating constructor)*, çağrılan
+işleve de **hedef kurucu işlev** *(target constructor)* denir.
 
 ```cpp
 class Baglanti {
@@ -60,7 +61,7 @@ public:
 };
 -->
 ```cpp
-Baglanti(std::string a) : Baglanti{std::move(a), 80, 30}, port{8080} { }   // hata
+Baglanti(std::string a) : Baglanti{std::move(a), 80, 30}, port{8080} { }   // sentaks hatası
 ```
 
 Sebebi şudur: hedef kurucu işlev bittiğinde nesne **tamamen hayata gelmiş** sayılır.
@@ -82,22 +83,22 @@ public:
 Baglanti(std::string a) : Baglanti{std::move(a), 80, 30} { port = 8080; }   // geçerli
 ```
 
-**Nesne, hedef kurucu işlev bitince hayata gelmiş sayılır.** Bunun doğrudan sonucu şudur:
-devreden kurucu işlevin gövdesinde hata oluşursa, **sonlandırıcı işlev çağrılır.**
-Sıradan bir kurucu işlevde durum böyle değildir (bkz. Kısım 18.9); orada gövdede oluşan
-hata nesnenin hiç hayata gelmediği anlamına gelir.
+**Nesne, devretmeyen hedef kurucu işlev bitince hayata gelmiş sayılır.** Bunun doğrudan
+sonucu şudur: devreden kurucu işlevin gövdesinden bir hata gönderilerek (Kısım 18)
+çıkılırsa, **sonlandırıcı işlev çağrılır.** Devretmeyen bir kurucu işlevde durum böyle
+değildir (Kısım 18.9); orada gövdeden hata gönderilerek çıkılması nesnenin hiç hayata
+gelmediği anlamına gelir.
 
 **Devretme döngüsü kurmayın.** Bir kurucu işlev doğrudan ya da dolaylı olarak kendine
-devrederse (örneğin iki kurucu işlevin birbirine devretmesi), bu durum
-**derleyicinin bildirmek zorunda olmadığı hata** *(ill-formed, no diagnostic required)*
-sayılır.
+devrederse (örneğin iki kurucu işlevin birbirine devretmesi), program hatalıdır; standart,
+gerçeklemenin bunu bildirmesini istemez.
 
 <!-- kod: atla -->
 ```cpp
 class Bozuk {
 public:
     Bozuk(int)    : Bozuk{1.0} { }
-    Bozuk(double) : Bozuk{1}   { }  // döngü — derleyicinin bildirmek zorunda olmadığı hata
+    Bozuk(double) : Bozuk{1}   { }  // döngü — program hatalı, tanı istenmez
 };
 ```
 
@@ -119,8 +120,9 @@ public:
 };
 ```
 
-Ortak **iş** yapılması gerekiyorsa — doğrulama, dönüştürme, kaynak edinme — devretme
-gerekir; sınıf içi ilk değer verme yalnızca değer atar, kod çalıştırmaz.
+Ortak **iş** yapılması gerekiyorsa — doğrulama, dönüştürme, kaynak edinme — devretme daha
+uygundur: sınıf içi ilk değer her elemana ayrı ayrı ilk değer verir ve kurucu işlevin
+argümanlarını göremez.
 
 İkisi birlikte de kullanılabilir ve çoğu sınıfta doğru çözüm budur: varsayılan değerler
 sınıf içinde, ortak mantık hedef kurucu işlevde.

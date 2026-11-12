@@ -3,12 +3,12 @@ cilt: "I — Temel"
 kisim: "12 — Sınıflar"
 baslik: "12.2 Sınıf bloğunun öğeleri"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 12.2 Sınıf bloğunun öğeleri
 
-Bir sınıf bloğu üç tür öğe barındırır:
+Bir sınıf bloğunun başlıca üç tür öğesi vardır:
 
 **Veri elemanları** *(data members)* — sınıf bloğunda bildirilen değişkenler. `static`
 olan ve olmayan diye ikiye ayrılır.

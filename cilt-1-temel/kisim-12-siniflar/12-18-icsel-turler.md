@@ -3,13 +3,13 @@ cilt: "I — Temel"
 kisim: "12 — Sınıflar"
 baslik: "12.18 İçsel türler"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 12.18 İçsel türler
 
 Sınıf bloğu içinde başka bir sınıf, `enum` türü veya tür eş ismi tanımlanabilir. Bunlara
-*nested types* veya *member types* denir.
+**içsel tür** *(nested type)* ya da tür üyesi (Kısım 12.2) denir.
 
 ```cpp
 class Liste {

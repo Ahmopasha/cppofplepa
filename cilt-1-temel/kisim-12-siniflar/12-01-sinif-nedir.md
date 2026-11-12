@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "12 — Sınıflar"
 baslik: "12.1 Sınıf nedir"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 12.1 Sınıf nedir
@@ -19,4 +19,5 @@ class  A { int x; };    // x private
 struct B { int x; };    // x public
 ```
 
-Bunun dışında hiçbir farkları yoktur. Kalıtımda da aynı ayrım geçerlidir (bkz. 17.2).
+Bunun dışında hiçbir farkları yoktur. Kalıtımda da aynı ayrım geçerlidir; belirleyici olan
+türemiş sınıfın tanımında kullanılan anahtar sözcüktür (Kısım 17.2).

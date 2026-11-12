@@ -3,13 +3,14 @@ cilt: "I — Temel"
 kisim: "12 — Sınıflar"
 baslik: "12.5 Üye işlevlerin tanımlanması"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 12.5 Üye işlevlerin tanımlanması
 
-Üye işlev iki yerde tanımlanabilir. Sınıf bloğu içinde tanımlanırsa **örtülü olarak
-`inline`** olur (bkz. Kısım 11).
+Üye işlev iki yerde tanımlanabilir. Sınıf bloğu içinde tanımlanırsa
+**örtülü olarak `inline`** olur (adlandırılmış bir modüle bağlı sınıflar dışında, Kısım
+11.3).
 
 ```cpp
 class Myclass {

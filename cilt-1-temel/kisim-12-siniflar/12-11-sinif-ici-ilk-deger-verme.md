@@ -3,13 +3,13 @@ cilt: "I — Temel"
 kisim: "12 — Sınıflar"
 baslik: "12.11 Sınıf içi ilk değer verme"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 12.11 Sınıf içi ilk değer verme
 
-Veri elemanına, bildirildiği yerde varsayılan bir değer verilebilir. Buna *default member
-initializer* denir.
+`static` olmayan bir veri elemanına, bildirildiği yerde varsayılan bir değer verilebilir
+(`static` veri elemanları için Kısım 12.14). Buna sınıf içi ilk değer denir (Kısım 3.10).
 
 ```cpp
 class Myclass {
