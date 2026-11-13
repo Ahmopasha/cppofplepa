@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "14 — Operatör Yüklemesi"
 baslik: "14.6 Önek ve sonek ayrımı"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 14.6 Önek ve sonek ayrımı
@@ -20,9 +20,10 @@ public:
 };
 ```
 
-Geri dönüş türleri de farklıdır ve bu fark Kısım 2.4'teki değer kategorileriyle
-tutarlıdır: önek biçimi L-Value üretir, dolayısıyla referans döndürür; sonek biçimi
-PR-Value üretir, dolayısıyla değer döndürür.
+Geri dönüş türleri de geleneksel olarak farklıdır ve yerleşik operatörleri, dolayısıyla
+Kısım 2.4'teki değer kategorilerini taklit eder: önek biçimi L-Value üretir, bu yüzden
+referans döndürür; sonek biçimi PR-Value üretir, bu yüzden değer döndürür. Standart geri
+dönüş türünü belirlemez; bu bir gelenektir.
 
 Sonek biçimi eski değerin bir kopyasını döndürmek zorunda olduğu için daha pahalıdır.
 Dönüş değerini kullanmıyorsanız önek biçimini tercih edin.

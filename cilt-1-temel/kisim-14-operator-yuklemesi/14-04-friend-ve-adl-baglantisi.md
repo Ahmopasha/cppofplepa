@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "14 — Operatör Yüklemesi"
 baslik: "14.4 `friend` ve ADL bağlantısı"
 kaynak: "ders notları"
-son_kontrol: "2026-10 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 14.4 `friend` ve ADL bağlantısı
@@ -26,9 +26,11 @@ public:
 };
 ```
 
-Bu `operator+` işlevi sınıfın üyesi **değildir**; global bir işlevdir. Ama ismi yalnızca
-argümana bağlı isim arama yoluyla bulunur (bkz. Kısım 16.5). Yani `a + b` yazınca bulunur,
-`Kesir::` ile nitelenerek çağrılamaz.
+Bu `operator+` işlevi sınıfın üyesi **değildir**; sınıfın bulunduğu isim alanının (burada
+global isim alanının) bir işlevidir. Ama ismi yalnızca argümana bağlı isim arama yoluyla,
+örneğin argümanlardan biri `Kesir` türündeyse, bulunur (Kısım 12.16, 16.5). Yani `a + b`
+ya da `operator+(a, b)` yazınca bulunur; `::operator+(a, b)` gibi nitelenmiş bir çağrıyla
+bulunmaz. Sınıfın üyesi olmadığı için `Kesir::operator+` diye bir isim de yoktur.
 
-ADL'in operatör yüklemesindeki asıl rolü budur: 16.5'te "operatör yüklemesi nitelenmeden
-çağrılmak zorundadır" demiştik; bu bölüm o gerekçenin uygulaması.
+ADL'in operatör yüklemesindeki asıl rolü budur: Kısım 16.5'te göreceğiniz gibi ADL,
+operatörlerin `a + b` biçiminde, nitelenmeden yazılabilmesini sağlar.

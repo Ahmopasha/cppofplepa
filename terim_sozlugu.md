@@ -129,6 +129,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | İngilizce | Türkçe | İlk geçtiği yer |
 |---|---|---|
 | function overloading | işlev yüklemesi | Cilt I 9.1 |
+| three-way comparison operator | üç yollu karşılaştırma operatörü | Cilt I 14.5 (ayrıntısı Cilt II 16.4) |
 | hash function | karma işlevi | Cilt I 23.4 |
 | overload resolution | yükleme çözümlemesi | Cilt I 9.3 |
 | viable function | uygun aday | Cilt I 9.4 |

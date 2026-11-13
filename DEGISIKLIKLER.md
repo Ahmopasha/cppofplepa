@@ -4,6 +4,16 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 14 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-14.md`):
+  - 14.1: ölçüt operatörün tür için doğal anlamı; 14.2: `operator new`/`delete` (ve dizi
+    biçimleri) istisnası, C++23 `static operator()`/`operator[]`; isim alanı atfı.
+  - 14.3: "sol operand `this`" yerine `*this`; kullanıcı tanımlı dönüşüm; örneğin dayandığı
+    kurucu işlev koda eklendi; yeni Standart Notu — C++20 (`==`/`!=` için yer değiştirmiş
+    aday; C++23'te eşleşen `operator!=` koşulu; gerekçe satırı yok; sayı 22).
+  - 14.4: `friend` işlevin isim alanı; nitelenmiş çağrıda bulunmaması; "16.5'te demiştik"
+    yanlışı düzeltildi.
+  - 14.5: "diğerleri türetilir" yanlışı düzeltildi; C++20'de yeniden yazma; `<=>` terimi.
+  - 14.6: geri dönüş türleri gelenektir. Sözlüğe bir terim eklendi.
 - Cilt I Kısım 13 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-13.md`):
   - 13.1–13.2: "özel üye işlevler" ve "üye üye kopyalama" tanıtıldı; örtülü bildirim,
     varsayılan kurucunun bastırılması, silinmiş sayılma, taban sınıfların önce kopyalanması.
