@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "15 — Dinamik Ömürlü Nesneler"
 baslik: "15.5 Bunları neden yazmamalısınız"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 15.5 Bunları neden yazmamalısınız
@@ -11,11 +11,12 @@ son_kontrol: "2026-09 (C++20)"
 Bu bölümdeki her şeyi bilmeniz gerekir, çünkü mevcut kodu okuyacaksınız. Ama **yeni kod
 yazarken çıplak `new` ve `delete` kullanmamalısınız.**
 
-Sebebi Kısım 18.5'te görülmüştü: bir hata gönderildiğinde yığın geri sarılır ve otomatik
-ömürlü nesnelerin sonlandırıcı işlevleri çalışır, ama `new` ile ayrılan bellek serbest
-kalmaz. Buna programın her `return` ve `break` yolunu düşünmek zorunda kalmayı ekleyin.
+Sebebini Kısım 18.5'te ayrıntısıyla göreceğiz: gönderilen bir hata yakalandığında, terk
+edilen bloklardaki otomatik ömürlü nesnelerin sonlandırıcı işlevleri çalışır, ama çıplak
+`new` ile ayrılan bellek geri verilmez. Buna programın her `return` ve `break` yolunu
+düşünmek zorunda kalmayı ekleyin.
 
-Doğru araç akıllı göstericilerdir (bkz. Kısım 25):
+Doğru araçlar akıllı göstericiler (Kısım 25) ve `std::vector` gibi kaplardır (Kısım 23.4):
 
 ```cpp
 auto p = std::make_unique<Myclass>(10);     // delete yazmanıza gerek yok

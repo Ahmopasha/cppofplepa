@@ -4,6 +4,19 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 15 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-15.md`):
+  - 15.1: "ömür kategorisi" *(storage duration)* tanıtıldı; statik için "ilk kullanımda"
+    yanlışı düzeltildi (blok içinde akış bildirime ilk geldiğinde; blok dışında ertelenmesi
+    gerçeklemeye bağlı); `thread_local` satırı; Kısım 3.2, Cilt II 17.5 ve Kısım 27 atıfları;
+    dinamik ömrün ölçütü.
+  - 15.2: kurucu çağrısı örneğe bağlandı; ilk değer verilmeyen yerleşik tür elemanları;
+    `std::malloc`/`std::free`; boş göstericiye `delete`/`delete[]`.
+  - 15.3: "derleyicinin bildirmek zorunda olmadığı" kusurlar.
+  - 15.4: sıradan `new` ifadesiyle sınırlandı; Kısım 18 atfı; `std::nothrow` ön duyurusu.
+  - 15.5: "18.5'te görülmüştü" yön hatası düzeltildi; geri sarma yakalanan hatayla
+    sınırlandı; "çıplak `new`"; kaplar (Kısım 23.4).
+  - Kısım 3.2 ve 3.3'te "ömür türü" → "ömür kategorisi" (terim uyumu). Sözlüğe bir terim
+    eklendi.
 - Cilt I Kısım 14 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-14.md`):
   - 14.1: ölçüt operatörün tür için doğal anlamı; 14.2: `operator new`/`delete` (ve dizi
     biçimleri) istisnası, C++23 `static operator()`/`operator[]`; isim alanı atfı.

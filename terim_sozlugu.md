@@ -159,6 +159,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | İngilizce | Türkçe | İlk geçtiği yer |
 |---|---|---|
 | stack unwinding | yığının geri sarılması | Cilt I 18.5 |
+| storage duration | ömür kategorisi | Cilt I 15.1 |
 | basic / strong guarantee | temel / güçlü garanti | Cilt II 13.1 |
 | moved-from state | kaynağı devralınmış nesne durumu | Cilt I 2.4.7 |
 | copy elision | kopyalama eliminasyonu | Cilt II 3.1 |

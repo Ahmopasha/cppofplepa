@@ -10,8 +10,8 @@ son_kontrol: "2026-11 (C++20)"
 
 İlk değer verme ifadesi hiç yazılmaz.
 
-Yerleşik türlerde sonuç ömür türüne bağlıdır. **Otomatik ömürlü** değişkenler çöp değer
-tutar; o değeri okumak tanımsız davranıştır. **Statik ömürlü** değişkenler ise önce
+Yerleşik türlerde sonuç ömür kategorisine bağlıdır. **Otomatik ömürlü** değişkenler çöp
+değer tutar; o değeri okumak tanımsız davranıştır. **Statik ömürlü** değişkenler ise önce
 sıfırlanır.
 
 ```cpp

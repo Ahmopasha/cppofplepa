@@ -3,13 +3,15 @@ cilt: "I — Temel"
 kisim: "15 — Dinamik Ömürlü Nesneler"
 baslik: "15.4 Bellek yetmezse"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 15.4 Bellek yetmezse
 
-`new`, bellek ayıramazsa `std::bad_alloc` gönderir. Geriye `nullptr` döndürmez; C
-alışkanlığıyla dönüş değerini denetlemek anlamsızdır.
+Sıradan `new` ifadesi, bellek ayıramazsa `std::bad_alloc` ile yakalanabilen bir hata
+gönderir (hata gönderme ve yakalama: Kısım 18). Bu biçim geriye `nullptr` döndürmez; C
+alışkanlığıyla dönüş değerini denetlemek anlamsızdır. Bellek ayıramadığında hata göndermek
+yerine `nullptr` döndüren biçimi (`new (std::nothrow)`) aşağıda göreceğiz.
 
 ```cpp
 try {

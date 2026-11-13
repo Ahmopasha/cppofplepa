@@ -9,7 +9,7 @@ son_kontrol: "2026-11 (C++20)"
 ## 3.3 Value-initialization
 
 Değişken tanımında boş küme parantezi kullanılır. Yerleşik türlerde
-**her zaman sıfırlama** yapar; ömür türünden bağımsızdır.
+**her zaman sıfırlama** yapar; ömür kategorisinden bağımsızdır.
 
 ```cpp
 int x{};        // 0

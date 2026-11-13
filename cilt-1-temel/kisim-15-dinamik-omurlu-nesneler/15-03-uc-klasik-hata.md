@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "15 — Dinamik Ömürlü Nesneler"
 baslik: "15.3 Üç klasik hata"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 15.3 Üç klasik hata
@@ -24,5 +24,5 @@ p->func();      // tanımsız davranış
 p = nullptr;    // delete'ten sonra bunu yapmak alışkanlık hâline getirilmeli
 ```
 
-Üçü de derleyicinin yakalayamadığı, çalışma zamanında ortaya çıkan ve bazen hiç ortaya
-çıkmayan hatalardır.
+Üçü de derleyicinin bildirmek zorunda olmadığı, çalışma zamanında ortaya çıkan ve bazen
+hiç belirti vermeyen kusurlardır.
