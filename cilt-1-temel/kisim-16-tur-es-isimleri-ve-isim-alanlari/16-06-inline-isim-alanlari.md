@@ -3,12 +3,13 @@ cilt: "I — Temel"
 kisim: "16 — Tür Eş İsimleri ve İsim Alanları"
 baslik: "16.6 `inline` isim alanları"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 16.6 `inline` isim alanları
 
-İçindeki isimler, dıştaki isim alanına aitmiş gibi görünür.
+**`inline` isim alanı** *(inline namespace)* içindeki isimler, çoğu bakımdan dıştaki isim
+alanına aitmiş gibi kullanılabilir.
 
 ```cpp
 namespace kutuphane {

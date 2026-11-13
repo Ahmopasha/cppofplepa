@@ -4,6 +4,19 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 16 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-16.md`):
+  - Terimler tanıtıldı: tür eş ismi, isim alanı, isim alanı eş ismi, global isim alanı,
+    `using` bildirimi ve direktifi, isimsiz isim alanı, `inline` isim alanı.
+  - 16.1: "`typedef` ile şablon yazılamaz" (Kısım 22, Cilt II 4.10); işlev göstericisi ve dizi
+    örneği. 16.2: global isim alanının kapsamı.
+  - 16.3: `using` bildiriminde birden çok isim (C++17); başlık dosyası öğüdü isim alanı
+    kapsamıyla sınırlandı.
+  - 16.4: `static` C++'ta da geçerli; işlevler; koda tür eklendi.
+  - 16.5: gerçeklemeye bağlı `sort(v.begin(), v.end())` örneği `getline(std::cin, s1)` ile
+    değiştirildi ve nedeni açıklandı; kural operatör ifadelerini kapsar; "operatör
+    yüklemeleri nitelenerek çağrılamaz" yanlışı düzeltildi (14.4 ile tutarlı); `friend`
+    koşulu; boşa giden Cilt II Kısım 4 atfı → 14.4; `std::` öneki. 16.6: "çoğu bakımdan".
+    Sözlüğe dokuz terim eklendi.
 - Cilt I Kısım 15 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-15.md`):
   - 15.1: "ömür kategorisi" *(storage duration)* tanıtıldı; statik için "ilk kullanımda"
     yanlışı düzeltildi (blok içinde akış bildirime ilk geldiğinde; blok dışında ertelenmesi

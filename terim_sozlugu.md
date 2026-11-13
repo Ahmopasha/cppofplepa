@@ -160,6 +160,15 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 |---|---|---|
 | stack unwinding | yığının geri sarılması | Cilt I 18.5 |
 | storage duration | ömür kategorisi | Cilt I 15.1 |
+| type alias | tür eş ismi | Cilt I 16.1 |
+| namespace | isim alanı | Cilt I 16.2 |
+| namespace alias | isim alanı eş ismi | Cilt I 16.2 |
+| global namespace | global isim alanı | Cilt I 16.2 |
+| using declaration | `using` bildirimi | Cilt I 16.3 |
+| using directive | `using` direktifi | Cilt I 16.3 |
+| unnamed namespace | isimsiz isim alanı | Cilt I 16.4 |
+| argument-dependent name lookup (ADL) | argümana bağlı isim arama | Cilt I 16.5 |
+| inline namespace | `inline` isim alanı | Cilt I 16.6 |
 | basic / strong guarantee | temel / güçlü garanti | Cilt II 13.1 |
 | moved-from state | kaynağı devralınmış nesne durumu | Cilt I 2.4.7 |
 | copy elision | kopyalama eliminasyonu | Cilt II 3.1 |
