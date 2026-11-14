@@ -169,6 +169,16 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | unnamed namespace | isimsiz isim alanı | Cilt I 16.4 |
 | argument-dependent name lookup (ADL) | argümana bağlı isim arama | Cilt I 16.5 |
 | inline namespace | `inline` isim alanı | Cilt I 16.6 |
+| inheritance | kalıtım | Cilt I 17.1 |
+| base class | taban sınıf | Cilt I 17.1 |
+| derived class | türemiş sınıf | Cilt I 17.1 |
+| polymorphism | çok biçimlilik | Cilt I 17.6 |
+| virtual function | sanal işlev | Cilt I 17.6 |
+| overriding | geçersiz kılma | Cilt I 17.6 |
+| polymorphic class | çok biçimli sınıf | Cilt I 17.6 |
+| pure virtual function | saf sanal işlev | Cilt I 17.8 |
+| abstract class | soyut sınıf | Cilt I 17.8 |
+| concrete class | somut sınıf | Cilt I 17.8 |
 | basic / strong guarantee | temel / güçlü garanti | Cilt II 13.1 |
 | moved-from state | kaynağı devralınmış nesne durumu | Cilt I 2.4.7 |
 | copy elision | kopyalama eliminasyonu | Cilt II 3.1 |
@@ -256,6 +266,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 |---|---|
 | L-Value, R-Value, PR-Value, X-Value, GL-Value | Standart metnindeki kısaltmalar; Türkçeleştirmek beş kategorinin ilişkisini gizler |
 | upcasting | Yerleşik; "yukarı dönüştürme" karşılığı yaygın değil |
+| static binding, dynamic binding (late binding) | Yerleşik; Cilt I 17.6 (yazar kararı) |
 | sentinel | Ranges bağlamında teknik bir rol adı; "nöbetçi" yanıltıcı olurdu |
 | data race | Yarış koşulundan ayrılması gereken teknik bir terim; "veri yarışı" ikisini birbirine yaklaştırır |
 | mixin, type erasure, deduction guide | Literatürde İngilizce dolaşıyor; çevirisi arama yapmayı zorlaştırır |

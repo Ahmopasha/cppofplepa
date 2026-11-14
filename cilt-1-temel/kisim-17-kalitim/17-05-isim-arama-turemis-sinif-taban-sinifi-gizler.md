@@ -1,12 +1,12 @@
 ---
 cilt: "I — Temel"
 kisim: "17 — Kalıtım"
-baslik: "17.5 İsim arama: türemiş sınıf taban sınıfı gizler"
+baslik: "17.5 İsim arama: türemiş sınıf taban sınıftaki ismi gölgeler"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
-## 17.5 İsim arama: türemiş sınıf taban sınıfı gizler
+## 17.5 İsim arama: türemiş sınıf taban sınıftaki ismi gölgeler
 
 Kalıtımla ilgili en sık karşılaşılan derleyici hatasının kaynağı budur.
 
@@ -28,9 +28,10 @@ int main()
 }
 ```
 
-İsim arama, ismi bulduğu ilk kapsamda durur. `func` ismi `Der` içinde bulunduğu için
-taban sınıfa hiç bakılmaz. **Taban sınıf ile türemiş sınıfın işlevleri birbirinin
-`overload`'ı olmaz**, çünkü farklı kapsamlardadırlar.
+Üye ismi aranırken arama, ismi bulduğu ilk sınıfta durur. `func` ismi `Der` içinde
+bulunduğu için taban sınıfa hiç bakılmaz. **Taban sınıf ile türemiş sınıfın işlevleri
+arasında kendiliğinden işlev yüklemesi olmaz**, çünkü farklı kapsamlardadırlar; `using`
+bildirimiyle (Kısım 16.3) aynı kapsama taşınabilirler.
 
 Bunu istemiyorsanız taban sınıftaki ismi türemiş sınıf kapsamına taşıyın:
 

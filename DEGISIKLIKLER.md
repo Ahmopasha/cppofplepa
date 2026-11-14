@@ -4,6 +4,21 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 17 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-17.md`):
+  - Terimler tanıtıldı: kalıtım, taban sınıf, türemiş sınıf (17.1); çok biçimlilik, sanal
+    işlev, geçersiz kılma, çok biçimli sınıf (17.6); saf sanal işlev, soyut sınıf, somut
+    sınıf (17.8). 17.5 başlığı "gölgeler" oldu (sözlük uyumu).
+  - 17.1: kalıtım üyelerin devralınması; is-a yalnızca `public` kalıtımda. 17.2: Cilt II 6.7.
+  - 17.4: upcasting gösterici/referans dönüşümü; `private`/`protected` kalıtımda erişim
+    ölçütü ("güvenli" ifadesi düzeltildi).
+  - 17.5: üye arama; "kendiliğinden" işlev yüklemesi olmaz, `using` ile taşınır.
+  - 17.6: geçersiz kılmada niteleyiciler; "`virtual` bildirmek yeterli" yanlışı düzeltildi
+    (gösterici/referans, `this`); farklı parametreli işlev gölgeler.
+  - 17.7: tanımsız davranış taban göstericisiyle silme koşuluna bağlandı; sızıntı ve
+    derleyici uyarısı ifadeleri kaldırıldı.
+  - 17.8: saf sanal işlev tanımlanabilir; çok katmanlı soyutluk ölçütü.
+  - 17.9: örneğin dayandığı soyut olmayan `Sekil`. Sözlüğe on terim, çevrilmeyenlere bir
+    satır eklendi.
 - Cilt I Kısım 16 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-16.md`):
   - Terimler tanıtıldı: tür eş ismi, isim alanı, isim alanı eş ismi, global isim alanı,
     `using` bildirimi ve direktifi, isimsiz isim alanı, `inline` isim alanı.

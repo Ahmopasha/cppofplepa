@@ -3,14 +3,14 @@ cilt: "I — Temel"
 kisim: "17 — Kalıtım"
 baslik: "17.2 Sözdizimi ve varsayılan kalıtım biçimi"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 17.2 Sözdizimi ve varsayılan kalıtım biçimi
 
 C++'ta üç kalıtım biçimi vardır: `public`, `protected`, `private`. İlk yıl boyunca
 kullanacağınız `public` kalıtımdır; is-a ilişkisini kuran tek biçim odur. Diğer ikisi
-başka bir amaca hizmet eder ve Cilt II'de ele alınıyor.
+başka bir amaca hizmet eder ve Cilt II, Kısım 6.7'de ele alınıyor.
 
 ```cpp
 class Der : public Base { };

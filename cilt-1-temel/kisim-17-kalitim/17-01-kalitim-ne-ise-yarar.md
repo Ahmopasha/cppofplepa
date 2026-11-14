@@ -3,14 +3,15 @@ cilt: "I — Temel"
 kisim: "17 — Kalıtım"
 baslik: "17.1 Kalıtım ne işe yarar"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 17.1 Kalıtım ne işe yarar
 
-Kalıtım, bir sınıfın başka bir sınıfın arayüzünü devralarak yeni bir sınıf
-oluşturmasıdır. Kurulan ilişkiye **is-a** ilişkisi denir: her türemiş sınıf nesnesi,
-aynı zamanda bir taban sınıf nesnesidir.
+**Kalıtım** *(inheritance)*, yeni bir sınıfın başka bir sınıfın üyelerini devralarak
+tanımlanmasıdır. Devralınan sınıfa **taban sınıf** *(base class)*, devralan sınıfa
+**türemiş sınıf** *(derived class)* denir. `public` kalıtımla kurulan ilişkiye **is-a**
+ilişkisi denir: her türemiş sınıf nesnesi, aynı zamanda bir taban sınıf nesnesidir.
 
 Bunun karşısında **has-a** ilişkisi vardır ve buna *composition* denir. Bir sınıf,
 başka bir sınıf türünden veri elemanı barındırıyorsa ilişki has-a'dır.

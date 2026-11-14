@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "17 — Kalıtım"
 baslik: "17.7 Sanal sonlandırıcı işlev"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 17.7 Sanal sonlandırıcı işlev
@@ -17,5 +17,5 @@ delete p;        // Sekil::~Sekil virtual değilse tanımsız davranış
 ```
 
 Kural: **çok biçimli olarak kullanılacak her taban sınıfın sonlandırıcı işlevi `virtual`
-olmalıdır.** Bunu unutmak kaynak sızıntısına yol açan gerçek bir hatadır ve derleyici
-sizi uyarmaz.
+olmalıdır.** Unutulur ve türemiş sınıf nesnesi taban sınıf göstericisi üzerinden
+silinirse sonuç tanımsız davranıştır. Derleyicinin bunu bildirmesi gerekmez.
