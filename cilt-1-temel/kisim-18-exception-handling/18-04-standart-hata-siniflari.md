@@ -3,13 +3,17 @@ cilt: "I — Temel"
 kisim: "18 — Exception Handling"
 baslik: "18.4 Standart hata sınıfları"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 18.4 Standart hata sınıfları
 
-Standart kütüphane, gönderdiği bütün hata nesnelerini `std::exception` sınıfından türeyen
-sınıflardan üretir. Bu sayede tek bir `catch` bloğu hepsini karşılayabilir.
+Standardın kütüphane işlevleri için yazdığı hatalar `std::exception` sınıfından türeyen
+sınıflardandır. Bu sayede `std::exception` türüne referans alan tek bir `catch` bloğu
+bunların hepsini yakalayabilir; standartta hangi hataları gönderebileceği yazılmamış
+işlevlerin hatalarının türü ise gerçeklemeye bağlıdır. (Sizin türlerinizin işlemlerinden
+çıkan hatalar ise `std::exception`'dan türemek zorunda değildir.) Aşağıda bu hiyerarşinin
+bir kısmı var:
 
 ```
 std::exception
@@ -36,5 +40,6 @@ public:
 
 Böylece sizin hatanız da `catch (const std::exception&)` ile yakalanabilir hâle gelir.
 
-İlkel türleri (`int`, `const char*`) göndermek mümkündür ama yapılmamalıdır; hata
-nesnesinin taşıdığı bilgi ve hiyerarşiye dahil olması kaybolur.
+Yerleşik türden değerleri (`int`, `const char*`) göndermek mümkündür ama yapılmamalıdır;
+bunlar `std::exception`'dan türemediği için `catch (const std::exception&)` bloğu onları
+yakalamaz ve `what()` ile açıklama alınamaz.

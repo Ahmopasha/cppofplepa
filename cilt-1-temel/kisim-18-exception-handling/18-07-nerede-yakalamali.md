@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "18 — Exception Handling"
 baslik: "18.7 Nerede yakalamalı"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 18.7 Nerede yakalamalı
@@ -30,6 +30,8 @@ catch (const std::exception& ex) {
 }
 ```
 
-Parametresiz `throw;` yazımı yalnızca `catch` bloğu içinde geçerlidir ve yakalanan
-nesnenin kendisini yeniden gönderir. `throw ex;` yazarsanız kopyalama olur ve dilimlenme
-riski doğar.
+Tek başına `throw;` yazımı, o an yakalanmış ve işlenmekte olan hatayı yeniden gönderir;
+yeni bir nesne oluşturulmaz. Genellikle `catch` bloğunun içinde yazılır, ama oradan
+çağrılan bir işlevde de kullanılabilir. İşlenmekte olan bir hata yokken çalışırsa
+`std::terminate` çağrılır. `throw ex;` yazarsanız kopyalama olur ve dilimlenme riski
+doğar.

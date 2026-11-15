@@ -4,6 +4,18 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 18 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-18.md`):
+  - 18.1: "hata", "hata göndermek", "yakalamak" tanıtıldı. 18.3: "hata nesnesi"; isimlendirilmiş
+    nesnenin "ömrü" gerekçesi düzeltildi; standart hata sınıflarının kopyalanması hata
+    göndermez; dilimlenme `catch` parametresinde.
+  - 18.4: kütüphanenin gönderdikleri standartta yazılanlarla sınırlandı; şema "bir kısmı";
+    "ilkel tür" → "yerleşik tür" ve gerekçesi.
+  - 18.5: geri sarmanın kapsamı; uygun `catch` yoksa `std::terminate` (geri sarma
+    gerçeklemeye bağlı); "yığının geri sarılması" terimi.
+  - 18.7: "`throw;` yalnızca `catch` içinde geçerlidir" yanlışı düzeltildi.
+  - 18.8: örtülü `noexcept`'in koşulları, `std::terminate`; yeni Standart Notu — C++11
+    (gerekçe satırı yok; sayı 23); Cilt II 2.6 atfının zamanı.
+  - 18.9: taban sınıf kısımları; devreden kurucu istisnası (Kısım 12.12). Sözlüğe dört terim.
 - Cilt I Kısım 17 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-17.md`):
   - Terimler tanıtıldı: kalıtım, taban sınıf, türemiş sınıf (17.1); çok biçimlilik, sanal
     işlev, geçersiz kılma, çok biçimli sınıf (17.6); saf sanal işlev, soyut sınıf, somut

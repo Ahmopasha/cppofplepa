@@ -3,14 +3,17 @@ cilt: "I — Temel"
 kisim: "18 — Exception Handling"
 baslik: "18.5 Yığının geri sarılması"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 18.5 Yığının geri sarılması
 
 Bir hata gönderildiğinde, programın akışı uygun `catch` bloğuna sıçrar. Bu sıçrama
-sırasında, terk edilen bütün bloklardaki **otomatik ömürlü nesnelerin sonlandırıcı
-işlevleri çalıştırılır.** Buna *stack unwinding* denir.
+sırasında, o `catch` bloğunun bağlı olduğu `try` bloğuna girildikten sonra hayata gelmiş
+ve henüz yok edilmemiş **otomatik ömürlü nesnelerin sonlandırıcı işlevleri çalıştırılır.**
+Buna **yığının geri sarılması** *(stack unwinding)* denir. Uygun bir `catch` bloğu
+bulunamazsa `std::terminate` çağrılır; o durumda yığının geri sarılıp sarılmayacağı
+gerçeklemeye bağlıdır.
 
 ```cpp
 void f()

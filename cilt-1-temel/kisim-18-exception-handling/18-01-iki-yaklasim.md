@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "18 — Exception Handling"
 baslik: "18.1 İki yaklaşım"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 18.1 İki yaklaşım
@@ -14,7 +14,9 @@ Bir işlev, isteneni yapamadığında bunu çağırana nasıl bildirir? İki yak
 bildirir. Çağıran kod her çağrıdan sonra denetim yapar.
 
 **Hata göndermek.** İşlev, sorunu tarif eden bir nesne gönderir ve programın akışı o
-nesneyi karşılamaya hazır olan yere sıçrar.
+nesneyi karşılamaya hazır olan yere sıçrar. Bu kitap bu nesneye **hata** *(exception)*,
+nesneyi göndermeye **hata göndermek** *(throw)*, karşılamaya da **yakalamak** *(catch)*
+der. «Hata kodu», «sentaks hatası» gibi ifadelerde ise sözcük genel anlamıyla kalır.
 
 İkincisinin üstünlüğü, hatanın **oluştuğu yer** ile **ele alınacağı yerin** birbirinden
 uzak olabilmesidir. Hata kodu yaklaşımında aradaki her katman kodu taşımak zorundadır;
