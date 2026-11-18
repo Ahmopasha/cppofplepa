@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "19 — Çalışma Zamanı Tür Bilgisi"
 baslik: "19.3 `typeid` ve `std::type_info`"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 19.3 `typeid` ve `std::type_info`
@@ -28,9 +28,9 @@ std::cout << typeid(*s).name();
 **`typeid(*s)` ile `typeid(s)` farklıdır.** İlki nesnenin dinamik türünü, ikincisi
 göstericinin statik türünü (`Sekil*`) verir.
 
-**`name()` işlevinin döndürdüğü yazı gerçeklemeye bağlıdır.** Derleyiciler farklı biçimler
-üretir; bu yazıyı programın mantığında kullanmayın, yalnızca hata ayıklama çıktısında
-kullanın.
+**`name()` işlevinin döndürdüğü yazı gerçeklemeye bağlıdır.** Biçimi gerçeklemeden
+gerçeklemeye değişebilir; bu yazıyı programın mantığında kullanmayın, yalnızca hata
+ayıklama çıktısında kullanın.
 
 `typeid` ile `dynamic_cast` arasındaki fark, `typeid`'in **tam eşleşme** aramasıdır.
 `Daire`'den türetilmiş bir `RenkliDaire` nesnesi için `typeid(*s) == typeid(Daire)`

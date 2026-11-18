@@ -4,6 +4,14 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 19 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-19.md`):
+  - 19.1: "dinamik tür" ve "statik tür" tanıtıldı; "her ikisi de çok biçimlilik gerektirir"
+    daraltıldı (dinamik türü sorgulamak için taban sınıf çok biçimli olmalı; değilse
+    `typeid` statik türü verir, `dynamic_cast` ile aşağı dönüşüm sentaks hatası); `vptr`
+    gerçekleme ayrıntısı olarak Cilt II 6.1'e bırakıldı.
+  - 19.3: `name()` biçimi gerçeklemeden gerçeklemeye değişebilir.
+  - 19.4: `dynamic_cast`'in maliyeti standartta belirtilmez; denetim yalnızca aşağı
+    dönüşümde. Sözlüğe iki terim eklendi.
 - Cilt I Kısım 18 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-18.md`):
   - 18.1: "hata", "hata göndermek", "yakalamak" tanıtıldı. 18.3: "hata nesnesi"; isimlendirilmiş
     nesnenin "ömrü" gerekçesi düzeltildi; standart hata sınıflarının kopyalanması hata

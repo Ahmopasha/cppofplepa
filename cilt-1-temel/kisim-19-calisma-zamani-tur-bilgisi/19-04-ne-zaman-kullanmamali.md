@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "19 — Çalışma Zamanı Tür Bilgisi"
 baslik: "19.4 Ne zaman kullanmamalı"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 19.4 Ne zaman kullanmamalı
@@ -29,5 +29,6 @@ aynı işi yapar ve yeni türler eklendiğinde değişmez (bkz. Kısım 17.6).
 RTTI'nin meşru kullanımı, hiyerarşinin dışından gelen ve genişletilemeyen durumlardır:
 serileştirme, hata ayıklama araçları, eski kodla köprü kurma.
 
-Maliyeti de vardır: `dynamic_cast` çalışma zamanında hiyerarşide arama yapar ve sanal
-çağrıdan pahalıdır.
+Maliyeti de vardır: taban sınıftan türemiş sınıfa dönüşümde `dynamic_cast`, dönüşümün
+geçerli olup olmadığını çalışma zamanında denetler. Bu denetimin ne kadar iş gerektirdiği
+hakkında standart bir şey söylemez; bunu gerçekleme belirler.
