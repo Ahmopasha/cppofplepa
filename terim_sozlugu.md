@@ -185,6 +185,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | exception object | hata nesnesi | Cilt I 18.3 |
 | dynamic type | dinamik tür | Cilt I 19.1 |
 | static type | statik tür | Cilt I 19.1 |
+| small string optimization | küçük yazı optimizasyonu | Cilt I 20.6 |
 | basic / strong guarantee | temel / güçlü garanti | Cilt II 13.1 |
 | moved-from state | kaynağı devralınmış nesne durumu | Cilt I 2.4.7 |
 | copy elision | kopyalama eliminasyonu | Cilt II 3.1 |

@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "20 — `std::string`"
 baslik: "20.2 Oluşturma ve temel işlemler"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 20.2 Oluşturma ve temel işlemler
@@ -29,4 +29,7 @@ s2[0];        // denetim yok — geçersiz indis tanımsız davranış
 s2.at(0);     // denetimli — geçersiz indis std::out_of_range gönderir
 ```
 
-Birleştirme `+` ve `+=` ile yapılır; karşılaştırma operatörleri beklendiği gibi çalışır.
+`[]` için geçerli indisler `0`'dan `size()`'a kadardır; `s2[s2.size()]` boş karakteri
+verir; bu konuma başka bir değer yazmak tanımsız davranıştır. `at` ise `size()` ve ötesi
+için `std::out_of_range` gönderir. Birleştirme `+` ve `+=` ile yapılır; karşılaştırma
+operatörleri beklendiği gibi çalışır.

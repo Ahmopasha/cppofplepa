@@ -4,6 +4,16 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 20 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-20.md`):
+  - 20.1: "`std::string` Rule of Zero'ya uyar" düzeltildi: kurala uyan, kaynak yönetimini
+    `std::string` gibi veri elemanlarına bırakan sınıftır.
+  - 20.2: `[]`'in geçerli indis sınırı (`s[s.size()]` boş karakteri verir; oraya başka değer
+    yazmak tanımsız davranış); `at` `size()` ve ötesi için `std::out_of_range` gönderir.
+  - 20.5: `c_str()` göstericisi ömür bitince geçersiz olur; `const` olmayan üye işlevlerin
+    çoğu ya da nesneyi değiştirebilecek bir işlev (`std::getline`) geçersiz kılabilir.
+  - 20.6: standart kısa yazıların nerede tutulacağını belirlemez; "gerçeklemeye bağlı" ve
+    "tipik olarak 15" kaldırıldı; terim tanıtıldı; `const` referans önerisinin SSO'ya bağlanan
+    çıkarımı düzeltildi; atıf Cilt II 11.2. Sözlüğe bir terim eklendi.
 - Cilt I Kısım 19 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-19.md`):
   - 19.1: "dinamik tür" ve "statik tür" tanıtıldı; "her ikisi de çok biçimlilik gerektirir"
     daraltıldı (dinamik türü sorgulamak için taban sınıf çok biçimli olmalı; değilse
