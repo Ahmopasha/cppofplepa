@@ -1,9 +1,9 @@
 ---
 cilt: "I — Temel"
-kisim: "21 — Bileşik Nesneler"
+kisim: "21 — Composition"
 baslik: "21.5 İçsel türler"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 21.5 İçsel türler

@@ -4,6 +4,16 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 21 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-21.md`):
+  - Kısım başlığı "Bileşik Nesneler" → "Composition" (yazar kararı: "bileşik" sözlükte
+    aggregate'in karşılığı); 21.2'deki "bileşik nesne" kaldırıldı; composition sözlükte
+    çevrilmeyenlere eklendi; iki geçiş metni uyumlandı.
+  - 21.3: `std::unique_ptr` elemanlı `Kayit` kopyalanamaz (örtülü kopyalama işlevleri
+    silinmiş sayılır); silinme kuralı işlev işlev; derleyicinin yazdığı işlevlerin yerleşik
+    türden elemanlarla ilişkisi daraltıldı; kod örneğine kopyalama (sentaks hatası) ve
+    taşıma satırları eklendi.
+  - 21.4: kod yorumundaki doğrulanamayan "40 işlev" kaldırıldı; arayüzün dışarıya açılması
+    `public` kalıtımla sınırlandı.
 - Cilt I Kısım 20 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-20.md`):
   - 20.1: "`std::string` Rule of Zero'ya uyar" düzeltildi: kurala uyan, kaynak yönetimini
     `std::string` gibi veri elemanlarına bırakan sınıftır.

@@ -280,6 +280,7 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | materialization, result object | C++17 tanımına ait; standart metnine bağlı kalındı |
 | pessimistic move | Kalıbın adı; betimleme değil |
 | vocabulary types | Bir tür ailesinin adı, kavram değil |
+| composition | Yerleşik; "bileşik" aggregate'in karşılığı (Cilt I 3.10), çakışmayı önlemek için çevrilmedi; Cilt I 17.1, 21 (yazar kararı) |
 
 ---
 

@@ -2,7 +2,7 @@
 tur: "kısım geçişi"
 cilt: "I — Temel"
 onceki: "Kısım 20 — `std::string`"
-sonraki: "Kısım 21 — Bileşik Nesneler"
+sonraki: "Kısım 21 — Composition"
 yer: "Kısım 21 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
 son_kontrol: "2026-10 (C++20)"

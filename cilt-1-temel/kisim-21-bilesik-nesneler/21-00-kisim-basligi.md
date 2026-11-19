@@ -1,9 +1,9 @@
 ---
 cilt: "I — Temel"
-kisim: "21 — Bileşik Nesneler"
-baslik: "Kısım 21 — Bileşik Nesneler"
+kisim: "21 — Composition"
+baslik: "Kısım 21 — Composition"
 kaynak: "derleyen"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
-# Kısım 21 — Bileşik Nesneler
+# Kısım 21 — Composition

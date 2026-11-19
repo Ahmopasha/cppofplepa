@@ -1,21 +1,21 @@
 ---
 cilt: "I — Temel"
-kisim: "21 — Bileşik Nesneler"
+kisim: "21 — Composition"
 baslik: "21.2 Hayata gelme sırası"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 21.2 Hayata gelme sırası
 
-Bir bileşik nesne hayata gelirken sıra şudur:
+Composition ile kurulmuş bir nesne hayata gelirken sıra şudur:
 
 1. Varsa taban sınıfın kurucu işlevi
 2. Veri elemanları, **sınıf tanımındaki bildirim sırasına göre**
 3. Sınıfın kendi kurucu işlevinin gövdesi
 
-Hayat biterken sıra tam tersidir. Bu, Kısım 17.3'te kalıtım için verilen sıranın aynısıdır;
-ikisi tek bir kuraldır.
+Hayat biterken sıra tam tersidir. Bu, Kısım 17.3'te kalıtım için verilen sıranın
+aynısıdır; ikisi tek bir kuraldır.
 
 Veri elemanlarına ilk değer, kurucu işlev ilk değer verme listesinde verilir:
 

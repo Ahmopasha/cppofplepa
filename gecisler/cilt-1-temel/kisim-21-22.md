@@ -1,7 +1,7 @@
 ---
 tur: "kısım geçişi"
 cilt: "I — Temel"
-onceki: "Kısım 21 — Bileşik Nesneler"
+onceki: "Kısım 21 — Composition"
 sonraki: "Kısım 22 — Şablonlara Giriş"
 yer: "Kısım 22 başlığının hemen altı, varsa kısım girişinden önce"
 kaynak: "derleyen"
