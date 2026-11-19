@@ -4,6 +4,16 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 22 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-22.md`):
+  - 22.3: şablon parametreleri "dört grup" değil üç biçim (tür, tür olmayan, şablon şablon);
+    parametre paketi bunlardan biri `...` ile bildirilince olur; terimler tanıtıldı.
+  - 22.4: CTAD'in açılımı; atıf Cilt II 4.7.
+  - 22.5: "örnekleme" ve "açık örnekleme" tanıtıldı; örtülü örneklemede yalnızca gereken
+    üye işlev tanımlarının üretilmesi [temp.inst]'e göre daraltıldı; "kaynak dosyada
+    tanımlarsanız bağlayıcı hatası alırsınız" yerine [temp.pre]/10 (program hatalı, tanı
+    gerekmez; açık örnekleme yolu); "üç şeyden biri" Kısım 2.7 ile uyumlandı.
+  - 22.6: "standart kütüphanenin tamamı şablonlardan oluşur" → "büyük bölümü"; SFINAE
+    açılımı; atıflar Cilt II 7 ve 18. 22.2 atfı Kısım 4.2. Sözlüğe dört terim eklendi.
 - Cilt I Kısım 21 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-21.md`):
   - Kısım başlığı "Bileşik Nesneler" → "Composition" (yazar kararı: "bileşik" sözlükte
     aggregate'in karşılığı); 21.2'deki "bileşik nesne" kaldırıldı; composition sözlükte

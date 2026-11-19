@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "22 — Şablonlara Giriş"
 baslik: "22.2 İşlev şablonları"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 22.2 İşlev şablonları
@@ -42,5 +42,5 @@ enbuyuk(3, 5.2);           // sentaks hatası
 enbuyuk<double>(3, 5.2);   // açıkça belirtince çalışır
 ```
 
-Şablon argüman çıkarımının kuralları, Kısım 4'teki `auto` kurallarıyla aynı temele
+Şablon argüman çıkarımının kuralları, Kısım 4.2'deki `auto` kurallarıyla aynı temele
 dayanır.

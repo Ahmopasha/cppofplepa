@@ -140,9 +140,13 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | comparison category | sıralama kategorisi | Cilt II 16.4 |
 | promotion | yükseltme | Cilt I 9.6 |
 | name mangling | çevrilmedi | Cilt I 9.9 |
-| instantiation | örnekleme | Cilt II 4.2 |
+| instantiation | örnekleme | Cilt I 22.5 (ayrıntısı Cilt II 4.2) |
+| explicit instantiation | açık örnekleme | Cilt I 22.5 (ayrıntısı Cilt II 4.2) |
 | specialization | özelleştirme *(iki anlamlı, bkz. Cilt II 4.2)* | Cilt II 4.3 |
-| parameter pack | parametre paketi | Cilt II 4.5 |
+| type parameter | tür parametresi | Cilt I 22.3 |
+| non-type template parameter | tür olmayan parametre | Cilt I 22.3 |
+| template template parameter | şablon şablon parametresi | Cilt I 22.3 |
+| parameter pack | parametre paketi | Cilt I 22.3 (ayrıntısı Cilt II 4.5) |
 | pack expansion | paket açma | Cilt II 4.5 |
 | fold expression | katlama ifadesi | Cilt II 4.6 |
 | deduction guide | çevrilmedi | Cilt II 4.7 |

@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "22 — Şablonlara Giriş"
 baslik: "22.4 Sınıf şablonları"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 22.4 Sınıf şablonları
@@ -29,4 +29,5 @@ C++17'den itibaren, kurucu işlev argümanlarından çıkarım yapılabilir:
 Kutu k3{42};      // Kutu<int> — C++17
 ```
 
-Bu mekanizmanın adı CTAD'dir ve sınırları vardır: **Cilt II, Kısım 4.**
+Bu mekanizmaya **CTAD** *(class template argument deduction)* denir; sınırları:
+**Cilt II, Kısım 4.7.**
