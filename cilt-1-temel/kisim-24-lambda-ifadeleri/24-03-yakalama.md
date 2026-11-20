@@ -3,7 +3,8 @@ cilt: "I — Temel"
 kisim: "24 — Lambda İfadeleri"
 baslik: "24.3 Yakalama"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
+kutular: ["Standart Notu — C++20"]
 ---
 
 ## 24.3 Yakalama
@@ -25,8 +26,9 @@ int a = 10, b = 20;
 [&, a]    { }              // a hariç hepsi referans
 ```
 
-`[=]` ve `[&]` yazımlarına **varsayılan yakalama** denir. Yalnızca gövdede gerçekten
-kullanılan değişkenler yakalanır.
+Yakalama listesinin başında tek başına duran `=` ya da `&` simgesine (`[=]`, `[&]`,
+`[&, x]` gibi) **varsayılan yakalama** *(capture default)* denir. Varsayılan yakalamada
+yalnızca gövdede gerçekten kullanılan değişkenler örtülü olarak yakalanır.
 
 Seçim kuralı şudur:
 
@@ -38,7 +40,7 @@ Seçim kuralı şudur:
 auto olustur()
 {
     int x = 10;
-    return [&x] { return x; };    // HATA: x yok olacak
+    return [&x] { return x; };    // geçerli; dönen lambdayı çağırmak tanımsız davranış
 }
 ```
 
@@ -46,6 +48,16 @@ Lambda, tanımlandığı ifadenin içinde hemen kullanılıyorsa referansla yaka
 ve kopyalamadan ucuzdur. Saklanacak, döndürülecek veya başka bir iş parçacığına
 geçirilecekse kopyalayarak yakalayın.
 
-Sınıf üye işlevinin içinde `[=]` yazmak, veri elemanlarını **kopyalamaz**; `this`
-göstericisini kopyalar. Nesne yok olursa lambda sarkar. C++17'den itibaren `[*this]`
-yazarak nesnenin kopyasını yakalayabilirsiniz.
+Sınıf üye işlevinin içinde `[=]` yazmak, veri elemanlarını **kopyalamaz**: gövdede
+`static` olmayan bir üye (veri elemanı ya da üye işlev) kullanılınca nesnenin kendisi
+(`*this`) referansla yakalanır ve bu üyeye o nesne üzerinden erişilir. Veri elemanı
+lambdanın kopyası değil asıl nesnenin elemanı olduğu için Kısım 24.4'teki kopya kısıtı ona
+uygulanmaz. Nesne yok olduktan sonra lambda çağrılırsa tanımsız davranıştır (sarkan
+referans). `[*this]` ise C++17'den itibaren nesneyi kopyalar.
+
+> **Standart Notu — C++20**
+> **C++20 öncesi:** `[=]`, gövdede `static` olmayan bir üye (veri elemanı ya da üye
+> işlev) kullanılınca `*this`'i örtülü olarak referansla yakalardı; `[=, this]` yazımı
+> sentaks hatasıydı.
+> **C++20 ile:** `*this`'in `[=]` ile örtülü olarak yakalanması hâlâ geçerlidir ama
+> artık önerilmiyor (Kısım 5.2); aynı anlam için C++20'den itibaren `[=, this]` yazılır.

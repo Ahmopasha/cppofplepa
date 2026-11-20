@@ -13,9 +13,9 @@ son_kontrol: "2026-11 (C++20)"
 Kullanılması gereken yerler:
 
 - Tür ismi uzun ve açıkça yazmanın hiçbir bilgi katmadığı durumlar
-(`std::vector<int>::iterator` yerine `auto`; iteratörler: Kısım 23.2) - Adıyla yazılamayan
-türler (lambda ifadelerinin türü, Kısım 24) - Şablon kodunda (Kısım 22), türün bağlama
-göre değiştiği durumlar
+  (`std::vector<int>::iterator` yerine `auto`; iteratörler: Kısım 23.2)
+- Adıyla yazılamayan türler (lambda ifadelerinin türü, Kısım 24)
+- Şablon kodunda (Kısım 22), türün bağlama göre değiştiği durumlar
 
 Kaçınılması gereken yer, türün okuyucu için önemli olduğu ve ilk değer veren ifadeden
 anlaşılmadığı durumlardır. `auto x = foo();` satırında `x`'in ne olduğu okunmuyorsa,

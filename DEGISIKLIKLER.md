@@ -4,6 +4,18 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 24 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-24.md`):
+  - 24.1: "kapanış türü", "kapanış nesnesi" ve "çağrı operatörü" tanıtıldı; "türünü
+    yazamazsınız" → türün adı yoktur.
+  - 24.2: C++20'de geri dönüş türü ya da `mutable` yazılacaksa parantezler zorunlu; yeni
+    Standart Notu — C++23 (parantezsiz yazım).
+  - 24.3: "varsayılan yakalama" tanıtıldı, örtülü yakalamaya bağlandı; sarkan referans
+    örneğinde "HATA" yorumu → kod geçerli, dönen lambdayı çağırmak tanımsız davranış;
+    üye işlevde `[=]` `*this`'i referansla yakalar; yeni Standart Notu — C++20 (`[=]` ile
+    örtülü `*this` artık önerilmiyor, `[=, this]`).
+  - 24.4: referansla yakalamada `mutable` gerekmemesinin gerekçesi [expr.prim.lambda.capture]/13'e
+    göre; kopyanın kapanış nesnesinin veri elemanı olması (/11).
+  - 4.4: madde listesi biçimi düzeltildi. Standart Notu sayısı 25. Sözlüğe üç terim eklendi.
 - Cilt I Kısım 23 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-23.md`):
   - 23.1: "kap", "algoritma", "iteratör" İngilizce karşılıklarıyla tanıtıldı.
   - 23.2: kategori tablosuna bitişik iteratör eklendi (C++17'de tanımlandı, C++20'de ayrı

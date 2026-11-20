@@ -231,7 +231,10 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | İngilizce | Türkçe | İlk geçtiği yer |
 |---|---|---|
 | capture | yakalama | Cilt I 24.3 |
-| closure type | kapanış türü | Cilt II 12.1 |
+| capture default | varsayılan yakalama | Cilt I 24.3 |
+| closure type | kapanış türü | Cilt I 24.1 (ayrıntısı Cilt II 12.1) |
+| closure object | kapanış nesnesi | Cilt I 24.1 |
+| function call operator | çağrı operatörü | Cilt I 24.1 |
 | init capture | ilk değerli yakalama | Cilt II 12.3 |
 | generic lambda | genelleştirilmiş lambda | Cilt II 12.4 |
 | IIFE | hemen çağrılan lambda | Cilt II 12.5 |
