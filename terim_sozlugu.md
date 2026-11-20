@@ -202,8 +202,18 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | İngilizce | Türkçe | İlk geçtiği yer |
 |---|---|---|
 | container | kap | Cilt I 23.1 |
+| algorithm | algoritma | Cilt I 23.1 |
+| iterator | iteratör | Cilt I 23.1 |
+| input / output iterator | girdi / çıktı iteratörü | Cilt I 23.2 |
+| forward iterator | ileri iteratör | Cilt I 23.2 |
+| bidirectional iterator | çift yönlü iteratör | Cilt I 23.2 |
+| random access iterator | rastgele erişimli iteratör | Cilt I 23.2 |
+| contiguous iterator | bitişik iteratör | Cilt I 23.2 |
+| sequence container | sıralı kap | Cilt I 23.4 |
+| associative container | birleşik kap | Cilt I 23.4 |
+| unordered associative container | sırasız birleşik kap | Cilt I 23.4 |
+| hash table | karma tablosu | Cilt I 23.4 |
 | container adaptor | kap uyumlandırıcısı | Cilt I 23.4 |
-| iterator | iteratör | Cilt I 23.2 |
 | sentinel | çevrilmedi | Cilt II 8.3 |
 | range | aralık | Cilt II 8.2 |
 | view | görünüm | Cilt II 8.4 |

@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "23 — STL"
 baslik: "23.7 Algoritmalar"
 kaynak: "ders notları"
-son_kontrol: "2026-10 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 23.7 Algoritmalar
@@ -28,10 +28,11 @@ lambda ifadelerinin en sık kullanıldığı yerdir (bkz. Kısım 24).
 std::sort(v.begin(), v.end(), [](int a, int b) { return a > b; });
 ```
 
-Sık kullanılan gruplar: arama (`find`, `find_if`, `search`), sayma (`count`, `count_if`),
-dönüştürme (`transform`, `copy`, `replace`), sıralama (`sort`, `stable_sort`,
-`partial_sort`), sıralı aralıkta arama (`binary_search`, `lower_bound`, `upper_bound`),
-sayısal işlemler (`accumulate`, `iota` — `<numeric>` başlığında).
+Sık kullanılan gruplar: arama (`std::find`, `std::find_if`, `std::search`), sayma
+(`std::count`, `std::count_if`), dönüştürme (`std::transform`, `std::copy`,
+`std::replace`), sıralama (`std::sort`, `std::stable_sort`, `std::partial_sort`), sıralı
+aralıkta arama (`std::binary_search`, `std::lower_bound`, `std::upper_bound`), sayısal
+işlemler (`std::accumulate`, `std::iota` — `<numeric>` başlığında).
 
 **Algoritmalar eleman silmez.** `std::remove`, silinmeyecek elemanları aralığın başına
 doğru kaydırır ve yeni mantıksal sonu, yani korunan son elemandan sonraki konumu gösteren

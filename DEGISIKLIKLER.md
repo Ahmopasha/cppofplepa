@@ -4,6 +4,17 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 23 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-23.md`):
+  - 23.1: "kap", "algoritma", "iteratör" İngilizce karşılıklarıyla tanıtıldı.
+  - 23.2: kategori tablosuna bitişik iteratör eklendi (C++17'de tanımlandı, C++20'de ayrı
+    kategori); `std::vector` ve `std::array` bu satıra taşındı; kategori adları tanıtıldı;
+    girdi/çıktı tanımı düzeltildi; `iterator_traits` atfı Cilt II 4.11.
+  - 23.4: grup adları, karma tablosu, karma işlevi ve kap uyumlandırıcısı tanıtıldı;
+    birleşik kaplar "anahtarlarına göre dizili tutar".
+  - 23.6: `push_back` sonrası tanımsız davranış yeniden yer ayırmaya bağlandı;
+    `std::vector`, `std::list`, `std::map` geçersizleşme kuralları [vector.modifiers],
+    [list.modifiers], [associative.reqmts]'e göre tamamlandı.
+  - Kısım genelinde kütüphane adlarına `std::` öneki; sözlüğe on terim eklendi.
 - Cilt I Kısım 22 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-22.md`):
   - 22.3: şablon parametreleri "dört grup" değil üç biçim (tür, tür olmayan, şablon şablon);
     parametre paketi bunlardan biri `...` ile bildirilince olur; terimler tanıtıldı.
