@@ -4,6 +4,17 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 25 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-25.md`):
+  - 25.1: atıf 18.6 → 18.5; `BasitAkilli` kopyalanırsa çifte silme (Kısım 13.5).
+  - 25.2: kopyalanamazlık bildirim tablosunun sonucu değil, standart kopyalama işlevlerini
+    `= delete` ile bildirir; `std::make_unique` gerekçesi C++20'ye göre; yeni Standart Notu —
+    C++17 (argümanların karışarak değerlendirilmesi ve sızıntı).
+  - 25.3: kontrol bloğu kural değil tanım; standart yönetim bilgilerinin yerini belirtmez,
+    `std::make_shared` için tek ayırmayı önerir.
+  - 25.4: döngüsel başvuru nesneler arasında; terim tanıtıldı.
+  - 25.5: maliyet eşitliği yerine sayaç yok, gösterici ve silici saklanır; "silici"
+    tanıtıldı; çifte silme tanımsız davranış; kural "`new` ile oluşturulmamış" nesneye göre.
+  - Kısım genelinde `std::` öneki. Standart Notu sayısı 26. Sözlüğe iki terim eklendi.
 - Cilt I Kısım 24 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-24.md`):
   - 24.1: "kapanış türü", "kapanış nesnesi" ve "çağrı operatörü" tanıtıldı; "türünü
     yazamazsınız" → türün adı yoktur.

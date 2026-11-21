@@ -3,7 +3,7 @@ cilt: "I — Temel"
 kisim: "25 — Akıllı Göstericiler"
 baslik: "25.3 `std::shared_ptr`"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 25.3 `std::shared_ptr`
@@ -18,6 +18,8 @@ auto q = p;                  // iki sahip
 std::cout << p.use_count();  // 2
 ```
 
-Sayaç için ayrı bir **kontrol bloğu** tutulur; bu, `unique_ptr`'a göre hem bellek hem
-hız maliyeti getirir. `make_shared` kullanmak, nesneyi ve kontrol bloğunu tek seferde
-ayırdığı için bu maliyeti azaltır.
+Standart, sayacın ve benzeri yönetim bilgilerinin nerede tutulacağını belirtmez; bu
+bilgilerin tutulduğu yapıya **kontrol bloğu** *(control block)* denir. Sayaç tutmak,
+`std::unique_ptr`'da olmayan bir ek iştir. Standart, `std::make_shared`'in nesneyi ve
+yönetim bilgilerini tek bir bellek ayırmayla kurmasını önerir; `new` ile oluşturulmuş bir
+nesnenin adresinden kurulan `std::shared_ptr` ise ikinci bir ayırma gerektirebilir.

@@ -195,6 +195,8 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | copy elision | kopyalama eliminasyonu | Cilt II 3.1 |
 | pessimistic move | çevrilmedi | Cilt II 2.7 |
 | control block | kontrol bloğu | Cilt I 25.3 |
+| deleter | silici | Cilt I 25.5 (ayrıntısı Cilt II 17.9) |
+| reference cycle | döngüsel başvuru | Cilt I 25.4 |
 | custom deleter | özel silici | Cilt II 17.9 |
 
 ### STL ve kütüphane
