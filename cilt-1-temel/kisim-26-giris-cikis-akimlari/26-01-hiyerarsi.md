@@ -3,13 +3,15 @@ cilt: "I — Temel"
 kisim: "26 — Giriş–Çıkış Akımları"
 baslik: "26.1 Hiyerarşi"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++20)"
+son_kontrol: "2026-11 (C++20)"
 ---
 
 ## 26.1 Hiyerarşi
 
-Akım sınıfları bir kalıtım hiyerarşisidir ve hepsi sınıf şablonudur. Günlük kullandığınız
-isimler, `char` açılımlarının tür eş isimleridir.
+Bu kısımda giriş ve çıkış, **akım** *(stream)* denen nesnelerle yapılır. Akım sınıfları
+bir kalıtım hiyerarşisidir. Tepedeki `std::ios_base` şablon olmayan bir sınıftır; şemadaki
+öteki sınıflar karakter türüyle parametrelenen sınıf şablonlarıdır. Günlük kullandığınız
+tür isimleri, `char` açılımlarının tür eş isimleridir (Kısım 16.1).
 
 ```
                  ios_base
@@ -22,11 +24,15 @@ isimler, `char` açılımlarının tür eş isimleridir.
     basic_istringstream<>  basic_ostringstream<>
 ```
 
-`std::ostream`, `basic_ostream<char>`'ın eş ismidir. `std::cout` da bu türden bir
-nesnedir.
+`std::cout`'un türü olan `std::ostream`, `std::basic_ostream<char>` demektir. Şemanın
+altında dosya akımları (Kısım 26.5) ve **yazı akımları** *(string streams)* (Kısım 26.6)
+vardır.
 
-Dört standart akım nesnesi vardır: `std::cin` (giriş), `std::cout` (çıkış, tamponlu),
-`std::cerr` (hata, tamponsuz), `std::clog` (hata, tamponlu).
+`char` için dört standart akım nesnesi vardır: `std::cin` (giriş), `std::cout` (çıkış),
+`std::cerr` (hata) ve `std::clog` (hata); `wchar_t` için de `w` önekli dört karşılığı
+(`std::wcout` gibi) vardır. Çıkış önce **tampona** *(buffer)* yazılıp toplu aktarılabilir.
+`std::cerr`'in tamponu varsayılan olarak her çıkış işleminden sonra boşaltılır;
+`std::cout` ve `std::clog` için standart bunu istemez.
 
 Hiyerarşinin varlığı pratik bir kazanç sağlar: `std::ostream&` parametreli bir işlev,
 ekrana da dosyaya da yazı akımına da yazabilir.

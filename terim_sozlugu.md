@@ -227,6 +227,11 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | proxy | vekil nesne | Cilt I 23.3 |
 | vocabulary types | çevrilmedi | Cilt II 11.1 |
 | formatted / unformatted I/O | biçimli / biçimsiz giriş-çıkış | Cilt I 26.2 |
+| stream | akım | Cilt I 26.1 |
+| buffer | tampon | Cilt I 26.1 |
+| string stream | yazı akımı | Cilt I 26.1 |
+| manipulator | manipülatör | Cilt I 26.4 |
+| field width | alan genişliği | Cilt I 26.4 |
 
 ### Lambda ve çağrılabilirler
 

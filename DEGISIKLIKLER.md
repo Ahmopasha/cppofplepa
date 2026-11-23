@@ -4,6 +4,17 @@
 
 ### Düzeltmeler
 
+- Cilt I Kısım 26 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-26.md`):
+  - 26.1: `std::ios_base` şablon değil; standart akım nesneleri `char` için dört, `wchar_t`
+    karşılıkları anıldı; tamponlama yerine `std::cerr`'in her çıkıştan sonra boşaltılması;
+    "akım", "tampon", "yazı akımı" tanıtıldı.
+  - 26.2: `>>` okunan türe göre durur; `std::cin.ignore()` tek karakter atar, satırın kalanı
+    için iki argümanlı biçim.
+  - 26.3: durumu üç bit belirler, `goodbit` sıfır değeridir; tablo satırları standarda göre;
+    `eofbit` başarısız okumaya değil girdinin sonuna varılmasına bağlı.
+  - 26.4: manipülatör tanımı ve başlıkları (`<ios>`, `<iomanip>`, `<ostream>`); alan genişliği
+    tanıtıldı, `std::setw`'in uygulandığı işlemler.
+  - Kısım genelinde `std::` öneki. Sözlüğe beş terim eklendi.
 - Cilt I Kısım 25 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-25.md`):
   - 25.1: atıf 18.6 → 18.5; `BasitAkilli` kopyalanırsa çifte silme (Kısım 13.5).
   - 25.2: kopyalanamazlık bildirim tablosunun sonucu değil, standart kopyalama işlevlerini
