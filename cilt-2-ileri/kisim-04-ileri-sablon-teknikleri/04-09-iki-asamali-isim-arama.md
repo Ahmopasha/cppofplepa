@@ -3,7 +3,8 @@ cilt: "II — İleri"
 kisim: "4 — İleri Şablon Teknikleri"
 baslik: "4.9 İki aşamalı isim arama"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+kutular: ["Standart Notu — C++20"]
+son_kontrol: "2026-11 (C++23)"
 ---
 
 ## 4.9 İki aşamalı isim arama
@@ -13,8 +14,11 @@ son_kontrol: "2026-09 (C++23)"
 **Bağımsız isimler** *(non-dependent)*, şablon parametresine bağlı olmayan isimlerdir;
 şablonun **tanımlandığı** noktada aranır ve bağlanır.
 
-**Bağımlı isimler** *(dependent)*, şablon parametresine bağlı olanlardır; şablonun
-**örneklendiği** noktada aranır.
+**Bağımlı isimler** *(dependent)* şablon parametresine bağlıdır; her özelleştirme için,
+argümanlar yerleştirildikten sonra aranır. Bağımlı çağrıdaki nitelenmemiş işlev adı olağan
+aramayla tanım noktasından, argümana bağlı isim aramayla (Cilt I Kısım 16.5) örnekleme
+noktasından da aranır. Şablondan sonra bildirilen işlevi yalnızca ikincisi, o da argüman
+türüyle ilişkili bir isim alanındaysa bulur.
 
 Bunun iki pratik sonucu vardır.
 
@@ -42,4 +46,14 @@ void func(T t)
 
 Onsuz `<` işareti karşılaştırma operatörü sanılır.
 
-C++20, `typename`'in zorunlu olduğu yerlerin bir kısmında yazma zorunluluğunu kaldırdı.
+> **Standart Notu — C++20**
+> **C++20 öncesi:** Bağımlı nitelenmiş bir isim tür belirtiyorsa, taban sınıf listesi ve
+> üye ilk değer listesindeki taban sınıf adı gibi birkaç istisna dışında `typename`
+> yazılırdı.
+> **C++20 ile:** Yalnızca türün gelebileceği bağlamlarda `typename` yazılmayabilir: eş
+> isim bildiriminin sağ tarafı (`using deger = T::deger_turu;`), `->` ile yazılan geri
+> dönüş türü, sınıf kapsamındaki üye bildiriminin tür belirteci gibi. Yukarıdaki gibi
+> blok kapsamındaki değişken bildirimlerinde ve şablon argüman listelerinde
+> (`std::vector<typename T::deger_turu>`) hâlâ zorunludur.
+> **Neden değişti:** Yalnızca türün gelebileceği yerlerde `typename` istemek gereksiz
+> yazımdı ve okunabilirliği bozuyordu.

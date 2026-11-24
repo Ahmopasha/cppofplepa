@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "4 — İleri Şablon Teknikleri"
 baslik: "4.10 Eş isim ve değişken şablonları"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-11 (C++23)"
 ---
 
 ## 4.10 Eş isim ve değişken şablonları
@@ -28,5 +28,5 @@ pi<float>;
 pi<double>;
 ```
 
-`type_traits` kütüphanesindeki `_v` ekli isimler bu mekanizmayla tanımlanmıştır:
+`<type_traits>` başlığındaki `_v` ekli isimler bu mekanizmayla tanımlanmıştır:
 `std::is_integral_v<T>`, `std::is_integral<T>::value`'nun kısaltmasıdır.

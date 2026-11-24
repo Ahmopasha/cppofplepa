@@ -4,7 +4,7 @@ kisim: "4 — İleri Şablon Teknikleri"
 baslik: "4.7 CTAD ve deduction guide"
 kaynak: "ders notları"
 kutular: ["Standart Notu — C++17"]
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-11 (C++23)"
 ---
 
 ## 4.7 CTAD ve deduction guide
@@ -42,5 +42,6 @@ yoktur.
 > yazılırdı; işlev şablonlarında çıkarım zaten vardı.
 > **C++17 ile:** Kurucu işlev argümanlarından çıkarım yapılabilir. `make_` işlevlerine
 > çoğu durumda gerek kalmadı.
-> **Neden değişti:** Sınıf ve işlev şablonları arasındaki bu asimetri, dilin en sık
-> şikâyet edilen tutarsızlıklarından biriydi.
+> **Neden değişti:** Tür argümanları, işlev şablonlarında olduğu gibi kurucu işlevin
+> argümanlarından çıkarılabilirdi; `make_` işlevleri sınıf şablonları için ayrıca
+> yazılan ve adlandırılışı tutarsız ek koddu.

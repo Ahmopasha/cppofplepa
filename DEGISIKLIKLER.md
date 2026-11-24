@@ -4,6 +4,20 @@
 
 ### Düzeltmeler
 
+- Cilt II Kısım 4 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-2-kisim-04.md`):
+  - 4.1: "dört grup" yerine üç biçim (her biri paket olabilir); başlık değişti. Tür olmayan
+    parametre türleri yapısal tür tanımına göre.
+  - 4.2: açık örneklemede sınıf tanımı başlıkta kalır; taşınamayan işlevler (dönüş türü
+    çıkarılan, `inline`, `constexpr`); derleme süresi iddiası çıktı.
+  - 4.5: C++17 öncesinde özyineleme tek yol değildi (ilk değer listesinde paket açma).
+  - 4.7: kutunun "Neden değişti" satırı P0091R3'ün gerekçesine göre.
+  - 4.8: geçersiz tür ya da ifade; yerleştirme yerleri ve doğrudan bağlam dışı hatalar.
+  - 4.9: bağımlı çağrıda olağan arama tanım noktasından, ADL örnekleme noktasından da;
+    yeni Standart Notu — C++20 (`typename`'in yazılmayabildiği bağlamlar).
+  - 4.11: yeni Standart Notu — C++20 (`std::iterator_traits`'in üye türleri);
+    gösterici özelleştirmesinde `value_type` `std::remove_cv_t<T>`.
+  - 4.12: Cilt I 23.7 atfı; 4.13: `std::apply` ile INVOKE ilişkisi.
+  - Terim tanıtımları ve `std::` önekleri. Standart Notu sayısı 28. Sözlüğe yedi terim.
 - Cilt I Kısım 26 (klasör klasör tarama; iddia tablosu `tarama/2026-11/cilt-1-kisim-26.md`):
   - 26.1: `std::ios_base` şablon değil; standart akım nesneleri `char` için dört, `wchar_t`
     karşılıkları anıldı; tamponlama yerine `std::cerr`'in her çıkıştan sonra boşaltılması;

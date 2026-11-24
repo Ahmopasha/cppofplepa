@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "4 — İleri Şablon Teknikleri"
 baslik: "4.13 Demeti argüman listesine açmak"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-11 (C++23)"
 ---
 
 ## 4.13 Demeti argüman listesine açmak
@@ -43,5 +43,6 @@ std::invoke(&S::f, s);       // s.f()
 std::invoke(&S::x, s);       // s.x
 ```
 
-Şablon kodunda, elinizdeki çağrılabilirin hangi türden olduğunu bilmediğinizde `invoke`
-kullanılır. `std::apply` da zaten arka planda onu çağırır.
+Çağrılabilirin türü bilinmeyen şablon kodunda `std::invoke` kullanılır. `std::apply` da
+çağrılabiliri demetin öğeleriyle aynı kurala göre çağırır: standart onu `std::invoke` ile
+aynı çağırma işlemiyle tanımlar.

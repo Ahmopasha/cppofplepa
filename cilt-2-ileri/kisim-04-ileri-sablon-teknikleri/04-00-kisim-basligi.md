@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "4 — İleri Şablon Teknikleri"
 baslik: "Kısım 4 — İleri Şablon Teknikleri"
 kaynak: "derleyen"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-11 (C++23)"
 ---
 
 # Kısım 4 — İleri Şablon Teknikleri

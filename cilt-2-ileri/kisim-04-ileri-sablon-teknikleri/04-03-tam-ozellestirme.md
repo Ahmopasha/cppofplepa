@@ -3,12 +3,13 @@ cilt: "II — İleri"
 kisim: "4 — İleri Şablon Teknikleri"
 baslik: "4.3 Tam özelleştirme"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-11 (C++23)"
 ---
 
 ## 4.3 Tam özelleştirme
 
-Belirli bir tür için şablonun tamamen farklı bir sürümünü yazmaktır.
+**Tam özelleştirme** *(explicit specialization)*, belirli bir tür için şablonun tamamen
+farklı bir sürümünü yazmaktır.
 
 ```cpp
 template<typename T>

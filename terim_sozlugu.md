@@ -154,6 +154,13 @@ terimi olmayan nitelemeler yerinde bırakıldı (Cilt II 9.2). Bunlar terim değ
 | alias template | eş isim şablonu | Cilt II 4.10 |
 | variable template | değişken şablonu | Cilt II 4.10 |
 | immediate context | doğrudan bağlam | Cilt II 4.8 |
+| structural type | yapısal tür | Cilt II 4.1 |
+| implicit instantiation | örtülü örnekleme | Cilt II 4.2 |
+| explicit specialization | tam özelleştirme | Cilt II 4.3 |
+| partial specialization | kısmi özelleştirme | Cilt II 4.4 |
+| function parameter pack | işlev parametre paketi | Cilt II 4.5 |
+| stream iterator | akım iteratörü | Cilt II 4.12 |
+| insert iterator | ekleme iteratörü | Cilt II 4.12 |
 | non-deduced context | çıkarılmayan bağlam | Cilt II 5.7 |
 | concept | kavram | Cilt II 7.1 |
 | subsumption | kısıt sıralaması | Cilt II 7.7 |

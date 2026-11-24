@@ -3,7 +3,7 @@ cilt: "II — İleri"
 kisim: "4 — İleri Şablon Teknikleri"
 baslik: "4.5 Değişken sayıda parametre"
 kaynak: "ders notları"
-son_kontrol: "2026-09 (C++23)"
+son_kontrol: "2026-11 (C++23)"
 ---
 
 ## 4.5 Değişken sayıda parametre
@@ -16,7 +16,7 @@ void yazdir(const Ts&... args);
 ```
 
 `Ts` bir **parametre paketidir**; sıfır veya daha fazla türü temsil eder. `args` ise bir
-**işlev parametre paketidir**.
+**işlev parametre paketidir** *(function parameter pack)*.
 
 Paketin eleman sayısı `sizeof...` ile alınır:
 
@@ -39,7 +39,7 @@ void ilet(Ts&&... args)
 Bu, Cilt II Kısım 1.2.5'teki mükemmel gönderimin değişken sayıda parametreye
 genellenmiş hâlidir; `emplace_back` tam olarak böyle yazılır.
 
-C++17 öncesinde paketi işlemenin tek yolu özyinelemeydi:
+C++17 öncesinde paketi işlemenin bir yolu özyinelemeydi:
 
 ```cpp
 void yazdir() { }                          // özyinelemenin tabanı
@@ -51,3 +51,7 @@ void yazdir(const T& ilk, const Ts&... kalan)
     yazdir(kalan...);
 }
 ```
+
+Bir başka yol, paketi ilk değer listesinde açmaktı:
+`int d[] = {0, ((std::cout << args), 0)...};`. Kısım 4.6'daki katlama ifadeleri ikisinin
+de yerini alır.
